@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[11pt,spanish, oneside]{SETUP/ezthesis} 
+%% # Opciones disponibles para el documento #
+%%
+%% Las opciones con un (*) son las opciones predeterminadas.
+%%
+%% Modo de compilar:
+%%   draft            - borrador con marcas de fecha y sin im'agenes
+%%   draftmarks       - borrador con marcas de fecha y con im'agenes
+%%   final (*)        - version final de la tesis
+%%
+%% Tama'no de papel:
+%%   letterpaper (*)  - tama'no carta (Am'erica) 
+%%   a4paper          - tama'no A4    (Europa)
+%%
+%% Formato de impresi'on:
+%%   oneside          - hojas impresas por un solo lado
+%%   twoside (*)      - hijas impresas por ambos lados
+%%
+%% Tama'no de letra:
+%%   10pt, 11pt, o 12pt (*)
+%%
+%% Espaciado entre renglones:
+%%   singlespace      - espacio sencillo
+%%   onehalfspace (*) - espacio de 1.5
+%%   doublespace      - a doble espacio
+%%
+%% Formato de las referencias bibliogr'aficas:
+%%   numbers          - numeradas, p.e. [1]
+%%   authoryear (*)   - por autor y a'no, p.e. (Newton, 1997)
+%%
+%% Opciones adicionales:
+%%   spanish         - tesis escrita en espa'nol
+%%
+%% Desactivar opciones especiales:
+%%   nobibtoc   - no incluir la bibiolgraf'ia en el 'Indice general
+%%   nofancyhdr - no incluir "fancyhdr" para producir los encabezados
+%%   nocolors   - no incluir "xcolor" para producir ligas con colores
+%%   nographicx - no incluir "graphicx" para insertar gr'aficos
+%%   nonatbib   - no incluir "natbib" para administrar la bibliograf'ia
+
+%\usepackage[inline]{trackchanges}
+\usepackage[finalnew]{trackchanges}
+\addeditor{SEC}
+\usepackage[compact]{titlesec}
+% idioma
+\usepackage[utf8]{inputenc}
+%\usepackage[USenglish,british,american,australian,english]{babel}
+
+\usepackage{booktabs} %tablas
+\usepackage{tabularx}
+\usepackage{rotating}  %rotar tablas
+%\usepackage[style=mla]{biblatex}  %Manejo de referencias
+\usepackage{colortbl} %color tablas
+\usepackage{setspace} %espaciado
+\usepackage{url}
+%\usepackage{hyperref}
+% Paquetes de la AMS:
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+
+
+
+
+% %margenes segun n. icontec
+% \usepackage{vmargin}
+%   \setmarginsrb  { 3.0cm}  % left margin
+%                  { 4.0cm}  % top margcm
+%                  { 3.0cm}  % right margcm
+%                  { 3.0cm}  % bottom margcm
+%                  {  10pt}  % head height
+%                  {0.25cm}  % head sep
+%                  {   9pt}  % foot height
+%                  { 0.8cm}  % foot sep
+
+\onehalfspacing
+\pagestyle{plain} % numeracion en la parte inferior
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{8} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{8}  % for normal
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+
+\author{Santiago Echeverri Chacón}
+\authoremail{sechev14@eafit.edu.co}
+\supervisor{René Restrepo Gómez}
+\supervisoremail{rrestre6@eafit.edu.co}
+\degree{MÁGISTER EN FÍSICA APLICADA}
+\program{Maestría en Física Aplicada}
+\institution{Universidad EAFIT}
+\faculty{Escuela de Ciencias}
+\department{Departmento de Ciencias Físicas}
+\title{GENERACIÓN Y CARACTERIZACIÓN DE VÓRTICES
+                  ÓPTICOS MEDIANTE MODULADORES ESPACIALES DE LUZ}
+
+
+\begin{document}
+
+\include{Preface/titlepage}
+
+\frontmatter
+
+\clearpage
+
+% \begin{savequote}[100mm]
+% \emph{``The first principle is that you must not fool yourself - and you are the easiest person to fool...''} \\
+% \qauthor{Richard P. Feynmann}
+% \end{savequote}
+
+\vspace*{5cm}
+\begin{flushright}
+\begin{tabular}{p{10cm}r}
+\emph{``The first principle is that you must not fool yourself - and you are the easiest person to fool...''} \\
+\textbf{Richard P. Feynman}
+\end{tabular}
+\end{flushright}
+\thispagestyle{empty}
+
+\include{Preface/dedication}
+\include{Preface/acknowledgement}
+\include{Preface/abstract}
+
+%: ----------------------- contents ------------------------
+
+\setcounter{secnumdepth}{5} % organisational level that receives a numbers
+\setcounter{tocdepth}{5}    % print table of contents for level 3
+\tableofcontents
+%: ----------------------- list of figures/tables ------------------------
+\listoffigures
+
+% \include{./src/Aknowledgments}
+% \include{./src/Introduction}
+% \include{./src/Problem}
+
+% \include{./src/Electromagnetic_waves_in_periodic_media}
+% \include{./src/Finite_element_method}
+% \include{./src/Implementation}
+% \include{./src/Results}
+% \include{./src/Conclusions}
+
+
+
+%: ----------------------- glossary ------------------------
+
+\include{Preface/glossary}
+\printnomenclature % [] = distance between entry and description
+
+
+\label{sec:glossary} % target name for links to glossary
+
+%: --------------------------------------------------------------
+%:                  MAIN DOCUMENT SECTION
+% --------------------------------------------------------------
+
+% the main text starts here with the introduction, 1st chapter,...
+\mainmatter
+\pagestyle{fancy}
+
+%: ----------------------- introduction ------------------------
+% introduction
+\include{Chapters/introduction}	
+%\include{1_introduction/1_motivation}	
+
+% Interferometria y HDR
+\part{Implementación de una plataforma para la caracterización de un SLM\label{ParteI}}
+
+
+%\cleardoublepage \phantomsection
+%\addcontentsline{toc}{chapter}{References}
+
+\end{document}

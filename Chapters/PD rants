@@ -1,0 +1,6 @@
+% Rants
+
+%Translation from chapter 3.1 of the book "Adaptive optics for biological imaging" p43
+
+Si se quiere modelar y entender un sistema formador de imagen, se debe saber qué campo óptico se produce a la salida para una entrada particular. En microscopía confocal el interés es saber la calidad del spot focal. La PSF, que es la imágen de un objeto puntual, caracteriza completamente el sistema. Esto es poque la salida del sistema óptica puede ser entendida como una superposición de los campos ópticos causados por el objeto puntual.
+
