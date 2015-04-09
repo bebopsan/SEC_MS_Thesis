@@ -2,7 +2,7 @@
 This repository has my Masters thesis manuscript.  
 The thesis is about Phase aberration detection in Optical Vortices
 
-The thesis is written in LaTex and comiled using the make command. 
+The thesis is written in LaTex and compiled using the make command. 
 
 ## Usage of make
 
@@ -16,7 +16,7 @@ make pdflatex
 and the following will happen:
 
 1. `clean` Cleans the auxiliary files as well as not needed latex and bibtex files.
-2.`pdflatex`  
+2. `pdflatex`  
 3. `bibtex`
 4. `pdflatex`
 5. `pdflatex`
