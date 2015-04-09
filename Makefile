@@ -18,46 +18,9 @@ FILE_TEX=SEC_main
 # Date stamp style
 DATESTAMP=`date +'%Y-%m-%d'`
 
-###
-# Authentication parameters
-###
-
-# Account tpye
-ACCOUNTTYPE=GOOGLE
-
 # Email
 # EMAIL=your-email-with-google-account
 EMAIL=santiag77e@gmail.com
-
-# Password
-# PASSWD=your-password
-PASSWD=1234567
-
-# Service type. Set it for documents
-SERVICE=writely
-
-# Source of the post request
-SOURCE= eafit.edu.co
-
-###
-# Google Docs resource id-s
-###
-
-# To get the resource id:
-# Open the document with Google Docs
-# Copy and past the document URL from your browser
-# Example:
-# https://docs.google.com/document/d/123XXX123XXX/edit?hl=en GB#
-# In this example, the resource id will be:
-# 123XXX123XXX
-
-# tex file resource id
-# TEX_GOOGLE_DOCS=123XXX123XXX
-TEX_GOOGLE_DOCS=123XXX123XXX
-
-# bib file resource id
-# BIB_GOOGLE_DOCS=123XXX123XXX
-BIB_GOOGLE_DOCS=123XXX123XXX
 
 
 ###
@@ -85,14 +48,13 @@ pdflatex: clean
 	# Uncomment makeindex if the document contains an index
 	makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
 	bibtex Int
-	bibtex Int
 	pdflatex ${FILE_TEX}.tex
 	pdflatex ${FILE_TEX}.tex
 	pdflatex ${FILE_TEX}.tex
 	# Backup tex, bib and generated pdf files
 	# There is one backup per day
-	mkdir -p time-machine/${DATESTAMP}
-	cp ${FILE_TEX}.pdf time-machine/${DATESTAMP}/${FILE_TEX}.pdf
+	#mkdir -p time-machine/${DATESTAMP}
+	#cp ${FILE_TEX}.pdf time-machine/${DATESTAMP}/${FILE_TEX}.pdf
 
 rtf: clean	
 	latex ${FILE_TEX}.tex
@@ -106,6 +68,19 @@ rtf: clean
 	# There is one backup per day
 	mkdir -p time-machine/${DATESTAMP}
 	cp ${FILE_TEX}.pdf time-machine/${DATESTAMP}/${FILE_TEX}.rtf
+
+git-commit: clean
+# Commit to previously configured git repository.
+# To set up a local repository do:
+#	git init
+#To add the local repository to a external repo do:
+#	git remote add origin remote-repository-URL
+# Sets the new remote
+#	git remote -v
+# Verifies the new remote URL
+	git add .
+	git commit
+	git push origin master
 
 view:
 	# Open the pdf document with skim in mac
@@ -126,44 +101,4 @@ clean:
 	find . -regex '.*.blg' -print0 | xargs -0 rm -rfv
 	# If there are other generated files, add the previous command again with the proper extension
 
-update:
-	# Create a temporal file with the POST request configuration 
-	# Uses the authentication parameters of this Makefile
-	echo "POST /accounts/ClientLogin HTTP/1.0\nContent-type: application/x-www-form-urlencoded\n\naccountType=${ACCOUNTTYPE}&Email=${EMAIL}&Passwd=${PASSWD}&service=${SERVICE}&source=${SOURCE}" > credentials.txt
-
-	# Perform the authentication
-	# Credentials are defined in Makefile
-	# and temporally store in updater/credentials.txt
-	wget -O clientLogin.txt --no-check-certificate --post-file=credentials.txt "https://www.google.com/accounts/ClientLogin" >/dev/null 2>&1
-
-	# Remove client login information (for security reasons)
-	rm credentials.txt
-	##
-	# Get the TEX document
-	##
-
-	# Get the document indicated by the first parameter
-	wget --header "Authorization: GoogleLogin auth=`cat clientLogin.txt | grep Auth | sed "s#Auth=##" | xargs echo -n`" "https://docs.google.com/feeds/download/documents/Export?docID=${TEX_GOOGLE_DOCS}&exportFormat=txt" -O temp.txt
-
-	# The first line of the downloaded line contains not valid characters
-	# Remove first line of the downloaded document
-	sed 1d temp.txt > ${FILE_TEX}.tex
-	# Remove the temp file
-	rm temp.txt
-
-	##
-	# Get the BIB document
-	##
-
-	# Get the document indicated by the first parameter
-	wget --header "Authorization: GoogleLogin auth=`cat clientLogin.txt | grep Auth | sed "s#Auth=##" | xargs echo -n`" "https://docs.google.com/feeds/download/documents/Export?docID=${BIB_GOOGLE_DOCS}&exportFormat=txt" -O temp.txt
-
-	# The first line of the downloaded line contains not valid characters
-	# Remove first line of the downloaded document
-	sed 1d temp.txt > ${FILE_TEX}.bib
-	# Remove the temp file
-	rm temp.txt
-
-	# Remove client login information (for security reasons)
-	rm clientLogin.txt
 
