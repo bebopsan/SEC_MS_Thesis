@@ -78,7 +78,8 @@ git-commit: clean
 # Sets the new remote
 #	git remote -v
 # Verifies the new remote URL
-	git add .
+	git pull
+	git add -A
 	git commit
 	git push origin master
 
