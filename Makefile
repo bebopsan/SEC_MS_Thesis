@@ -48,6 +48,7 @@ pdflatex: clean
 	# Uncomment makeindex if the document contains an index
 	makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
 	bibtex Int
+	bibtex ChGen
 	pdflatex ${FILE_TEX}.tex
 	pdflatex ${FILE_TEX}.tex
 	pdflatex ${FILE_TEX}.tex
@@ -89,9 +90,10 @@ view:
 
 clean:
 	# Cleaning ${FILE_TEX} related files...
-	ls ${FILE_TEX}.* | grep -v \.tex$ | grep -v \.bib$ | xargs rm -fv
+	ls ${FILE_TEX}.* | grep -v \.pdf$ | grep -v \.tex$ | grep -v \.bib$ | xargs rm -fv
 	# Cleaning other tex related files if applicable...
-	rm -fv *log *aux *dvi *lof *lot *bit *idx *glo *bbl *ilg *toc *ind *blg *out *nlo *brf *nls *pdf 
+	rm -fv *log *aux *dvi *lof *lot *bit *idx *glo *bbl *ilg *toc *ind *blg *out *nlo *brf *nls
+	#rm -fv *pdf 
 	# Cleaning in subdirectories *.aux files...
 	find . -regex '.*.aux' -print0 | xargs -0 rm -rfv
 	# Cleaning in subdirectories *.log files...

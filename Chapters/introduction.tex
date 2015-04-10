@@ -6,7 +6,7 @@
 
 \chapter{Introducción}
 \label{cha:Introduccion}
-
+\lhead{Introducción} % This is for the header on each page - perhaps a shortened title
 \graphicspath{{Figures/intro_img/}{../Figures/intro_img/}}
 
 Como es bien sabido, la luz transporta energía; esto se hace evidente al
@@ -20,7 +20,7 @@ contribuciones, la de spin y la orbital. Desde un punto de vista
 macroscópico, el momento angular de spin se asocia con la polarización
 de la luz, es decir con la dirección de oscilación de los campos
 eléctrico y magnético con respecto a un eje coordenado. Asimismo, el
-momento angular orbital (OAM) se asocia con las distribuciones
+\textbf{momento angular orbital} (OAM) se asocia con las distribuciones
 espaciales de la amplitud y la fase, tal y como se observan
 en un plano perpendicular a la propagación de la luz. Para aclarar esta idea
 comparemos dos haces polarizados linealmente, uno con OAM
@@ -30,8 +30,7 @@ Gaussiana, al ser enfocado por una lente, en un plano de
 observación veremos que la distribución de intensidad está dada por una función de
 Airy como la que se ilustra en la figura \ref{fig:oam_intro}c). 
 %\ref{fig:oam0intro}  
-
-lp;./['%\begin{figure}[h!]
+%\begin{figure}[h!]
 %\centering
 %\includegraphics[scale=.33]{img/oam0Intro}
 %\caption{a) Amplitud normalizada de un haz plano circular con OAM 0. b)
@@ -57,7 +56,7 @@ perfil con forma de dona como la de la figura
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.33]{oam_Intro}
-\caption{ Las figuras a) y b) representan mapas de fase de haces con
+\caption[Comparación entre haces Gaussianos y haces Laguerre-Gauss]{ Las figuras a) y b) representan mapas de fase de haces con
   OAM 0 y +1 definidos en el intervalo $[- 
   \pi,\pi]$ . Las intensidades correspondientes luego de enfocar los haces en
   un plano de observación se muestran en las figuras c) y d).}
@@ -77,7 +76,12 @@ también una dependencia radial y azimutal descrita por polinomios de
 Laguerre, con los cuales se pueden representar vórtices ópticos de fase
 y amplitudes del tipo dona.       
 El estudio, y el desarrollo de aplicaciones sobre los haces Laguerre-Gauss y por consecuencia, de los VO , requiere entonces de la
-capacidad de manipular el OAM de haces de luz.  \\
+capacidad de manipular el OAM de haces de luz.\\
+
+
+
+%------------------ESTADO_DEL_ARTE---------------
+\section{Estado del arte del estudio de haces Laguerre-Gauss\label{sec:estadoArte}}
 
 El momento angular orbital añade un grado de libertad al
 conjunto de propiedades que pueden ser manipuladas y que caracterizan
@@ -149,9 +153,9 @@ De proyectos como este, se ha formado una red de grupos interesados
 específicamente en el estudio de VO. En particular,
 la cooperación entre algunos de ostos grupos derivó en trabajos en los
 cuales se estudió el efecto de la birrefringencia inducida por
-cristales birrefringentes en vórtices ópticos \citepInt{Gomez2012a}, y la
+cristales birrefringentes en vórtices ópticos \citepInt{Gomez2012}, y la
 posibilidad de generar vórtices con una cantidad reducida de niveles
-de gris en moduladores de transmisión \citepInt{Rueda2013}. De forma
+de gris en moduladores de transmisión \citepInt{Rueda2013,Londono2015}. De forma
 similar, la Universidad EAFIT, a través de su grupo de Óptica Aplicada
 y en cooperación con el Centro de Investigaciones Ópticas de
 Argentina,  ha contribuido con el desarrollo de técnicas metrológicas
@@ -160,10 +164,14 @@ speckle
 \citepInt{Angel-Toro2012,Angel-Toro2012a,Angel-Toro2013,Sierra-Sosa2013,Sierra-Sosa2013b}. 
 
 
+
+\section{Motivación\label{sec:motiv}}
+
 Con la iniciativa de adquirir las capacidades técnicas y experimentales
-necesarias para el desarrollo de aplicaciones metrológicas de vórtices ópticos, el grupo de Óptica
-Aplicada de la Universidad EAFIT ha abierto dos proyectos internos, y
-ha sido merecedor de una beca del programa Jóvenes Investigadores de Colciencias,
+necesarias para el desarrollo de aplicaciones metrológicas de vórtices
+ópticos, el grupo de Óptica 
+Aplicada de la Universidad EAFIT abrió dos proyectos internos, y
+fue merecedor de una beca del programa Jóvenes Investigadores de Colciencias,
 convocatoria 645 a cursar en el 2015.  
 Las prioridades del grupo, y asimismo los temas de trabajo de estos
 dos proyectos son: 
@@ -174,66 +182,79 @@ dos proyectos son:
   distinto de cero para instrumentos de microscopia de objetos de fase. 
 \end{itemize}
 
-Es, en este contexto, que desde Julio del 2013 he venido realizando mi labor de
-investigación en la línea de metrologia óptica del grupo de Óptica Aplicada de la Universidad EAFIT
-en el proyecto interinstitucional  \textit{Aberraciones ópticas en haces Laguerre-Gaussianos: corrección
-  y aplicaciones metrológicas} gozando del beneficio de un beca de Maestría. 
+\section{Planteamiento del problema}
 
-% % duración del programa. Así como realizar mi trabajo de grado en armonía con
-% % el mismo. 
+\label{sec:planteamiento}
 
-% %Este trabajo se plantea como un desarrollo complementario de la línea
-% %de investigación del grupo en la cual he venido trabajando
+En este proyecto se busca generar y caracterizar haces LG por medio de
+un instrumento electro óptico conocido como modulador espacial de luz
+(SLM) que previamente debe ser caracterizado. 
 
-Mediante la presente propuesta de Trabajo de Grado se busca proponer
-un proyecto final de maestría con el cual se pueda concluir y documentar
-un proceso académico e investigativo de dos años que va a permitirle al
-grupo de Óptica Aplicada abrir nuevas areas de trabajo. 
-Específicamente, se propone terminar de desarrollar las capacidades técnicas y
-habilidades necesarias para la manipulación del OAM y la generación de
-VO con miras a la exploración de nuevas aplicaciones de VO en la
-metrología óptica y la microscopía. \\
+% La generación de vórtices ópticos requiere de un instrumento conocido
+% como modulador espacial de luz capaz de manipular punto a punto las
+% propiedades ópticas de un haz de luz. En el primer año del trabajo de
+% maestría se desarrolló un sistema opto-mecatrónico que permite la
+% caracterización de un modulador espacial de transmisión para generar
+% vórtices ópticos. Una vez puesto a punto, y con la capacidad técnica
+% para generar vórtices ópticos, el proyecto entró en su segunda etapa
+% que consiste en la implementación de técnicas para la caracterización
+% de aberraciones ópticas en vórtices ópticos y su posterior corrección.
+% En el primer semestre de la segunda etapa se ha
+% avanzado en dos frentes: De un lado, se han 
+% explorado, vía simulación, algoritmos de reconstrucción de fase e identificación de
+% aberraciones en esquemas no interferométricos, conocidos como
+% algoritmos de diversidad de fase. Por otra parte, se han implementado
+% algoritmos basados en reconstrucción de interferogramas para
+% modelación de elementos ópticos birrefringentes, y se han realizado medidas experimentales en vórtices
+% ópticos para evaluar el desempeño del sistema de generación de
+% vórtices y de los algoritmos de identificación de aberraciones. 
 
-
-En adelante, en la sección \ref{sec:planteamiento} se presentará el
-planteamiento del problema. En la sección \ref{sec:marco_teorico}, se presentará  un breve marco
-teórico y estado del arte que dará soporte a las proposiciones del planteamiento del problema.
-% Adicionalmente se abordará una breve sección
-% de análisis de riesgos (\ref{sec:analisis}) en la cual se pretende evaluar las posibles
-% limitaciones y fuentes de retraso o aplazamiento. 
-Y en la sección \ref{sec:objetivos} se presentará el objetivo general y enumerarán
-los objetivos específicos que deben ser cumplidos al finalizar el
-proyecto. Luego, en la sección \ref{sec:metodologia} se hará una descripción de las
-actividades a realizar para la consecución de los objetivos
-específicos, y se presentará un cronograma (sección \ref{sec:cronograma})  que
-establece los tiempos en los cuales se deben cumplir. Finalmente, se
-presenta una descripción de los recursos necesarios
-para llevar a cabo el proyecto y se listan las referencias
-bibliográficas consultadas. 
-
-\section{Motivación y objetivos\label{sec:motiv}}
+La propuesta del presente proyecto consiste entonces en caracterizar
+haces LG por medio de un SLM a partir de la integración de  
+algoritmos de identificación de aberraciones, y una plataforma
+experimental sistematizada para la generación de haces del tipo LG.  
+Adicionalmente, se propone estudiar posibles aplicaciones de la
+observación o manipulación de las aberraciones ópticas presentes en
+haces LG una vez haya sido dominada la capacidad para identificarlas y
+corregirlas. 
 
 
-%------------------ESTADO_DEL_ARTE---------------
-\section{Estado del Arte\label{sec:estadoArte}}
-
-
-
+\section{Objetivos}\label{sec:objetivos}
+\label{sec:objetivos}
+ A continuación se listan el objetivo general y los
+objetivos específicos. 
+\subsection{Objetivo General}
+Desarrollar la capacidad para generar y caracterizar vórtices de fase
+mediante un SLM de transmisión.
+\subsection{Objetivos Específicos}
+% % Según Convocatoria Jóvenes Investigadores \\
+\begin{itemize}
+\item Identificar y apropiar los conceptos y procedimientos necesarios
+  para caracterizar moduladores espaciales de luz de transmisión, con
+  miras a la producción y análisis de vórtices ópticos.
+\item Implementar una plataforma experimental para caracterizar la
+  modulación de amplitud y fase de un SLM a partir de un montaje
+  interferométrico automatizado.
+\item Obtener experimentalmente vórtices ópticos del tipo
+  Laguerre-Gauss mediante el uso de un SLM y estudiar las
+  distribuciones de intensidad y fase alrededor de los vórtices.
+\item Proponer alternativas para el desarrollo de aplicaciones
+  metrológicas basadas en la generación de VO y el estudio de sus
+  propiedades.
+\end{itemize}
 
 %-----------------ESTRUCTURA-------------------
-\section{Estructura\label{sec:estructura}}
+\section{Estructura del documento\label{sec:estructura}}
 
 El texto principal de este trabajo, está dividido en 2 partes temáticas que agrupan los Capítulos. A continuación, se presenta la estructura general de la disertación por Partes y Capítulos: \\
 
 
-\textbf{Parte \ref{ParteI}: Implementación de una plataforma para la caracterización de un SLM}
+\textbf{Parte \ref{ParteI}: Generación de haces Laguerre-Gauss por medio de un SLM}
 
 
 
 \textbf{Parte \ref{ParteII}: Caracterización y corrección de aberraciones de VO}
 
-
-\textbf{Parte \ref{ParteIV}: Recuperación de fase con métodos no interferométricos}
 
 
 \newpage

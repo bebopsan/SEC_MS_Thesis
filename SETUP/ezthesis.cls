@@ -203,6 +203,7 @@
 % %% with hyperref
 % \def\bibliographyfix{%
 % 	\let\old@bibliography\bibliography
+
 % 	\def\bibliography{%
 % 		\clearpage
 % 		\phantomsection
@@ -216,10 +217,14 @@
 %---------------------------------------------------------------
 % Packages
 %---------------------------------------------------------------
+                                %referencias
+%\PassOptionsToPackage{square,numbers}{natbib}
+% \RequirePackage{natbib} 
 \usepackage[square, sort&compress, numbers, sectionbib]{natbib} %OJO CAMBIO 
+%\usepackage[backend=bibtex,url=false]{biblatex}  %Manejo de
 \usepackage[resetlabels]{multibib}
 \newcites{Int}{Bibliograf\'{i}a}
-% \newcites{Nor}{Bibliograf\'{i}a}
+\newcites{ChGen}{Bibliograf\'{i}a}
 % \newcites{Slm}{Bibliograf\'{i}a}
 % \newcites{Vor}{Bibliograf\'{i}a}
 % \newcites{Aer}{Bibliograf\'{i}a}
@@ -253,12 +258,43 @@
                   ÓPTICOS MEDIANTE MODULADORES ESPACIALES DE LUZ}, pdfauthor={Santiago Echeverri},
 pdfsubject={Optical Vortices, SLM Characterization, Phase retrieval}, pdfkeywords={Optical Vortices, SLM Characterization, Phase retrieval}, pdfpagemode=UseOutlines,bookmarks,bookmarksopen,pdfstartview=FitH,colorlinks,linkcolor=blue,
 urlcolor=blue, cite color=blue]{hyperref} %
+
 \usepackage[hyperpageref]{backref} 
+%\usepackage[inline]{trackchanges}
+\usepackage[finalnew]{trackchanges}
+\addeditor{SEC}
+\usepackage[compact]{titlesec}
+% idioma
+\usepackage[utf8]{inputenc}
+%\usepackage[USenglish,british,american,australian,english]{babel}
+
+\usepackage{booktabs} %tablas
+\usepackage{tabularx}
+\usepackage{rotating}  %rotar tablas
+
+\usepackage{colortbl} %color tablas
+\usepackage{setspace} %espaciado
+\usepackage{url}
+\usepackage{subcaption}
+%\usepackage{hyperref}
+% Paquetes de la AMS:
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{dsfont}
+\onehalfspacing
+\pagestyle{plain} % numeracion en la parte inferior
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{8} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{8}  % for normal
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+
 
 %---------------------------------------------------------------
 %  End Packages
 %---------------------------------------------------------------
-\usepackage[resetlabels]{multibib}
+%\usepackage[resetlabels]{multibib}
 
 %% title page building blocks
 \renewenvironment{titlepage}%
@@ -541,5 +577,36 @@ showstringspaces=false            %
 \titlespacing*{\subsubsection}{0pt}{*4}{0.5ex}
 }
 
+%:-------------------------- backmatter text layout -----------------------
+
+\newcommand{\backmatter}{%
+\cleardoublepage
+\pagestyle{fancy}
+       
+% \chapter format
+\titleformat{\chapter}[display]%		
+% Label and title options
+{\filleft}%
+% Label format and text
+{\color{Gray}{\filleft\small{\bfseries ANEXO}} {\linebreak\fontsize{90}{90}\selectfont\selectfont {\bfseries \thechapter}}}	   
+% Label and title distance
+{2ex}
+% Title format
+{\vspace{2ex}\bfseries \fontsize{30}{30}\selectfont}%
+% Space between title and text
+\titlespacing{\chapter}{3mm}{*10}{15mm}[3mm] %       
+       
+% \section format
+\titleformat{\section}[block]{\normalfont\Large}{\thesection}{.5em}{\bfseries}
+\titlespacing*{\section}{0pt}{*4}{*1}
+
+% \subsection format
+\titleformat{\subsection}[block]{\normalfont\large}{\thesubsection}{.5em}{\bfseries}
+\titlespacing*{\subsection}{0pt}{*4}{*1}
+
+% \subsubsection format
+\titleformat{\subsubsection}[block]{\normalfont\normalsize}{\thesubsubsection}{.5em}{\bfseries}
+\titlespacing*{\subsubsection}{0pt}{*4}{0.5ex}
+}
 
 \endinput

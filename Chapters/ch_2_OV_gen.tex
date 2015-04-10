@@ -1,0 +1,1645 @@
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%------------------------------------------------------------------------- 
+
+\chapter{Generación de Vórtices Ópticos}
+\label{cha:Gen_intro}
+
+\graphicspath{{Figures/ch2_img/}{../Figures/ch2_img/}}
+\lhead{Generación de Vórtices Ópticos: \textit{Introducción}} % This is for the header on each page - perhaps a shortened title
+\section{Estado del Arte}
+\label{sec:estado_del_arte}
+\lhead{Generación de Vórtices Ópticos: \textit{Estado
+    del Arte}}
+Los haces con OAM distinto de cero inicialmente fueron generados en el
+laboratorio por medio de técnicas analógicas entre las que se destacan
+el uso de conversores modales \citepChGen{Alekseev1998}, placas de fase espiral grabadas en sustratos
+transparentes \citepChGen{Jun2009}, y hologramas de fase impresos en acetato
+\citepChGen{Carpentier2008} . La conversión modal utiliza sucesiones de
+lentes astigmáticas para convertir los modos Hermite Gauss en modos
+Laguerre Gauss, y fue la primera forma en la cual se produjeron VO en
+el laboratorio. A diferencia de la conversión modal, - que requiere un
+montaje experimental muy sensible -  las técnicas que utilizan máscaras
+de fase se caracterizan por necesitar sólo un elemento óptico que
+permite modificar punto a punto la fase de un haz que originalmente
+carecía de momento angular, para convertirlo en un haz con vorticidad
+óptica. El uso de placas físicas grabadas con un patrón espiral
+tiene la ventaja de generar haces LG con sólo ubicarlas en
+el camino óptico del haz, y tiene la desventaja de que una vez
+fabricadas no se pueden modificar. 
+En situaciones donde es requerido generar haces del tipo LG con la suficiente
+flexibilidad como para corregir aberraciones ópticas, se
+necesita de dispositivos digitales con propiedades similares a los
+dispositivos analógicos mencionados anteriormente. Estos dispositivos
+se conocen como moduladores espaciales de luz o SLM por sus siglas en
+inglés. En este proyecto se pretende generar VO y caracterizar su
+frente de onda utilizando un tipo de SLM's que modifican la fase de la
+luz cuando ésta pasa a través de ellos. 
+
+\subsection{Moduladores Espaciales de Luz}
+
+Como su nombre lo indica, los moduladores espaciales de luz sirven
+para modular punto a punto las propiedades de la luz sobre un
+plano. Ya sea solamente su amplitud como en los dispositivos de
+visualización de cristal líquido (pantallas LCD), o su fase como en
+los dispositivos que se ilustran en la figura \ref{fig:LCDSLM}.
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.5\textwidth]{LCDSLM.png}
+\caption{Moduladores espaciales PLUTO y LC2012 de reflexión y
+  transmisión marca Holoeye basados en la tecnología de cristal
+  líquido. Por ser hecho a partir de un LCD comercial el modulador de
+  la derecha es ensamblado a una cuarta parte del costo del izquierdo.}
+\label{fig:LCDSLM}
+\end{figure}
+
+Si diferenciamos los SLM por el tipo de tecnología, estos pueden ser
+agrupados en dos categorías: basados en cristales líquidos, o en
+arreglos de micro espejos (figura \ref{fig:MEMSLM}), mejor 
+conocidos en la industria de la proyección como DLP (de Digital Light
+Processing).  
+\subsubsection{Moduladores basados en micro espejos}
+En su mayoría, los moduladores comerciales basados en arreglos de micro
+espejos funcionan con micro mecanismos que inclinan la superficie
+reflectiva de tal forma que se modifique la cantidad de luz que un
+observador ve desde una perspectiva dada, es decir que modulan
+intensidad. Sin embargo, con el interés de modular fase además de
+intensidad se han desarrollado nuevos micro mecanismos que
+permiten desplazar verticalmente el espejo sin modificar su
+inclinación introduciendo así un cambio en la longitud del camino
+óptico y por ende la fase tal y como se presenta en \citepChGen{Wu2010,
+  Liesener2006}. Dado que es una tecnología incipiente y ha tenido
+menor tiempo en el mercado que los cristales líquidos, estos sistemas
+y en particular los de tipo pistón, siguen teniendo precios elevados y
+aún están lejos de ser utilizados en muchos laboratorios.
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.5\textwidth]{MEMSLM.png}
+\caption{Modulador espacial basado en arreglos de micro espejos marca Texas Instruments.}
+\label{fig:MEMSLM}
+\end{figure}
+
+\subsubsection{Moduladores de cristal líquido}
+Los SLM basados en Cristales Líquidos (CL) aprovechan las propiedades
+físicas de ciertos polímeros que dada su forma alargada y propiedades
+electrónicas polares, cambian su orientación ante la presencia de
+campos eléctricos.  Esta sensibilidad a los campos eléctricos, en
+conjunto con sus propiedades ópticas anisotrópicas permitió que desde
+los años 70s se implementaran CL para generar imágenes en pantallas de
+dispositivos como relojes, calculadoras y luego televisores y
+proyectores. Fue más adelante cuando estudios más especializados de las
+propiedades de los cristales líquidos como los realizados por Yariv y Yeh
+en \citepChGen{Yeh1999,Yariv2002}, y experimentos como los de Konforti et
+al. \citepChGen{Konforti1988} demostraron que los LCD pueden ser usados como
+moduladores de solo fase. 
+Aunque la aplicación de cristales líquidos para modulación de fase es
+relativamente reciente, el estudio de sus propiedades físicas no lo es
+y desde los años 60’s la investigación ha sido respaldada por grandes
+empresas interesadas en desarrollar productos tecnológicos de
+generación y procesamiento de imágenes como RTC, Hamamatsu, Hitachi, HP, Texas
+Instruments, Sony y otros. Dado este interés por entender los CL, se
+ha llegado a modelos matemáticos y  técnicas de  
+caracterización robustas que permiten extraer los parámetros de un SLM para
+ simular su comportamiento.
+El desarrollo de estas técnicas ha permitido a investigadores 
+alrededor del mundo implementar moduladores de fase a
+partir de elementos LCD extraídos de dispositivos de proyección
+comerciales, entre ellos se encuentran los trabajos de
+\citepChGen{Pezzaniti1993,Soutar1994,Zhang1994,Moreno1998,Davis1999,Iemmi2001,Davis2003,Moreno2003,Kim2005,Duran2006,Duran2007,Marquez2007,Liu2010,Ma2010,Ma2011,Yu2012}. Mientras
+que autores como Mahmud, \citepChGen{Mahmud2008}, Roopahsree
+\citepChGen{Roopashree2009a}, y David \citepChGen{Dev2012}
+caracterizaron un Holoeye LC2002 que es vendido comercialmente como
+modulador de amplitud y fase.
+Ejemplo de la práctica de reensamblar un LCD y venderlo como SLM es el
+modulador marca Holoeye LC2012 que gracias a usar un LCD comercial
+marca Sony es ensamblado a una cuarta parte del precio de otros
+moduladores. 
+
+Adicionalmente, cabe mencionar que los moduladores en base a CL se
+dividen en dos tipos, de reflexión y de transmisión. Sin entrar en
+detalle, los primeros permiten modulaciones de fase que van hasta $2\pi$
+radianes, tienen mayor resolución, necesitan menos elementos de
+polarización para su uso, tienen altas velocidades de operación y el
+hecho de que la electrónica esté detrás del cristal (y detrás de la
+superficie reflectiva) hace que se produzcan menos efectos indeseados
+de difracción. Todo esto a costa de desarrollar CL y
+electrónica personalizados. En cambio, los moduladores de transmisión
+se desarrollan a partir de CL comerciales que fuera de polarizar la luz
+retardan su fase. Esto implica un acople entre modulación de fase y 
+modulación de intensidad que se traduce en menor calidad de la
+modulación de fase total. Para lograr una buena
+modulación se necesitan polarizadores y retardadores que generan un
+estado de polarización específico a la entrada del SLM. Por otra
+parte, al tener la electrónica acoplada sobre el cristal, se limita la
+resolución; no todo el volumen de CL se aprovecha y se introducen
+efectos indeseados de difracción. 
+No obstante, los SLM de transmisión son muy económicos y algunos
+autores como Davis et al. \citepChGen{Davis2000, Davis2013} han propuesto
+que se podrían usar como dispositivos para modular polarización. En
+base a esto otros como Moreno et al. \citepChGen{Moreno2004, Moreno2011} han
+combinado el formalismo de Fourier con el de las matrices de Jones
+para modelar el comportamiento de dispositivos ópticos de Fourier que
+involucran polarización. 
+En el laboratorio de metrología óptica del grupo de Óptica Aplicada se
+encuentran dos moduladores de transmisión marca Holoeye modelos
+LC-2002 y LC- 2012 que necesitan ser caracterizados para optimizar su
+uso en aplicaciones metrológicas tales como la creación de vórtices
+ópticos. 
+La generación de VO se da entonces una vez se tenga apropiada la
+herramienta que los produce. El resto de esta sección se enfoca en la
+segunda mitad del problema, es decir, ¿Cómo caracterizar y corregir las
+aberraciones ópticas de un VO?
+
+\subsection{Aberraciones ópticas}
+
+Los VO generados en el laboratorio están sujetos a aberraciones
+ópticas que se asocian a situaciones tales como:
+\begin{itemize}
+\item Problemas en la alineación de componentes ópticos como
+  lentes o espejos.
+\item Deformaciones en las superficies de elementos como
+  polarizadores, lentes, espejos, láminas retardadoras, e incluso de
+  las céldas de cristal líquido en el SLM.
+\item Presencia de partículas de polvo en las superficies de las
+  componentes ópticas que inducen efectos indeseados de difracción. 
+\end{itemize}
+
+Adicionalmente, y siguiendo con el tema de la sección anterior, los
+SLM de transmisión basados en pantallas de CL introducen otras fuentes
+de aberraciones. En primera medida, las pantallas son dispositivos discretos en dos de los
+sentidos de la palabra. Por un lado, son discretos espacialmente y
+las señales de control son asignadas a subdivisiones del cristal de tamaño finito
+conocidas como pixeles. El arreglo rectangular de todos los pixeles
+genera efectos de difracción similares a los de rejillas verticales y
+horizontales combinadas. Esto quiere decir que el SLM separa los
+órdenes de difracción de la luz que pasa a travez de él. Asimismo, el
+hecho de ser una cuadrícula discreta hace que el modulador obviamente no pueda
+generar distribuciones de fase en regiones infinitamente pequeñas como sería deseado
+alrededor de una singularidad óptica. Como ejemplo, en la figura
+\ref{fig:discrete_mask} a) se muestra una imagen del la máscara que se
+envía al SLM en la región donde resultaría una singularidad
+óptica. Como se puede ver, la máscara de fase discreta resulta muy distinta a
+la máscara ideal que se presentó en la figura \ref{fig:oam_intro}b), y
+por lo tanto introduce deformaciones en el haz Laguerre-Gauss que
+resulta a la salida del SLM.   
+
+\begin{figure}[h!]
+\centering
+\includegraphics[ scale=.4]{discrete_mask.png}
+%Las imagenes que enviamos al SLM son generadas en un
+%  ordenador que de por sí es discreto, y llegan a un dispositivo
+ % físico que tiene divisiones discretas, tanto espaciales como
+ % electrónicas. Aún 
+\caption{a) Magnificación de una mascara tipica proyectada al SLM. b) Imagen de un VO de poca calidad producido con un SLM de
+transmisión modelo Holoeye LC2002.}
+\label{fig:discrete_mask}
+\end{figure}
+
+Por otra parte, el SLM es discreto en la medida que sólo puede asignar
+níveles de voltaje discretos (0-255 divisiónes de 5V) a cada una de
+las celdas. Este fenómeno también es observable en la figura
+\ref{fig:discrete_mask}a) y puede introducir efectos
+indeseados. Más aún, si cómo el nuestro, el modulador no llega a una
+modulación de sólo fase, o tiene una modulación que no llega a
+completar el ciclo de $2\pi$ radianes. 
+Todas las posibles fuentes de error mencionadas anteriormente se
+combinan para generar haces Laguerre-Gauss de poca calidad como el que se muestra
+en la figura \ref{fig:discrete_mask} b). 
+
+
+\section{Marco Teórico de la Caracterización de SLMs de Trasmisión}
+\label{sec:marco_teorico}
+\lhead{Generación de Vórtices Ópticos: \textit{Marco Teórico}}
+
+Hace falta una buena introduccíon
+
+\subsection{Cristales líquidos}
+\subsubsection{Características de los CL}  
+Un cristal Líquido es una sustancia que posee propiedades que
+se asemejan tanto a las de los sólidos cristalinos como a las de los
+líquidos. También puede ser visto como un líquido en el cual existe
+orden entre sus moléculas. Para ilustrar esta idea recordemos que los
+sólidos cristalinos son un estado de la materia que se caracteriza por
+su rigidez y fuertes enlaces químicos, en el cual se puede
+establecer un orden posicional en todas las direcciones tal y como se
+ilustra en la figura \ref{fig:solido}. Esto implica que la posición de
+las moléculas o átomos que lo componen puede ser abstraída como una
+red periódica que cumple ciertas reglas de simetría. En cambio, un
+líquido amorfo como el de la figura \ref{fig:liquido} tiene enlaces
+más débiles por lo cual puede fluir, y está compuesto
+por moléculas que están completamente desorganizadas. 
+\begin{figure}
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.6\linewidth]{Cristaline_solid}
+  \caption{Moléculas con orden posicional y orientacional en un sólido cristalino.}
+  \label{fig:solido}
+\end{subfigure}\qquad
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.6\linewidth]{liquid}
+  \caption{Moléculas desordenadas pero cercanas en un líquido.}
+  \label{fig:liquido}
+\end{subfigure}
+\caption{Dos estados de la materia comunes en la naturaleza.}
+  \label{fig:estados}
+\end{figure}
+Los cristales líquidos son sustancias que como los
+sólidos poseen cierto orden y que pueden fluir como los líquidos. 
+
+Los CL líquidos pueden ser clasificados en tres tipos o fases distintas
+conocidas como, \textit{nemáticos},
+\textit{smeticos} y \textit{colestéricos}, y más adelante se abordará esta
+clasificación, no obstante su diversidad (más de 100.000 compuestos
+distintos según \url{http://www.lci-publisher.com}), la característica común de los CL es que están
+compuestos de moléculas muy anisotrópicas, esto es, que sus
+propiedades (ópticas, eléctricas y mecánicas) dependen de la
+dirección desde la que se observen. La anisotropía se debe tanto a la
+geometría alargada o achatada de las moléculas, como a las propiedades
+electrónicas de sus componentes.  En el caso de moléculas
+alargadas como en la figura \ref{fig:LCMolecule} su estructura química se
+compone de un sistema de anillos aromáticos que pueden ser o no
+saturados conectados por un grupo de conexión A, y sujetos a dos
+cadenas o grupos terminales X y Y \citepChGen{Yeh1999}. 
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=0.5\textwidth]{LCMolecule}
+\caption{Esquema de la composición química general en una molécula de CL.}
+\label{fig:LCMolecule}
+\end{figure}
+La presencia de los anillos proporciona las fuerzas intermoleculares de corto alcance que
+son necesarias para formar fases nemáticas y el tipo de anillos
+(saturado o no saturado) determina la presencia o no de enlaces $\pi$
+que se asocian a orbitales $P_z$ de los electrones. Esto a su vez
+afecta la absorción en el ultravioleta y la birefringencia, se observa mayor
+birefringencia en CL con anillos no saturados y mejor comportamiento
+en el ultravioleta para anillos saturados.  Luego, las cadenas del
+grupo terminal X pueden ser de tres tipos:
+\begin{itemize}
+\item Cadenas alquilos (alkyl)  $C_nH_{2n+1}$: 
+\item Grupos alcoxy $C_nH_{2n+1}O$
+\item Grupos alilos (alkenyl) $CH_2=CH-CH_2-$
+\end{itemize}
+ La longitud de las cadenas X influencia tanto las constantes elásticas
+ como las temperaturas de transición de fase. Para cadenas cortas con
+ uno o dos átomos de carbono los grupos son muy cortos como para
+ presentar fases de CL. Los grupos terminales de tamaño medio: n = 3-8
+ son los más adecuados para para construir fases nemáticas por su
+ mayor anisotropía, y los compuestos con cadenas aún más largas
+ exhiben fases smeticas. La temperatura a la cual la solución pasa de
+ ser nemática a isotrópica se conoce como el punto de aclarado o
+ \textit{clearing point}, en términos generales, esta temperatura
+ disminuye en la medida en la que se alargan los tamaños del 
+ grupo terminal X. La función que relaciona el punto de aclarado con
+ el número de átomos de carbono es una función suave en la cual los
+ números pares generan temperaturas más bajas que los impares. Fuera
+ de esto, las propiedades mecánicas como la viscosidad también se ven
+ afectadas por el tamaño de los grupos terminales, cadenas
+ largas implican viscosidades más altas, y por ello frecuencias de
+ operación más bajas. 
+Finalmente, las cadenas que forman el grupo terminal Y son las que
+tienen mayor influencia en las constantes dieléctricas de la molécula
+($\epsilon_x,\epsilon_y$), y asimismo su anisotropía dieléctrica
+$\Delta\epsilon$ variables que como veremos más adelante son las que
+determinan la birrefringencia del CL asociada a la modulación de fase.
+Las cadenas del grupo terminal Y pueden ser:
+\begin{itemize}
+\item No polares: No Influencian mucho la anisotropía dieléctrica, un
+  ejemplo es el grupo alquilo $CnH2n+1$.
+\item Polares:  Como CN, F, y Cl. Su alta polaridad induce en la
+  molécula una alta anisotropía dieléctrica y por tanto alta
+  birrefringencia. La alta anisotropía se obtiene a costa de alta viscosidad, resistividad
+  insuficiente y problemas de estabilidad bajo iluminación 
+  ultravioleta. Los grupos Y muy polares como los que contienen
+  cianuro CN No son buenos para operar a  altas temperaturas como por
+  ejemplo proyectores, y sufren de degradación en el UV. Para esas
+  aplicaciones se utilizan compuestos menos polares como el flúor o
+  cloro que tienen menor birrefringencia.
+\end{itemize}
+
+\subsubsection{Clasificación de los CL}  
+\label{sec:LC-clasification}
+En 1922 y sintetizando los hallazgos de 30 años desde su descubrimiento el
+cristalógrafo George Friedel publicó un artículo \citepChGen{Friedel1922}
+en el que clasifica los CL en tres tipos básicos conocidos como
+cristales smeticos, nemáticos y colestéricos.
+En términos de orden, los CL sméticos son los más similares a un
+sólido, y los nemáticos se asemejan más a un líquido, y en la medida
+en la que se calienta un CL este realiza una transición desde cristal
+smetico hasta líquido isotrópico pasando por la fase nemática. Los estados
+colestéricos son un tipo particular de CL nemáticos que  a diferencia
+de los anteriores tienen propiedades inhomogeneas. 
+La principal característica que le da una medida de orden a los CL es
+la tendencia de sus moléculas a orientarse en una dirección
+preferente gracias a su distribución polar de cargas. Esta tendencia
+se puede observar claramente en las figuras \ref{fig:smetic} y
+\ref{fig:nematic} como si las moléculas fueran vagones de un tren que
+se siguen uno detrás del otro en forma de hilo \footnote{De hecho, la palabra
+\textit{Nematic} proviene de la expresión griega \textit{nema} que
+significa hilo.}.  
+
+La orientación preferencial de las moléculas les
+otorga una cierta medida de orden a los CL que en adelante llamaremos orden
+orientacional. La \textit{cantidad} de orden se medirá por medio de un
+parámetro estadístico conocido como parámetro de orden que relaciona
+la orientación de las moléculas individuales con la orientación
+preferencial o vector director $\vec{n}$ en las vecindades de
+la molécula. Si se tiene un conjunto de moléculas como la que se
+ilustra en la figura \ref{fig:angulo_director} dónde 
+$\theta$ es el ángulo que se forma entre el eje mayor de la molécula
+$\vec{v}$ y el vector director, el parámetro de orden orientacional
+del cristal se da como el siguiente promedio estadístico sobre todas
+las moléculas.
+
+$$ S = \frac{1}{2}\left<3\cos^2{\theta-1}\right>$$
+ 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.3\linewidth]{angulo_director}
+\caption{Orientación de una molécula de CL con respecto al ángulo
+  director en su vecindad.}
+\label{fig:angulo_director}
+\end{figure}
+
+Un CL con sus moléculas alineadas perfectamente paralelas tiene un
+parámetro de orden $S=1$, mientras que un CL con moléculas orientadas
+aleatoriamente posee un parámetro $S=0$. El parámetro de orden depende
+tanto del tipo de molécula como de la temperatura, en la medida en la
+que aumenta la temperatura las moléculas pierden su alineación y el CL
+se convierte en un líquido isotrópico. El parámetro de orden gana
+importancia cuando se necesita seleccionar un CL que deba ser usado en
+rangos de temperatura especiales y se necesite garantizar anisotropía.
+
+Los Cristales smeticos como el que se ilustra en la figura
+\ref{fig:smetic} se diferencian de los nemáticos en que poseen orden
+posicional en una dirección además de orden orientacional. Sin embargo,
+este orden viene acompañado de propiedades mecánicas que son menos
+convenientes para la construcción de LCDs y por ello las fases
+nemáticas y colestéricas son las que tienen mayor número de
+aplicaciones en dispositivos electro ópticos. 
+A diferencia de las fases smetica y nemática que tienen un solo vector
+de orientación, en los cristales líquidos colestéricos el vector
+director varía a través del medio de una forma bien
+definida y por ello se consideran medios inhomogeneos. Generalmente la
+variación es helicoidal como la que se ve en la figura \ref{fig:cholesteric}.   
+La variable que caracteriza un cristal líquido colestérico es el
+ángulo de inclinación o pitch que forman las moléculas inclinadas con
+respecto al eje óptico del material. 
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.4\textwidth}
+  \centering
+  \includegraphics[width=.6\linewidth]{Smetic_LC}
+  \caption{Cristal líquido smético.}
+  \label{fig:smetic}
+\end{subfigure}\qquad
+\begin{subfigure}{.4\textwidth}
+  \centering
+  \includegraphics[width=.6\linewidth]{Nematic_LC}
+  \caption{Cristal líquido nemático.}
+  \label{fig:nematic}
+\end{subfigure}\\
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.6\linewidth]{Cholesteric_LC_2}
+  \caption{Cristal líquido colestérico.}
+  \label{fig:cholesteric}
+\end{subfigure}
+\caption{Clasificación de los cristales líquidos según su orden.}
+\label{fig:CL_clasificacion}
+\end{figure}
+
+
+\subsubsection{Las pantallas de cristal líquido nematico retorcido.}
+
+
+Los moduladores de CL de transmisión que se usan para proyección se
+construyen usando una configuración conocida como Twisted
+Nematic (TN-LCD) o nematicos retorcidos. Los TN-LCD son
+dispositivos como el que se ilustra en la figura \ref{fig:tn-lcd} en
+los cuales una  solución de cristal líquido nemático 
+se inyecta entre dos superficies rígidas transparentes que han sido frotadas
+a lo largo de una dirección preestablecida. Las moléculas del CL en contacto con las
+superficies transparentes se adhieren a los canales microscópicos que
+resultan del frotado, tomando así su dirección. Cuando las direcciones
+de frotado de las superficies en ambos extremos no coinciden, la
+dirección preferente de orientación de las moléculas cambia
+gradualmente en profundidad desde la dirección del plano de entrada hasta la del
+plano de salida como se ve en la figura
+\ref{fig:tn-lc}.  El resultado es un cristal líquido inhomogeneo
+parecido a un cristal colestérico en el cual la orientación de las
+moléculas varía de forma lineal.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{tn-lcd}
+  \caption{Esquema de un TN-LCD cuando no hay un voltaje entre las placas.}
+  \label{fig:tn-lc}
+\end{subfigure}\qquad
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{tn-lcd-voltage}
+  \caption{Esquema de un TN-LCD dónde se aplica una diferencia de
+    potencial entre placas}
+  \label{fig:tn-lc-voltage}
+\end{subfigure}
+\caption[Arquitectura de un TN-LCD]{Arquitectura de un TN-LCD cuando (a) está apagado, y (b) se
+  le aplica una diferencia de potencial. Tomado de Nestor Uribe \citepChGen{UribePatarroyo2011}}
+  \label{fig:tn-lcd}
+\end{figure} 
+
+Generalmente las direcciones de frotado en las superficies de entrada
+y salida son ortogonales de tal forma que las moléculas experimentan
+una rotación de 90 grados. Ante la presencia de un campo eléctrico a
+lo largo del cristal las moléculas experimentan una inclinación que es
+proporcional a la diferencia de potencial entre las placas como en la
+figura \ref{fig:tn-lc-voltage}. Al ser moléculas alargadas y polares
+experimentan un torque que atrae a la parte negativa de la molécula
+hacia el electrodo positivo del 
+dispositivo y viceversa. La inclinación es proporcional al voltaje
+aplicado y es de mayor magnitud en las regiones más alejadas
+de las paredes del dispositivo. La configuración Twisted Nematic ha
+sido seleccionada para muchos dispositivos electro ópticos comerciales porque afecta
+la polarización de la luz que incide sobre ella. El objetivo de  los
+autores que han caracterizado moduladores de transmisión ha sido
+principalmente el de describir matemáticamente y de forma robusta las
+propiedades ópticas dispositivos que tienen cristales líquidos de esta naturaleza. 
+
+En lo que sigue se presentarán las herramientas matemáticas que son
+base para la descripción matemática de campos ópticos polarizados, y
+se aplicará para la descripción de un modelo de CL.
+
+\subsection{Polarización de la luz}
+
+En la teoría electromagnética de la luz se representan los campos
+ópticos como ondas que se propagan en el espacio. Un haz de luz
+se puede representar tanto por su vector de campo eléctrico como
+magnético y ambos son perturbaciones de carácter periódico. Si el
+medio de propagación es isotrópico, la dirección de la perturbación 
+es transversal, es decir ortogonal a la dirección de propagación
+($\mathbf{k}\cdot\mathbf{E}$). Para haces planos monocromáticos se
+suele usar la siguiente expresión para el campo eléctrico:  
+
+\begin{align}
+\mathbf{E} &=\Re\left[\mathbf{A}e^{i\left( \omega t -\mathbf{k}\cdot \mathbf{r}\right)}\right]\label{eq:complex_field},\\
+\mathbf{E} &=\mathbf{A}\cos{ \left(\omega t -\mathbf{k}\cdot
+    \mathbf{r}\right)},\notag
+\end{align}
+dónde, $i = \sqrt{-1}$, $\omega$ es la frecuencia temporal, $\mathbf{k}$ es el vector de
+onda o frecuencia espacial, y $\mathbf{A}$ determina la amplitud.
+Las frecuencias espacial y temporal se relacionan por medio de la
+longitud de onda  ($\lambda$) y el índice de refracción del medio ($\mathbf{n}$) con la
+siguiente expresión:
+
+$$\mathbf{k} = \mathbf{n} \frac{2\pi}{\lambda}.$$
+
+Dado que son ortogonales, las variaciones del campo se pueden
+representar sobre un plano que es 
+ortogonal a la dirección de propagación ($z$ en nuestro caso), y ese plano se puede
+representar a su vez por dos vectores que son ortogonales entre si
+($x$, $y$).
+Cuando la variación del campo sucede sobre una dirección preferencial
+se dice que la luz es polarizada, y esa dirección se puede descomponer
+como una combinación lineal de las variaciones mutuamente independientes
+sobre cada uno de los ejes que forman el plano:
+
+\begin{align}
+\mathbf{E} &= E_x +E_y, \notag\\
+E_x &= A_x\cos{ \left(\omega t -kz+\delta_x\right)} \label{eq:xcomp},\\
+E_y &= A_y\cos{ \left(\omega t -kz+\delta_y\right)}\label{eq:ycomp}.
+\end{align}
+
+Se ha separado entonces el campo en sus componentes vertical ($y$) y
+horizontal ($x$), cada una con su respectiva amplitud ($A_x,A_y$) y
+retardo en fase ($\delta_x,\delta_y$). Dado que las amplitudes son
+positivas las fases se dan en el rango $-\pi<\delta_{x,y}<\pi$.
+La representación en componentes perpendiculares se asemeja a un
+sistema acoplado de osciladores armónicos que oscilan a una misma
+frecuencia. Si se dibuja la suma vectorial de las componentes $x$, y $y$ como
+un vector que va desde el origen hasta el punto ($E_x,E_y$) y luego se
+avanza en el tiempo, la trayectoria que describe la punta del vector
+será una figura elíptica como la que 
+se muestra en \ref{fig:ellipse_clean} . Si en cambio se congela el tiempo y se gráfica
+el desplazamiento de la punta del vector en el espacio se obtiene una figura
+helicoidal como en \ref{fig:trayectory_clean}. En estos dibujos se ha
+escogido representar una elipse por que es el caso más general de polarización, sin
+embargo, la relación entre las amplitudes ($A_y/A_x$) y la
+diferencia de fases ($\delta = \delta_y-\delta_x$) entre las componentes del
+campo determina si la polarización es lineal ($\delta = 0$), circular
+($\delta =\pm \frac{\pi}{2}$ ) o elíptica, y la orientación del eje
+mayor con respecto a $x$.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{ellipse_clean}
+  %\caption{Elipse arbitraria que resulta cuando se observa la
+   % variación temporal de un campo sobre el plano.}
+  \caption{}
+\label{fig:ellipse_clean}
+\end{subfigure}\qquad
+\begin{subfigure}{.45\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{trayectory_clean}
+ % \caption{Trayectoria helicodidal de la variación espacial de un
+  %  campo óptico a lo largo de $z$.}
+  \caption{}
+  \label{fig:trayectory_clean}
+\end{subfigure}
+\caption{Representaciones de la posición de un vector de campo
+  eléctrico con polarización elíptica cuando (a) se analiza en un
+  punto en el espacio, y (b) se  congela el tiempo.} 
+\label{fig:general_field}
+\end{figure} 
+
+Desde el punto de vista matemático, la figura
+\ref{fig:ellipse_clean} se describe por medio de la ecuación
+\ref{eq:ellipse} que es la ecuación de una cónica y se puede obtener
+a partir de las expresiones \ref{eq:xcomp} y \ref{eq:ycomp} como se
+muestra a continuación.\\ Si $\delta = \delta_y-\delta_x$ y $z=0$,
+entonces:
+
+\begin{align*}
+E_x &= A_x\cos{ \left(\omega t \right)},\\
+E_y &= A_y\cos{ \left(\omega t -\delta\right)}.
+\end{align*}
+
+Luego:
+
+ \begin{align*}
+\cos{\omega t} &=\frac{E_x}{A_x},\\
+\sin^2{\omega t} &= 1-\left(\frac{E_x}{A_x}\right)^2,\\
+\sin{\omega t} &= \sqrt{1-\left(\frac{E_x}{A_x}\right)^2}.
+\end{align*}
+
+Por otra parte se tiene:
+\begin{equation}
+  \label{eq:Ey-2}
+E_y = A_y\left( \cos{\omega t}\cos{\delta}+\sin{\omega
+    t}\sin{\delta}\right).  
+\end{equation}
+
+
+Reemplazando $\sin{\omega t} $ y $\cos{\omega t} $ en la expresión
+\ref{eq:Ey-2} obtenemos:
+
+\begin{align}
+E_y &= \frac{A_yE_x}{A_x}\cos{\delta} +
+A_y\sqrt{1-\frac{E_x}{A_x}}\sin{\delta},\notag\\
+\frac{E_y}{A_y} - \frac{E_x}{A_x}\cos{\delta}  &= 
+\sqrt{1-\left(\frac{E_x}{A_x}\right)^2}\sin{\delta}.\label{eq:ellipse_nos}
+\end{align}
+
+Elevando al cuadrado la igualdad \ref{eq:ellipse_nos} y organizando
+términos, obtenemos la ecuación general de una elipse inscrita en un
+rectángulo con lados $2A_x$, $2A_y$: 
+
+\begin{equation}
+\left(\frac{E_x}{A_x}\right)^2+\left(\frac{E_y}{A_y}\right)^2-2\frac{\cos{\delta}}{A_xA_y}E_xE_y
+= \sin^2{\delta}.
+\label{eq:ellipse}
+\end{equation}
+
+Se puede ahora plantear una rotación de un ángulo $\phi$ con respecto
+al eje horizontal ($x$) sobre el sistema de coordenadas  como se
+muestra en la figura \ref{fig:ellipse} para que
+el eje mayor de la elipse quede alineado con el eje
+\textit{horizontal} del nuevo sistema. Haciendo esto, se lleva la
+ecuación \ref{eq:ellipse} a la forma más conocida de la ecuación
+\ref{eq:new_ellipse}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = 1]{ellipse}
+\caption[Rotación del sistema de coordenadas de la elipse de polarización]{Rotación del sistema de coordenadas un ángulo $\phi$.}
+\label{fig:ellipse}
+\end{figure}
+
+\begin{equation}
+\left(\frac{E_{x'}}{a}\right)^2+\left(\frac{E_{y'}}{b}\right)^2 = 1,
+\label{eq:new_ellipse}
+\end{equation}
+
+dónde $a$ y $b$ son los semi ejes mayor y menor, y $E_{x'}$, $E_{y'}$
+son las componentes del campo eléctrico en las direcciones $x'$,
+$y'$. Los semiejes de la elipse están dados por las siguientes expresiones:
+\begin{align*}
+a^2 = A_x\cos^2{\phi}+A_y^2\sin^2{\phi} +2A_xA_y \cos{\delta}\cos{\phi}\sin{\phi},\\
+b^2 = A_x\sin^2{\phi}+A_y^2\cos^2{\phi} -2A_xA_y \cos{\delta}\cos{\phi}\sin{\phi}.
+\end{align*}
+
+La elipticidad se define como la razón entre el eje menor y el eje
+mayor de la elipse $e=\pm\frac{b}{a}$ de tal forma que si el semi eje
+menor es cero, la elipse se vuelve una linea y por tanto se dice que
+la polarización es lineal en la dirección de $a$. Si por el contrario
+los dos semi ejes tienen  la misma longitud, la ecuación de la elipse
+se vuelve la de un círculo, y se dice que la polarización es
+circular como en la figura \ref{fig:circular_polarizations}a. 
+El signo de la elipticidad determina el sentido
+de giro de la hélice, si el signo es positivo la elipse es circular
+izquierda como en la figura \ref{fig:circular_polarizations}b y es circular derecha
+cuando el signo es negativo \ref{fig:circular_polarizations}c. Cabe
+anotar que el sentido de giro de la polarización es una convención
+que varía según el autor, algunos interpretan el sentido de giro como
+si se congelara el tiempo y se siguiera la punta del vector
+$\mathbf{E}$ desde el cero en adelante. Sin embargo otros autores
+interpretan el sentido de giro como si en un punto fijo vieran girar
+el vector $\mathbf{E}$ que les llega en la medida que pasa el tiempo. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=.5]{circular_polarizations}
+\caption{(a) Esquema de una polarizaciónes circular en donde los semiejes
+  de la elipse son iguales. La polarización circular izquierda (b) se da
+cuando $e=\frac{b}{a}$ y la derecha (c) cuando  $e=-\frac{b}{a}$.}
+\label{fig:circular_polarizations}
+\end{figure}
+
+Una ellipse de polarización arbitraria se puede expresar entonces conociendo su
+elipticidad y su ángulo de inclinación con respecto al eje
+horizontal. Estas dos características se pueden parametrizar como dos
+ángulos que se dan en
+términos de las amplitudes máximas del campo $A_x$, $A_y$
+y el retardo entre componentes $\delta$. Por una parte, el ángulo de
+inclinación se encuentra interpretando la ecuación \ref{eq:ellipse} en
+su forma bilineal de la forma:
+
+\begin{equation}
+\begin{pmatrix}
+E_x & E_y
+\end{pmatrix}
+\begin{pmatrix}
+\frac{1}{A_x^2} & -\frac{\cos{\delta}}{A_xA_y}\\
+ -\frac{\cos{\delta}}{A_xA_y} & \frac{1}{A_y^2} 
+\end{pmatrix}
+\begin{pmatrix}
+E_x \\ E_y
+\end{pmatrix}
+=\sin^2{\delta},
+\end{equation}
+
+sacando factor común $\frac{1}{A_x^2} $ se obtiene:
+
+\begin{equation}
+\begin{pmatrix}
+E_x & E_y
+\end{pmatrix}
+\begin{pmatrix}
+1 & -\frac{A_x\cos{\delta}}{A_y}\\
+ -\frac{A_x\cos{\delta}}{A_y} & \frac{A_x/2}{A_y^2} 
+\end{pmatrix}
+\begin{pmatrix}
+E_x \\ E_y
+\end{pmatrix}
+=A_x/2\sin^2{\delta},
+\end{equation}
+o en forma compacta:
+\begin{equation}
+\begin{pmatrix}
+E_x & E_y
+\end{pmatrix}
+\begin{pmatrix}
+1 & a\\
+ a & b 
+\end{pmatrix}
+\begin{pmatrix}
+E_x \\ E_y
+\end{pmatrix}
+=c.
+\end{equation}
+%http://mpalffy.lci.kent.edu/Optics/Chapters/Ch7_Polarized%20Light.pdf
+
+Una \href{http://es.wikipedia.org/wiki/Cu\%C3\%A1drica}{cuádrica o
+  superficie cuádrica} es una  hipersuperficie D-dimensional
+representada por una ecuación de segundo grado con 
+coordenadas espaciales. Si estas coordenadas son $\{x_1,
+x_2, ... x_D\}$, entonces la cuádrica típica en ese espacio se define
+mediante la ecuación algebraica: 
+
+\[ \sum_{i,j=1}^D Q_{i,j} x_i x_j + \sum_{i=1}^D P_i x_i + R = 0. \]
+
+El caso particular en el cual solo hay dos dimensiones y los valores
+$P_i$ son todos 0, es el de una elipse. En nuestro caso, tenemos en
+notación matricial:
+
+\[ \mathbf{E}^TQ\mathbf{E} + R= 0, \]
+ 
+con
+\[
+Q=
+\begin{pmatrix}
+1 & a\\
+ a & b 
+\end{pmatrix}.
+ \]
+y $R=-c = -A_x/2\sin^2{\delta}$. Ahora los autovalores de una elipse
+representada por su forma matricial están asociados con la
+direcciones de sus ejes principales, y apuntan en la dirección de los
+puntos máximos \citepChGen{Palffy1998}. Como nuestra incógnita es el ángulo
+que determina la dirección de los puntos máximos podemos escribir la
+siguiente ecuación de autovalores para despejar $\phi$
+\url{http://en.wikipedia.org/wiki/Quadratic_form}
+
+
+\[\begin{pmatrix}
+1 & a\\
+ a & b 
+\end{pmatrix} 
+\begin{pmatrix}
+\cos{\phi}\\
+ \sin{\phi} 
+\end{pmatrix} =
+\lambda \begin{pmatrix}
+\cos{\phi}\\
+ \sin{\phi} 
+\end{pmatrix} ,
+\]
+
+desarrollando, se obtienen las siguientes dos ecuaciones:
+\begin{align*}
+\cos{\phi} +a\sin{\phi} &= \lambda\cos{\phi},\\
+a\cos{\phi} +b\sin{\phi} &= \lambda\sin{\phi}.
+\end{align*}
+
+Despejando $\lambda$ e igualando las ecuaciones se llega a una
+expresión dependiente de un ángulo doble:
+
+\[1+a\tan{\phi} = \frac{a}{\tan{\phi}}+b,\]
+\[b-1= a\tan{\phi} -\frac{a}{\tan{\phi}},\]
+\[ b-1=a\left(\frac{\tan^2{\phi} -1}{\tan{\phi}}\right),\]
+\[\tan{2\phi} =\frac{2a}{b-1}.\]
+
+Finalmente, reemplazando $a$, y $b$ se tiene el ángulo de inclinación
+de la elipse:
+
+\begin{equation*}
+\phi = \frac{1}{2}\tan^{-1}{\left(\frac{2A_xA_y}{A_x^2-A_y^2}\cos{\delta}\right)}.
+\end{equation*}
+
+Siguiendo un esquema similar, aunque más tedioso se encuentra el
+ángulo de elipticidad ($\theta = \tan^{-1}{e}$) en términos de la
+función seno como:
+
+\begin{equation*}
+\theta = \frac{1}{2}\sin^{-1}{\left(\frac{2A_xA_y}{A_x^2+A_y^2}\sin{\delta}\right)}.
+\end{equation*}
+
+A la hora de despejar $\phi$ y $\theta$ reemplazando valores en la
+primera ecuación usando un computador se aconseja reemplazar la función
+$\tan^{-1}$ por la función atan2, que es popular en paquetes de
+cálculos numéricos (como numpy) o lenguajes de programación como
+Matlab, porque permite evitar las singularidades que ocurren cuando el argumento de la
+función tangente inversa es $\pi/2$.
+
+\subsection{El formalismo de Jones}
+
+Se conoce como formalismo de Jones al uso de una representación
+vectorial para describir campos ópticos coherentes y monocromáticos cuando es
+importante la naturaleza vectorial de la luz y la polarización.  
+En el esquema de Jones los campos ópticos con dos componentes ortogonales se
+representan como un vector con elementos complejos conocido como
+vector de Jones. Las dos componentes complejas del campo en la ecuación
+\ref{eq:complex_field} se representan como elementos de un vector
+columna conocido como vector de Jones:
+ 
+\begin{equation}
+\mathbf{J} =\begin{pmatrix} A_xe^{i\delta_x}\\A_ye^{i\delta_y}\end{pmatrix}.
+\label{eq:jones_vector}
+\end{equation}
+
+Siendo un vector complejo, $\mathbf{J}$ no es una cantidad observable
+en el espacio físico. Para obtener obtener por ejemplo, la
+componentente  $x$ del campo eléctrico se hace la operación $E_x(t) = \Re
+\left[J_xe^{i\omega t}\right]$.
+Para el estudio de la polarización conviene representar el vector de
+Jones en su forma normalizada, es decir tal que cumpla la condición: $$\mathbf{J}^{\dagger}\mathbf{J}=1.$$
+La normalización se logra parametrizando las amplitudes con el ángulo
+del vector que forman: $$\tan{\psi}=\frac{\sin{\psi}}{\cos{\psi}}=\frac{A_y}{A_x},$$
+de esta forma $A_y=\sin{\psi}$ y $A_x = \cos{\psi}$. Adicionalmente,
+la fase de las componentes se acostumbra a escribir en su forma
+relativa y con respecto a la componente $y$ como se muestra en la
+expresión \ref{eq:normalized_jones_vector}.
+
+\begin{equation}
+\mathbf{J(\psi,\delta)} =\begin{pmatrix} \cos{\psi}\\\sin{\psi}e^{i\delta}\end{pmatrix}.
+\label{eq:normalized_jones_vector}
+\end{equation}
+
+\subsubsection{Algunos estados de polarización importantes}
+Como se dijo antes, las polarizaciones lineales se obtienen cuando las
+componentes están en fase, es decir que $\delta =
+\delta_y-\delta_x=0$, sin embargo, también se cumple cuando las
+diferencias de fase entre las componentes son múltiplos de $\pi$. 
+
+La polarizaciónes lineales ($\delta = n\pi$ ) horizontal y vertical se dan cuando $\psi
+= n\pi$ y $\psi = \frac{\pi}{2}(2n+1)$ respectivamente:
+
+\begin{align*}
+\mathbf{H} &=\begin{pmatrix}1\\0\end{pmatrix},& \mathbf{V} &=\begin{pmatrix}0\\1\end{pmatrix}.
+\end{align*}
+
+La polarización lineal a $45^{\circ}$ se da cuando las componentes $x$
+y $y$ tienen la misma magnitud y dirección, es decir cuando
+$\psi=\frac{\pi}{4}(4n+1)$. La polarización a  $-45^{\circ}$ se da cuando
+$\psi=\frac{\pi}{4}(4n-1)$.
+
+\begin{align*}
+\mathbf{45^{\circ}}
+&=\begin{pmatrix}\cos{\pi/4}\\\sin{\pi/4}\end{pmatrix}=\frac{1}{\sqrt{2}}
+\begin{pmatrix}1\\1\end{pmatrix},&
+\mathbf{-45^{\circ}} 
+&=\begin{pmatrix}\cos{-\pi/4}\\\sin{-\pi/4}\end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}. 
+\end{align*} 
+
+Las polarizaciones circular izquierda y circular derecha son tales que
+ambas componentes tienen la misma magnitud como en la de $45^{\circ}$,
+pero el retardo en fase es de $\delta = \frac{\pi}{2}$:
+
+\begin{align*}
+\mathbf{CD}
+&=\begin{pmatrix}\cos{\pi/4}\\\sin{\pi/4}e^{i\frac{\pi}{2}}\end{pmatrix}=\frac{1}{\sqrt{2}}
+\begin{pmatrix}1\\i\end{pmatrix},&
+\mathbf{CI} 
+&=\begin{pmatrix}\cos{-\pi/4}\\\sin{-\pi/4}e^{i\frac{\pi}{2}}\end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-i\end{pmatrix}. 
+\end{align*} 
+
+Una característica interesante de los estados lineales y circulares es
+que se pueden dar unos como combinación lineal de los otros:
+
+\begin{align*}
+\mathbf{CD} &= \frac{1}{\sqrt{2}}\left( \mathbf{H} -
+  i\mathbf{V}\right),\\
+\mathbf{CI} &= \frac{1}{\sqrt{2}}\left( \mathbf{H} +
+  i\mathbf{V}\right),\\
+\mathbf{H} &= \frac{1}{\sqrt{2}}\left( \mathbf{CD} +
+  \mathbf{CI}\right),\\
+\mathbf{V} &= \frac{i}{\sqrt{2}}\left( \mathbf{CD} -
+  \mathbf{CI}\right).
+\end{align*}
+
+\subsubsection{Elementos ópticos como operadores en la representación
+  de Jones}
+
+Así como en el álgebra lineal se usan matrices para transformar
+vectores, en el formalismo de Jones existen operadores que se
+representan como matrices 2x2 y que tienen la cualidad de
+transformar los campos.  Las matrices de Jones deben cumplir algunas
+propiedades generales \citepChGen{Yariv2002}:
+
+\begin{enumerate}
+\item La dirección de propagación de un campo determina las
+  componentes de la matriz que representa al elemento polarizador. Si
+  la incidencia es desde la izquierda $(z=0)$ definimos la matriz $M$ como aquella
+  que transforma el vector de entrada en el de salida:
+
+  \begin{equation}
+    \begin{pmatrix}
+      V_x^{out}\\V_y^{out}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      M_{11}&M_{12}\\M_{21} & M_{22}
+    \end{pmatrix}
+    \begin{pmatrix}
+      V_x^{in}\\V_y^{in}
+    \end{pmatrix},
+    \label{eq:right_propagation}
+  \end{equation}
+si el vector de entrada ingresa desde la derecha entonces
+definiremos una matriz distinta $N$ para representar la transformación:
+  \begin{equation*}
+    \begin{pmatrix}
+      V_x^{out}\\V_y^{out}
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      N_{11}&N_{12}\\N_{21} & N_{22}
+    \end{pmatrix}
+    \begin{pmatrix}
+      V_x^{in}\\V_y^{in}
+    \end{pmatrix}.
+  \end{equation*}
+
+Para que se cumpla el principio de simetría temporal, se debe cumplir
+que $NM=1$. Si se rebobina la propagación en la expresión
+\ref{eq:right_propagation} el haz de salida 
+debería seguir el mismo camino que recorrió a la entrada, y ser
+afectado por la matriz $N$ de tal forma que vuelva a la forma que
+tenía en un principio: 
+
+ \begin{align*}
+    \begin{pmatrix}
+      V_x^{in}\\V_y^{in}
+    \end{pmatrix}
+    &=
+    \begin{pmatrix}
+      N_{11}&N_{12}\\N_{21} & N_{22}
+    \end{pmatrix}
+    \begin{pmatrix}
+      V_x^{out}\\V_y^{out}
+    \end{pmatrix},\\
+    &=
+    \begin{pmatrix}
+      N_{11}&N_{12}\\N_{21} & N_{22}
+    \end{pmatrix}
+    \begin{pmatrix}
+      M_{11}&M_{12}\\M_{21} & M_{22}
+    \end{pmatrix}
+    \begin{pmatrix}
+      V_x^{in}\\V_y^{in}
+    \end{pmatrix}.\\
+  \end{align*}
+
+  Conociendo que las matrices están asociadas a un mismo elemento se
+  debe cumplir que $N$ sea la transpuesta de $M$:
+
+  \begin{align*}
+    N_{11}&=M_{11},&    N_{12}&=M_{21},&     N_{21}&=M_{12}, &     N_{22}&=M_{22}.
+  \end{align*}
+
+Esta relación es importante para analizar sistemas en los cuales la
+luz debe pasar dos veces por el CL en sentidos opuestos, caso especial
+es el de los SLM's de reflexión en los cuales hay una
+superficie especular de un lado.
+
+\item Tanto la matriz $M$ como la $N$ son operadores unitarios:
+  \begin{align*}
+    M^{\dagger} M &= 1,& N^{\dagger}N &=1.
+  \end{align*}
+Dónde el símbolo $\dagger$ indica que se saca el conjugado hermítico
+de $M$:
+\begin{equation*}
+M^{-1}=M^{\dagger}=
+  \begin{pmatrix}
+      M_{11}^*&M_{21}^*\\M_{12}^* & M_{22}^*
+    \end{pmatrix}.
+\end{equation*}
+\item Las matrices de Jones son unimodulares es decir:
+$$det(M) = det(M^{\dagger})  = M_{11}M_{22}-M_{12}M_{21} = 1.$$ 
+
+Si asumimos que $M^{-1}$ es:
+
+\begin{equation*}
+  M=
+  \begin{pmatrix}
+    M_{22}&-M_{12}\\-M_{21}&M_{11}
+  \end{pmatrix},
+\end{equation*}
+
+se ve que cumple con la relación $M^{-1}M = 1$:
+
+\begin{align*}
+    \begin{pmatrix}
+    M_{22}&-M_{12}\\-M_{21}&M_{11}
+  \end{pmatrix}
+\begin{pmatrix}
+      M_{11}&M_{12}\\M_{21} & M_{22}
+    \end{pmatrix}
+&=
+    \begin{pmatrix}
+ M_{22}M_{11}-M_{12}M_{21}     & M_{22}M_{12}-M_{12}M_{22}\\
+-M_{11}M_{21}+M_{11}M_{21}    & -M_{12}M_{21} + M_{11}M_{22} 
+    \end{pmatrix},\\
+&=
+\begin{pmatrix}
+  1 &0\\0&1
+\end{pmatrix}.
+\end{align*}
+
+Con esto, se puede simplificar la forma de una matriz de Jones a
+partir de las siguientes relaciones:
+
+\begin{align*}
+  M_{21} &= - M_{12}^*, & M_{22} = M_{11}^*,
+\end{align*}
+
+obteniendo una forma de la matriz que depende de sólo dos números
+complejos:
+\begin{equation}
+  M=
+  \begin{pmatrix}
+    A & B \\-B^* & A^*
+  \end{pmatrix}
+\label{eq:general_jones_matrix}
+\end{equation}
+
+Tener la matriz en esta forma facilita encontrar los parámetros de elementos
+ópticos desconocidos como un SLM.
+
+\end{enumerate}
+
+Los operadores que se verán a
+continuación hacen referencia a dos tipos de elementos ópticos que se
+utilizan en el laboratorio para modificar los estados de polarización
+de una onda, estos son polarizadores y retardadores. Los polarizadores
+son elementos que afectan únicamente la amplitud y los
+retardadores introducen un retardo en fase entre las componentes del campo.
+
+Por una parte, los polarizadores horizontales son elementos que sólo
+dejan pasar la componente $x$ del campo, y se representan con la
+matriz de la expresión \ref{eq:Px_matrix}.
+
+\begin{equation}
+P_x = \begin{pmatrix}1 &0\\0&0\end{pmatrix}.
+\label{eq:Px_matrix}
+\end{equation}
+
+Si llega cualquier campo al polarizador horizontal este dejará pasar
+sólo la componente $x$ tal y
+como se muestra en la figura \ref{fig:linear_polarizer}. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = .7]{linear_polarizer}
+\caption{Propagación de un estado de polarización lineal a través de
+  un polarizador horizontal.}
+\label{fig:linear_polarizer}
+\end{figure}
+
+La  operación vectorial correspondiente a este fenómeno se da como la
+multiplicación entre la matriz del polarizador y el vector de Jones
+que representa al campo, en este caso un campo con polarización lineal
+a $45^{\circ}$:
+
+\begin{equation*}
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\0
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &0\\0&0
+\end{pmatrix}
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 \\1
+\end{pmatrix}.
+\end{equation*}
+
+Los polarizadores que no están orientados con el eje $x$ se pueden
+obtener a partir de la matriz de $P_x$ por medio de la siguiente
+operación de rotación: 
+
+\begin{align*}
+P_{\theta}&=R^T(\theta)P_xR(\theta)\\
+P_{\theta}
+&=
+\begin{pmatrix}
+  \cos{\theta} &-\sin{\theta}\\\sin{\theta}&\cos{\theta}
+\end{pmatrix},
+\begin{pmatrix}
+1 & 0 \\0& 0
+\end{pmatrix}
+\begin{pmatrix}
+  \cos{\theta} &\sin{\theta}\\-\sin{\theta}&\cos{\theta}
+\end{pmatrix}.
+\end{align*}
+
+En adelante se seguirá usando este método para representar la matriz de cualquier
+elemento óptico rotado.
+Reemplazando $\theta = \frac{\pi}{2}$ y $\theta = \frac{\pi}{4}$
+obtenemos las matrices $P_V$ y $P_{45^{\circ}}$ correspondientes al
+polarizador horizontal y al que está inclinado $45^{\circ}$:
+
+\begin{align*}
+P_{V}
+&=
+\begin{pmatrix}
+  \cos{\frac{\pi}{2}} &-\sin{\frac{\pi}{2}}\\\sin{\frac{\pi}{2}}&\cos{\frac{\pi}{2}}
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 \\0& 0
+\end{pmatrix}
+\begin{pmatrix}
+  \cos{\frac{\pi}{2}} &\sin{\frac{\pi}{2}}\\-\sin{\frac{\pi}{2}}&\cos{\frac{\pi}{2}}
+\end{pmatrix},\\
+&=
+\begin{pmatrix}
+  0&-1\\1&0
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 \\0& 0
+\end{pmatrix}
+\begin{pmatrix}
+0 &1\\-1&0
+\end{pmatrix},\\
+&=
+\begin{pmatrix}
+0 &0\\0&1
+\end{pmatrix}.\\
+\end{align*}
+\begin{align*}
+P_{45^{\circ}}
+&=
+\begin{pmatrix}
+  \cos{\frac{\pi}{4}} &-\sin{\frac{\pi}{4}}\\\sin{\frac{\pi}{4}}&\cos{\frac{\pi}{4}}
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 \\0& 0
+\end{pmatrix}
+\begin{pmatrix}
+  \cos{\frac{\pi}{4}} &\sin{\frac{\pi}{4}}\\-\sin{\frac{\pi}{4}}&\cos{\frac{\pi}{4}}
+\end{pmatrix},\\
+&=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+  1&-1\\1&1
+\end{pmatrix}
+\begin{pmatrix}
+1 & 0 \\0& 0
+\end{pmatrix}
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 &1\\-1&1
+\end{pmatrix},\\
+&=
+\frac{1}{2}
+\begin{pmatrix}
+1 &1\\1&1
+\end{pmatrix}.\\
+\end{align*}
+
+Por otra parte, los retardadores ópticos modifican tanto la amplitud
+como la fase de las componentes del campo y sus elementos son
+complejos. La matriz general para un retardador óptico con desfase
+$\beta $ y orientación del eje rápido con el eje
+$x$ es:
+
+\begin{equation*}
+WP = 
+\begin{pmatrix}
+e^{i\beta/2} & 0 \\0&e^{-i\beta/2}  
+\end{pmatrix}
+\label{eq:retarder}
+\end{equation*}
+
+Los retardadores ópticos se construyen a partir de materiales
+birrefringentes donde el retardo de fase $\beta$ de una componente con respecto a otra es
+proporcional a la diferencia de índices de refracción, y a la
+profundidad $d$ del medio birrefringente como se muestra a continuación:
+
+$$\beta= \frac{\pi}{2}d\left(n_e-n_o\right).$$ 
+
+Dónde el índice de refracción extraordinario corresponde al eje rápido
+del medio, y el extraordinario al eje lento. Si multiplicamos la
+ecuación \ref{eq:retarder} por $e^{-i\beta/2} $ 
+obtenemos la forma no normalizada que es muy común en los libros de
+texto porque se hace evidente que la componente $E_y$ del campo sufre un
+retardo en fase de $\beta$ con respecto a $E_x$: 
+
+\begin{equation*}
+WP = 
+\begin{pmatrix}
+1& 0 \\0&e^{-i\beta}  
+\end{pmatrix}.
+\label{eq:retarder}
+\end{equation*}
+
+Los retardadores más usados en el laboratorio son aquellos que
+introducen retardos de cuarto de onda:
+
+\begin{align*}
+QWP &= \begin{pmatrix} e^{i\frac{\pi}{4}}  &0\\0&e^{-i\frac{\pi}{4}}\end{pmatrix},\\
+&=  \begin{pmatrix} 1 &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix},\\
+&=  \begin{pmatrix} 1 &0\\0&-i\end{pmatrix},
+\end{align*}
+y retardos de
+media onda:
+\begin{align*}
+HWP &= \begin{pmatrix} e^{i\frac{\pi}{2}}  &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix},\\
+&=  \begin{pmatrix} 1 &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix},\\
+&=  \begin{pmatrix} 1 &0\\0&-1\end{pmatrix},\\
+\end{align*}
+
+
+Los de cuarto de onda permiten obtener polarizaciones
+circulares o elípticas a partir de polarizaciones lineales. La figura
+\ref{fig:qwp_retarder} muestra cómo conseguir un campo con
+polarización circular derecha a partir de polarización lineal y un 
+retardador $QWP$.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.7]{qwp_retarder}
+\caption{Propagación de un estado de polarización lineal a
+  $45^{\circ}$ a través de una placa de retardo de cuarto de onda
+  vertical que genera un estado de polarización circular derecho. Las
+placas de cuarto de onda introducen un retardo de fase de
+$\frac{\pi}{2}$.}
+\label{fig:qwp_retarder}
+\end{figure}
+La operación correspondiente en el formalismo de Jones es:
+
+\begin{align*}
+\mathbf{CD} &=
+R^{T}\left(\frac{\pi}{2}\right)\left(QWP\right)R\left(\frac{\pi}{2}\right)\mathbf{45}^{\circ},\\ 
+  \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\i
+\end{pmatrix}&=
+\begin{pmatrix}
+  0 &-1\\1&0
+\end{pmatrix}
+\begin{pmatrix} e^{i\frac{\pi}{4}}  &0\\0&e^{-i\frac{\pi}{4}} \end{pmatrix}
+\begin{pmatrix}
+  0&1\\-1&0
+\end{pmatrix}
+ \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\ 1
+\end{pmatrix},
+\\
+&=
+\begin{pmatrix}
+e^{-i\frac{\pi}{4}}  & 0 \\0 & e^{i\frac{\pi}{4}} 
+\end{pmatrix}
+  \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\ 1
+\end{pmatrix},\\
+&=
+\begin{pmatrix}
+1  & 0 \\0 & i
+\end{pmatrix}
+  \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\ 1
+\end{pmatrix}.
+\end{align*}
+
+En cambio, los de media onda permiten rotar el estado de
+polarización sin afectar la intensidad a la salida. En la
+figura \ref{fig:hwp_retarder} se muestra cómo una placa de media onda
+orientada a $45^{\circ}$ puede rotar un estado de polarización lineal
+horizontal a uno vertical. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.7]{HWP_retarder}
+\caption{Propagación de un estado de polarización lineal a
+  $45^{\circ}$ a través de una placa de retardo de cuarto de onda
+  vertical que genera un estado de polarización circular derecho. Las
+placas de cuarto de onda introducen un retardo de fase de
+$\frac{\pi}{2}$.}
+\label{fig:hwp_retarder}
+\end{figure}
+
+Como en los casos anteriores, se puede representar la rotación de la
+polarización usando el formalismo de Jones:
+
+\begin{align*}
+\mathbf{V} &=
+R^{T}\left(\frac{\pi}{4}\right)\left(HWP\right)R\left(\frac{\pi}{4}\right)\mathbf{H},\\ 
+\begin{pmatrix}
+0\\1
+\end{pmatrix}&=
+ \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+  1 &-1\\1&1
+\end{pmatrix}
+\begin{pmatrix} 1
+  &0\\0&-1 \end{pmatrix}
+ \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1&1\\-1&1
+\end{pmatrix}
+\begin{pmatrix}
+1\\ 0
+\end{pmatrix},
+\\
+&=
+\begin{pmatrix}
+0  & 1 \\1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+1\\ 0
+\end{pmatrix},\\&=
+\begin{pmatrix}
+0\\1
+\end{pmatrix}.
+\end{align*}
+
+
+Combinando rotadores ópticos (HWP) y retardadores de cuarto de onda (QWP),
+podemos generar polarizaciones elípticas con cualquier inclinación y
+elipticidad. Esto será de utilidad más adelante pues los autovectores
+de las matrices de Jones indican los estados de polarización para los
+cuales el sistema es transparente, es decir, no se modifica el vector
+tras la operación de la matriz:
+\[\mathbf{M}J_{\lambda} = \lambda J_{\lambda}.\]
+Cuando se desea modulación de sólo fase en un SLM lo que se busca es
+precisamente que no se modifique la polarización y por ende la
+amplitud. El problema de calibrar moduladores se reduce a encontrar la
+matriz que define el CL y extraer sus autoestados tal y como dicen
+Pezzanitti y Davis en \citepChGen{Pezzaniti1993,Davis1998,Davis2003}.
+En la sección que sigue se construirá un modelo para describir el
+comportamiento de un cristal líquido enroscado (TN-LCD) en términos de
+matrices de Jones.
+
+\subsection{Propiedades ópticas de los cristales líquidos nemáticos enroscados (TN-LCD)}
+
+Los cristales líquidos del tipo TN-LCD son medios ópticos inhomogeneos
+y anisotrópicos que localmente actúan como si fueran cristales
+birrefringentes uniaxiales con su eje óptico orientado en la dirección
+preferente de las moléculas. Como se mencionó en la sección
+\ref{sec:LC-clasification} la anisotropía se debe a la forma obloide
+de las moléculas del cristal, y en el caso de los TN la inhomogeneidad
+viene dada por la orientación preferencial de las moléculas que es
+función de su posición. Las propiedades ópticas se estudian suponiendo
+que el material se puede representar como láminas delgadas perpendiculares a la
+dirección de propagación, cada una de ellas actuando como si fuera un
+cristal birrefringente uniaxial con su eje óptico rotado respecto al eje $x$ un ángulo
+$\psi$ como se ilustra en la figura
+\ref{fig:tn-lcd_sticks}.  
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = .3]{TN-LCD_sticks}
+\caption{Propagación de la luz en un cristal líquido del tipo Twisted
+  Nematic. En este diagrama el ángulo de entorchado es de $90^{\circ}$.}
+\label{fig:tn-lcd_sticks}
+\end{figure}
+
+La rotación de cada \textit{lámina} de
+moléculas se asume proporcional a la distancia desde la superficie de
+entra da del LCD:
+\begin{equation}
+  \label{eq:twist_angle}
+\psi(z)  =\alpha z.  
+\end{equation}
+Aquí la constante $\alpha$
+se conoce como coeficiente de torsión, y el ángulo a la salida viene
+dado por: $$\phi \equiv \psi(d)=\alpha d.$$ Si se divide el cristal en
+$N$ láminas, cada una tendrá un grosor $d/N$ y estará orientada en los ángulos
+$\rho,2\rho,3\rho,\dots\left(N-1\right)\rho,N\rho$ con
+$\rho=\phi/N$. Si cada una representa un cristal birrefringente, este tendrá una
+birrefringencia asociada al grosor dada por: $$\beta_N = \frac{\pi
+  d}{2N}\left(n_e-n_o\right).$$
+La matriz de Jones general para el conjunto de todas las láminas se
+encuentra como la multiplicación de cada una como se muestra a
+continuación:
+\[ M= W_NW_{N-1}\cdots W_3W_2W_1=\prod_{m=1}^NW_m = \prod_{m=1}^NR(m\rho)^TW_0R(m\rho), \]
+
+dónde $R$ es la matriz de rotación, y $W_m$ es la matriz de Jones para
+el retardador $m$ rotada, y $W_0$ es aquella donde el eje rápido está
+orientado con el eje $x$:
+
+\begin{equation*}
+W_0 =
+\begin{pmatrix}
+  e^{i\beta/2N} &0 \\ 0 & e^{-i\beta/2N} 
+\end{pmatrix}.
+\end{equation*}
+
+Las matrices de rotación cumplen la siguiente regla:
+\begin{align*}
+R^T(\psi_m)R^T(\psi_{m-1}) &= R^T\left(\psi_m+\psi_{m-1}\right),\\
+&=
+\begin{pmatrix}
+  \cos{\psi_m}&  -\sin{\psi_m}\\  \sin{\psi_m}&  \cos{\psi_m}
+\end{pmatrix}
+\begin{pmatrix}
+  \cos{\psi_{m-1}}&  -\sin{\psi_{m-1}}\\  \sin{\psi_{m-1}}&  \cos{\psi_{m-1}}
+\end{pmatrix},\\
+&=
+\begin{pmatrix}
+  \cos{\psi_m}\cos{\psi_{m-1}}-\sin{\psi_m}\sin{\psi_{m-1}}&  
+-(\cos{\psi_m}\sin{\psi_{m-1}}+\sin{\psi_m} \cos{\psi_{m-1}})\\
+  \sin{\psi_m} \cos{\psi_{m-1}}+\cos{\psi_m}\sin{\psi_{m-1}}& 
+ -\sin{\psi_m}\sin{\psi_{m-1}}+\cos{\psi_m}\cos{\psi_{m-1}}
+\end{pmatrix},  \\
+&=\begin{pmatrix}
+  \cos{\left(\psi_m+\psi_{m-1}\right)}&  -\sin{\left(\psi_m+\psi_{m-1}\right)}\\
+  \sin{\left(\psi_m+\psi_{m-1}\right)}&  \cos{\left(\psi_m+\psi_{m-1}\right)} 
+\end{pmatrix}.
+\end{align*}
+
+Usando esto sobre las matrices de rotación, se puede realizar el
+siguiente razonamiento, si $N=1$:
+
+\begin{equation*}
+  M = R^T(\rho)W_0R(\rho).
+\end{equation*}
+
+Si en cambio $N=2$:
+
+\begin{align*}
+  M &= R^T(2\rho)W_0R(2\rho)R^T(\rho)W_0R(\rho),\\
+      &=R^T(2\rho)W_0R(\rho)R(\rho)R^T(\rho)W_0R(\rho).
+\end{align*}
+
+Como $R(\rho)R^T(\rho)=\mathds{1}$ se tiene:
+
+\begin{align*}
+ M &= R^T(2\rho)W_0R(\rho)W_0R(\rho),\\
+     &=R^T(2\rho)\left[W_0R(\rho)\right]^2.
+\end{align*}
+Para $N=3$:
+
+\begin{align*}
+  M &= R^T(3\rho)W_0R(3\rho)R^T(2\rho)W_0R(2\rho)R^T(\rho)W_0R(\rho),\\
+      &=R^T(3\rho)W_0R(3\rho)R^T(2\rho)\left[W_0R(\rho)\right]^2,\\
+      &=R^T(3\rho)W_0R(\rho)R(2\rho)R^T(2\rho)\left[W_0R(\rho)\right]^2,\\
+      &=R^T(3\rho)W_0R(\rho)\left[W_0R(\rho)\right]^2,\\
+      &=R^T(3\rho)\left[W_0R(\rho)\right]^3.
+\end{align*}
+
+Ahora para una cantidad arbitraria $m$:
+
+\begin{align*}
+  M &= R^T(m\rho)W_0R(m\rho)R^T((m-1)\rho)\left[W_0R(\rho)\right]^{m-1},\\
+      &=R^T(m\rho)W_0R(\rho)R((m-1)\rho)R^T((m-1)\rho)\left[W_0R(\rho)\right]^{m-1},\\  
+      &=R^T(m\rho)W_0R(\rho)\left[W_0R(\rho)\right]^{m-1},\\
+      &=R^T(m\rho)\left[W_0R(m\rho)\right]^{m}.
+\end{align*}
+
+
+Y así se obtiene la matriz general del TN-LCD según Yariv et.al \citepChGen{Yariv2002} en
+términos de dos matrices, una que cambia el estado de polarización y
+otra que simplemente lo rota: 
+
+\begin{align}
+M&=R^T\left( \phi\right)
+\left[W_0R\left(\frac{\phi}{N}\right)\right]^N,\\
+&=R^T\left( \phi\right)
+\begin{pmatrix}
+  \cos{\frac{\phi}{N}e^{i\beta/N}} &  \sin{\frac{\phi}{N}e^{i\beta/N}}\\
+  -\sin{\frac{\phi}{N}e^{-i\beta/N}} &  \cos{\frac{\phi}{N}e^{-i\beta/N}}  
+\end{pmatrix}^N.
+\label{eq:general_lcd_matrix}
+\end{align}
+
+La ecuación \ref{eq:general_lcd_matrix} puede ser simplificada aún
+mas como muestra Yeh en \citepChGen{Yeh1999} si se usa la identidad de Chebyshev
+\ref{eq:chebyshev} para matrices unimodulares:  
+
+\begin{equation}
+  \begin{pmatrix}
+    A & B \\ C & D
+  \end{pmatrix}^m
+=
+\begin{pmatrix}
+  \frac{A\sin{ (mZ) }-\sin(m-1)Z }{\sin{Z} }
+  &\frac{B\sin{(mZ)}}{\sin{Z}}\\
+\frac{C\sin{(mZ)}}{\sin{Z}}&   \frac{D\sin{ (mZ) }-\sin(m-1)Z }{\sin{Z} }
+\end{pmatrix},
+  \label{eq:chebyshev}
+\end{equation}
+
+con \[Z = \cos^{-1}{\left[\frac{1}{2}(A+D)\right]}.\]
+Si se saca el límite cuando $(N\rightarrow \infty)$ se obtiene la
+siguiente matriz:
+
+
+\begin{equation}
+  \label{eq:TN-LCD_Jones_Matrix}
+  M=
+  \begin{pmatrix}
+    \cos{\phi} & -\sin{\phi}\\\sin{\phi}&\cos{\phi}
+  \end{pmatrix}
+  \begin{pmatrix}
+    \cos{\gamma}+i\beta\frac{\sin{\gamma}}{\gamma} & \phi\frac{\sin{\gamma}}{\gamma}\\
+-\phi\frac{\sin{\gamma}}{\gamma}   & \cos{\gamma}-i\beta\frac{\sin{\gamma}}{\gamma}
+  \end{pmatrix},
+\end{equation} 
+dónde:
+\[\gamma=\sqrt{\phi^2+\beta^2}.\]
+
+Ahora, esta es la matriz que todos los autores encontrados en el
+estudio del estado del arte referencian y a partir de la cual se basan
+para caracterizar moduladores. La matriz que representa un
+SLM  tal como se estudió en esta sección es la forma más
+simple de representar un cristal líquido del tipo twisted nematic y se
+conoce como el modelo de Lu y Saleh \citepChGen{Saleh1990}. Este modelo
+parte de asumir las siguientes aproximaciones:
+
+\begin{itemize}
+\item El TN-LCD se comporta como una sucesión de  láminas
+  retardadoras en las cuales la orientación del vector director varía
+  gradualmente desde un ángulo a la entrada hasta un ángulo a la
+  salida y formando un ángulo de rotación conocido como twist angle. 
+\item El ángulo de rotación (twist angle) es una función lineal
+  proporcional a la profundidad en el cristal tal y como se expresa en
+  la ecuación \ref{eq:twist_angle}.
+\item El ángulo de inclinación (tilt angle) se produce cuando se
+  introduce un campo eléctrico que hace rotar las moléculas para
+  alinearlas en su dirección. Éste ángulo se asume constante a lo
+  largo del cristal para un voltaje específico. Si la birrefringencia
+  es proporcional al ángulo de inclinación entonces al variar el
+  voltaje esta variará linealmente con respecto al voltaje.
+\end{itemize}
+
+En modelos posteriores como los de Coy et al \citepChGen{Coy1996} y Marquez
+et al \citepChGen{Marquez2000} se construyen matrices para el LCD que corrigen
+comportamientos no lineales no previstos por  Lu y Saleh. El
+principal factor a corregir en un LCD es la tendencia de las moléculas
+cercanas a las paredes del cristal a conservar la dirección de pulido
+de los vidrios que las contienen como se ilustra en la figura \ref{fig:lcd_models}.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{lcd_models}
+\caption[Modelos de TN-LCD]{Modelos de TN-LCD tomado de Marquez et al en \citepChGen{Marquez2000}.}
+\label{fig:lcd_models}
+\end{figure}
+ Este efecto hace que el ángulo de
+rotación no sea una función lineal  lo largo de la profundidad y que la
+birrefringencia no sea una función lineal del voltaje.
+
+
+\section{Revisión de la literatura}
+Se realizó una revisión de la literatura en el contexto de calibración
+de moduladores basados en TN-LCD y se encontró que para poder utilizar
+una pantalla de cristal líquido como un modulador de sólo fase se debe
+caracterizar el dispositivo como si fuera un elemento óptico que
+afecta tanto la polarización como la fase de la luz. La mayoría de los
+autores usan el cálculo de Jones para representar el efecto del SLM
+sobre la luz como la operación de la matriz del SLM sobre un vector de
+polarización a la entrada. Sin embargo, algunos autores como Yu et al.  \citepChGen{Yu2012}, Moreno et
+al. \citepChGen{Moreno2008} y Durán et al. \citepChGen{Duran2007} utilizan también
+la medida de parámetros de  Stokes y matrices de Muller para obtener
+curvas de calibración de los dispositivos. El reto en ambos casos es
+encontrar una matriz que 
+modele con precisión el comportamiento del modulador para diferentes
+valores de voltaje aplicado. 
+
+
+Hay dos formas básicas de caracterizar el
+SLM, por una parte se puede seguir el camino riguroso y analizar el
+TN-LCD desde el punto de vista físico como se hizo en la sección
+anterior. Para este caso se deben encontrar los parámetros físicos que
+determinan la matriz que se presentó en la fórmula
+\ref{eq:TN-LCD_Jones_Matrix}, es decir, la 
+birrefringencia como función del voltaje, el ángulo de rotación de las
+moléculas a la entrada del modulador, y el ángulo de rotación total
+que experimentan las moléculas hasta la salida del modulador. Estos
+parámetros son encontrados en la mayoría de los casos por medio de
+ajuste de curvas con medidas experimentales de la tramitancia.  La
+otra forma en la que se obtiene la matriz de Jones es asumiendo que el
+sistema es como una caja negra que debe cumplir reglas menos
+exigentes. En la figura \ref{fig:articulos_metodos} se ilustra por
+medio de dos columnas la cantidad y fecha en las cuales se han
+publicado artículos científicos en los cuales se usa uno u otro método
+para caracterizar los moduladores. Adicionalmente se identificaron los
+grupos que más han publicado sobre el tema. De la figura
+\ref{fig:articulos_metodos} y de las fechas en los artículos de la
+bibliografía se puede observar que la investigación en TN-LCD para
+aplicación en procesamiento óptico tuvo su auge entre 1990 y 2010
+aproximadamente, esto se debe como afirma Kirsch en \citepChGen{Kirsch1992}
+a que a finales de los 80s las pantallas 
+de CL para televisores portátiles resultaron interesantes a los
+investigadores como dispositivos para generación dinámica de máscaras
+de amplitud y fase. El declive en cambio, se debe a que los
+moduladores de reflexión han ido reemplazando a los de transmisión por
+ no necesitar de una caracterización y tener mejores prestaciones. 
+También se ha concluido que los artículos que buscaban encontrar todos los
+parámetros del modulador como el de Marquez et al del 2000\citepChGen{Marquez2000} y
+el de Yun et al. en 1998 \citepChGen{Zhisheng1998} preceden en el tiempo a los artículos
+donde se busca simplificar el modelo y asumir el comportamiento del
+LCD como una caja negra, como los dos artículos de Ma et al. en 2010 y
+2011 \citepChGen{Ma2010, Ma2011} o el de Ignacio Moreno en 2003 \citepChGen{Moreno2003} (que
+es el que actualmente intentamos replicar en el laboratorio). Al
+parecer los autores de estos últimos identificaron una necesidad de
+simplificar el proceso de caracterización, y entre sus argumentos 
+están: la simplicidad matemática y número reducido de medidas necesarias.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{articulos_metodos}
+\caption{Tabla de publicaciones en relación con caracterización de
+  moduladores tipo TN-LCD. Los rectángulos representan los grupos que
+  han publicado más en el tema y que resultan de mayor interés para
+  este trabajo. }
+\label{fig:articulos_metodos}
+\end{figure}
+
+El principal resultado del estudio del estado del arte fue encontrar
+un patrón en la evolución del tema en la literatura desde los primeros
+métodos para pantallas de televisor \citepChGen{Moreno1998} hasta campos
+dónde se modula la polarización producidos por moduladores en
+\citepChGen{Moreno2011}. Este patrón tiene como columna vertebral al
+investigador Ignacio Moreno que, junto con otros investigadores en
+universidades de España y California ha dirigido los avances en aplicaciones
+científicas de pantallas TN-LCD. En el momento, en el laboratorio de
+Óptica y Fotónica del Grupo de Óptica Aplicada nos encontramos
+apropiando las técnicas que se referencian en dos de sus artículos
+para encontrar ya sea la matriz de ``caja negra'' del modulador o la
+matriz con los parámetros de fabricación. Una vez caracterizado se
+procederá a encontrar los autovalores de la matriz de Jones (como se
+explica en \citepChGen{Davis1998}), y usarlos
+para plantear estados de polarización a la entrada y la salida del SLM
+que permitan una modulación de solo fase con la cual se puedan hacer
+elementos difractivos digitales tales como máscaras espiral de fase o
+lentes de Fresnel. Los elementos difractivos producidos de forma
+digital son la clave para investigar aberraciones ópticas en haces
+Laguerre-Gauss y sus aplicaciones.
+
+\newpage
+\pagebreak[4]
+\bibliographystyleChGen{unsrtnat}
+\bibliographyChGen{References/Ch2}
