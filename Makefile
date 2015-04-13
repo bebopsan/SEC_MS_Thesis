@@ -49,6 +49,7 @@ pdflatex: clean
 	makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
 	bibtex Int
 	bibtex ChGen
+	bibtex ChPD
 	pdflatex ${FILE_TEX}.tex
 	pdflatex ${FILE_TEX}.tex
 	pdflatex ${FILE_TEX}.tex

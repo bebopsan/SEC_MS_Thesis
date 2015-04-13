@@ -1,0 +1,87 @@
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%------------------------------------------------------------------------- 
+
+\chapter{Caracterización de aberraciones en Vórtices Ópticos}
+\label{cha:Car_intro}
+\graphicspath{{Figures/chPD_img/}{../Figures/chPD_img/}}
+\lhead{Caracterización de aberraciones en Vórtices Ópticos:
+  \textit{Introducción}} % This is for the header on each page -
+                         % perhaps a shortened title
+\section{Introducción}
+En capítulos anteriores ha quedado claro que para producir VO es
+necesario contar con un sistema óptico en el cual sea posible
+manipular con precisión la fase de un frente de onda.  Asimismo, se
+presentó un montaje experimental en el cual logramos generar VO a
+partir del uso de dispositivos difractivos conocidos como SLMs. 
+No obstante, los VO obtenidos distan de ser de suficiente calidad como
+para ser usados en aplicaciones científicas o tecnológicas. 
+
+Esta segunda parte de la tesis abarca el trabajo que se realizó para
+mejorar la calidad óptica de nuestro montaje con el fín de mejorar los
+VO que se obtuvieron en la parte anterior. 
+
+\section{Estado del Arte}
+\label{sec:ChPD_estado_del_arte}
+\lhead{Caracterización de aberraciones en Vórtices Ópticos: \textit{Estado
+    del Arte}}
+
+Los sistemas ópticos formadores de imágen que se encuentran en
+aplicaciones de la vida real están sujetos a aberraciones de fase que
+limitan su resolución. Es por ello que en la industria y en laboratorios se hace un gran esfuerzo para
+detectar aberraciones y corregirlas vía Óptica Adaptativa (AO) \citepChPD{Kubby2013} o por
+medio de técnicas digitales posteriores a la adquisición
+\citepChPD{Korkiakoski2012}. 
+
+Las aberraciones ópticas en un sistema formador de imagen pueden
+proceder de fuentes intrínsecas tales como imperfecciones en el
+diseño, los materiales, la manufactura o la alineación de los
+elementos que los componen. O de fuentes extrínsecas como variaciones
+en el índice de refracción de muestras microscópicas y turbulencia atmosférica en
+imágenes capturadas usando telescopios. La presencia de aberraciones
+del último tipo en imágenes procedentes de telescopios terrestres, y
+la dificultad de modificar los sistemas para incluir brazos de referencia han sido la motivación para
+el desarrollo de varias técnicas de Sensado de Fase no
+Interferométricas (NI-WFS). La técnica de Diversidad de Fases o Phase
+Diversity (PD) pertenece a una familia de NI-WFS conocida como de
+Reconstrucción de Fase o Phase Retrieval. A diferencia de técnicas
+directas que requieren de óptica y sensores adicionales como los
+sistemas que usan sensores Shack-Hartman, las técnicas de Phase
+Retrieval consisten en la determinación de la fase de una función
+compleja a partir de medidas de su magnitud usando 
+información a priori de la función o de su transformada \citepChPD{Fienup1993}. 
+Específicamente, la técnica de reconstrucción  PD ha sido usada
+exitosamente en el contexto de sistemas de AO para incrementar la resolución de sistemas ópticos
+tales como el Telescopio Espacial Hubble \citepChPD{Fienup1993}, y en
+post procesamiento de imágenes de astronomía en las cuales la
+resolución es crítica. Dos casos muy relevantes son el estudio de
+manchas solares y la detección de planetas extrasolares \citepChPD{Lofdahl1994,Bonet2005,Korkiakoski2012,Sauvage2007,Sauvage2012}. 
+
+Así como con otras técnicas desarrolladas para aplicaciones en
+astronomía, los métodos de reconstrucción de fase como el
+Gerchberg-Sachston (GS) y PD han migrado a aplicaciones en el
+laboratorio, y más específicamente a aplicaciones en microscopía de
+fase \citepChPD{Jesacher2007,Camacho2010,Kner2013a}. Tal es el caso
+del trabajo de \citetChPD{Jesacher2007} que implementó una versión del
+método GS para la optimización de pinzas ópticas utilizadas como
+iluminación en sistemas de microscopía de contraste de fase espiral. 
+
+En este capítulo se presenta un método novedoso de reconstrucción de
+fase del tipo PD inspirado en la aplicación antes mencionada, y por
+medio del cual fue posible detectar y corregir las aberraciones ópticas
+del sistema generador de VO presentado en el capítulo
+\ref{cha:Gen_intro}.  A continuación se presenta el marco teórico que
+soporta la implementación del método. En la sección
+\ref{sec:ChPD_materiales_y_metodos} se presenta el 
+
+\section{Marco Teórico}
+\label{sec:ChPD_marco_teorico}
+
+\section{Materiales y Métodos}
+\label{sec:ChPD_materiales_y_metodos}
+
+\newpage
+\pagebreak[4]
+\bibliographystyleChPD{unsrtnat}
+\bibliographyChPD{References/Ch_PD}

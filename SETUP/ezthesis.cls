@@ -225,6 +225,7 @@
 \usepackage[resetlabels]{multibib}
 \newcites{Int}{Bibliograf\'{i}a}
 \newcites{ChGen}{Bibliograf\'{i}a}
+\newcites{ChPD}{Bibliograf\'{i}a}
 % \newcites{Slm}{Bibliograf\'{i}a}
 % \newcites{Vor}{Bibliograf\'{i}a}
 % \newcites{Aer}{Bibliograf\'{i}a}
