@@ -4,7 +4,7 @@
 
 %: ----------------------- introduction file header -----------------------
 
-\chapter{Conclusiones}
+\chapter{Conclusiones y perspectivas}
 \label{cha:Conclusiones}
 
 % the code below specifies where the figures are stored
@@ -15,10 +15,61 @@
 %\fi
 
 
-Se logró implementar un método para la caracterización y corrección de
-aberraciones ópticas en haces Laguerre-Gausianos. 
+En el marco de esta tésis se implementó un sistema para la generación
+de vórtices ópticos por medio de SLMs de trasmisión y un método para
+la caracterización y corrección de aberraciones ópticas en haces Laguerre-Gausianos. 
+La combinación de ambos cumple con los objetivos del proyecto de grado
+y de los proyectos internos del grupo de investigación en óptica
+aplicada. Y le deja al laboratório de Fotónica una herramienta para el
+desarrollo de técnicas de micoscopía basadas en iluminación con haces
+portadores de OAM. 
+Específicamente. 
 
-
+\begin{itemize}
+\item Se mostró el resultado de una labor investigativa con la cual
+  fue posible establecer un marco conceptual y teórico para la
+  caracterización y puesta a punto de un modulador espacial de luz de
+  trasmisión basado en cristales líquidos del tipo twisted nematic. 
+\item Se presentó un sistema automatizado para la caracterización de
+  pantallas de cristál líquido que se compone de una parte física, que
+  involucra cuatro rotadores ópticos mecatrónicos, y una parte de
+  software que adquiere los datos y los procesa para obtener las
+  matrices de Jones que describen el elemento birrefringente para cada
+  nivel de gris. 
+\item Asimismo, se desarrolló una aplicacion de software en la
+  plataforma Matlab $\circledR$ para la
+  generación de máscaras de fase arbitrarias a ser proyectadas en el
+  SLM. Esta aplicación permite:
+  \begin{itemize}
+    \item Crear máscaras de fase espiral de carga entera arbitraria
+      sumadas a:
+      \begin{itemize}
+        \item Lentes.
+        \item Rejillas de difracción de varios tipos.
+        \item Aberraciones ópticas compuestas a partir de polinomios
+          de Zernike.
+      \end{itemize}
+    \item Discretizar las máscaras de fase en la cantidad de niveles
+      deseados, y asignando valores predeterminados a cada uno. 
+  \end{itemize}
+\item Por otra parte, se propuso un método novedoso para la
+  caracterización de SLMs basado en el análisis de desplazamiento de
+  franjas en un interferómetro con brazos que no comparten el mismo
+  estado de polarización. Este método ha sido demostrado en
+  simulaciones y nos encontramos en el proceso de corroboración
+  experimental para validarlo. 
+ \item Utilizando una configuración de estados de polarización que
+   producen alta modulación de fase y baja modulación de amplitud se
+   generaron VO en un sistema óptico 4F y se detectó que aún con buena
+   modulación no se corrigen del todo las aberraciones. 
+\item Dado lo anterior se implementó un método traído de aplicaciones
+  en astronomía para la detección y
+  corrección de aberraciones ópticas en haces con vorticidad óptica.
+\item Este método fue validado mediante numerosas simulaciones, y
+  experimentos. Concluimos que hemos desarrollado la capacidad para
+  detectar y corregir aberraciones ópticas en sistemas ópticos
+  iluminados con haces portadores de OAM.
+\end{itemize}
 
 
 % ----------------------------------------------------------------------
