@@ -46,11 +46,12 @@ latex: clean
 pdflatex: clean	
 	pdflatex ${FILE_TEX}.tex
 	# Uncomment makeindex if the document contains an index
-	makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
+#	makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
 	bibtex Int
 	bibtex ChGen
 	bibtex ChPD
 	pdflatex ${FILE_TEX}.tex
+	makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
 	pdflatex ${FILE_TEX}.tex
 	pdflatex ${FILE_TEX}.tex
 	# Backup tex, bib and generated pdf files
