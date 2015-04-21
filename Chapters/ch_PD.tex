@@ -469,10 +469,73 @@ apertura circular que corresponde al tamaño del haz en el SLM.
 \label{fig:mixed_mask}
 \end{figure}
 
-% y cuyo diámetro puede ser normalizado a 1
+Luego de atravesar el SLM el haz encuentra el resto del sistema óptico
+y se enfoca para formar imágen ($|u_j^l|^2$) en el plano de observación o plano
+imágen. 
+% En nuestro caso el resto del sistema consiste en una sola
+% lente (tal y como se muestra en alguna foto) con la misma curvatura
+% que la lente usada para colimar el haz hace imá. 
+Como se puede ver en el extremo derecho de la figura \ref{fig:set-up},
+los perfiles de intensidad que se usan como entrada para el algorítmo
+de la figura \ref{fig:flowchart} corresponden sólo a una pequeña parte
+de la imagen en la cual está el orden +1 de la rejilla de
+difracción. Dado que los spots tienen un tamaño microscópico, para observar sólo
+el orden 1 en el plano de enfoque usamos un objetivo de 
+microscopio de magnificación 10x y una cámara CCD marca Imaging
+Source.    
+
+En conclusión, para realizar la reconstrucción de fase de un sistema
+óptico formador de imágen usando nuestro método, se deben registrar varias de las
+imágenes que éste forma cuando se le introducen cambios conocidos en
+la fase. Los cambios en la fase se introducen a partir de máscaras de
+fase localizadas en uno de sus planos de Fourier por medio de un
+TN-SLM.  
+Introdcir las máscaras de fase genera distorisiones en la distribución
+a la salida que además dependen de las aberraciones ópticas desconocidas del
+sistema en cuestión. El hecho de generar varias combinaciones de
+diversidades y registrar varias imagenes con distorsiones distintas,
+lleva a limitar el espacio de soluciones posibles y acerca el método a
+una solución única. Esta es la grán ventaja del PD sobre otros métodos
+de reconstrucción de fase. 
+
+Adicionalmente, el hecho de usar la familia
+de diversidades de espiral, aumenta la sensibilidad del método ante
+aberraciones ya que los haces portadores de OAM tienen cambios más
+drásticos en sus distribuciones de intencidad cuando hay
+aberraciones. Aumentar la sensibilidad tiene un efecto positivo sobre
+la exactitud de la solución porque se encuentra de forma más precisa
+el valor y tipo de aberraciones que producen una distribución particular. 
+
+El conjunto de imágenes tomadas experimentalmente ($d_j^l$), y las
+condiciones particulares con las cuales fueron producidas, tales como:
+la forma de la apertura, el tipo de iluminación y la selección de diversidades, son el
+argumento de la rutina de PD. En el interior de la rutina de PD,
+simulamos el sistema óptico y producimos imágenes artificiales
+($|u_j^l|^2$) que son comparadas píxel a píxel con las imágenes
+experimentales. Así como las distorsiones en las imágenes
+experimentales son función de las aberraciones que desconocemos, las
+distorsiones de las imágenes artificiales van a ser función de una
+fase conocida y parametrizada ($\phi$) que vamos a variar hasta que el funcional
+\ref{eq:metric_coherent_OAMs} retorne un mínimo. 
+Cuando acabe el esquema de búsqueda de un mínimo, y la fase
+propuesta ($\phi$) produzca imágenes artificiales ($|u_j^l|^2$)
+idénticas a las imágenes experimentales, y siempre y cuando las
+condiciones de la simulación sean identicas a las condiciones del
+laboratorio, significará que hemos identificado las aberraciones del
+sistema óptico correctamente.
+
+Una vez presentado el método, procedemos a presentar los resultados
+logrados. 
+%introducir un TN-SLM en un plano de Fourier 
 
 \section{Resultados}
 \label{sec:ChPD_resultados}
+
+Nuestro método fue probado extensivamente .
+
+\subsection{Resultados de simulaciones}
+
+\subsection{Resultados experimentales}
 
 \newpage
 \pagebreak[4]
