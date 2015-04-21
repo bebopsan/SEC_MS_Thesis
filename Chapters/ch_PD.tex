@@ -191,7 +191,7 @@ S_1 = \frac{H_1\star H_1}{|H_1|^2} = \frac{H_0H_{\Delta} \star H_0H_{\Delta}}{|H
 \end{equation}
 obtenemos una OTF con diversidad $\phi_1$ que nos permitirá predecir cómo son
 las imagenes registradas a la salida del sistema cuando se introduce
-un cambio de fase $$D_1 = D_{obj} S_1$$. 
+un cambio de fase: $$D_1 = D_{obj} S_1.$$ 
 La tarea de encontrar las aberraciones del sistema óptico en el PD
 tradicional consiste entonces en encontrar una distribución de fase
 inicial $\phi(\vec{u})$ que en combinación con la función pupila
@@ -340,14 +340,136 @@ Fourier es entonces:
 \end{equation}
 
 Usando la ecuación (\ref{eq:newGP}) se puede definir el funcional de
-PD coherente mejorado con VO que se muestra en la ecuación \ref{eq:metric_coherent_OAMs}.
+PD coherente mejorado con VO que se muestra en la ecuación
+(\ref{eq:metric_coherent_OAMs}). %a continuación:
 \begin{equation}\label{eq:metric_coherent_OAMs}
 L(\phi)= \sum_{l=0}^L\sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j}^l - |u_j^l|^2 \right | ^2.
-\end{equation} 
+\end{equation}
 
+Con ese funcional se puede plantear una metodología de solución para
+el problema de reconstrucción de fase como se ilustra en el diagrama
+de flujo de la figura  \ref{fig:flowchart}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.2]{PDLightFlux_simple_esp.pdf}
+\caption[Diagrama de flujo del PD con iluminación coherente]{Diagrama de flujo de una implementación de PD con iluminación
+  coherente mejorado con VO.}
+\label{fig:flowchart}
+\end{figure}
+
+A continuación, en lo que resta de este capitulo se ahondará en el método y en los detalles del proceso
+para entender qué es lo que sucede en cada una de las etapas. 
 
 \section{Materiales y Métodos}
 \label{sec:ChPD_materiales_y_metodos}
+
+Como se mencionó en la sección \ref{sec:ChPD_PD_il_coherente}, para
+poder generar imágenes simuladas $|u_j^l|^2$ nuestro método se basa en
+la premisa de conocer el campo óptico a la entrada del sistema
+formador de imágen. Es decir que si usamos un láser de buena calidad
+para obtener las imágenes del brazo izquierdo del diagrama
+\ref{fig:flowchart} podemos asumir que el campo a la entrada del
+sistema simulado ($u_{obj}$)
+%que produce las imágenes del brazo derecho
+, tiene las características
+ópticas de una fuente láser coherente, es decir: amplitud gaussiana, perfíl
+de fase plano, y que además está limitado por una
+apertura circular correspondiente a la geometría de las lentes (En esta parte se podría hacer referencia a
+un montaje óptico descrito en el capítulo pasado. Idealmente a una fotografía).  
+
+Como el nuestro es un sistema formador de imágen y vamos a introducir las
+máscaras de diversidades en un plano de Fourier para simular la autocorrelación, se debe obtener la
+transformada de Fourier del campo mencionado anteriormente y colimar
+el haz para evitar que siga divergiendo. En adelante haremos
+referencia a la figura \ref{fig:set-up} para ilustrar las diferentes
+partes del sistema para reconstrucción de fase como si se tratara de
+un sistema 4F.
+Suponiendo que el frente de onda ya ha sido transformado al dominio de Fourier y que se
+encuentra colimado, representamos en el extremo izquierdo de la figura
+\ref{fig:set-up} la FT del campo a la entrada ($U_{obj}$) como un haz
+circular que incide sobre un TN-SLM (El mismo holoeye 2002 que se
+present[o anteriormente).  Dado que el campo ha sido
+colimado luego de obtener su FT, se puede asumir que todos los planos desde que
+se colima el haz hasta que vuelve a pasar por una lente son
+equivalentes al plano de fourier de un sistema 4F, y eso nos brinda un
+espacio adecuado para introducir el SLM como se muestra en el recuadro
+azul de la figura \ref{fig:set-up}. 
+
+Si se trabaja en aplicaciones de microscopía en las cuales los objetos
+son de tamaños micrométricos, sus transformadas de Fourier son campos
+ópticos más extensos y la información en coordenadas de frecuencia
+espaciál puede dispersarse en tamaños comparativamente más
+grandes. Una ventaja significativa de modificar el PD para que las
+diversidades de fase se introduzcan en un plano de Fourier es el hecho
+de que se pueden aprovechar más pixeles, y por ende se aumenta la
+resolución espacial de la modulación de fase. 
+
+%El uso de SLMS y sus ventajas. 
+
+El uso de dispositivos de modulación espacial de la fase para
+aplicaciones en PD se ha extendido en la literatura
+\citepChPD{Uribe-Patarroyo2010,Camacho2010,Korkiakoski2012,Katkovnik2012}
+debido a la flexibilidad con la que se pueden generar máscaras de fase
+arbitrarias como diversidades de fase, a diferencia de métodos
+tradicionales como desenfoques que dependen de desplazamientos y alineación muy
+precisos de elementos ópticos. Más aún, el uso de elementos de
+la base de Zernike (diferentes al desenfoque) como diversidad de aberración tiene la ventaja de
+producir distorciones más grandes y más facilmente detectables en la
+distribución de intensidad del plano imágen. Esto es particularmente
+cierto cuando los las distribuciones pertenecen a objetos altamente
+sensibles a aberraciones como es el caso de los OV. Polinomios de
+Zernike como los dos correspondientes al astigmatismo primario han
+sido usados por \citetChPD{Kner2013} como diversidad de aberración en PD para reconstrucción de
+fase de objetos tridimensionales en aplicaciones de microscopía donde
+el desenfoque no añade una cantidad significante de información. 
+ 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{PhaseDiversitySetup_esp.pdf}
+\caption{Un SLM es usado para introducir diversidades de fase en un
+  plano de Fourier. La máscara que se asigna al CL es una combinación de:
+  (a) Máscara espiral de fase con OAM 1, (b) rejilla de difracción
+  tipo Blazed, y (c) +0.5 astigmatismo primario como diversidad de
+  aberración. El primer orden de difracción producido por la rejilla
+  es usado como portador de los haces Laguerre-Gauss con OAM1
+  enfocados en el plano imagen.} 
+\label{fig:set-up}
+\end{figure}
+
+Cuando $U_{obj}$ llega al SLM se encuentra con una combinación de tres
+máscaras de fase que han sido asignadas a los píxeles del CL. La
+primera de estas máscaras, visible en la figura \ref{fig:set-up}(a)  es una máscara de espiral de fase con carga
+topologica $l$ que (como
+se vió en la sección ``referenciar sección'') introduce un una
+singularidad de fase de orden $l$ al campo. La segunda máscara
+(\ref{fig:set-up}(b)) corresponde a una rejilla de difracción del tipo
+blazed que se usa para separar la luz que ha sido difractada al primer
+orden del resto. Esta rejilla mejora de forma significativa la calidad
+de los vórtices ópticos porque evita efectos de interferencia causados
+por partes del campo que no son correctamente difractadas por el
+modulador. La poca eficiencia de difracción se debe a la no linealidad
+de la modulación y al hecho de que los TN-SLM de trasmisión no logran
+modulaciones de $2\pi$.  Finalmente, la tercera máscara
+(Fig. \ref{fig:set-up}(c)) introduce la diversidad de fase de
+aberración, en este caso, y en adelante corresponde al polinomio de
+Zernike de astigmatismo primario (De índice 4 en la notación de
+Wyant). La suma de las tres máscaras tal y como se le presenta al SLM
+en el montaje experimental se muestra en la figura
+\ref{{fig:mixed_mask}} superpuesta a una
+apertura circular que corresponde al tamaño del haz en el SLM.   
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{mixed_mask.pdf}
+\caption{Ejemplo de una máscara tenedor que resulta de combinar una
+  máscara de espiral con $l=1$, con una red de difracción y una
+  máscara de diversidad de aberración con astigmatismo primario de
+  $Z_4=0.5\lambda$.} 
+\label{fig:mixed_mask}
+\end{figure}
+
+% y cuyo diámetro puede ser normalizado a 1
 
 \section{Resultados}
 \label{sec:ChPD_resultados}
@@ -356,3 +478,4 @@ L(\phi)= \sum_{l=0}^L\sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j}^l - |u_j^l|^2
 \pagebreak[4]
 \bibliographystyleChPD{unsrtnat}
 \bibliographyChPD{References/Ch_PD}
+
