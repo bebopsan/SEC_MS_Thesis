@@ -180,7 +180,7 @@ Si la GP del sistema es modificada por un cambio conocido en la fase o
 diversidad de fase de la forma:
 $$H_{\Delta}=e^{\phi_1(\vec{u})}.$$ 
 Obtenemos una nueva GP que se puede describir como el producto entre
-la GP original ($H_{0}$) y la GP con el cambio o diverisdad de fase
+la GP original ($H_{0}$) y la GP con el cambio o diversidad de fase
 ($H_{\Delta}$). Estas diversidades son generalmente desenfoques
 introducidos al cambiar el camino óptico de haces esféricos, o pueden
 ser otro tipo de distribuciones de fase fácilmente parametrizables en
@@ -324,8 +324,8 @@ onda se puede representar aproximadamente suma de:
 \begin{itemize}
 \item Las aberraciones inherentes al sistema ($\phi$) representadas como una
   combinación ponderada de polinomios de Zernike. En nuestro caso la
-  combinación se hace con los primeros 15 coeficientes según la
-  notación de wyant \citepChPD{Schmidt2010}. 
+  combinación se hace con los primeros 15 coeficientes siguiendo la
+  convención de numeración de \citetChPD{Noll1976}. 
 \item La diversidad de fase espiral ($\psi_l$).
 \item La diversidad de fase de aberración ($\psi_l$) que consiste en
   un solo elemento de la base de Zernike, como desenfoque o
@@ -367,18 +367,18 @@ para entender qué es lo que sucede en cada una de las etapas.
 Como se mencionó en la sección \ref{sec:ChPD_PD_il_coherente}, para
 poder generar imágenes simuladas $|u_j^l|^2$ nuestro método se basa en
 la premisa de conocer el campo óptico a la entrada del sistema
-formador de imágen. Es decir que si usamos un láser de buena calidad
+formador de imagen. Es decir que si usamos un láser de buena calidad
 para obtener las imágenes del brazo izquierdo del diagrama
 \ref{fig:flowchart} podemos asumir que el campo a la entrada del
 sistema simulado ($u_{obj}$)
 %que produce las imágenes del brazo derecho
 , tiene las características
-ópticas de una fuente láser coherente, es decir: amplitud gaussiana, perfíl
+ópticas de una fuente láser coherente, es decir: amplitud Gaussiana, perfil
 de fase plano, y que además está limitado por una
 apertura circular correspondiente a la geometría de las lentes (En esta parte se podría hacer referencia a
 un montaje óptico descrito en el capítulo pasado. Idealmente a una fotografía).  
 
-Como el nuestro es un sistema formador de imágen y vamos a introducir las
+Como el nuestro es un sistema formador de imagen y vamos a introducir las
 máscaras de diversidades en un plano de Fourier para simular la autocorrelación, se debe obtener la
 transformada de Fourier del campo mencionado anteriormente y colimar
 el haz para evitar que siga divergiendo. En adelante haremos
@@ -388,18 +388,18 @@ un sistema 4F.
 Suponiendo que el frente de onda ya ha sido transformado al dominio de Fourier y que se
 encuentra colimado, representamos en el extremo izquierdo de la figura
 \ref{fig:set-up} la FT del campo a la entrada ($U_{obj}$) como un haz
-circular que incide sobre un TN-SLM (El mismo holoeye 2002 que se
+circular que incide sobre un TN-SLM (El mismo Holoeye 2002 que se
 present[o anteriormente).  Dado que el campo ha sido
 colimado luego de obtener su FT, se puede asumir que todos los planos desde que
 se colima el haz hasta que vuelve a pasar por una lente son
-equivalentes al plano de fourier de un sistema 4F, y eso nos brinda un
+equivalentes al plano de Fourier de un sistema 4F, y eso nos brinda un
 espacio adecuado para introducir el SLM como se muestra en el recuadro
 azul de la figura \ref{fig:set-up}. 
 
 Si se trabaja en aplicaciones de microscopía en las cuales los objetos
 son de tamaños micrométricos, sus transformadas de Fourier son campos
 ópticos más extensos y la información en coordenadas de frecuencia
-espaciál puede dispersarse en tamaños comparativamente más
+espacial puede dispersarse en tamaños comparativamente más
 grandes. Una ventaja significativa de modificar el PD para que las
 diversidades de fase se introduzcan en un plano de Fourier es el hecho
 de que se pueden aprovechar más pixeles, y por ende se aumenta la
@@ -415,8 +415,8 @@ arbitrarias como diversidades de fase, a diferencia de métodos
 tradicionales como desenfoques que dependen de desplazamientos y alineación muy
 precisos de elementos ópticos. Más aún, el uso de elementos de
 la base de Zernike (diferentes al desenfoque) como diversidad de aberración tiene la ventaja de
-producir distorciones más grandes y más facilmente detectables en la
-distribución de intensidad del plano imágen. Esto es particularmente
+producir distorsiones más grandes y más facilmente detectables en la
+distribución de intensidad del plano imagen. Esto es particularmente
 cierto cuando los las distribuciones pertenecen a objetos altamente
 sensibles a aberraciones como es el caso de los OV. Polinomios de
 Zernike como los dos correspondientes al astigmatismo primario han
@@ -427,7 +427,7 @@ el desenfoque no añade una cantidad significante de información.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{PhaseDiversitySetup_esp.pdf}
-\caption{Un SLM es usado para introducir diversidades de fase en un
+\caption[Diagrama del sistema óptico para PD con iluminación coherente.]{Un SLM es usado para introducir diversidades de fase en un
   plano de Fourier. La máscara que se asigna al CL es una combinación de:
   (a) Máscara espiral de fase con OAM 1, (b) rejilla de difracción
   tipo Blazed, y (c) +0.5 astigmatismo primario como diversidad de
@@ -441,7 +441,7 @@ Cuando $U_{obj}$ llega al SLM se encuentra con una combinación de tres
 máscaras de fase que han sido asignadas a los píxeles del CL. La
 primera de estas máscaras, visible en la figura \ref{fig:set-up}(a)  es una máscara de espiral de fase con carga
 topologica $l$ que (como
-se vió en la sección ``referenciar sección'') introduce un una
+se vio en la sección ``referenciar sección'') introduce un una
 singularidad de fase de orden $l$ al campo. La segunda máscara
 (\ref{fig:set-up}(b)) corresponde a una rejilla de difracción del tipo
 blazed que se usa para separar la luz que ha sido difractada al primer
@@ -449,12 +449,12 @@ orden del resto. Esta rejilla mejora de forma significativa la calidad
 de los vórtices ópticos porque evita efectos de interferencia causados
 por partes del campo que no son correctamente difractadas por el
 modulador. La poca eficiencia de difracción se debe a la no linealidad
-de la modulación y al hecho de que los TN-SLM de trasmisión no logran
+de la modulación y al hecho de que los TN-SLM de transmisión no logran
 modulaciones de $2\pi$.  Finalmente, la tercera máscara
 (Fig. \ref{fig:set-up}(c)) introduce la diversidad de fase de
 aberración, en este caso, y en adelante corresponde al polinomio de
 Zernike de astigmatismo primario (De índice 4 en la notación de
-Wyant). La suma de las tres máscaras tal y como se le presenta al SLM
+Noll). La suma de las tres máscaras tal y como se le presenta al SLM
 en el montaje experimental se muestra en la figura
 \ref{{fig:mixed_mask}} superpuesta a una
 apertura circular que corresponde al tamaño del haz en el SLM.   
@@ -462,7 +462,7 @@ apertura circular que corresponde al tamaño del haz en el SLM.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{mixed_mask.pdf}
-\caption{Ejemplo de una máscara tenedor que resulta de combinar una
+\caption[Ejemplo de una máscara tenedor con astigmatismo.]{Ejemplo de una máscara tenedor que resulta de combinar una
   máscara de espiral con $l=1$, con una red de difracción y una
   máscara de diversidad de aberración con astigmatismo primario de
   $Z_4=0.5\lambda$.} 
@@ -470,13 +470,13 @@ apertura circular que corresponde al tamaño del haz en el SLM.
 \end{figure}
 
 Luego de atravesar el SLM el haz encuentra el resto del sistema óptico
-y se enfoca para formar imágen ($|u_j^l|^2$) en el plano de observación o plano
-imágen. 
+y se enfoca para formar imagen ($|u_j^l|^2$) en el plano de observación o plano
+imagen. 
 % En nuestro caso el resto del sistema consiste en una sola
 % lente (tal y como se muestra en alguna foto) con la misma curvatura
-% que la lente usada para colimar el haz hace imá. 
+% que la lente usada para colimar el haz hace ima. 
 Como se puede ver en el extremo derecho de la figura \ref{fig:set-up},
-los perfiles de intensidad que se usan como entrada para el algorítmo
+los perfiles de intensidad que se usan como entrada para el algoritmo
 de la figura \ref{fig:flowchart} corresponden sólo a una pequeña parte
 de la imagen en la cual está el orden +1 de la rejilla de
 difracción. Dado que los spots tienen un tamaño microscópico, para observar sólo
@@ -485,23 +485,23 @@ microscopio de magnificación 10x y una cámara CCD marca Imaging
 Source.    
 
 En conclusión, para realizar la reconstrucción de fase de un sistema
-óptico formador de imágen usando nuestro método, se deben registrar varias de las
+óptico formador de imagen usando nuestro método, se deben registrar varias de las
 imágenes que éste forma cuando se le introducen cambios conocidos en
 la fase. Los cambios en la fase se introducen a partir de máscaras de
 fase localizadas en uno de sus planos de Fourier por medio de un
 TN-SLM.  
-Introdcir las máscaras de fase genera distorisiones en la distribución
+Introducir las máscaras de fase genera distorsiones en la distribución
 a la salida que además dependen de las aberraciones ópticas desconocidas del
 sistema en cuestión. El hecho de generar varias combinaciones de
 diversidades y registrar varias imagenes con distorsiones distintas,
 lleva a limitar el espacio de soluciones posibles y acerca el método a
-una solución única. Esta es la grán ventaja del PD sobre otros métodos
+una solución única. Esta es la gran ventaja del PD sobre otros métodos
 de reconstrucción de fase. 
 
 Adicionalmente, el hecho de usar la familia
 de diversidades de espiral, aumenta la sensibilidad del método ante
 aberraciones ya que los haces portadores de OAM tienen cambios más
-drásticos en sus distribuciones de intencidad cuando hay
+drásticos en sus distribuciones de intensidad cuando hay
 aberraciones. Aumentar la sensibilidad tiene un efecto positivo sobre
 la exactitud de la solución porque se encuentra de forma más precisa
 el valor y tipo de aberraciones que producen una distribución particular. 
@@ -520,7 +520,7 @@ fase conocida y parametrizada ($\phi$) que vamos a variar hasta que el funcional
 Cuando acabe el esquema de búsqueda de un mínimo, y la fase
 propuesta ($\phi$) produzca imágenes artificiales ($|u_j^l|^2$)
 idénticas a las imágenes experimentales, y siempre y cuando las
-condiciones de la simulación sean identicas a las condiciones del
+condiciones de la simulación sean idénticas a las condiciones del
 laboratorio, significará que hemos identificado las aberraciones del
 sistema óptico correctamente.
 
@@ -531,11 +531,89 @@ logrados.
 \section{Resultados}
 \label{sec:ChPD_resultados}
 
-Nuestro método fue probado extensivamente .
+Nuestro método fue probado extensivamente con el fin de validar
+nuestras premisas y evaluar su comportamiento ante diversas entradas. 
+En esta sección se describen las pruebas simuladas y experimentales
+que se realizaron, y se muestran los resultados para cada una. 
 
 \subsection{Resultados de simulaciones}
+En primera medida se requería simular el método para corroborar que
+funcionaba en sistemas ideales. La simulación de reconstrucción de
+fases consiste en reemplazar el conjunto de imagenes de referencia $d_j^l$ por un
+conjunto de imágenes artificiales que han sido afectadas por una
+aberración conocida inherente al sistema
+óptico simulado. La aberración conocida será nuestra fase de
+referencia, es decir, la fase con la cual compararemos la exactitud de
+la reconstrucción. 
+Una vez comprobamos que nuestra implementación del PD reconstruía de
+forma precisa aberraciones simples, procedimos a probarlo con
+aberraciones generadas aleatoriamente, y luego con aberraciones aleatorias de
+diferente magnitud. Asimismo, comparamos el desempeño del PD contra el
+método GS con y sin VO, y contra sí mismo con conjuntos diferentes de
+diversidades con y sin VO.  
+
+\subsubsection{Preparación de las fases de referencia}
+
+Si las aberraciones se conforman como una combinación lineal de
+elementos de la base de Zernike como se muestra en
+\ref{eq:ChPD_phase_Zernike}, un frente de onda aleatorio puede ser
+facilmente compuesto asignando valores aleatorios a los coeficientes $a_i$. 
+\begin{equation}
+\label{eq:ChPD_phase_Zernike}
+\phi(\vec{u}) = \sum_{i=1}^{N=15}a_iZ_i(\vec{u}). 
+\end{equation}
+Para generar los coeficientes utilizamos la función \textbf{normrnd}
+de Matlab$\circledR$ que produce una lista de números aleatorios pertenecientes
+ a una distribución Gaussiana con media y desviación
+estándar definidas por el usuario.  En nuestro caso se quería una
+misma probabilidad para coeficientes positivos y negativos así que se asignó la media
+como $0\lambda$. La desviación estándar se asignó como $0.5\lambda$ como valor
+tentativo previo al escalamiento. 
+
+La exactitud de los métodos de reconstrucción de fase en algunos casos
+está ligada a la magnitud de las aberraciones. Aberraciones de
+magnitud muy pequeña pueden producir resultados similares a
+aberraciones de igual magnitud pero distinta forma. Esto es un
+problema si los métodos no son lo suficientemente sensibles como para
+distinguirlas. Asimismo, aberraciones de magnitudes muy altas pueden
+introducir distorsiones tan grandes en las imágenes de entrada que
+impiden que los métodos converjan a un mínimo global, o incluso pueden
+causar divergencia. Con el fin de evaluar el desempeño de nuestro
+PD ante magnitudes variables, generamos aberraciones aleatorias en diferentes
+escalas. Se tomó como métrica de la escala el valor de la media
+cuadrática (RMS) del frente de onda, que para una base normalizada es:
+$$RMS =  \sqrt{\sum_{i=1}^{N=15}a_i^2 }.$$
+Los coeficientes aleatorios que entrega la función \textbf{normrnd}
+fueron escalados en una rutina de minimización (Referenciar el código)
+hasta obtener una combinación con RMS definido. 
+Se corrió la rutina de PD para 6 escalas distintas desde $RMS = 1/14\lambda$ (límite de
+difracción) hasta $RMS = 1\lambda$. Y cada una de las reconstrucciones
+de una escala particular fue repetida con fases distintas 15 veces
+para que el resultado fuera estadísticamente significativo. Es decir
+que en total se hicieron  90 reconstrucciones de fase por cada método
+a evaluar. Se evaluó el método de GS con y sin VO, y el método de PD
+de iluminación coherente sin VO, y con VO bajo dos combinaciones
+distintas de diversidades haciendo un total de 450 reconstrucciones de
+fase.  
+Los resultados de estas simulaciones se han condensado en la figura
+\ref{fig:ChPD_RMS_error} y se discuten en adelante. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.6]{WF_errors_new_colors_esp.pdf}
+\caption[Resultados de simulaciones con PD de iluminación
+coherente.]{Las marcas en el eje x denotan el error RMS para
+  diferentes escalas con respecto a
+  un haz plano para cada conjunto de 15 réplicas. El eje y denota el
+  error RMS promedio para entre la aberración de referencia y la
+  aberración reconstruída.} 
+\label{fig:ChPD_RMS_error}
+\end{figure}
+
+
 
 \subsection{Resultados experimentales}
+
+
 
 \newpage
 \pagebreak[4]
