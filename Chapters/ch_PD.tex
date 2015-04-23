@@ -609,6 +609,89 @@ coherente.]{Las marcas en el eje x denotan el error RMS para
 \label{fig:ChPD_RMS_error}
 \end{figure}
 
+\subsection{Descripción y análisis de resultados simulados}
+Comenzamos por describir brevemente los datos que componen la gráfica
+\ref{fig:ChPD_RMS_error}. De un lado están los cuadrados rojos que representan el error
+para cada escala cuando se reconstruyen las aberraciones usando el
+método GS tradicional. Los rombos azules son también de GS y
+representan la solución cuando se añaden VO de OAM1 a la entrada, tal
+y como lo presenta \citetChPD{Jesacher2007}. Por otra parte, del lado
+de PD con iluminación coherente, los datos con cruces verdes
+representan el método PD cuando no ha sido mejorado con
+diversidades de fase espiral.
+%, presentado en la sección \ref{sec:ChPD_PD_il_coherente}. 
+En ese caso se usaron sólo tres imágenes como entrada, la nominal y
+dos con diversidades. No se usaron máscaras espiral ($l=0$), y las
+diversidades de aberración consisten en los siguientes dos valores de
+astigmatismo $j=Z_4:\pm 0.5$. Tanto los datos con triángulos dorados
+como los que tienen  $\times$ púrpura representan resultados del
+método de PD con iluminación coherente mejorado con VO y fueron
+obtenidos con nueve imágenes. Las diversidades de aberración para
+estos casos son las mismas y se añaden las diversidades de espiral
+$l=0,1,2$ para el primer caso y $l=-2,0,2$ para el segundo.  
+
+\subsubsection{Discusión sobre GS}
+Analizar correctamente los resultados de la figura
+\ref{fig:ChPD_RMS_error} depende de entender las diferencias entre la
+reconstrucción con GS y la reconstrucción con PD. Comenzaremos por
+identificar algunas propiedades de la reconstrucción con el método GS.
+
+El método GS es un algoritmo cíclico de una sola imagen en el cual se
+llega a la solución haciendo múltiples propagaciones hacia adelante y hacia atrás
+del sistema óptico. Se parte de un campo complejo conocido en un plano
+de Fourier, que se debe propagar por medio de una FT a través del
+sistema para obtener el campo en el plano imagen. La amplitud del
+campo resultante se reemplaza por la raíz cuadrada de la intensidad
+medida experimentalmente, y el resultado se propaga en sentido
+contrario a través del sistema por medio de una FT inversa. De nuevo
+en el plano de Fourier, la amplitud del campo se reemplaza por una
+equivalente a la que habría en la entrada del sistema y se repite el
+ciclo hasta que la fase converja a la aberración del sistema que
+produce amplitudes a la salida iguales a la raíz cuadrada de las
+intensidades tomadas experimentalemente. 
+
+Si el campo óptico propuesto en el plano de
+Fourier del sistema es tal que su imagen resulta similar a la imagen
+de entrada, la convergencia es casi segura, el error desciende en cada
+iteración y se necesita de muy pocas
+iteraciones para alcanzar convergencia. En estos casos, podemos
+suponer que el algoritmo ha retornado un mínimo global. Sin embargo, aberraciones de
+mayor magnitud, o con formas complejas, pueden hacer que el error
+aumente antes de comenzar a descender, y entregar resultados que,
+aunque generan magnitudes del campo similares a la raíz cuadrada de
+las imágenes experimentales, no tienen fases similares a la fase de
+referencia. Estos serían entonces mínimos locales, y no representarían
+una solución aceptable a la hora de comparar con una métrica como el
+RMS del frente de onda. Este fenómeno ha sido estudiado ya por varios
+autores \citepChPD{Paxman1992,Jesacher2007} que han mostrado que la
+unicidad de la solución no está garantizada cuando se ejecutan métodos
+de propagación como el GS.
+
+Viendo que distribuciones de fase aleatorias probablemente impedirían
+implementar un método de análisis de convergencia basado en búsqueda
+de una variación del error por debajo de un cierto umbral, decidimos
+ejecutar el algoritmo de GS de tal forma que se detuviera una vez
+hubieran pasado 60 iteraciones independientemente del caso. Esto
+aseguraría que las simulaciones que iban en buen camino alcanzaran un
+cambio en el error suficientemente bajo, y le impediría a las
+soluciones que divergían seguir aumentando el error indefinidamente. 
+
+ La presencia de mínimos locales y la
+imprecision pueden entenderse si se observa 
+que, a diferencia de métodos basados en búsqueda del gradiente, en los
+cuales la fase se compone de forma parametrizada, el proceso cíclico
+del GS retorna la fase como una imagen por el simple hecho de propagar campos complejos
+en forma iterativa. Como resultado se corre el riesgo de obtener distribuciones
+de fase que no representan adecuadamente el sistema. 
+
+Más aún, las propagaciones pueden propiciar la presencia de aberraciones del tipo Pistón ($Z_0$) o plano inclinado
+($Z_{1,2}$) que no afectan la forma de la distribución de intensidad y que
+pueden invalidar la comparación con la fase de referencia. A fin de que la comparación entre el
+método de GS y el PD sea justa se sustrajeron las máscaras espiral
+cuando estaban presentes y la fase del frente de onda se proyectó al
+equivalente en la composición de la base Zernike tal y como muestra en
+el capítulo 5 de \citepChPD{Schmidt2010}.
+
 
 
 \subsection{Resultados experimentales}
