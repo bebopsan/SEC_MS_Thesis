@@ -568,8 +568,7 @@ de Matlab$\circledR$ que produce una lista de números aleatorios pertenecientes
 estándar definidas por el usuario.  En nuestro caso se quería una
 misma probabilidad para coeficientes positivos y negativos así que se asignó la media
 como $0\lambda$. La desviación estándar se asignó como $0.5\lambda$ como valor
-tentativo previo al escalamiento. 
-
+tentativo previo al escalamiento.\\
 La exactitud de los métodos de reconstrucción de fase en algunos casos
 está ligada a la magnitud de las aberraciones. Aberraciones de
 magnitud muy pequeña pueden producir resultados similares a
@@ -630,6 +629,7 @@ obtenidos con nueve imágenes. Las diversidades de aberración para
 estos casos son las mismas y se añaden las diversidades de espiral
 $l=0,1,2$ para el primer caso y $l=-2,0,2$ para el segundo.  
 
+Se puede observar claramente que el m[etodo de PD coherente supera  
 \subsubsection{Discusión sobre GS}
 Analizar correctamente los resultados de la figura
 \ref{fig:ChPD_RMS_error} depende de entender las diferencias entre la
@@ -676,7 +676,7 @@ aseguraría que las simulaciones que iban en buen camino alcanzaran un
 cambio en el error suficientemente bajo, y le impediría a las
 soluciones que divergían seguir aumentando el error indefinidamente. 
 
- La presencia de mínimos locales y la
+La presencia de mínimos locales y la
 imprecision pueden entenderse si se observa 
 que, a diferencia de métodos basados en búsqueda del gradiente, en los
 cuales la fase se compone de forma parametrizada, el proceso cíclico
@@ -684,15 +684,33 @@ del GS retorna la fase como una imagen por el simple hecho de propagar campos co
 en forma iterativa. Como resultado se corre el riesgo de obtener distribuciones
 de fase que no representan adecuadamente el sistema. 
 
-Más aún, las propagaciones pueden propiciar la presencia de aberraciones del tipo Pistón ($Z_0$) o plano inclinado
+Más aún, las propagaciones pueden propiciar la aparición de aberraciones del tipo Pistón ($Z_0$) o plano inclinado
 ($Z_{1,2}$) que no afectan la forma de la distribución de intensidad y que
 pueden invalidar la comparación con la fase de referencia. A fin de que la comparación entre el
 método de GS y el PD sea justa se sustrajeron las máscaras espiral
 cuando estaban presentes y la fase del frente de onda se proyectó al
-equivalente en la composición de la base Zernike tal y como muestra en
+equivalente en la  base Zernike tal y como muestra en
 el capítulo 5 de \citepChPD{Schmidt2010}.
 
 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.3]{phase_comparison_esp.pdf}
+\caption{Comparación visual y de coeficientes entre uno de los frentes
+  de onda aleatorios de escala $1/14\lambda$ y las fases reconstruidas
+  con PD y GS.} 
+\label{fig:visual_comparison}
+\end{figure}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.3]{phase_comparison_esp_2.pdf}
+\caption{Comparación visual y de coeficientes entre uno de los frentes
+  de onda aleatorios de escala $1/14\lambda$ y las fases reconstruidas
+  con PD y GS.} 
+\label{fig:visual_comparison}
+\end{figure}
 
 \subsection{Resultados experimentales}
 
