@@ -537,6 +537,7 @@ En esta sección se describen las pruebas simuladas y experimentales
 que se realizaron, y se muestran los resultados para cada una. 
 
 \subsection{Resultados de simulaciones}
+\label{sec:ChPD_resultados_simulados}
 En primera medida se requería simular el método para corroborar que
 funcionaba en sistemas ideales. La simulación de reconstrucción de
 fases consiste en reemplazar el conjunto de imagenes de referencia $d_j^l$ por un
@@ -608,7 +609,7 @@ coherente.]{Las marcas en el eje x denotan el error RMS para
 \label{fig:ChPD_RMS_error}
 \end{figure}
 
-\subsection{Descripción y análisis de resultados simulados}
+\subsubsection{Descripción y análisis de resultados simulados}
 Comenzamos por describir brevemente los datos que componen la gráfica
 \ref{fig:ChPD_RMS_error}. De un lado están los cuadrados rojos que representan el error
 para cada escala cuando se reconstruyen las aberraciones usando el
@@ -629,7 +630,46 @@ obtenidos con nueve imágenes. Las diversidades de aberración para
 estos casos son las mismas y se añaden las diversidades de espiral
 $l=0,1,2$ para el primer caso y $l=-2,0,2$ para el segundo.  
 
-Se puede observar claramente que el m[etodo de PD coherente supera  
+En la figura \ref{fig:ChPD_RMS_error} se puede observar claramente que
+el método de PD coherente supera en 
+exactitud al GS por al menos un orden de magnitud en cualquiera de las
+selecciones de diversidades. La precision de la aproximación con PD
+también en evidencia cuando se comparan las fases reconstruidas y los pesos
+de los coeficientes recuperados para un frente de onda particular como
+se muestra en la figura \ref{fig:ChPD_visual_comparison}. En ese caso se
+compararon las fases de la réplica número 10 para la reconstrucción de
+un perfil de fase con aberraciones de $1/14\lambda$ RMS, y se ve
+que la reconstrucción de los pesos con PD es casi exacta. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.3]{phase_comparison_esp.pdf}
+\caption[Resultados visuales de simulaciones de PD coherente para
+aberración $1/14\lambda$]{Comparación visual y de coeficientes entre uno de los frentes
+  de onda aleatorios de escala $1/14\lambda$ y las fases reconstruidas
+  con PD y GS.} 
+\label{fig:ChPD_visual_comparison}
+\end{figure}
+Después de un cuidadoso análisis de los resultados, se puedo concluir que hacer un
+incremento en la redundancia aumentando la cantidad de imágenes de
+entrada tiene un efecto positivo sobre la precisión. Eso se ve
+reflejado en la mejor reconstrucción de PD de 9 imagenes con respecto
+al de tres, y la mejor reconstrucción de ste último con respecto al GS
+de una sola imagen.  Asimismo, identificamos que el desempeño del
+método mejora cuando se usan VO con cargas topológicas de orden más
+alto, y que la combinación de diversidades espiral de mismo valor pero
+signo contrario es preferible a una variedad de cargas de mismo
+signo. Creemos que una razón importante por la cual los resultados con
+vórtices de $l=2$ son mejores que los de $l=1$ y estos a su vez
+mejores que los haces Gaussianos $l=0$ es el hecho de que tienen un
+tamaño mayor. Al ocupar una parte mayor de la imagen los cambios en el
+perfil debidos a las aberraciones son más evidentes y pueden ser
+muestreados con una mayor cantidad de píxeles. Luego, pensamos que
+incluir VO con carga negativa y positiva es preferible ya que se le
+introducen al método máscaras de diversidad cuya redundancia puede ``desenvolver''
+aberraciones simétricas. Una aberración simétrica puede afectar de
+distinta forma vórtices ópticos cuya fase se envuelve en sentido
+derecho, y vórtices cuya fase se envuelve hacia la izquierda.\\
+
 \subsubsection{Discusión sobre GS}
 Analizar correctamente los resultados de la figura
 \ref{fig:ChPD_RMS_error} depende de entender las diferencias entre la
@@ -649,24 +689,66 @@ equivalente a la que habría en la entrada del sistema y se repite el
 ciclo hasta que la fase converja a la aberración del sistema que
 produce amplitudes a la salida iguales a la raíz cuadrada de las
 intensidades tomadas experimentalemente. 
-
 Si el campo óptico propuesto en el plano de
 Fourier del sistema es tal que su imagen resulta similar a la imagen
 de entrada, la convergencia es casi segura, el error desciende en cada
 iteración y se necesita de muy pocas
-iteraciones para alcanzar convergencia. En estos casos, podemos
-suponer que el algoritmo ha retornado un mínimo global. Sin embargo, aberraciones de
-mayor magnitud, o con formas complejas, pueden hacer que el error
-aumente antes de comenzar a descender, y entregar resultados que,
-aunque generan magnitudes del campo similares a la raíz cuadrada de
-las imágenes experimentales, no tienen fases similares a la fase de
-referencia. Estos serían entonces mínimos locales, y no representarían
-una solución aceptable a la hora de comparar con una métrica como el
-RMS del frente de onda. Este fenómeno ha sido estudiado ya por varios
-autores \citepChPD{Paxman1992,Jesacher2007} que han mostrado que la
-unicidad de la solución no está garantizada cuando se ejecutan métodos
-de propagación como el GS.
-
+iteraciones para alcanzar convergencia. Este es el caso del ejemplo
+que mostramos en la figura \ref{fig:ChPD_visual_comparison}. En estos
+casos podemos suponer que el algoritmo ha retornado un mínimo
+global. Sin embargo, aberraciones de mayor magnitud, o con formas
+complejas, pueden hacer que el error aumente antes de comenzar a
+descender, y entregar resultados que, aunque generan magnitudes del
+campo similares a la raíz cuadrada de las imágenes experimentales, no
+tienen fases similares a la fase de referencia.  Estos serían entonces
+mínimos locales, y no representarían una solución aceptable a la hora
+de comparar con una métrica como el RMS del frente de onda. Este
+fenómeno ha sido estudiado ya por varios autores
+\citepChPD{Paxman1992,Jesacher2007} que han mostrado que la unicidad
+de la solución no está garantizada cuando se ejecutan métodos de
+propagación como el GS.  
+La presencia de mínimos locales y la
+imprecision pueden entenderse si se observa 
+que, a diferencia de métodos basados en búsqueda del gradiente, en los
+cuales la fase se compone de forma parametrizada, el proceso cíclico
+del GS retorna la fase como una imagen por el simple hecho de propagar campos complejos
+en forma iterativa. Como resultado se corre el riesgo de obtener distribuciones
+de fase que no representan adecuadamente el sistema.  Un ejemplo muy bueno de situaciones en las
+cuales se presenta ese resultado es el que se ilustra en la figura
+\ref{fig:visual_comparison}. Esta figura muestra el resultado de la
+reconstrucción de fase con varios métodos cuando las aberraciones son
+grandes (RMS $1\lambda$) y se puede ver claramente que PD sigue siendo
+altamente preciso, y que la solución
+con el método de GS (cuadrados verdes) llegó a un mínimo que no
+corresponde a la referencia. En este caso se muestra además que la
+solución con el método de GS mejorado con VO devuelve una fase espiral
+aberrada que no corresponde a la fase espiral de referencia. Además hemos
+visto que en algunos casos las múltiples propagaciones
+producen singularidades de fase adicionales no ubicadas en el centro
+de la imagen. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.3]{phase_comparison_esp_2.pdf}
+\caption[Resultados visuales de simulaciones de PD coherente para
+aberración $1\lambda$]{Comparación visual y de coeficientes entre uno de los frentes
+  de onda aleatorios de escala $1\lambda$ y las fases reconstruidas
+  con PD y GS. En este caso se incluye también el resultado del GS con
+VO porque al restar la fase espiral y proyectar a la base de Zernike
+se obtuvieron mejores resultados que sin VO.} 
+\label{fig:visual_comparison}
+\end{figure}
+Más aún, las propagaciones del GS pueden propiciar la aparición de
+aberraciones del tipo Pistón ($Z_0$) o plano inclinado
+($Z_{1,2}$) que no afectan la forma de la distribución de intensidad
+pero si distorsionan la máscara espiral aberrada y que 
+pueden invalidar la comparación con la fase de referencia. 
+A fin de que la comparación entre el método de GS y el PD sea justa se
+sustrajeron las máscaras espiral cuando estaban presentes y la fase
+del frente de onda se proyectó al equivalente en la  base Zernike tal
+y como muestra en el capítulo 5 de \citepChPD{Schmidt2010}. Con esto
+pudimos extraer los coefficientes correspondientes a los datos de
+cuadros verdes y triángulos azules de la figura
+\ref{fig:visual_comparison}. 
 Viendo que distribuciones de fase aleatorias probablemente impedirían
 implementar un método de análisis de convergencia basado en búsqueda
 de una variación del error por debajo de un cierto umbral, decidimos
@@ -676,44 +758,26 @@ aseguraría que las simulaciones que iban en buen camino alcanzaran un
 cambio en el error suficientemente bajo, y le impediría a las
 soluciones que divergían seguir aumentando el error indefinidamente. 
 
-La presencia de mínimos locales y la
-imprecision pueden entenderse si se observa 
-que, a diferencia de métodos basados en búsqueda del gradiente, en los
-cuales la fase se compone de forma parametrizada, el proceso cíclico
-del GS retorna la fase como una imagen por el simple hecho de propagar campos complejos
-en forma iterativa. Como resultado se corre el riesgo de obtener distribuciones
-de fase que no representan adecuadamente el sistema. 
-
-Más aún, las propagaciones pueden propiciar la aparición de aberraciones del tipo Pistón ($Z_0$) o plano inclinado
-($Z_{1,2}$) que no afectan la forma de la distribución de intensidad y que
-pueden invalidar la comparación con la fase de referencia. A fin de que la comparación entre el
-método de GS y el PD sea justa se sustrajeron las máscaras espiral
-cuando estaban presentes y la fase del frente de onda se proyectó al
-equivalente en la  base Zernike tal y como muestra en
-el capítulo 5 de \citepChPD{Schmidt2010}.
-
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.3]{phase_comparison_esp.pdf}
-\caption{Comparación visual y de coeficientes entre uno de los frentes
-  de onda aleatorios de escala $1/14\lambda$ y las fases reconstruidas
-  con PD y GS.} 
-\label{fig:visual_comparison}
-\end{figure}
-
-
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.3]{phase_comparison_esp_2.pdf}
-\caption{Comparación visual y de coeficientes entre uno de los frentes
-  de onda aleatorios de escala $1/14\lambda$ y las fases reconstruidas
-  con PD y GS.} 
-\label{fig:visual_comparison}
-\end{figure}
+\subsubsection{Sobre las limitantes del método}
+La superioridad del método PD viene con la desventaja de implicar un
+mayor tiempo de procesamiento. Mientras que las reconstrucciones con
+GS pueden tardar alrededor de 30 segundos, la reconstrucción con el PD
+de 3 imágenes tarda 6 minutos y la de PD con 9 tarda 22 minutos. Esto
+se debe a que el algoritmo es más complejo y las funciones de
+minimización que buscan la mayor pendiente necesitan de una mayor cantidad
+de evaluaciones de los funcionales (\ref{eq:metric_coherent}) y
+(\ref{eq:metric_coherent_OAMs}) para poder ensamblar el gradiente
+numéricamente. Todos los resultados fueron obtenidos a partir de
+código programado en el lenguaje de programación Matlab$\circledR$ y
+no han sido optimizados para mejorar la velocidad de
+procesamiento. Futuras implementaciones paralelizadas de los
+algoritmos podrían sacar provecho de lenguajes de programación de bajo
+nivel como \textbf{C++} y de una Unidad de Procesamiento Gráfico (GPU)
+para mejorar los tiempos de reconstrucción y hacer del método una
+alternativa viable en aplicaciones donde la velocidad sea importante. 
 
 \subsection{Resultados experimentales}
-
+\label{sec:ChPD_resultados_experimentales}
 
 
 \newpage
