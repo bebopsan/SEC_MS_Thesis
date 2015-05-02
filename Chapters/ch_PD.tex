@@ -870,19 +870,21 @@ observar en la figura \ref{fig:trefoil_aber}.
 \end{figure} 
 
 La introducción de una aberración conocida se hace por medio del mismo
-SLM sumando la máscara de la aberración tipo trébol a las máscaras
-originales usadas en la simulación como la que se mostró en la figura
-\ref{fig:mixed_mask}. Esta aberración no solo nos permite brobar el
+SLM sumando la máscara de la aberración tipo trébol a las máscaras 
+originales usadas en la simulación. %\ref{fig:mixed_mask}. 
+Esta aberración no solo nos permite probar el
 método en una condición extrema, sino que también permite evaluar
 su capacidad para encontrar aberraciones conocidas. 
-
-La figura \ref{fig:exp_results} muestra uno de los resultados
-obtenidos. 
-En la primera fila, dentro de un rectángulo verde se muestran tres de las imágenes usadas para 
+La figura \ref{fig:exp_results}(a) muestra tres grupos de imagenes, en
+la primera fila de cada grupo, se resaltan dentro
+de un rectángulo verde 3 de las 9 imágenes de entrada ($d_j^l$)
+adquiridas cuando la diversidad espiral es $l=0,1,2$, las diversidades
+de aberración son $j = 0\lambda, 0.5\lambda$, y  $-0.5\lambda$ de
+astigmatismo, y se ha sumado a todas la aberración tipo trébol.   
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=.8]{experimental_results_07032015_small.pdf}
+\includegraphics[scale=1]{experimental_results_07032015_small.pdf}
 \caption[Resultados experimentales de la reconstrucción de fase con
 PD.]{(a) Experimental results visual comparison and (b) Retrieved  WF
   coefficients. Input images correspond to aberration diversity of 
@@ -890,6 +892,15 @@ PD.]{(a) Experimental results visual comparison and (b) Retrieved  WF
 \label{fig:exp_results}
 \end{figure} 
 
+Las nueve imagenes resaltadas en recuadros con línea sólida son la
+entrada al algoritmo de PD y las imágenes en recuadros con líneas
+discontinuas corresponden a las imagens entregadas por el algoritmo
+cuando el método de búsqueda del gradiente ha alcanzado un punto de
+convergencia. Se puede observar claramente que las imagenes
+recuperadas por nuestro método no sólo emulan con alta exactitud las
+imagenes usadas como entrada sino, también otras imagenes que no
+fueron incluidas, en este caso las que corresponden a diversidades de
+espiral $l=-2,-1$.
 
 \begin{figure}[h!]
 \centering
