@@ -779,6 +779,126 @@ alternativa viable en aplicaciones donde la velocidad sea importante.
 \subsection{Resultados experimentales}
 \label{sec:ChPD_resultados_experimentales}
 
+El método de PD con iluminación coherente mejorado con OAM también fue
+probado con aberraciones inducidas en sistemas ópticos reales. A
+continuación se describe el montaje óptico, el experimento planteado y
+se muestran los resultados. 
+
+\subsubsection{Montaje óptico} 
+El montaje experimental usado para la caracterización de aberraciones
+se puede observar en la figura \ref{fig:exp_setup}. Como fuente de
+iluminación se ha utilizado una fuente laser de 532nm con polarización
+vertical y modo $TEM_{0,0}$ que puede observarse en la parte derecha de la imagen. Este
+láser de estado sólido produce un haz con polarización ligeramente
+elíptica; con el fin de garantizar un estado de polarización lineal
+vertical hemos introducido un polarizador (P1) con recubrimiento delgado a
+base nanopartículas que tiene una alta relación de
+extinción (10.000:1) marca THORLABS referencia LPVISB050. Una vez
+seleccionado el estado de polarización, el haz continúa su recorrido 
+hasta el extremo izquierdo de la mesa óptica donde cambia de dirección
+para luego pasar por un filtro espacial (SF) que se ilustra a la izquierda
+de la figura \ref{fig:exp_setup}. El SF permite eliminar
+contenidos con altas frecuencias como speckle y obtener un perfil
+ bien definido que pueda ser aproximado por una función Gaussiana. La
+ lente L1 cuya distancia focal de 10 cm coincide con la distancia hasta
+ el pinhole del SF, y colima el haz que diverge a causa del
+ objetivo de microscopio de 20x en el SF. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1]{PD_setup_big.pdf}
+\caption[Montaje experimental para reconstrucción de fase con PD]{Montaje experimental para la caracterización de aberraciones
+en VO.} 
+\label{fig:exp_setup}
+\end{figure} 
+
+Una vez colimado, el haz queda de un
+ diámetro de aproximadamente 2cm y continúa su recorrido hasta la
+ lente L2. La lente L2 de distancia (incluir la distancia focal de L2) enfoca el haz en un
+ plano que en adelante llamaremos plano objeto y que está a una
+ distancia de 15cm. Los elementos que se encuentran a partir de este
+ punto conforman el sistema formador de imagen a ser
+ analizado.
+% y en este caso resulta muy similar a un microscopio óptico para
+% observar el plano objeto. 
+El sistema formador de imagen
+ que implementamos es un sistema 4F conformado por las lentes L3 y
+ L4. El plano objeto del sistema está a una distancia de L3 que coincide con su
+ distancia focal, y asimismo el SLM está a una distancia focal a la
+ derecha de L3. Esta configuración asegura que las diversidades de fase introducidas al modulador actúen
+ exactamente en el plano donde se encuentra la FT del objeto.       
+Por otra parte, la distancia focal de L4 coincide con la distancia
+entre el plano del SLM y la lente L4. Esto hace que el haz tenga un
+mismo tamaño entre L3 y L4 y que la distribución de intensidades que
+se observa en el plano imagen corresponda a una antitransformada del
+campo a la salida del SLM. Con esta configuración hemos emulado el
+montaje que se ilustró en la figura \ref{fig:set-up} en la sección
+anterior. 
+
+Las imágenes que sirven de entrada al algoritmo son capturadas por un
+ocular de microscopio marca Newport con aumento de 10x acoplado a una cámara
+CCD de resolución 1280x960 marca imagine source modelo DMK
+41BU02.H. Con el fin de capturar con alta precisión las imagenes que corresponden al
+primer orden de difracción en el plano imagen, hemos ubicado la cámara
+sobre una base con libertad de movimiento en X y Y controlada con
+desplazadores micrométricos. El desplazador que actúa en la dirección
+perpendicular al haz permite ubicar el ocular ligeramente desplazado
+del haz de tal manera que sólo entre la luz correspondiente al primer
+orden de difracción. 
+
+\subsubsection{Análisis de resultados}
+
+El montaje en su totalidad tiene aberraciones ópticas que se deben
+tanto a la alineación y calidad de los elementos ópticos como a la
+capacidad de modulación del TN-SLM. Esas aberraciones son las
+responsables de que los VO sin corrección presentados en el capítulo
+anterior tengan una mala calidad. En esta sección mostraremos uno de
+los resultados obtenidos con el montaje descrito anteriormente. Con el
+fin de evaluar la capacidad del método para recuperar aberraciones
+conocidas y no solo las aberraciones inherentes al sistema hemos
+añadido una aberración tipo trébol de magnitud $1\lambda$ a todas las
+imágenes. Las aberraciones tipo trébol corresponden al
+polinomio 10 de la base de Zernike y su perfil de fase se puede
+observar en la figura \ref{fig:trefoil_aber}.  
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{trefoil.pdf}
+\caption[Aberración tipo trébol.]{Mapa de fase de una aberración tipo
+  trébol de valor $1\lambda$.} 
+\label{fig:trefoil_aber}
+\end{figure} 
+
+La introducción de una aberración conocida se hace por medio del mismo
+SLM sumando la máscara de la aberración tipo trébol a las máscaras
+originales usadas en la simulación como la que se mostró en la figura
+\ref{fig:mixed_mask}. Esta aberración no solo nos permite brobar el
+método en una condición extrema, sino que también permite evaluar
+su capacidad para encontrar aberraciones conocidas. 
+
+La figura \ref{fig:exp_results} muestra uno de los resultados
+obtenidos. 
+En la primera fila, dentro de un rectángulo verde se muestran tres de las imágenes usadas para 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.8]{experimental_results_07032015_small.pdf}
+\caption[Resultados experimentales de la reconstrucción de fase con
+PD.]{(a) Experimental results visual comparison and (b) Retrieved  WF
+  coefficients. Input images correspond to aberration diversity of 
+  0.5 astigmatism and spiral diversities $l=0,1,2$.} 
+\label{fig:exp_results}
+\end{figure} 
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.7]{PSF_comparison_experimental_results_07032015.pdf}
+\caption[VO registrados luego de restar las aberraciones detectadas
+  con PD.]{Images taken after adding the inverse of the reconstructed  
+  wavefront to the SLM.}  
+\label{fig:exp_correction}
+\end{figure}
 
 \newpage
 \pagebreak[4]
