@@ -156,8 +156,8 @@ necesarios para entender la caracterización de SLMs y luego se
 presentarán las diversas herramientas y métodos que se implementaron
 para lograr la generación de VO.
 
-En la sección que sige se introduce la segunda mitad del
-problema, es decir, ¿Cómo caracterizar y corregir las aberraciones ópticas de un VO?
+% En la sección que sige se introduce la segunda mitad del
+% problema, es decir, ¿Cómo caracterizar y corregir las aberraciones ópticas de un VO?
 
 % \subsection{Aberraciones ópticas}
 
@@ -220,13 +220,22 @@ problema, es decir, ¿Cómo caracterizar y corregir las aberraciones ópticas de
 \label{sec:ChGen_marco_teorico}
 \lhead{Generación de Vórtices Ópticos: \textit{Marco Teórico}}
 
-Hace falta una buena introduccíon
+Dado que los SLMs de transmisión se ensamblan a partir de LCs, lo
+primero que hay que tener en cuenta para su caracterización 
+es conocer sus generalidades y entender sus propiedades ópticas. 
+Entenderemos que los LCs afectan el estado de polarización de la luz y
+por ello se dedicará un espacio del marco teórico a presentar los conceptos
+generales y herramientas matemáticas propias de la teoría de polarización. 
+Una vez presentadas estas herramientas se mostrarán los modelos
+actuales con los cuales se representa matemáticamente la modulación de
+un LC y se hará una breve revisión de la literatura de la
+caracterización de SLMs. 
 
 \subsection{Cristales líquidos}
 \subsubsection{Características de los LC}  
 Un cristal Líquido es una sustancia que posee propiedades que
 se asemejan tanto a las de los sólidos cristalinos como a las de los
-líquidos. También puede ser visto como un líquido en el cual existe
+líquidos, y puede ser visto como un líquido en el cual existe
 orden entre sus moléculas. Para ilustrar esta idea recordemos que los
 sólidos cristalinos son un estado de la materia que se caracteriza por
 su rigidez y fuertes enlaces químicos, en el cual se puede
@@ -235,9 +244,9 @@ ilustra en la figura \ref{fig:solido}. Esto implica que la posición de
 las moléculas o átomos que lo componen puede ser abstraída como una
 red periódica que cumple ciertas reglas de simetría. En cambio, un
 líquido amorfo como el de la figura \ref{fig:liquido} tiene enlaces
-más débiles por lo cual puede fluir, y está compuesto
+más débiles por lo cual puede fluir y está compuesto
 por moléculas que están completamente desorganizadas. 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \begin{subfigure}{.45\textwidth}
   \centering
@@ -254,20 +263,22 @@ por moléculas que están completamente desorganizadas.
 \caption{Dos estados de la materia comunes en la naturaleza.}
   \label{fig:estados}
 \end{figure}
+
 Los cristales líquidos son sustancias que como los
 sólidos poseen cierto orden y que pueden fluir como los líquidos. 
 
-Los LCs pueden ser clasificados en tres tipos o fases distintas
+Por otra parte, los LCs pueden ser clasificados en tres tipos o fases distintas
 conocidas como, \textit{nemáticos},
 \textit{smeticos} y \textit{colestéricos}, y más adelante se abordará esta
-clasificación, no obstante su diversidad (más de 100.000 compuestos
+clasificación. No obstante su diversidad (más de 100.000 compuestos
 distintos según \url{http://www.lci-publisher.com}), la característica común de los LC es que están
-compuestos de moléculas muy anisotrópicas, esto es, que sus
+compuestos de moléculas altamente anisotrópicas, esto es, que sus
 propiedades (ópticas, eléctricas y mecánicas) dependen de la
 dirección desde la que se observen. La anisotropía se debe tanto a la
 geometría alargada o achatada de las moléculas, como a las propiedades
 electrónicas de sus componentes.  En el caso de moléculas
-alargadas como en la figura \ref{fig:LCMolecule} su estructura química se
+alargadas de LCs como la de la figura \ref{fig:LCMolecule} la
+estructura química de un LC genéral se
 compone de un sistema de anillos aromáticos que pueden ser o no
 saturados conectados por un grupo de conexión A, y sujetos a dos
 cadenas o grupos terminales X y Y \citepChGen{Yeh1999}. 
@@ -277,11 +288,12 @@ cadenas o grupos terminales X y Y \citepChGen{Yeh1999}.
 \caption{Esquema de la composición química general en una molécula de LC.}
 \label{fig:LCMolecule}
 \end{figure}
+
 La presencia de los anillos proporciona las fuerzas intermoleculares de corto alcance que
 son necesarias para formar fases nemáticas y el tipo de anillos
 (saturado o no saturado) determina la presencia o no de enlaces $\pi$
 que se asocian a orbitales $P_z$ de los electrones. Esto a su vez
-afecta la absorción en el ultravioleta y la birefringencia, se observa mayor
+afecta la absorción en el ultravioleta y la birefringencia; se observa mayor
 birefringencia en LC con anillos no saturados y mejor comportamiento
 en el ultravioleta para anillos saturados.  Luego, las cadenas del
 grupo terminal X pueden ser de tres tipos:
@@ -329,22 +341,22 @@ Las cadenas del grupo terminal Y pueden ser:
 
 \subsubsection{Clasificación de los LC}  
 \label{sec:LC-clasification}
-En 1922 y sintetizando los hallazgos de 30 años desde su descubrimiento el
-cristalógrafo George Friedel publicó un artículo \citepChGen{Friedel1922}
+En 1922 y sintetizando los hallazgos de 30 años desde el descubrimiento
+de los LCs, el cristalógrafo George Friedel publicó un artículo \citepChGen{Friedel1922}
 en el que clasifica los LC en tres tipos básicos conocidos como
 cristales smeticos, nemáticos y colestéricos.
 En términos de orden, los LC sméticos son los más similares a un
 sólido, y los nemáticos se asemejan más a un líquido, y en la medida
-en la que se calienta un LC este realiza una transición desde cristal
+en la que se calienta un LC éste realiza una transición desde cristal
 smetico hasta líquido isotrópico pasando por la fase nemática. Los estados
-colestéricos son un tipo particular de LC nemáticos que  a diferencia
+colestéricos son un tipo particular de LC nemáticos que a diferencia
 de los anteriores tienen propiedades inhomogeneas. 
 La principal característica que le da una medida de orden a los LC es
 la tendencia de sus moléculas a orientarse en una dirección
 preferente gracias a su distribución polar de cargas. Esta tendencia
 se puede observar claramente en las figuras \ref{fig:smetic} y
 \ref{fig:nematic} como si las moléculas fueran vagones de un tren que
-se siguen uno detrás del otro en forma de hilo \footnote{De hecho, la palabra
+se siguen uno detrás del otro en forma de hilo \footnote{La palabra
 \textit{Nematic} proviene de la expresión griega \textit{nema} que
 significa hilo.}.  
 
@@ -374,27 +386,12 @@ $$ S = \frac{1}{2}\left<3\cos^2{\theta-1}\right>$$
 Un LC con sus moléculas alineadas perfectamente paralelas tiene un
 parámetro de orden $S=1$, mientras que un LC con moléculas orientadas
 aleatoriamente posee un parámetro $S=0$. El parámetro de orden depende
-tanto del tipo de molécula como de la temperatura, en la medida en la
+tanto del tipo de molécula como de la temperatura; en la medida en la
 que aumenta la temperatura las moléculas pierden su alineación y el LC
 se convierte en un líquido isotrópico. El parámetro de orden gana
 importancia cuando se necesita seleccionar un LC que deba ser usado en
 rangos de temperatura especiales y se necesite garantizar anisotropía.
 
-Los Cristales smeticos como el que se ilustra en la figura
-\ref{fig:smetic} se diferencian de los nemáticos en que poseen orden
-posicional en una dirección además de orden orientacional. Sin embargo,
-este orden viene acompañado de propiedades mecánicas que son menos
-convenientes para la construcción de LCDs y por ello las fases
-nemáticas y colestéricas son las que tienen mayor número de
-aplicaciones en dispositivos electro ópticos. 
-A diferencia de las fases smetica y nemática que tienen un solo vector
-de orientación, en los cristales líquidos colestéricos el vector
-director varía a través del medio de una forma bien
-definida y por ello se consideran medios inhomogeneos. Generalmente la
-variación es helicoidal como la que se ve en la figura \ref{fig:cholesteric}.   
-La variable que caracteriza un cristal líquido colestérico es el
-ángulo de inclinación o pitch que forman las moléculas inclinadas con
-respecto al eje óptico del material. 
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{.4\textwidth}
@@ -419,6 +416,22 @@ respecto al eje óptico del material.
 \label{fig:CL_clasificacion}
 \end{figure}
 
+Los Cristales smeticos como el que se ilustra en la figura
+\ref{fig:smetic} se diferencian de los nemáticos en que poseen orden
+posicional en una dirección además de orden orientacional. Sin embargo,
+este orden viene acompañado de propiedades mecánicas que son menos
+convenientes para la construcción de LCDs y por ello las fases
+nemáticas y colestéricas son las que tienen mayor número de
+aplicaciones en dispositivos electro ópticos. 
+A diferencia de las fases smetica y nemática que tienen un solo vector
+de orientación, en los cristales líquidos colestéricos el vector
+director varía a través del medio de una forma bien
+definida y por ello se consideran medios inhomogeneos. Generalmente la
+variación es helicoidal como la que se ve en la figura \ref{fig:cholesteric}.   
+La variable que caracteriza un cristal líquido colestérico es el
+ángulo de inclinación o pitch que forman las moléculas inclinadas con
+respecto al eje óptico del material. 
+
 
 \subsubsection{Las pantallas de cristal líquido nematico retorcido.}
 
@@ -440,7 +453,7 @@ plano de salida como se ve en la figura
 parecido a un cristal colestérico en el cual la orientación de las
 moléculas varía de forma lineal.
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \begin{subfigure}{.45\textwidth}
   \centering
@@ -461,21 +474,22 @@ moléculas varía de forma lineal.
 \end{figure} 
 
 Generalmente las direcciones de frotado en las superficies de entrada
-y salida son ortogonales de tal forma que las moléculas experimentan
-una rotación de 90 grados. Ante la presencia de un campo eléctrico a
-lo largo del cristal las moléculas experimentan una inclinación que es
-proporcional a la diferencia de potencial entre las placas como en la
-figura \ref{fig:tn-lc-voltage}. Al ser moléculas alargadas y polares
+y salida son ortogonales de tal forma que las moléculas a la salida experimentan
+una rotación de 90 grados con respecto a las de la entrada. Ante la
+presencia de un campo eléctrico a lo largo del cristal las moléculas
+experimentan una inclinación que es proporcional a la diferencia de
+potencial entre las placas tal y como se ilustra en la figura
+\ref{fig:tn-lc-voltage}. Al ser moléculas alargadas y polares
 experimentan un torque que atrae a la parte negativa de la molécula
-hacia el electrodo positivo del 
-dispositivo y viceversa. La inclinación es proporcional al voltaje
-aplicado y es de mayor magnitud en las regiones más alejadas
-de las paredes del dispositivo. La configuración Twisted Nematic ha
-sido seleccionada para muchos dispositivos electro ópticos comerciales porque afecta
-la polarización de la luz que incide sobre ella. El objetivo de  los
+hacia el electrodo positivo del  dispositivo y viceversa. La
+inclinación es proporcional al voltaje aplicado y es de mayor magnitud
+en las regiones más alejadas de las paredes del dispositivo. La
+configuración Twisted Nematic ha sido seleccionada para muchos
+dispositivos electro ópticos comerciales porque afecta 
+la polarización de la luz que incide sobre ella. El objetivo de los
 autores que han caracterizado moduladores de transmisión ha sido
 principalmente el de describir matemáticamente y de forma robusta las
-propiedades ópticas dispositivos que tienen cristales líquidos de esta naturaleza. 
+propiedades ópticas de dispositivos que tienen cristales líquidos de esta naturaleza. 
 
 En lo que sigue se presentarán las herramientas matemáticas que son
 base para la descripción matemática de campos ópticos polarizados, y
@@ -484,7 +498,7 @@ se aplicará para la descripción de un modelo de LC.
 \subsection{Polarización de la luz}
 
 En la teoría electromagnética de la luz se representan los campos
-ópticos como ondas que se propagan en el espacio. Un haz de luz
+ópticos como ondas que se propagan en el espacio vacío. Un haz de luz
 se puede representar tanto por su vector de campo eléctrico como
 magnético y ambos son perturbaciones de carácter periódico. Si el
 medio de propagación es isotrópico, la dirección de la perturbación 
@@ -530,16 +544,16 @@ sistema acoplado de osciladores armónicos que oscilan a una misma
 frecuencia. Si se dibuja la suma vectorial de las componentes $x$, y $y$ como
 un vector que va desde el origen hasta el punto ($E_x,E_y$) y luego se
 avanza en el tiempo, la trayectoria que describe la punta del vector
-será una figura elíptica como la que 
-se muestra en \ref{fig:ellipse_clean} . Si en cambio se congela el tiempo y se gráfica
-el desplazamiento de la punta del vector en el espacio se obtiene una figura
-helicoidal como en \ref{fig:trayectory_clean}. En estos dibujos se ha
-escogido representar una elipse por que es el caso más general de polarización, sin
+será una curva elíptica como la que 
+se muestra en la figura \ref{fig:ellipse_clean} . Si en cambio se congela el tiempo y se gráfica
+el desplazamiento de la punta del vector en el espacio se obtiene una curva
+helicoidal como en la figura \ref{fig:trayectory_clean}. En estos dibujos se ha
+escogido representar una elipse por que es el caso más general de polarización. Sin
 embargo, la relación entre las amplitudes ($A_y/A_x$) y la
 diferencia de fases ($\delta = \delta_y-\delta_x$) entre las componentes del
 campo determina si la polarización es lineal ($\delta = 0$), circular
-($\delta =\pm \frac{\pi}{2}$ ) o elíptica, y la orientación del eje
-mayor con respecto a $x$.
+($\delta =\pm \frac{\pi}{2}$) o elíptica, y la orientación del eje
+mayor de la elipse con respecto al eje $x$.
 
 \begin{figure}[h!]
 \centering
@@ -569,71 +583,60 @@ la polarización]{Representaciones de la posición de un vector de campo
 Desde el punto de vista matemático, la figura
 \ref{fig:ellipse_clean} se describe por medio de la ecuación
 \ref{eq:ellipse} que es la ecuación de una cónica y se puede obtener
-a partir de las expresiones \ref{eq:xcomp} y \ref{eq:ycomp} como se
-muestra a continuación.\\ Si $\delta = \delta_y-\delta_x$ y $z=0$,
-entonces:
+a partir de las expresiones (\ref{eq:xcomp}) y (\ref{eq:ycomp}) como se
+muestra a continuación. Si $\delta = \delta_y-\delta_x$ y $z=0$,
+entonces el campo se puede escribir como
 
 \begin{align*}
 E_x &= A_x\cos{ \left(\omega t \right)},\\
 E_y &= A_y\cos{ \left(\omega t -\delta\right)}.
 \end{align*}
-
-Luego:
-
+Y se puede despejar los términos correspondientes al $\sin$ y $\cos$
  \begin{align*}
 \cos{\omega t} &=\frac{E_x}{A_x},\\
 \sin^2{\omega t} &= 1-\left(\frac{E_x}{A_x}\right)^2,\\
 \sin{\omega t} &= \sqrt{1-\left(\frac{E_x}{A_x}\right)^2}.
 \end{align*}
-
-Por otra parte se tiene:
+Por otra parte se tiene
 \begin{equation}
   \label{eq:Ey-2}
 E_y = A_y\left( \cos{\omega t}\cos{\delta}+\sin{\omega
     t}\sin{\delta}\right).  
 \end{equation}
-
-
 Reemplazando $\sin{\omega t} $ y $\cos{\omega t} $ en la expresión
-\ref{eq:Ey-2} obtenemos:
-
+(\ref{eq:Ey-2}) obtenemos
 \begin{align}
 E_y &= \frac{A_yE_x}{A_x}\cos{\delta} +
 A_y\sqrt{1-\frac{E_x}{A_x}}\sin{\delta},\notag\\
 \frac{E_y}{A_y} - \frac{E_x}{A_x}\cos{\delta}  &= 
 \sqrt{1-\left(\frac{E_x}{A_x}\right)^2}\sin{\delta}.\label{eq:ellipse_nos}
 \end{align}
-
-Elevando al cuadrado la igualdad \ref{eq:ellipse_nos} y organizando
+Elevando al cuadrado la igualdad (\ref{eq:ellipse_nos}) y organizando
 términos, obtenemos la ecuación general de una elipse inscrita en un
 rectángulo con lados $2A_x$, $2A_y$: 
-
 \begin{equation}
 \left(\frac{E_x}{A_x}\right)^2+\left(\frac{E_y}{A_y}\right)^2-2\frac{\cos{\delta}}{A_xA_y}E_xE_y
 = \sin^2{\delta}.
 \label{eq:ellipse}
 \end{equation}
-
 Se puede ahora plantear una rotación de un ángulo $\phi$ con respecto
 al eje horizontal ($x$) sobre el sistema de coordenadas  como se
 muestra en la figura \ref{fig:ellipse} para que
 el eje mayor de la elipse quede alineado con el eje
-\textit{horizontal} del nuevo sistema. Haciendo esto, se lleva la
-ecuación \ref{eq:ellipse} a la forma más conocida de la ecuación
-\ref{eq:new_ellipse}.
-
+\textit{horizontal} del nuevo sistema. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale = 1]{ellipse}
 \caption[Rotación del sistema de coordenadas de la elipse de polarización]{Rotación del sistema de coordenadas un ángulo $\phi$.}
 \label{fig:ellipse}
 \end{figure}
-
+Haciendo esto, se lleva la
+ecuación (\ref{eq:ellipse}) a la forma más conocida de la ecuación
+(\ref{eq:new_ellipse})
 \begin{equation}
 \left(\frac{E_{x'}}{a}\right)^2+\left(\frac{E_{y'}}{b}\right)^2 = 1,
 \label{eq:new_ellipse}
 \end{equation}
-
 dónde $a$ y $b$ son los semi ejes mayor y menor, y $E_{x'}$, $E_{y'}$
 son las componentes del campo eléctrico en las direcciones $x'$,
 $y'$. Los semiejes de la elipse están dados por las siguientes expresiones:
@@ -660,10 +663,10 @@ $\mathbf{E}$ desde el cero en adelante. Sin embargo otros autores
 interpretan el sentido de giro como si en un punto fijo vieran girar
 el vector $\mathbf{E}$ que les llega en la medida que pasa el tiempo. 
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{circular_polarizations}
-\caption[Estados de polarización circular]{(a) Esquema de una polarizaciónes circular en donde los semiejes
+\caption[Estados de polarización circular]{(a) Esquema de un estado de polarización circular en donde los semiejes
   de la elipse son iguales. La polarización circular izquierda (b) se da
 cuando $e=\frac{b}{a}$ y la derecha (c) cuando  $e=-\frac{b}{a}$.}
 \label{fig:circular_polarizations}
@@ -675,8 +678,8 @@ horizontal. Estas dos características se pueden parametrizar como dos
 ángulos que se dan en
 términos de las amplitudes máximas del campo $A_x$, $A_y$
 y el retardo entre componentes $\delta$. Por una parte, el ángulo de
-inclinación se encuentra interpretando la ecuación \ref{eq:ellipse} en
-su forma bilineal de la forma:
+inclinación se encuentra interpretando la ecuación (\ref{eq:ellipse}) en
+su forma bilineal de la forma
 
 \begin{equation}
 \begin{pmatrix}
@@ -692,7 +695,7 @@ E_x \\ E_y
 =\sin^2{\delta},
 \end{equation}
 
-sacando factor común $\frac{1}{A_x^2} $ se obtiene:
+sacando factor común $\frac{1}{A_x^2} $ se obtiene
 
 \begin{equation}
 \begin{pmatrix}
@@ -707,7 +710,7 @@ E_x \\ E_y
 \end{pmatrix}
 =A_x/2\sin^2{\delta},
 \end{equation}
-o en forma compacta:
+o en forma compacta
 \begin{equation}
 \begin{pmatrix}
 E_x & E_y
@@ -729,15 +732,11 @@ representada por una ecuación de segundo grado con
 coordenadas espaciales. Si estas coordenadas son $\{x_1,
 x_2, ... x_D\}$, entonces la cuádrica típica en ese espacio se define
 mediante la ecuación algebraica: 
-
 \[ \sum_{i,j=1}^D Q_{i,j} x_i x_j + \sum_{i=1}^D P_i x_i + R = 0. \]
-
 El caso particular en el cual solo hay dos dimensiones y los valores
 $P_i$ son todos 0, es el de una elipse. En nuestro caso, tenemos en
 notación matricial:
-
 \[ \mathbf{E}^TQ\mathbf{E} + R= 0, \]
- 
 con
 \[
 Q=
@@ -746,15 +745,13 @@ Q=
  a & b 
 \end{pmatrix}.
  \]
-y $R=-c = -A_x/2\sin^2{\delta}$. Ahora los autovalores de una elipse
+y $R=-c = -A_x/2\sin^2{\delta}$. Ahora, los autovalores de una elipse
 representada por su forma matricial están asociados con la
-direcciones de sus ejes principales, y apuntan en la dirección de los
+dirección de sus ejes principales, y apuntan en la dirección de los
 puntos máximos \citepChGen{Palffy1998}. Como nuestra incógnita es el ángulo
-que determina la dirección de los puntos máximos podemos escribir la
-siguiente ecuación de autovalores para despejar $\phi$
-\url{http://en.wikipedia.org/wiki/Quadratic_form}
-
-
+que determina la dirección de los puntos máximos, podemos escribir la
+siguiente ecuación de autovalores para despejar $\phi$\footnote{
+\url{http://en.wikipedia.org/wiki/Quadratic_form}}
 \[\begin{pmatrix}
 1 & a\\
  a & b 
@@ -768,36 +765,28 @@ siguiente ecuación de autovalores para despejar $\phi$
  \sin{\phi} 
 \end{pmatrix} ,
 \]
-
 desarrollando, se obtienen las siguientes dos ecuaciones:
 \begin{align*}
 \cos{\phi} +a\sin{\phi} &= \lambda\cos{\phi},\\
 a\cos{\phi} +b\sin{\phi} &= \lambda\sin{\phi}.
 \end{align*}
-
 Despejando $\lambda$ e igualando las ecuaciones se llega a una
 expresión dependiente de un ángulo doble:
-
 \[1+a\tan{\phi} = \frac{a}{\tan{\phi}}+b,\]
 \[b-1= a\tan{\phi} -\frac{a}{\tan{\phi}},\]
 \[ b-1=a\left(\frac{\tan^2{\phi} -1}{\tan{\phi}}\right),\]
 \[\tan{2\phi} =\frac{2a}{b-1}.\]
-
 Finalmente, reemplazando $a$, y $b$ se tiene el ángulo de inclinación
 de la elipse:
-
 \begin{equation*}
 \phi = \frac{1}{2}\tan^{-1}{\left(\frac{2A_xA_y}{A_x^2-A_y^2}\cos{\delta}\right)}.
 \end{equation*}
-
 Siguiendo un esquema similar, aunque más tedioso se encuentra el
 ángulo de elipticidad ($\theta = \tan^{-1}{e}$) en términos de la
 función seno como:
-
 \begin{equation*}
 \theta = \frac{1}{2}\sin^{-1}{\left(\frac{2A_xA_y}{A_x^2+A_y^2}\sin{\delta}\right)}.
 \end{equation*}
-
 A la hora de despejar $\phi$ y $\theta$ reemplazando valores en la
 primera ecuación usando un computador se aconseja reemplazar la función
 $\tan^{-1}$ por la función atan2, que es popular en paquetes de
@@ -813,26 +802,25 @@ importante la naturaleza vectorial de la luz y la polarización.
 En el esquema de Jones los campos ópticos con dos componentes ortogonales se
 representan como un vector con elementos complejos conocido como
 vector de Jones. Las dos componentes complejas del campo en la ecuación
-\ref{eq:complex_field} se representan como elementos de un vector
+(\ref{eq:complex_field}) se representan como elementos de un vector
 columna conocido como vector de Jones:
  
 \begin{equation}
 \mathbf{J} =\begin{pmatrix} A_xe^{i\delta_x}\\A_ye^{i\delta_y}\end{pmatrix}.
 \label{eq:jones_vector}
 \end{equation}
-
 Siendo un vector complejo, $\mathbf{J}$ no es una cantidad observable
 en el espacio físico. Para obtener obtener por ejemplo, la
 componentente  $x$ del campo eléctrico se hace la operación $E_x(t) = \Re
 \left[J_xe^{i\omega t}\right]$.
 Para el estudio de la polarización conviene representar el vector de
-Jones en su forma normalizada, es decir tal que cumpla la condición: $$\mathbf{J}^{\dagger}\mathbf{J}=1.$$
+Jones en su forma normalizada, es decir tal que cumpla la condición $$\mathbf{J}^{\dagger}\mathbf{J}=1.$$
 La normalización se logra parametrizando las amplitudes con el ángulo
 del vector que forman: $$\tan{\psi}=\frac{\sin{\psi}}{\cos{\psi}}=\frac{A_y}{A_x},$$
 de esta forma $A_y=\sin{\psi}$ y $A_x = \cos{\psi}$. Adicionalmente,
 la fase de las componentes se acostumbra a escribir en su forma
 relativa y con respecto a la componente $y$ como se muestra en la
-expresión \ref{eq:normalized_jones_vector}.
+expresión (\ref{eq:normalized_jones_vector}).
 
 \begin{equation}
 \mathbf{J(\psi,\delta)} =\begin{pmatrix} \cos{\psi}\\\sin{\psi}e^{i\delta}\end{pmatrix}.
@@ -842,21 +830,17 @@ expresión \ref{eq:normalized_jones_vector}.
 \subsubsection{Algunos estados de polarización importantes}
 Como se dijo antes, las polarizaciones lineales se obtienen cuando las
 componentes están en fase, es decir que $\delta =
-\delta_y-\delta_x=0$, sin embargo, también se cumple cuando las
+\delta_y-\delta_x=0$. Sin embargo, la condición también se cumple cuando las
 diferencias de fase entre las componentes son múltiplos de $\pi$. 
-
-La polarizaciónes lineales ($\delta = n\pi$ ) horizontal y vertical se dan cuando $\psi
+Por otra parte, las polarizaciónes lineales ($\delta = n\pi$ ) horizontal y vertical se dan cuando $\psi
 = n\pi$ y $\psi = \frac{\pi}{2}(2n+1)$ respectivamente:
-
 \begin{align*}
 \mathbf{H} &=\begin{pmatrix}1\\0\end{pmatrix},& \mathbf{V} &=\begin{pmatrix}0\\1\end{pmatrix}.
 \end{align*}
-
-La polarización lineal a $45^{\circ}$ se da cuando las componentes $x$
+Y la polarización lineal a $45^{\circ}$ se da cuando las componentes $x$
 y $y$ tienen la misma magnitud y dirección, es decir cuando
 $\psi=\frac{\pi}{4}(4n+1)$. La polarización a  $-45^{\circ}$ se da cuando
 $\psi=\frac{\pi}{4}(4n-1)$.
-
 \begin{align*}
 \mathbf{45^{\circ}}
 &=\begin{pmatrix}\cos{\pi/4}\\\sin{\pi/4}\end{pmatrix}=\frac{1}{\sqrt{2}}
@@ -864,11 +848,9 @@ $\psi=\frac{\pi}{4}(4n-1)$.
 \mathbf{-45^{\circ}} 
 &=\begin{pmatrix}\cos{-\pi/4}\\\sin{-\pi/4}\end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}. 
 \end{align*} 
-
 Las polarizaciones circular izquierda y circular derecha son tales que
 ambas componentes tienen la misma magnitud como en la de $45^{\circ}$,
 pero el retardo en fase es de $\delta = \frac{\pi}{2}$:
-
 \begin{align*}
 \mathbf{CD}
 &=\begin{pmatrix}\cos{\pi/4}\\\sin{\pi/4}e^{i\frac{\pi}{2}}\end{pmatrix}=\frac{1}{\sqrt{2}}
@@ -876,7 +858,6 @@ pero el retardo en fase es de $\delta = \frac{\pi}{2}$:
 \mathbf{CI} 
 &=\begin{pmatrix}\cos{-\pi/4}\\\sin{-\pi/4}e^{i\frac{\pi}{2}}\end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-i\end{pmatrix}. 
 \end{align*} 
-
 Una característica interesante de los estados lineales y circulares es
 que se pueden dar unos como combinación lineal de los otros:
 
@@ -897,14 +878,15 @@ que se pueden dar unos como combinación lineal de los otros:
 Así como en el álgebra lineal se usan matrices para transformar
 vectores, en el formalismo de Jones existen operadores que se
 representan como matrices 2x2 y que tienen la cualidad de
-transformar los campos.  Las matrices de Jones deben cumplir algunas
-propiedades generales \citepChGen{Yariv2002}:
+transformar los campos. Estos operadores se conocen como matrices de
+Jones y deben cumplir algunas
+propiedades generales \citepChGen{Yariv2002} que se listan a continuación:
 
 \begin{enumerate}
 \item La dirección de propagación de un campo determina las
   componentes de la matriz que representa al elemento polarizador. Si
   la incidencia es desde la izquierda $(z=0)$ definimos la matriz $M$ como aquella
-  que transforma el vector de entrada en el de salida:
+  que transforma el vector de entrada en el de salida
 
   \begin{equation}
     \begin{pmatrix}
@@ -936,10 +918,10 @@ definiremos una matriz distinta $N$ para representar la transformación:
 
 Para que se cumpla el principio de simetría temporal, se debe cumplir
 que $NM=1$. Si se rebobina la propagación en la expresión
-\ref{eq:right_propagation} el haz de salida 
+(\ref{eq:right_propagation}) el haz de salida 
 debería seguir el mismo camino que recorrió a la entrada, y ser
 afectado por la matriz $N$ de tal forma que vuelva a la forma que
-tenía en un principio: 
+tenía en un principio 
 
  \begin{align*}
     \begin{pmatrix}
@@ -963,14 +945,11 @@ tenía en un principio:
       V_x^{in}\\V_y^{in}
     \end{pmatrix}.\\
   \end{align*}
-
   Conociendo que las matrices están asociadas a un mismo elemento se
-  debe cumplir que $N$ sea la transpuesta de $M$:
-
+  debe cumplir que $N$ sea la transpuesta de $M$
   \begin{align*}
     N_{11}&=M_{11},&    N_{12}&=M_{21},&     N_{21}&=M_{12}, &     N_{22}&=M_{22}.
   \end{align*}
-
 Esta relación es importante para analizar sistemas en los cuales la
 luz debe pasar dos veces por el LC en sentidos opuestos, caso especial
 es el de los SLM's de reflexión en los cuales hay una
@@ -988,20 +967,16 @@ M^{-1}=M^{\dagger}=
       M_{11}^*&M_{21}^*\\M_{12}^* & M_{22}^*
     \end{pmatrix}.
 \end{equation*}
-\item Las matrices de Jones son unimodulares es decir:
+\item Las matrices de Jones son unimodulares es decir
 $$det(M) = det(M^{\dagger})  = M_{11}M_{22}-M_{12}M_{21} = 1.$$ 
-
-Si asumimos que $M^{-1}$ es:
-
+Si asumimos que $M^{-1}$ es
 \begin{equation*}
   M=
   \begin{pmatrix}
     M_{22}&-M_{12}\\-M_{21}&M_{11}
   \end{pmatrix},
 \end{equation*}
-
 se ve que cumple con la relación $M^{-1}M = 1$:
-
 \begin{align*}
     \begin{pmatrix}
     M_{22}&-M_{12}\\-M_{21}&M_{11}
@@ -1019,14 +994,11 @@ se ve que cumple con la relación $M^{-1}M = 1$:
   1 &0\\0&1
 \end{pmatrix}.
 \end{align*}
-
 Con esto, se puede simplificar la forma de una matriz de Jones a
 partir de las siguientes relaciones:
-
 \begin{align*}
   M_{21} &= - M_{12}^*, & M_{22} = M_{11}^*,
 \end{align*}
-
 obteniendo una forma de la matriz que depende de sólo dos números
 complejos:
 \begin{equation}
