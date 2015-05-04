@@ -70,11 +70,11 @@ intensidad se han desarrollado nuevos micro mecanismos que
 permiten desplazar verticalmente el espejo sin modificar su
 inclinación, introduciendo así un cambio en la distancia del camino
 óptico y por ende, la fase tal y como se presenta en los trabajos de
-\citetChGen{Wu2010} y \citetChGen{Liesener2006}. Dado que es una tecnología incipiente y ha tenido
-menor tiempo en el mercado que los cristales líquidos, estos sistemas
-y en particular los de tipo pistón, siguen teniendo precios elevados y
-aún están lejos de ser utilizados en muchos laboratorios.
-
+\citetChGen{Wu2010} y \citetChGen{Liesener2006}. Dado que es una
+tecnología incipiente y ha tenido menor tiempo en el mercado que los
+cristales líquidos, estos sistemas y en particular los de tipo pistón,
+siguen teniendo precios elevados y aún están lejos de ser utilizados
+en muchos laboratorios. 
 \begin{figure}[h!]
 \centering
     \includegraphics[width=0.5\textwidth]{MEMSLM.png}
@@ -83,27 +83,26 @@ aún están lejos de ser utilizados en muchos laboratorios.
 \end{figure}
 
 \subsubsection{Moduladores de cristal líquido}
-Los SLM basados en Cristales Líquidos (CL) aprovechan las propiedades
+Los SLM basados en Cristales Líquidos (LCs) aprovechan las propiedades
 físicas de ciertos polímeros que dada su forma alargada y propiedades
 electrónicas polares, cambian su orientación ante la presencia de
 campos eléctricos.  Esta sensibilidad a los campos eléctricos, en
 conjunto con sus propiedades ópticas anisotrópicas permitió que desde
-los años 70s se implementaran CL para generar imágenes en pantallas de
+los años 70s se implementaran LCs para generar imágenes en pantallas de
 dispositivos como relojes, calculadoras y luego televisores y
-proyectores. Fue más adelante cuando estudios más especializados de las
-propiedades de los cristales líquidos como los realizados por Yariv y Yeh
-en \citepChGen{Yeh1999,Yariv2002}, y experimentos como los de Konforti et
-al. \citepChGen{Konforti1988} demostraron que los LCD pueden ser usados como
-moduladores de solo fase. 
-Aunque la aplicación de cristales líquidos para modulación de fase es
-relativamente reciente, el estudio de sus propiedades físicas no lo es
-y desde los años 60’s la investigación ha sido respaldada por grandes
-empresas interesadas en desarrollar productos tecnológicos de
-generación y procesamiento de imágenes como RTC, Hamamatsu, Hitachi, HP, Texas
-Instruments, Sony y otros. Dado este interés por entender los CL, se
-ha llegado a modelos matemáticos y  técnicas de  
+proyectores. Fue más adelante cuando estudios especializados de las
+propiedades de los LCs como los realizados por
+\citetChGen{Yeh1999} y \citetChGen{Yariv2002}, y experimentos como los de
+\citetChGen{Konforti1988} demostraron que los LCD pueden ser usados
+como moduladores de solo fase. Aunque la aplicación de LCs para
+modulación de fase es relativamente reciente, el estudio de sus
+propiedades físicas no lo es y desde los años 60’s la investigación ha
+sido respaldada por grandes empresas interesadas en desarrollar
+productos tecnológicos de generación y procesamiento de imágenes como
+RTC, Hamamatsu, Hitachi, HP, Texas Instruments, Sony y otros. Dado
+el interés por entender los LC, se ha llegado a modelos matemáticos y  técnicas de  
 caracterización robustas que permiten extraer los parámetros de un SLM para
- simular su comportamiento.
+ simular su comportamiento. 
 El desarrollo de estas técnicas ha permitido a investigadores 
 alrededor del mundo implementar moduladores de fase a
 partir de elementos LCD extraídos de dispositivos de proyección
@@ -118,96 +117,103 @@ modulador marca Holoeye LC2012 que gracias a usar un LCD comercial
 marca Sony es ensamblado a una cuarta parte del precio de otros
 moduladores. 
 
-Adicionalmente, cabe mencionar que los moduladores en base a CL se
+Adicionalmente, cabe mencionar que los moduladores en base a LC se
 dividen en dos tipos, de reflexión y de transmisión. Sin entrar en
 detalle, los primeros permiten modulaciones de fase que van hasta $2\pi$
 radianes, tienen mayor resolución, necesitan menos elementos de
 polarización para su uso, tienen altas velocidades de operación y el
 hecho de que la electrónica esté detrás del cristal (y detrás de la
 superficie reflectiva) hace que se produzcan menos efectos indeseados
-de difracción. Todo esto a costa de desarrollar CL y
+de difracción. Todo esto a costa de desarrollar LCs y
 electrónica personalizados. En cambio, los moduladores de transmisión
-se desarrollan a partir de CL comerciales que fuera de polarizar la luz
+se ensamblan a partir de LCs comerciales que fuera de polarizar la luz
 retardan su fase. Esto implica un acople entre modulación de fase y 
 modulación de intensidad que se traduce en menor calidad de la
-modulación de fase total. Para lograr una buena
-modulación se necesitan polarizadores y retardadores que generan un
-estado de polarización específico a la entrada del SLM. Por otra
-parte, al tener la electrónica acoplada sobre el cristal, se limita la
-resolución; no todo el volumen de CL se aprovecha y se introducen
+modulación de fase total. Para lograr una modulación específica se
+necesitan polarizadores y retardadores que generen un 
+estado de polarización particular a la entrada del SLM. Por otra
+parte, al tener la electrónica acoplada sobre el cristal y no en un
+elemento separado como en los de reflexión, se limita la
+resolución; no todo el volumen de LC se aprovecha y se introducen
 efectos indeseados de difracción. 
 No obstante, los SLM de transmisión son muy económicos y algunos
 autores como Davis et al. \citepChGen{Davis2000, Davis2013} han propuesto
 que se podrían usar como dispositivos para modular polarización. En
-base a esto otros como Moreno et al. \citepChGen{Moreno2004, Moreno2011} han
+base a la idea de usarlos para modular polarización, otros como \citetChGen{Moreno2004, Moreno2011} han
 combinado el formalismo de Fourier con el de las matrices de Jones
 para modelar el comportamiento de dispositivos ópticos de Fourier que
 involucran polarización. 
-En el laboratorio de metrología óptica del grupo de Óptica Aplicada se
-encuentran dos moduladores de transmisión marca Holoeye modelos
-LC-2002 y LC- 2012 que necesitan ser caracterizados para optimizar su
-uso en aplicaciones metrológicas tales como la creación de vórtices
-ópticos. 
+
+En el laboratorio de metrología óptica del grupo de Óptica Aplicada de
+la Universidad EAFIT se encuentran dos moduladores de transmisión
+marca Holoeye modelos LC-2002 y LC- 2012 que en el contexto de este
+trabajo han sido caracterizados para optimizar su uso en aplicaciones metrológicas
+tales como la creación y corrección de aberraciones en haces LG.  
 La generación de VO se da entonces una vez se tenga apropiada la
-herramienta que los produce. El resto de esta sección se enfoca en la
-segunda mitad del problema, es decir, ¿Cómo caracterizar y corregir las
-aberraciones ópticas de un VO?
+herramienta que los produce.  
+A lo largo de este capítulo se presentarán los conceptos teóricos
+necesarios para entender la caracterización de SLMs y luego se
+presentarán las diversas herramientas y métodos que se implementaron
+para lograr la generación de VO.
 
-\subsection{Aberraciones ópticas}
+En la sección que sige se introduce la segunda mitad del
+problema, es decir, ¿Cómo caracterizar y corregir las aberraciones ópticas de un VO?
 
-Los VO generados en el laboratorio están sujetos a aberraciones
-ópticas que se asocian a situaciones tales como:
-\begin{itemize}
-\item Problemas en la alineación de componentes ópticos como
-  lentes o espejos.
-\item Deformaciones en las superficies de elementos como
-  polarizadores, lentes, espejos, láminas retardadoras, e incluso de
-  las céldas de cristal líquido en el SLM.
-\item Presencia de partículas de polvo en las superficies de las
-  componentes ópticas que inducen efectos indeseados de difracción. 
-\end{itemize}
+% \subsection{Aberraciones ópticas}
 
-Adicionalmente, y siguiendo con el tema de la sección anterior, los
-SLM de transmisión basados en pantallas de CL introducen otras fuentes
-de aberraciones. En primera medida, las pantallas son dispositivos discretos en dos de los
-sentidos de la palabra. Por un lado, son discretos espacialmente y
-las señales de control son asignadas a subdivisiones del cristal de tamaño finito
-conocidas como pixeles. El arreglo rectangular de todos los pixeles
-genera efectos de difracción similares a los de rejillas verticales y
-horizontales combinadas. Esto quiere decir que el SLM separa los
-órdenes de difracción de la luz que pasa a travez de él. Asimismo, el
-hecho de ser una cuadrícula discreta hace que el modulador obviamente no pueda
-generar distribuciones de fase en regiones infinitamente pequeñas como sería deseado
-alrededor de una singularidad óptica. Como ejemplo, en la figura
-\ref{fig:discrete_mask} a) se muestra una imagen del la máscara que se
-envía al SLM en la región donde resultaría una singularidad
-óptica. Como se puede ver, la máscara de fase discreta resulta muy distinta a
-la máscara ideal que se presentó en la figura \ref{fig:oam_intro}b), y
-por lo tanto introduce deformaciones en el haz Laguerre-Gauss que
-resulta a la salida del SLM.   
+% Los VO generados en el laboratorio están sujetos a aberraciones
+% ópticas que se asocian a situaciones tales como:
+% \begin{itemize}
+% \item Problemas en la alineación de componentes ópticos como
+%   lentes o espejos.
+% \item Deformaciones en las superficies de elementos como
+%   polarizadores, lentes, espejos, láminas retardadoras, e incluso de
+%   las céldas de cristal líquido en el SLM.
+% \item Presencia de partículas de polvo en las superficies de las
+%   componentes ópticas que inducen efectos indeseados de difracción. 
+% \end{itemize}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[ scale=.4]{discrete_mask.png}
-%Las imagenes que enviamos al SLM son generadas en un
-%  ordenador que de por sí es discreto, y llegan a un dispositivo
- % físico que tiene divisiones discretas, tanto espaciales como
- % electrónicas. Aún 
-\caption[Efecto de pixelado eb el SLM sobre las aberraciones en VO]{a) Magnificación de una mascara tipica proyectada al SLM. b) Imagen de un VO de poca calidad producido con un SLM de
-transmisión modelo Holoeye LC2002.}
-\label{fig:discrete_mask}
-\end{figure}
+% Adicionalmente, y siguiendo con el tema de la sección anterior, los
+% SLM de transmisión basados en pantallas de LC introducen otras fuentes
+% de aberraciones. En primera medida, los LCD son dispositivos discretos en dos de los
+% sentidos de la palabra; por un lado, son discretos espacialmente y
+% las señales de control son asignadas a subdivisiones del cristal de tamaño finito
+% conocidas como píxeles. El arreglo rectangular de todos los píxeles
+% genera efectos de difracción similares a los de rejillas verticales y
+% horizontales combinadas. Esto quiere decir que el SLM separa los
+% órdenes de difracción de la luz que pasa a travez de él. Asimismo, el
+% hecho de ser una cuadrícula discreta hace que el modulador no pueda
+% generar distribuciones de fase en regiones infinitamente pequeñas como
+% sería deseado alrededor de una singularidad óptica. Como ejemplo, en la figura
+% \ref{fig:discrete_mask} a) se muestra una imagen de la región donde
+% resultaría una singularidad óptica en una máscara de
+% fase espiral enviada al SLM. Como se puede ver, la máscara de fase
+% discreta resulta muy distinta a la máscara ideal presentada en la
+% figura \ref{fig:oam_intro}b), y por lo tanto introduce deformaciones
+% en el haz Laguerre-Gauss que resulta a la salida del SLM.   
 
-Por otra parte, el SLM es discreto en la medida que sólo puede asignar
-níveles de voltaje discretos (0-255 divisiónes de 5V) a cada una de
-las celdas. Este fenómeno también es observable en la figura
-\ref{fig:discrete_mask}a) y puede introducir efectos
-indeseados. Más aún, si cómo el nuestro, el modulador no llega a una
-modulación de sólo fase, o tiene una modulación que no llega a
-completar el ciclo de $2\pi$ radianes. 
-Todas las posibles fuentes de error mencionadas anteriormente se
-combinan para generar haces Laguerre-Gauss de poca calidad como el que se muestra
-en la figura \ref{fig:discrete_mask} b). 
+% \begin{figure}[h!]
+% \centering
+% \includegraphics[ scale=.4]{discrete_mask.png}
+% %Las imagenes que enviamos al SLM son generadas en un
+% %  ordenador que de por sí es discreto, y llegan a un dispositivo
+%  % físico que tiene divisiones discretas, tanto espaciales como
+%  % electrónicas. Aún 
+% \caption[Efecto de pixelado eb el SLM sobre las aberraciones en VO]{a) Magnificación de una mascara tipica proyectada al SLM. b) Imagen de un VO de poca calidad producido con un SLM de
+% transmisión modelo Holoeye LC2002.}
+% \label{fig:discrete_mask}
+% \end{figure}
+
+% Por otra parte, el SLM es discreto en la medida que sólo puede asignar
+% níveles de voltaje discretos (0-255 divisiónes de 5V) a cada una de
+% las celdas. Este fenómeno también es observable en la figura
+% \ref{fig:discrete_mask}a) y puede introducir efectos
+% indeseados. Más aún, si cómo el nuestro, el modulador no llega a una
+% modulación de sólo fase, o tiene una modulación que no llega a
+% completar el ciclo de $2\pi$ radianes. 
+% Todas las posibles fuentes de error mencionadas anteriormente se
+% combinan para generar haces Laguerre-Gauss de poca calidad como el que se muestra
+% en la figura \ref{fig:discrete_mask} b). 
 
 
 \section{Marco Teórico de la Caracterización de SLMs de Trasmisión}
@@ -217,7 +223,7 @@ en la figura \ref{fig:discrete_mask} b).
 Hace falta una buena introduccíon
 
 \subsection{Cristales líquidos}
-\subsubsection{Características de los CL}  
+\subsubsection{Características de los LC}  
 Un cristal Líquido es una sustancia que posee propiedades que
 se asemejan tanto a las de los sólidos cristalinos como a las de los
 líquidos. También puede ser visto como un líquido en el cual existe
@@ -251,11 +257,11 @@ por moléculas que están completamente desorganizadas.
 Los cristales líquidos son sustancias que como los
 sólidos poseen cierto orden y que pueden fluir como los líquidos. 
 
-Los CL líquidos pueden ser clasificados en tres tipos o fases distintas
+Los LCs pueden ser clasificados en tres tipos o fases distintas
 conocidas como, \textit{nemáticos},
 \textit{smeticos} y \textit{colestéricos}, y más adelante se abordará esta
 clasificación, no obstante su diversidad (más de 100.000 compuestos
-distintos según \url{http://www.lci-publisher.com}), la característica común de los CL es que están
+distintos según \url{http://www.lci-publisher.com}), la característica común de los LC es que están
 compuestos de moléculas muy anisotrópicas, esto es, que sus
 propiedades (ópticas, eléctricas y mecánicas) dependen de la
 dirección desde la que se observen. La anisotropía se debe tanto a la
@@ -268,7 +274,7 @@ cadenas o grupos terminales X y Y \citepChGen{Yeh1999}.
 \begin{figure}[h!]
 \centering
     \includegraphics[width=0.5\textwidth]{LCMolecule}
-\caption{Esquema de la composición química general en una molécula de CL.}
+\caption{Esquema de la composición química general en una molécula de LC.}
 \label{fig:LCMolecule}
 \end{figure}
 La presencia de los anillos proporciona las fuerzas intermoleculares de corto alcance que
@@ -276,7 +282,7 @@ son necesarias para formar fases nemáticas y el tipo de anillos
 (saturado o no saturado) determina la presencia o no de enlaces $\pi$
 que se asocian a orbitales $P_z$ de los electrones. Esto a su vez
 afecta la absorción en el ultravioleta y la birefringencia, se observa mayor
-birefringencia en CL con anillos no saturados y mejor comportamiento
+birefringencia en LC con anillos no saturados y mejor comportamiento
 en el ultravioleta para anillos saturados.  Luego, las cadenas del
 grupo terminal X pueden ser de tres tipos:
 \begin{itemize}
@@ -287,7 +293,7 @@ grupo terminal X pueden ser de tres tipos:
  La longitud de las cadenas X influencia tanto las constantes elásticas
  como las temperaturas de transición de fase. Para cadenas cortas con
  uno o dos átomos de carbono los grupos son muy cortos como para
- presentar fases de CL. Los grupos terminales de tamaño medio: n = 3-8
+ presentar fases de LC. Los grupos terminales de tamaño medio: n = 3-8
  son los más adecuados para para construir fases nemáticas por su
  mayor anisotropía, y los compuestos con cadenas aún más largas
  exhiben fases smeticas. La temperatura a la cual la solución pasa de
@@ -305,7 +311,7 @@ Finalmente, las cadenas que forman el grupo terminal Y son las que
 tienen mayor influencia en las constantes dieléctricas de la molécula
 ($\epsilon_x,\epsilon_y$), y asimismo su anisotropía dieléctrica
 $\Delta\epsilon$ variables que como veremos más adelante son las que
-determinan la birrefringencia del CL asociada a la modulación de fase.
+determinan la birrefringencia del LC asociada a la modulación de fase.
 Las cadenas del grupo terminal Y pueden ser:
 \begin{itemize}
 \item No polares: No Influencian mucho la anisotropía dieléctrica, un
@@ -321,19 +327,19 @@ Las cadenas del grupo terminal Y pueden ser:
   cloro que tienen menor birrefringencia.
 \end{itemize}
 
-\subsubsection{Clasificación de los CL}  
+\subsubsection{Clasificación de los LC}  
 \label{sec:LC-clasification}
 En 1922 y sintetizando los hallazgos de 30 años desde su descubrimiento el
 cristalógrafo George Friedel publicó un artículo \citepChGen{Friedel1922}
-en el que clasifica los CL en tres tipos básicos conocidos como
+en el que clasifica los LC en tres tipos básicos conocidos como
 cristales smeticos, nemáticos y colestéricos.
-En términos de orden, los CL sméticos son los más similares a un
+En términos de orden, los LC sméticos son los más similares a un
 sólido, y los nemáticos se asemejan más a un líquido, y en la medida
-en la que se calienta un CL este realiza una transición desde cristal
+en la que se calienta un LC este realiza una transición desde cristal
 smetico hasta líquido isotrópico pasando por la fase nemática. Los estados
-colestéricos son un tipo particular de CL nemáticos que  a diferencia
+colestéricos son un tipo particular de LC nemáticos que  a diferencia
 de los anteriores tienen propiedades inhomogeneas. 
-La principal característica que le da una medida de orden a los CL es
+La principal característica que le da una medida de orden a los LC es
 la tendencia de sus moléculas a orientarse en una dirección
 preferente gracias a su distribución polar de cargas. Esta tendencia
 se puede observar claramente en las figuras \ref{fig:smetic} y
@@ -343,7 +349,7 @@ se siguen uno detrás del otro en forma de hilo \footnote{De hecho, la palabra
 significa hilo.}.  
 
 La orientación preferencial de las moléculas les
-otorga una cierta medida de orden a los CL que en adelante llamaremos orden
+otorga una cierta medida de orden a los LC que en adelante llamaremos orden
 orientacional. La \textit{cantidad} de orden se medirá por medio de un
 parámetro estadístico conocido como parámetro de orden que relaciona
 la orientación de las moléculas individuales con la orientación
@@ -360,18 +366,18 @@ $$ S = \frac{1}{2}\left<3\cos^2{\theta-1}\right>$$
 \begin{figure}[h!]
 \centering
 \includegraphics[width=.3\linewidth]{angulo_director}
-\caption{Orientación de una molécula de CL con respecto al ángulo
+\caption{Orientación de una molécula de LC con respecto al ángulo
   director en su vecindad.}
 \label{fig:angulo_director}
 \end{figure}
 
-Un CL con sus moléculas alineadas perfectamente paralelas tiene un
-parámetro de orden $S=1$, mientras que un CL con moléculas orientadas
+Un LC con sus moléculas alineadas perfectamente paralelas tiene un
+parámetro de orden $S=1$, mientras que un LC con moléculas orientadas
 aleatoriamente posee un parámetro $S=0$. El parámetro de orden depende
 tanto del tipo de molécula como de la temperatura, en la medida en la
-que aumenta la temperatura las moléculas pierden su alineación y el CL
+que aumenta la temperatura las moléculas pierden su alineación y el LC
 se convierte en un líquido isotrópico. El parámetro de orden gana
-importancia cuando se necesita seleccionar un CL que deba ser usado en
+importancia cuando se necesita seleccionar un LC que deba ser usado en
 rangos de temperatura especiales y se necesite garantizar anisotropía.
 
 Los Cristales smeticos como el que se ilustra en la figura
@@ -417,13 +423,13 @@ respecto al eje óptico del material.
 \subsubsection{Las pantallas de cristal líquido nematico retorcido.}
 
 
-Los moduladores de CL de transmisión que se usan para proyección se
+Los moduladores de LC de transmisión que se usan para proyección se
 construyen usando una configuración conocida como Twisted
 Nematic (TN-LCD) o nematicos retorcidos. Los TN-LCD son
 dispositivos como el que se ilustra en la figura \ref{fig:tn-lcd} en
 los cuales una  solución de cristal líquido nemático 
 se inyecta entre dos superficies rígidas transparentes que han sido frotadas
-a lo largo de una dirección preestablecida. Las moléculas del CL en contacto con las
+a lo largo de una dirección preestablecida. Las moléculas del LC en contacto con las
 superficies transparentes se adhieren a los canales microscópicos que
 resultan del frotado, tomando así su dirección. Cuando las direcciones
 de frotado de las superficies en ambos extremos no coinciden, la
@@ -473,7 +479,7 @@ propiedades ópticas dispositivos que tienen cristales líquidos de esta natural
 
 En lo que sigue se presentarán las herramientas matemáticas que son
 base para la descripción matemática de campos ópticos polarizados, y
-se aplicará para la descripción de un modelo de CL.
+se aplicará para la descripción de un modelo de LC.
 
 \subsection{Polarización de la luz}
 
@@ -966,7 +972,7 @@ tenía en un principio:
   \end{align*}
 
 Esta relación es importante para analizar sistemas en los cuales la
-luz debe pasar dos veces por el CL en sentidos opuestos, caso especial
+luz debe pasar dos veces por el LC en sentidos opuestos, caso especial
 es el de los SLM's de reflexión en los cuales hay una
 superficie especular de un lado.
 
@@ -1336,7 +1342,7 @@ tras la operación de la matriz:
 Cuando se desea modulación de sólo fase en un SLM lo que se busca es
 precisamente que no se modifique la polarización y por ende la
 amplitud. El problema de calibrar moduladores se reduce a encontrar la
-matriz que define el CL y extraer sus autoestados tal y como dicen
+matriz que define el LC y extraer sus autoestados tal y como dicen
 Pezzanitti y Davis en \citepChGen{Pezzaniti1993,Davis1998,Davis2003}.
 En la sección que sigue se construirá un modelo para describir el
 comportamiento de un cristal líquido enroscado (TN-LCD) en términos de
@@ -1593,7 +1599,7 @@ bibliografía se puede observar que la investigación en TN-LCD para
 aplicación en procesamiento óptico tuvo su auge entre 1990 y 2010
 aproximadamente, esto se debe como afirma Kirsch en \citepChGen{Kirsch1992}
 a que a finales de los 80s las pantallas 
-de CL para televisores portátiles resultaron interesantes a los
+de LC para televisores portátiles resultaron interesantes a los
 investigadores como dispositivos para generación dinámica de máscaras
 de amplitud y fase. El declive en cambio, se debe a que los
 moduladores de reflexión han ido reemplazando a los de transmisión por
@@ -1653,7 +1659,7 @@ Laguerre-Gauss y sus aplicaciones.
   amplitud. 
 \item Describir el funcionamiento y la idea detrás de los programas de
   iPython para la detección de las matrices de Jones.
-\item Describir la idea que tenemos para caracterizar CL utilizando
+\item Describir la idea que tenemos para caracterizar LC utilizando
   interferometría.
 \item mostrar los Vórtices obtenidos con buenas modulaciones y
   compararlos con los v[ortices que se obtenían antes.

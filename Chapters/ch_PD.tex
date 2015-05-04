@@ -22,11 +22,8 @@ Esta segunda parte de la tesis abarca el trabajo que se realizó para
 mejorar la calidad óptica de nuestro montaje con el fin de mejorar los
 VO que se obtuvieron en la parte anterior. 
 
-\section{Estado del Arte}
-\label{sec:ChPD_estado_del_arte}
-\lhead{Caracterización de aberraciones en Vórtices Ópticos: \textit{Estado
-    del Arte}}
-
+\subsection{Aberraciones ópticas}
+% Try not to modify this...
 Los sistemas ópticos formadores de imagen que se encuentran en
 aplicaciones de la vida real están sujetos a aberraciones de fase que
 limitan su resolución. Es por ello que en la industria y en laboratorios se hace un gran esfuerzo para
@@ -39,13 +36,75 @@ proceder de fuentes intrínsecas tales como imperfecciones en el
 diseño, los materiales, la manufactura o la alineación de los
 elementos que los componen. O de fuentes extrínsecas como variaciones
 en el índice de refracción de muestras microscópicas y turbulencia atmosférica en
-imágenes capturadas usando telescopios. La presencia de aberraciones
-del último tipo en imágenes procedentes de telescopios terrestres, y
-la dificultad de modificar los sistemas para incluir brazos de referencia han sido la motivación para
+imágenes capturadas usando telescopios. 
+% Return from this point if necessary.
+
+Adicionalmente, y siguiendo con el tema del capítulo anterior, los
+SLMs de transmisión basados en pantallas de LC introducen otras fuentes
+de aberraciones. En primera medida, los LCD son dispositivos discretos en dos de los
+sentidos de la palabra; por un lado, son discretos espacialmente y
+las señales de control son asignadas a subdivisiones del cristal de tamaño finito
+conocidas como píxeles. El arreglo rectangular de todos los píxeles
+genera efectos de difracción similares a los de rejillas verticales y
+horizontales combinadas. Esto quiere decir que el SLM separa los
+órdenes de difracción de la luz que pasa a travez de él. Asimismo, el
+hecho de ser una cuadrícula discreta hace que el modulador no pueda
+generar distribuciones de fase en regiones infinitamente pequeñas como
+sería deseado alrededor de una singularidad óptica. Como ejemplo, en la figura
+\ref{fig:discrete_mask} a) se muestra una imagen de la región donde
+resultaría una singularidad óptica en una máscara de
+fase espiral enviada al SLM. Como se puede ver, la máscara de fase
+discreta resulta muy distinta a la máscara ideal presentada en la
+figura \ref{fig:oam_intro}b), y por lo tanto introduce deformaciones
+en el haz Laguerre-Gauss que resulta a la salida del SLM.   
+
+\begin{figure}[h!]
+\centering
+\includegraphics[ scale=.4]{discrete_mask.png}
+%Las imagenes que enviamos al SLM son generadas en un
+%  ordenador que de por sí es discreto, y llegan a un dispositivo
+ % físico que tiene divisiones discretas, tanto espaciales como
+ % electrónicas. Aún 
+\caption[Efecto de pixelado en el SLM sobre las aberraciones en
+VOs]{a) Magnificación de una mascara de fase espiral típica proyectada
+  al SLM. b) Imagen de un VO de poca calidad producido con un SLM de 
+transmisión modelo Holoeye LC2002.}
+\label{fig:discrete_mask}
+\end{figure}
+
+Por otra parte, el SLM es discreto en la medida que sólo puede asignar
+níveles de voltaje discretos (0-255 divisiónes de 5V) a cada una de
+las celdas. Este fenómeno también es observable en la figura
+\ref{fig:discrete_mask}a) y puede introducir efectos
+indeseados. Más aún, si el modulador no llega a una
+modulación de sólo fase, o si tiene una modulación que no llega al
+rango de $2\pi$ radianes.  
+Todas las posibles fuentes de error mencionadas anteriormente se
+combinan para generar haces Laguerre-Gauss de poca calidad como el que se muestra
+en la figura \ref{fig:discrete_mask} b). 
+
+Así tengan orígenes distintos, las fuentes de distorsión en
+la fase del frente de onda pueden ser identificadas y corregidas como
+una sóla aberración usando métodos de reconstrucción de fase. A
+continuación presentamos un novedoso método de reconstrucción de fase
+no interferométrico por medio del cual logramos identificar las
+aberraciones de nuestro montaje óptico y corregirlas para generar VO
+de calidad.   
+
+\section{Estado del Arte}
+\label{sec:ChPD_estado_del_arte}
+\lhead{Caracterización de aberraciones en Vórtices Ópticos: \textit{Estado
+    del Arte}}
+
+La presencia de aberraciones extrínsecas
+%del último tipo 
+en imágenes adquiridas por telescopios terrestres, y
+la dificultad de modificar estos sistemas para incluir brazos de
+referencia han sido las motivaciones principales para 
 el desarrollo de varias técnicas de Sensado de Fase no
 Interferométricas (NI-WFS). La técnica de Diversidad de Fases o Phase
 Diversity (PD) pertenece a una familia de NI-WFS conocida como de
-Reconstrucción de Fase o Phase Retrieval. A diferencia de técnicas
+Reconstrucción de Fase o phase retrieval. A diferencia de técnicas
 directas que requieren de óptica y sensores adicionales como los
 sistemas que usan sensores Shack-Hartman, las técnicas de Phase
 Retrieval consisten en la determinación de la fase de una función
@@ -785,7 +844,7 @@ continuación se describe el montaje óptico, el experimento planteado y
 se muestran los resultados. 
 
 \subsubsection{Montaje óptico} 
-El montaje experimental usado para la caracterización de aberraciones
++El montaje experimental usado para la caracterización de aberraciones
 se puede observar en la figura \ref{fig:exp_setup}. Como fuente de
 iluminación se ha utilizado una fuente laser de 532nm con polarización
 vertical y modo $TEM_{0,0}$ que puede observarse en la parte derecha de la imagen. Este
