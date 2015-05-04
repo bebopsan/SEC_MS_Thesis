@@ -220,7 +220,9 @@
                                 %referencias
 %\PassOptionsToPackage{square,numbers}{natbib}
 % \RequirePackage{natbib} 
-\usepackage[square, sort&compress, numbers, sectionbib]{natbib} %OJO CAMBIO 
+\usepackage[square, sort&compress, numbers, sectionbib]{natbib} %OJO
+                                %CAMBIO 
+%\usepackage[spanish]{babelbib} %OJO
 %\usepackage[backend=bibtex,url=false]{biblatex}  %Manejo de
 \usepackage[resetlabels]{multibib}
 \newcites{Int}{Bibliograf\'{i}a}
@@ -288,8 +290,8 @@ urlcolor=blue, cite color=blue]{hyperref} %
 \DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{8} % for bold
 \DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{8}  % for normal
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 
 
 %---------------------------------------------------------------
@@ -551,6 +553,9 @@ showstringspaces=false            %
 %[\titlerule\vspace{10ex}]
 %%% Space between title and text
 %\titlespacing*{\chapter}{0pt}{*4}{*1}
+
+% Distance between captions and text
+\setlength{\textfloatsep}{20pt}
 
 % \chapter format
 \titleformat{\chapter}[display]%		
