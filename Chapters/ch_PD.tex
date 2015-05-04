@@ -746,7 +746,7 @@ A fin de que la comparación entre el método de GS y el PD sea justa se
 sustrajeron las máscaras espiral cuando estaban presentes y la fase
 del frente de onda se proyectó al equivalente en la  base Zernike tal
 y como muestra en el capítulo 5 de \citepChPD{Schmidt2010}. Con esto
-pudimos extraer los coefficientes correspondientes a los datos de
+pudimos extraer los coeficientes correspondientes a los datos de
 cuadros verdes y triángulos azules de la figura
 \ref{fig:visual_comparison}. 
 Viendo que distribuciones de fase aleatorias probablemente impedirían
@@ -881,35 +881,61 @@ de un rectángulo verde 3 de las 9 imágenes de entrada ($d_j^l$)
 adquiridas cuando la diversidad espiral es $l=0,1,2$, las diversidades
 de aberración son $j = 0\lambda, 0.5\lambda$, y  $-0.5\lambda$ de
 astigmatismo, y se ha sumado a todas la aberración tipo trébol.   
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=1]{experimental_results_07032015_small.pdf}
 \caption[Resultados experimentales de la reconstrucción de fase con
-PD.]{(a) Experimental results visual comparison and (b) Retrieved  WF
-  coefficients. Input images correspond to aberration diversity of 
-  0.5 astigmatism and spiral diversities $l=0,1,2$.} 
+PD.]{(a) Imagenes experimentales de
+  entrada $d_j^l$ vs imágenes simuladas $|u_j^l|^2$ cuando el PD ha
+  alcanzado convergencia y se han encontrado las aberraciones del
+  sistema $\phi$.  (b) Coeficientes de Zernike que componen $\phi$.} 
 \label{fig:exp_results}
 \end{figure} 
 
-Las nueve imagenes resaltadas en recuadros con línea sólida son la
+Las nueve imagenes dentro de recuadros con línea sólida son la
 entrada al algoritmo de PD y las imágenes en recuadros con líneas
-discontinuas corresponden a las imagens entregadas por el algoritmo
-cuando el método de búsqueda del gradiente ha alcanzado un punto de
-convergencia. Se puede observar claramente que las imagenes
-recuperadas por nuestro método no sólo emulan con alta exactitud las
-imagenes usadas como entrada sino, también otras imagenes que no
-fueron incluidas, en este caso las que corresponden a diversidades de
-espiral $l=-2,-1$.
+discontinuas corresponden a las imagens sintéticas ($|u_j^l|^2$) obtenidas
+cuando el método de búsqueda del gradiente ha alcanzado su punto de 
+convergencia. Se puede observar que las imagenes
+recuperadas por nuestro método no sólo emulan con alta precisión las
+imagenes usadas como entrada ($l=0,1,2$) sino, también otras imagenes que no
+fueron incluidas. En este caso las no incluidas corresponden a
+diversidades de fase espiral $l=-2,-1$. El hecho de que logremos emular el comportamiento
+del montaje experimental en casos que no fueron usados por el método
+es un buen indicador de que se obtuvo una solución global, y que la
+aberración del sistema es precisamente la recuperada. Luego, la figura
+\ref{fig:exp_results}(b) muestra los valores de los 15 coeficientes de
+Zernike que componen la aberración recuperada y lo primero que se puede
+observar es un pico con valor de  $1.08\lambda$ en el coeficiente
+número 10, muy distinto a las otras componentes de magnitudes menores
+a $0.4\lambda$, que comprueba la exactitud de la solución.   
+
+Finalmente, la figura \ref{fig:exp_correction} muestra VO de calidad mejorada obtenidos
+luego de restar el frente de onda recuperado al frente de
+onda nominal $j = Z_4:0$.  
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=.7]{PSF_comparison_experimental_results_07032015.pdf}
-\caption[VO registrados luego de restar las aberraciones detectadas
-  con PD.]{Images taken after adding the inverse of the reconstructed  
-  wavefront to the SLM.}  
+\includegraphics[scale=1.3]{PSF_comparison_experimental_results_07032015.pdf}
+\caption[VO registrados luego restar las aberraciones detectadas
+  con PD.]{Imagenes de VO tomadas luego de restar las aberraciones
+    reconstruidas con PD.}  
 \label{fig:exp_correction}
 \end{figure}
+
+Este resultado demuestra que se logró implementar un sistema capaz de
+generar, caracterizar y corregir VO mediante el uso de un SLM. 
+
+Fuera de eso, y dado que los VO tienen gran sensibilidad ante ciertas
+aberraciones, el método desarrollado puede ser utilizado como una
+herramienta de metrología óptica para la caracterización de sistemas
+formadores de imagen. 
+
+En el marco del proyecto de grado se generó una
+publicación científica en la cual se propone nuestra implementación
+como una posible alternativa paran la caracterización de sistemas
+formadores de imagen que puedan ser iluminados con fuentes
+coherentes. 
 
 \newpage
 \pagebreak[4]
