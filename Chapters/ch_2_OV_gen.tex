@@ -1040,8 +1040,7 @@ como se muestra en la figura \ref{fig:linear_polarizer}.
 La  operación vectorial correspondiente a este fenómeno se da como la
 multiplicación entre la matriz del polarizador y el vector de Jones
 que representa al campo, en este caso un campo con polarización lineal
-a $45^{\circ}$:
-
+a $45^{\circ}$
 \begin{equation*}
 \frac{1}{\sqrt{2}}
 \begin{pmatrix}
@@ -1056,11 +1055,9 @@ a $45^{\circ}$:
 1 \\1
 \end{pmatrix}.
 \end{equation*}
-
 Los polarizadores que no están orientados con el eje $x$ se pueden
 obtener a partir de la matriz de $P_x$ por medio de la siguiente
-operación de rotación: 
-
+operación de rotación, 
 \begin{align*}
 P_{\theta}&=R^T(\theta)P_xR(\theta)\\
 P_{\theta}
@@ -1075,13 +1072,11 @@ P_{\theta}
   \cos{\theta} &\sin{\theta}\\-\sin{\theta}&\cos{\theta}
 \end{pmatrix}.
 \end{align*}
-
 En adelante se seguirá usando este método para representar la matriz de cualquier
 elemento óptico rotado.
 Reemplazando $\theta = \frac{\pi}{2}$ y $\theta = \frac{\pi}{4}$
 obtenemos las matrices $P_V$ y $P_{45^{\circ}}$ correspondientes al
 polarizador horizontal y al que está inclinado $45^{\circ}$:
-
 \begin{align*}
 P_{V}
 &=
@@ -1139,35 +1134,29 @@ P_{45^{\circ}}
 1 &1\\1&1
 \end{pmatrix}.\\
 \end{align*}
-
 Por otra parte, los retardadores ópticos modifican tanto la amplitud
 como la fase de las componentes del campo y sus elementos son
 complejos. La matriz general para un retardador óptico con desfase
 $\beta $ y orientación del eje rápido con el eje
 $x$ es:
-
-\begin{equation*}
+\begin{equation}
 WP = 
 \begin{pmatrix}
 e^{i\beta/2} & 0 \\0&e^{-i\beta/2}  
 \end{pmatrix}
 \label{eq:retarder}
-\end{equation*}
-
+\end{equation}
 Los retardadores ópticos se construyen a partir de materiales
 birrefringentes donde el retardo de fase $\beta$ de una componente con respecto a otra es
 proporcional a la diferencia de índices de refracción, y a la
-profundidad $d$ del medio birrefringente como se muestra a continuación:
-
+profundidad $d$ del medio birrefringente,
 $$\beta= \frac{\pi}{2}d\left(n_e-n_o\right).$$ 
-
 Dónde el índice de refracción extraordinario corresponde al eje rápido
 del medio, y el extraordinario al eje lento. Si multiplicamos la
-ecuación \ref{eq:retarder} por $e^{-i\beta/2} $ 
+ecuación (\ref{eq:retarder}) por $e^{-i\beta/2} $ 
 obtenemos la forma no normalizada que es muy común en los libros de
-texto porque se hace evidente que la componente $E_y$ del campo sufre un
+texto porque en ella se hace evidente que la componente $E_y$ del campo sufre un
 retardo en fase de $\beta$ con respecto a $E_x$: 
-
 \begin{equation*}
 WP = 
 \begin{pmatrix}
@@ -1175,10 +1164,8 @@ WP =
 \end{pmatrix}.
 \label{eq:retarder_2}
 \end{equation*}
-
 Los retardadores más usados en el laboratorio son aquellos que
 introducen retardos de cuarto de onda:
-
 \begin{align*}
 QWP &= \begin{pmatrix} e^{i\frac{\pi}{4}}  &0\\0&e^{-i\frac{\pi}{4}}\end{pmatrix},\\
 &=  \begin{pmatrix} 1 &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix},\\
@@ -1191,8 +1178,6 @@ HWP &= \begin{pmatrix} e^{i\frac{\pi}{2}}  &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix
 &=  \begin{pmatrix} 1 &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix},\\
 &=  \begin{pmatrix} 1 &0\\0&-1\end{pmatrix},\\
 \end{align*}
-
-
 Los de cuarto de onda permiten obtener polarizaciones
 circulares o elípticas a partir de polarizaciones lineales. La figura
 \ref{fig:qwp_retarder} muestra cómo conseguir un campo con
@@ -1209,7 +1194,6 @@ $\frac{\pi}{2}$ radianes.}
 \label{fig:qwp_retarder}
 \end{figure}
 La operación correspondiente en el formalismo de Jones es:
-
 \begin{align*}
 \mathbf{CD} &=
 R^{T}\left(\frac{\pi}{2}\right)\left(QWP\right)R\left(\frac{\pi}{2}\right)\mathbf{45}^{\circ},\\ 
@@ -1246,13 +1230,11 @@ e^{-i\frac{\pi}{4}}  & 0 \\0 & e^{i\frac{\pi}{4}}
 1\\ 1
 \end{pmatrix}.
 \end{align*}
-
-En cambio, los de media onda permiten rotar el estado de
+En cambio, los retardadores de media onda permiten rotar el estado de
 polarización sin afectar la intensidad a la salida. En la
 figura \ref{fig:hwp_retarder} se muestra cómo una placa de media onda
 orientada a $45^{\circ}$ puede rotar un estado de polarización lineal
 horizontal a uno vertical. 
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.7]{HWP_retarder}
@@ -1262,10 +1244,8 @@ placas de media onda introducen un retardo de fase de
 $\pi$ radianes.}
 \label{fig:hwp_retarder}
 \end{figure}
-
 Como en los casos anteriores, se puede representar la rotación de la
 polarización usando el formalismo de Jones:
-
 \begin{align*}
 \mathbf{V} &=
 R^{T}\left(\frac{\pi}{4}\right)\left(HWP\right)R\left(\frac{\pi}{4}\right)\mathbf{H},\\ 
@@ -1297,14 +1277,12 @@ R^{T}\left(\frac{\pi}{4}\right)\left(HWP\right)R\left(\frac{\pi}{4}\right)\mathb
 0\\1
 \end{pmatrix}.
 \end{align*}
-
-
 Combinando rotadores ópticos (HWP) y retardadores de cuarto de onda (QWP),
 podemos generar polarizaciones elípticas con cualquier inclinación y
 elipticidad. Esto será de utilidad más adelante pues los autovectores
 de las matrices de Jones indican los estados de polarización para los
 cuales el sistema es transparente, es decir, no se modifica el vector
-tras la operación de la matriz:
+tras la operación de la matriz,
 \[\mathbf{M}J_{\lambda} = \lambda J_{\lambda}.\]
 Cuando se desea modulación de sólo fase en un SLM lo que se busca es
 precisamente que no se modifique la polarización y por ende la
@@ -1330,7 +1308,6 @@ dirección de propagación, cada una de ellas actuando como si fuera un
 cristal birrefringente uniaxial con su eje óptico rotado respecto al eje $x$ un ángulo
 $\psi$ como se ilustra en la figura
 \ref{fig:tn-lcd_sticks}.  
-
 \begin{figure}[h!]
 \centering
 \includegraphics[scale = .3]{TN-LCD_sticks}
@@ -1339,38 +1316,34 @@ $\psi$ como se ilustra en la figura
   Nematic. En este diagrama el ángulo de entorchado es de $90^{\circ}$.}
 \label{fig:tn-lcd_sticks}
 \end{figure}
-
 La rotación de cada \textit{lámina} de
 moléculas se asume proporcional a la distancia desde la superficie de
-entra da del LCD:
+entra da del LCD,
 \begin{equation}
   \label{eq:twist_angle}
 \psi(z)  =\alpha z.  
 \end{equation}
 Aquí la constante $\alpha$
 se conoce como coeficiente de torsión, y el ángulo a la salida viene
-dado por: $$\phi \equiv \psi(d)=\alpha d.$$ Si se divide el cristal en
+dado por $$\phi \equiv \psi(d)=\alpha d.$$ Si se divide el cristal en
 $N$ láminas, cada una tendrá un grosor $d/N$ y estará orientada en los ángulos
 $\rho,2\rho,3\rho,\dots\left(N-1\right)\rho,N\rho$ con
-$\rho=\phi/N$. Si cada una representa un cristal birrefringente, este tendrá una
-birrefringencia asociada al grosor dada por: $$\beta_N = \frac{\pi
+$\rho=\phi/N$. Si cada lámina representa un cristal birrefringente, ésta tendrá una
+birrefringencia asociada a su grosor dada por $$\beta_N = \frac{\pi
   d}{2N}\left(n_e-n_o\right).$$
 La matriz de Jones general para el conjunto de todas las láminas se
 encuentra como la multiplicación de cada una como se muestra a
 continuación:
 \[ M= W_NW_{N-1}\cdots W_3W_2W_1=\prod_{m=1}^NW_m = \prod_{m=1}^NR(m\rho)^TW_0R(m\rho), \]
-
-dónde $R$ es la matriz de rotación, y $W_m$ es la matriz de Jones para
-el retardador $m$ rotada, y $W_0$ es aquella donde el eje rápido está
+dónde $R$ es la matriz de rotación, $W_m$ es la matriz de Jones para
+el retardador $m$ rotada, y $W_0$ es aquella lámina en donde el eje rápido está
 orientado con el eje $x$:
-
 \begin{equation*}
 W_0 =
 \begin{pmatrix}
   e^{i\beta/2N} &0 \\ 0 & e^{-i\beta/2N} 
 \end{pmatrix}.
 \end{equation*}
-
 Las matrices de rotación cumplen la siguiente regla:
 \begin{align*}
 R^T(\psi_m)R^T(\psi_{m-1}) &= R^T\left(\psi_m+\psi_{m-1}\right),\\
@@ -1393,29 +1366,22 @@ R^T(\psi_m)R^T(\psi_{m-1}) &= R^T\left(\psi_m+\psi_{m-1}\right),\\
   \sin{\left(\psi_m+\psi_{m-1}\right)}&  \cos{\left(\psi_m+\psi_{m-1}\right)} 
 \end{pmatrix}.
 \end{align*}
-
 Usando esto sobre las matrices de rotación, se puede realizar el
-siguiente razonamiento, si $N=1$:
-
+siguiente razonamiento, si $N=1$ entonces
 \begin{equation*}
   M = R^T(\rho)W_0R(\rho).
 \end{equation*}
-
-Si en cambio $N=2$:
-
+Si en cambio $N=2$ se tiene
 \begin{align*}
   M &= R^T(2\rho)W_0R(2\rho)R^T(\rho)W_0R(\rho),\\
       &=R^T(2\rho)W_0R(\rho)R(\rho)R^T(\rho)W_0R(\rho).
 \end{align*}
-
-Como $R(\rho)R^T(\rho)=\mathds{1}$ se tiene:
-
+Como $R(\rho)R^T(\rho)=\mathds{1}$ entonces
 \begin{align*}
  M &= R^T(2\rho)W_0R(\rho)W_0R(\rho),\\
      &=R^T(2\rho)\left[W_0R(\rho)\right]^2.
 \end{align*}
-Para $N=3$:
-
+Y para $N=3$:
 \begin{align*}
   M &= R^T(3\rho)W_0R(3\rho)R^T(2\rho)W_0R(2\rho)R^T(\rho)W_0R(\rho),\\
       &=R^T(3\rho)W_0R(3\rho)R^T(2\rho)\left[W_0R(\rho)\right]^2,\\
@@ -1423,21 +1389,16 @@ Para $N=3$:
       &=R^T(3\rho)W_0R(\rho)\left[W_0R(\rho)\right]^2,\\
       &=R^T(3\rho)\left[W_0R(\rho)\right]^3.
 \end{align*}
-
 Ahora para una cantidad arbitraria $m$:
-
 \begin{align*}
   M &= R^T(m\rho)W_0R(m\rho)R^T((m-1)\rho)\left[W_0R(\rho)\right]^{m-1},\\
       &=R^T(m\rho)W_0R(\rho)R((m-1)\rho)R^T((m-1)\rho)\left[W_0R(\rho)\right]^{m-1},\\  
       &=R^T(m\rho)W_0R(\rho)\left[W_0R(\rho)\right]^{m-1},\\
       &=R^T(m\rho)\left[W_0R(m\rho)\right]^{m}.
 \end{align*}
-
-
-Y así se obtiene la matriz general del TN-LCD según Yariv et.al \citepChGen{Yariv2002} en
+Y así se obtiene la matriz general del TN-LCD según \citetChGen{Yariv2002} en
 términos de dos matrices, una que cambia el estado de polarización y
-otra que simplemente lo rota: 
-
+otra que simplemente lo rota
 \begin{align}
 M&=R^T\left( \phi\right)
 \left[W_0R\left(\frac{\phi}{N}\right)\right]^N,\\
@@ -1448,11 +1409,9 @@ M&=R^T\left( \phi\right)
 \end{pmatrix}^N.
 \label{eq:general_lcd_matrix}
 \end{align}
-
-La ecuación \ref{eq:general_lcd_matrix} puede ser simplificada aún
-mas como muestra Yeh en \citepChGen{Yeh1999} si se usa la identidad de Chebyshev
-\ref{eq:chebyshev} para matrices unimodulares:  
-
+La ecuación (\ref{eq:general_lcd_matrix}) puede ser simplificada aún
+mas como muestran \citetChGen{Yeh1999} si se usa la identidad de Chebyshev
+para matrices unimodulares  
 \begin{equation}
   \begin{pmatrix}
     A & B \\ C & D
@@ -1465,12 +1424,9 @@ mas como muestra Yeh en \citepChGen{Yeh1999} si se usa la identidad de Chebyshev
 \end{pmatrix},
   \label{eq:chebyshev}
 \end{equation}
-
 con \[Z = \cos^{-1}{\left[\frac{1}{2}(A+D)\right]}.\]
 Si se saca el límite cuando $(N\rightarrow \infty)$ se obtiene la
-siguiente matriz:
-
-
+siguiente matriz
 \begin{equation}
   \label{eq:TN-LCD_Jones_Matrix}
   M=
@@ -1485,12 +1441,13 @@ siguiente matriz:
 dónde:
 \[\gamma=\sqrt{\phi^2+\beta^2}.\]
 
-Ahora, esta es la matriz que todos los autores encontrados en el
+Ahora, la matriz de la ecuación (\ref{eq:TN-LCD_Jones_Matrix})  es la
+matriz que todos los autores encontrados en el
 estudio del estado del arte referencian y a partir de la cual se basan
 para caracterizar moduladores. La matriz que representa un
 SLM  tal como se estudió en esta sección es la forma más
 simple de representar un cristal líquido del tipo twisted nematic y se
-conoce como el modelo de Lu y Saleh \citepChGen{Saleh1990}. Este modelo
+conoce como el modelo de \citetChGen{Saleh1990}. Este modelo
 parte de asumir las siguientes aproximaciones:
 
 \begin{itemize}
@@ -1500,31 +1457,30 @@ parte de asumir las siguientes aproximaciones:
   salida y formando un ángulo de rotación conocido como twist angle. 
 \item El ángulo de rotación (twist angle) es una función lineal
   proporcional a la profundidad en el cristal tal y como se expresa en
-  la ecuación \ref{eq:twist_angle}.
+  la ecuación (\ref{eq:twist_angle}).
 \item El ángulo de inclinación (tilt angle) se produce cuando se
   introduce un campo eléctrico que hace rotar las moléculas para
   alinearlas en su dirección. Éste ángulo se asume constante a lo
   largo del cristal para un voltaje específico. Si la birrefringencia
   es proporcional al ángulo de inclinación entonces al variar el
-  voltaje esta variará linealmente con respecto al voltaje.
+  voltaje ésta variará linealmente con respecto al voltaje.
 \end{itemize}
 
-En modelos posteriores como los de Coy et al \citepChGen{Coy1996} y Marquez
-et al \citepChGen{Marquez2000} se construyen matrices para el LCD que corrigen
-comportamientos no lineales no previstos por  Lu y Saleh. El
+En modelos posteriores como los de \citetChGen{Coy1996} y
+\citetChGen{Marquez2000} se construyen matrices para el LCD que
+corrigen comportamientos no lineales no previstos por  Lu y Saleh. El
 principal factor a corregir en un LCD es la tendencia de las moléculas
 cercanas a las paredes del cristal a conservar la dirección de pulido
 de los vidrios que las contienen como se ilustra en la figura \ref{fig:lcd_models}.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{lcd_models}
-\caption[Modelos de TN-LCD]{Modelos de TN-LCD tomado de Marquez et al en \citepChGen{Marquez2000}.}
+\caption[Modelos de TN-LCD]{Modelos de TN-LCD tomado de \citetChGen{Marquez2000}.}
 \label{fig:lcd_models}
 \end{figure}
  Este efecto hace que el ángulo de
 rotación no sea una función lineal  lo largo de la profundidad y que la
 birrefringencia no sea una función lineal del voltaje.
-
 
 \section{Revisión de la literatura}
 Se realizó una revisión de la literatura en el contexto de calibración
@@ -1534,21 +1490,19 @@ caracterizar el dispositivo como si fuera un elemento óptico que
 afecta tanto la polarización como la fase de la luz. La mayoría de los
 autores usan el cálculo de Jones para representar el efecto del SLM
 sobre la luz como la operación de la matriz del SLM sobre un vector de
-polarización a la entrada. Sin embargo, algunos autores como Yu et al.  \citepChGen{Yu2012}, Moreno et
-al. \citepChGen{Moreno2008} y Durán et al. \citepChGen{Duran2007} utilizan también
+polarización a la entrada. Sin embargo, algunos autores como \citetChGen{Yu2012}, \citetChGen{Moreno2008} y Durán et al. \citepChGen{Duran2007} utilizan también
 la medida de parámetros de  Stokes y matrices de Muller para obtener
 curvas de calibración de los dispositivos. El reto en ambos casos es
 encontrar una matriz que 
 modele con precisión el comportamiento del modulador para diferentes
 valores de voltaje aplicado. 
 
-
 Hay dos formas básicas de caracterizar el
 SLM, por una parte se puede seguir el camino riguroso y analizar el
 TN-LCD desde el punto de vista físico como se hizo en la sección
 anterior. Para este caso se deben encontrar los parámetros físicos que
 determinan la matriz que se presentó en la fórmula
-\ref{eq:TN-LCD_Jones_Matrix}, es decir, la 
+(\ref{eq:TN-LCD_Jones_Matrix}), es decir, la 
 birrefringencia como función del voltaje, el ángulo de rotación de las
 moléculas a la entrada del modulador, y el ángulo de rotación total
 que experimentan las moléculas hasta la salida del modulador. Estos
@@ -1564,7 +1518,7 @@ grupos que más han publicado sobre el tema. De la figura
 \ref{fig:articulos_metodos} y de las fechas en los artículos de la
 bibliografía se puede observar que la investigación en TN-LCD para
 aplicación en procesamiento óptico tuvo su auge entre 1990 y 2010
-aproximadamente, esto se debe como afirma Kirsch en \citepChGen{Kirsch1992}
+aproximadamente, esto se debe como afirman \citetChGen{Kirsch1992}
 a que a finales de los 80s las pantallas 
 de LC para televisores portátiles resultaron interesantes a los
 investigadores como dispositivos para generación dinámica de máscaras
@@ -1572,47 +1526,45 @@ de amplitud y fase. El declive en cambio, se debe a que los
 moduladores de reflexión han ido reemplazando a los de transmisión por
  no necesitar de una caracterización y tener mejores prestaciones. 
 También se ha concluido que los artículos que buscaban encontrar todos los
-parámetros del modulador como el de Marquez et al del 2000\citepChGen{Marquez2000} y
-el de Yun et al. en 1998 \citepChGen{Zhisheng1998} preceden en el tiempo a los artículos
+parámetros del modulador como el de \citetChGen{Marquez2000} y
+el de \citetChGen{Zhisheng1998} en 1998 preceden en el tiempo a los artículos
 donde se busca simplificar el modelo y asumir el comportamiento del
-LCD como una caja negra, como los dos artículos de Ma et al. en 2010 y
-2011 \citepChGen{Ma2010, Ma2011} o el de Ignacio Moreno en 2003 \citepChGen{Moreno2003} (que
-es el que actualmente intentamos replicar en el laboratorio). Al
-parecer los autores de estos últimos identificaron una necesidad de
+LCD como una caja negra, como los dos artículos de \citetChGen{Ma2010, Ma2011} en 2010 y
+2011 o el de \citetChGen{Moreno2003} en 2003, que es en el cual nos
+hemos inspirado para caracterizar nuestros SLMs. Los autores de esta
+última referencia identificaron una necesidad de 
 simplificar el proceso de caracterización, y entre sus argumentos 
-están: la simplicidad matemática y número reducido de medidas necesarias.
-
-
+están la simplicidad matemática y número reducido de medidas necesarias.
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=.5]{articulos_metodos}
+\includegraphics[scale=.6]{articulos_metodos}
 \caption[Publicaciones en relación a la caracterización de TN-LCD]{Tabla de publicaciones en relación con caracterización de
   moduladores tipo TN-LCD. Los rectángulos representan los grupos que
   han publicado más en el tema y que resultan de mayor interés para
   este trabajo. }
 \label{fig:articulos_metodos}
 \end{figure}
-
 El principal resultado del estudio del estado del arte fue encontrar
 un patrón en la evolución del tema en la literatura desde los primeros
 métodos para pantallas de televisor \citepChGen{Moreno1998} hasta campos
-dónde se modula la polarización producidos por moduladores en
-\citepChGen{Moreno2011}. Este patrón tiene como columna vertebral al
+dónde se modula la polarización producidos por moduladores
+\citepChGen{Moreno2011}. Este patrón tiene como columna vertebral al 
 investigador Ignacio Moreno que, junto con otros investigadores en
 universidades de España y California ha dirigido los avances en aplicaciones
-científicas de pantallas TN-LCD. En el momento, en el laboratorio de
-Óptica y Fotónica del Grupo de Óptica Aplicada nos encontramos
-apropiando las técnicas que se referencian en dos de sus artículos
-para encontrar ya sea la matriz de ``caja negra'' del modulador o la
-matriz con los parámetros de fabricación. Una vez caracterizado se
-procederá a encontrar los autovalores de la matriz de Jones (como se
-explica en \citepChGen{Davis1998}), y usarlos
-para plantear estados de polarización a la entrada y la salida del SLM
-que permitan una modulación de solo fase con la cual se puedan hacer
-elementos difractivos digitales tales como máscaras espiral de fase o
-lentes de Fresnel. Los elementos difractivos producidos de forma
-digital son la clave para investigar aberraciones ópticas en haces
-Laguerre-Gauss y sus aplicaciones.
+científicas de pantallas TN-LCD. 
+
+En lo que sigue de este capítulo presentaremos una variación del
+método de caracterización \citetChGen{Moreno2003} implementada por nosotros y que
+tambien considera el SLM como una caja negra. Esta implementación
+involucró no solo análisis de datos sino también el diseño y
+construcción de un sistema automatizado para la toma de medidas. 
+Una vez caracterizado el SLM se
+procedió a encontrar los autovalores de la matriz de Jones que
+representan estados de polarización a la entrada y la salida del SLM 
+que permiten una modulación de solo fase con la cual se pueden emular
+elementos difractivos digitales tales como máscaras espiral de fase, prismas,
+lentes de Fresnel e inclusive aberraciones. Los elementos difractivos producidos de forma
+digital son la clave para producir haces Laguerre-Gauss.
 
 \section{Caracterización de TN-SLM}
 \label{sec:ChPD_Caracterizacion_de_SLM}
