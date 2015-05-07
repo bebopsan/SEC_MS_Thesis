@@ -1294,7 +1294,7 @@ comportamiento de un cristal líquido enroscado (TN-LCD) en términos de
 matrices de Jones.
 
 \subsection{Propiedades ópticas de los cristales líquidos nemáticos enroscados (TN-LCD)}
-
+\label{sec:Propiedades_opticas_de_TNLCD}
 Los cristales líquidos del tipo TN-LCD son medios ópticos inhomogeneos
 y anisotrópicos que localmente actúan como si fueran cristales
 birrefringentes uniaxiales con su eje óptico orientado en la dirección
@@ -1567,15 +1567,182 @@ lentes de Fresnel e inclusive aberraciones. Los elementos difractivos producidos
 digital son la clave para producir haces Laguerre-Gauss.
 
 \section{Caracterización de TN-SLM}
-\label{sec:ChPD_Caracterizacion_de_SLM}
+\label{sec:ChGV_Caracterizacion_de_SLM}
 \lhead{Generación de Vórtices Ópticos: \textit{Caracterización de un TN-SLM}}
 
+Como se mencionó antes, en la caracterización del SLM se pretende
+encontrar estados de polarización a la entrada y salida del modulador
+que produzcan modulaciones de solo fase, con buena tramitancia y con
+un rango amplio de valores de fase. 
+Por ende es necesario medir las modulaciones de amplitud y de fase. En
+las siguientes secciones se muestra cómo medimos las modulaciones de
+amplitud y fase. 
+
+\subsection{Medida de la modulación de amplitud}
+\label{sec:ChGV_med_mod_amp}
+
+En la figura \ref{fig:PSG_PSD} se presenta un esquema del sistema
+óptico usado para medir la modulación de amplitud. Si el haz tiene una
+polarización lineal y se propaga en la dirección de $z$ la combinación
+de un HWP y un primer QWP conocida como generador de estados de
+polarización (PSG), permite producir estados de polarización
+arbitrarios a la entrada del SLM. Luego, el haz llega al SLM y la modulación de amplitud se
+da porque las moléculas de LC en el SLM cambian el estado de
+polarización dependiendo del valor de voltaje aplicado. Cuando se añade un detector de estados de
+polarización (PSD) compuesto por un segundo QWP y un polarizador, la amplitud del campo a la salida del polarizador
+(P) dependerá de la matriz de Jones del SLM para el nivel de gris
+actual y de los vectores de Jones asociados al PSG y PSD. A la salida
+del PSD hay un estado con polarización lineal cuya intensidad puede
+ser medida usando un fotodetector, o una cámara. 
+ \begin{figure}[h!]
+\centering
+\includegraphics[scale=.8]{PSG_PSD.pdf}
+\caption[Esquema de un sistema generador y analizador de estados de
+polarización]{Esquema general de un sistema óptico para
+  caracterización de modulación de intensidad de un TN-SLM.}
+\label{fig:PSG_PSD}
+\end{figure}
+
+Desde el punto de vista matemático, el campo a la salida ($Out$) se puede
+obtener multiplicando un vector de entrada $In$ por cada uno de
+los elementos del sistema 
+\begin{equation}
+\label{eq:ChGV_Out}
+Out = \left( \mathbf{P}\ \mathbf{QWP_2}\ \right) \mathbf{SLM}\ \left( \mathbf{QWP_1}\
+\mathbf{HWP}\right)\ In.
+\end{equation}
+La intensidad medida por la cámara no es más que el módulo cuadrado de
+este campo
+
+\begin{equation}
+I = |Out|^2 = Out^{\dagger}Out.
+\end{equation}
+
+A continuación, en la figura \ref{fig:amp_H_V_SLM_2002} se presenta
+una curva de modulación de amplitud que se consigue graficando los
+valores de intensidad normalizada cuando se varían los niveles de gris discretos
+del SLM de 0 a 255. Como se mencionó antes, el nivel de gris es
+proporcional al voltaje sobre las celdas de CL y corresponde a 0
+cuando el ángulo de inclinación de las moléculas es de 90º. La
+figura \ref{fig:amp_H_V_SLM_2002} es especialmente interesante porque
+muestra el comportamiento del SLM marca Holoeye modelo LC2002 en la
+configuración típica de pantallas LCD para royección, es decir, cuando
+el PSG genera un estado de polarización a la entrada horizontal y el
+PSD detecta un estado vertical. Como es de esperarse, en esta
+configuración el SLM modula amplitud en un rango de 0 a 1 y con una
+pendiente relativamente suave y lineal. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.55]{amp_H_V_SLM_2002.pdf}
+\caption[Curva de modulación de amplitud para un estado no
+óptimo]{Medida de la intensidad normalizada del SLM Holoeye LC-2002 en la configuración típica
+  de pantallas LCD para royección. En este caso el PSG genera un estado de
+  polarización a la entrada horizontal y el PSD detecta un estado vertical.}
+\label{fig:amp_H_V_SLM_2002}
+\end{figure}
+Este tipo de modulaciónes
+sirven para proyectar imágenes en niveles de gris y se pueden lograr
+con dos polarizadores como PSG y PSD que generen estados ortogonales
+entre si.
+% Como se explicó en la sección \ref{sec:Propiedades_opticas_de_TNLCD}
+%  si el ángulo de torsión de las moléculas en el SLM es de $90^{\circ}$ y
+% las moléculas a la entrada están alineadas con el eje horizontal, el
+% estado de polarización a la salida será aproximadamente vertical.
+
+No obstante, nuestro objetivo es encontrar una combinación de estados
+de polarización que resulten en una baja modulación de amplitud y
+buena tramitancia. 
+
+\subsection{Medida de múltiples estados para alimentar un modelo de
+  caja negra.}
+\label{sec:ChGV_med_mod_amp}
+
+La curva anterior caracteriza la modulación de amplitud del SLM para
+una sola combinación de PSG y PSD. Una forma de buscar buenas
+combinaciones de PSG y PSD consiste en plantear muchos estados
+distintos y medir la modulación hasta encontrar un estado con las
+condicienes adecuadas. Hacer esto experimentalmente es un proceso
+engorroso y requiere de mucho tiempo porque hay infinidad de
+combinaciones posibles. 
+En cambio, vamos a medir experimentalmente sólo 12 combinaciones de PSG y PSD y con
+ellas alimentaremos un modelo de caja negra en el cual la matriz de
+Jones para cada nivel de gris será encontrada por un método de ajuste
+de parámetros.
+% basado en un algorítmo de minimización basado en la búsqueda del
+% gradiente. 
+Una vez conocido el modelo del SLM se puede buscar el
+estado que cumple las condiciones haciendo experimentos simulados con
+los cuales si es práctico hacer una búsqueda entre múltiples estados.
+
+En esta sección se introducirá una notación alternativa para la
+representación de estadodes de polarización, y se describiran los
+estados ortogonales usados para la caracterización. 
+
+\subsubsection{La notación de Dirac}
+
+De forma similar a cómo sucede en la mecánica cuántica, los estados de
+polarización arbitrarios generados por un PSG se pueden representar en
+la notación de BraKets de Dirac como Ket's:
+\begin{equation}
+|J> = \begin{pmatrix} J_x \\ J_y\end{pmatrix} = \left( \mathbf{QWP_1}\
+\mathbf{HWP}\right)\ In.
+\end{equation}
+Y por consigiente el PSD correspondiente a un PSG dado es el Bra,
+o el vector que es complejo conjugado del Ket.
+\begin{equation}
+<J|= |J>^{\dagger} = \begin{pmatrix} J_x &  J_y\end{pmatrix} 
+\end{equation}
+Por otra parte, la matriz de Jones del SLM cumple el papel que tendría un
+operador en la mecánica cuántica. Es decir que si los Bra y Ket representan vectores normalizados, la
+intensidad del campo a la salida puede ser obtenida como el valor
+esperado del operador del SLM cuando la base del PSG es proyectada
+sobre la del PSD.
+\begin{equation}
+\label{eq:valor_esperado}
+I = <J|\mathbf{SLM} |J> = 
+\begin{pmatrix}
+J_x & J_y
+\end{pmatrix}
+\begin{pmatrix}
+A & B\\
+ -B^* & A^* 
+\end{pmatrix}
+\begin{pmatrix}
+J_x \\ J_y
+\end{pmatrix}
+,
+\end{equation}
+%donde $A$ y $B$ son números complejos.
+
+Los estados que determinan una matriz 
+Basandonos en el trabajo de Moreno, y con la convicción de que
+parametrizaban una variedad suficientemente diversa de situaciones
+escogimos las siguientes configuraciones de PSG y PSD para alimentar
+el algorítmo de ajuste.  
+
+\begin{align*}
+I_1 &= <\mathbf{V}|SLM|\mathbf{V}>& I_5 &=
+                                          <\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_9
+  &= <\mathbf{R}|SLM|\mathbf{R}>\\
+I_2 &= <\mathbf{H}|SLM|\mathbf{V}>&I_6 &=
+                                         <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_{10}
+  &= <\mathbf{L}|SLM|\mathbf{R}>\\
+I_3 &= <\mathbf{V}|SLM|\mathbf{H}>&I_7 &= <\mathbf{45^{\circ}}|SLM|\mathbf{-45^{\circ}}>&I_{11} &= <\mathbf{R}|SLM|\mathbf{L}>\\
+I_4 &= <\mathbf{H}|SLM|\mathbf{H}>&I_8 &=
+                                         <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_{12}
+  &= <\mathbf{L}|SLM|\mathbf{L}> 
+\end{align*}
+
+Y medir la modulación de fase implica medir cómo cambia la fase del
+frente de onda. 
+
+
 \begin{itemize}
-\item Describir el sistema de rotadores
-\item Describir las aplicaciones para caracterización de motores
 \item Describir los dos algor[itmos que usamos para la reconstrucción
   de la modulación de fase y el de reconstrucción de modulación de
   amplitud. 
+\item Describir el sistema de rotadores
+\item Describir las aplicaciones para caracterización de motores
 \item Describir el funcionamiento y la idea detrás de los programas de
   iPython para la detección de las matrices de Jones.
 \item Describir la idea que tenemos para caracterizar LC utilizando
