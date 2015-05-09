@@ -814,7 +814,9 @@ en el espacio físico. Para obtener obtener por ejemplo, la
 componentente  $x$ del campo eléctrico se hace la operación $E_x(t) = \Re
 \left[J_xe^{i\omega t}\right]$.
 Para el estudio de la polarización conviene representar el vector de
-Jones en su forma normalizada, es decir tal que cumpla la condición $$\mathbf{J}^{\dagger}\mathbf{J}=1.$$
+Jones en su forma normalizada, es decir tal que cumpla la
+condición $$\mathbf{J}^{\dagger}\mathbf{J}=1,$$
+dónde el símbolo $\dagger$ representa la transpuesta conjugada.
 La normalización se logra parametrizando las amplitudes con el ángulo
 del vector que forman: $$\tan{\psi}=\frac{\sin{\psi}}{\cos{\psi}}=\frac{A_y}{A_x},$$
 de esta forma $A_y=\sin{\psi}$ y $A_x = \cos{\psi}$. Adicionalmente,
@@ -860,7 +862,6 @@ pero el retardo en fase es de $\delta = \frac{\pi}{2}$:
 \end{align*} 
 Una característica interesante de los estados lineales y circulares es
 que se pueden dar unos como combinación lineal de los otros:
-
 \begin{align*}
 \mathbf{CD} &= \frac{1}{\sqrt{2}}\left( \mathbf{H} -
   i\mathbf{V}\right),\\
@@ -871,6 +872,27 @@ que se pueden dar unos como combinación lineal de los otros:
 \mathbf{V} &= \frac{i}{\sqrt{2}}\left( \mathbf{CD} -
   \mathbf{CI}\right).
 \end{align*}
+Los vectores de las tres parejas de estados que hemos visto hasta
+ahora son bases
+ortonormales. Esto quiere decir que fuera de estar normalizados,
+%son linealmente independientes entre sí, 
+si calculamos el producto escalar elementos de una misma pareja obtenemos un
+valor de 0,
+% \begin{equation*}
+% \begin{pmatrix}1&0\end{pmatrix}\begin{pmatrix}0\\1\end{pmatrix}=
+% \left(\frac{1}{\sqrt{2}}\begin{pmatrix}1&1\end{pmatrix}\right)\left(\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}\right)  = \left(\frac{1}{\sqrt{2}}
+% \begin{pmatrix}1&i\end{pmatrix}\right)\left(\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-i\end{pmatrix}\right)
+% = 0.
+% \end{equation*}
+\begin{equation*}
+\mathbf{H^{\dagger}V} = \mathbf{45^{\circ\dagger}45^{\circ}} =
+\mathbf{CD^{\dagger}CI = 0.}   
+\end{equation*}
+Fuera de eso, estos estados se han mencionado porque sirven como base para el espacio
+de posibles estados de polarización y serán usados en la sección
+\ref{sec:ChGV_med_mod_amp} para producir 6 curvas de modulación de
+amplitud que alimentan un modelo inspirado en el de \citetChGen{Ma2010}  capaz de predecir la modulación para
+cualquier otro estado. 
 
 \subsubsection{Elementos ópticos como operadores en la representación
   de Jones}
@@ -1001,13 +1023,17 @@ partir de las siguientes relaciones:
 \end{align*}
 obteniendo una forma de la matriz que depende de sólo dos números
 complejos:
-\begin{equation}
-  M=
+\begin{align}
+  M&=
   \begin{pmatrix}
     A & B \\-B^* & A^*
+  \end{pmatrix}\\
+&=
+  \begin{pmatrix}
+    x+iy & z+iw \\-z+iw & x-iy
   \end{pmatrix}
 \label{eq:general_jones_matrix}
-\end{equation}
+\end{align}
 
 Tener la matriz en esta forma facilita encontrar los parámetros de elementos
 ópticos desconocidos como un SLM porque reduce el número de incógnitas.
@@ -1623,12 +1649,13 @@ una curva de modulación de amplitud que se consigue graficando los
 valores de intensidad normalizada cuando se varían los niveles de gris discretos
 del SLM de 0 a 255. Como se mencionó antes, el nivel de gris es
 proporcional al voltaje sobre las celdas de CL y corresponde a 0
-cuando el ángulo de inclinación de las moléculas es de 90º. La
+cuando el ángulo de inclinación de las moléculas es de 90º con
+respecto a la dirección de propagación. La
 figura \ref{fig:amp_H_V_SLM_2002} es especialmente interesante porque
 muestra el comportamiento del SLM marca Holoeye modelo LC2002 en la
 configuración típica de pantallas LCD para royección, es decir, cuando
-el PSG genera un estado de polarización a la entrada horizontal y el
-PSD detecta un estado vertical. Como es de esperarse, en esta
+el PSG genera un estado de polarización a la entrada vertical y el
+PSD detecta un estado horizontal. Como es de esperarse, en esta
 configuración el SLM modula amplitud en un rango de 0 a 1 y con una
 pendiente relativamente suave y lineal. 
 \begin{figure}[h!]
@@ -1637,12 +1664,12 @@ pendiente relativamente suave y lineal.
 \caption[Curva de modulación de amplitud para un estado no
 óptimo]{Medida de la intensidad normalizada del SLM Holoeye LC-2002 en la configuración típica
   de pantallas LCD para royección. En este caso el PSG genera un estado de
-  polarización a la entrada horizontal y el PSD detecta un estado vertical.}
+  polarización a la entrada vertical y el PSD detecta un estado horizontal.}
 \label{fig:amp_H_V_SLM_2002}
 \end{figure}
 Este tipo de modulaciónes
 sirven para proyectar imágenes en niveles de gris y se pueden lograr
-con dos polarizadores como PSG y PSD que generen estados ortogonales
+con dos polarizadores como PSG y PSD que generen estados líneales ortogonales
 entre si.
 % Como se explicó en la sección \ref{sec:Propiedades_opticas_de_TNLCD}
 %  si el ángulo de torsión de las moléculas en el SLM es de $90^{\circ}$ y
@@ -1652,27 +1679,27 @@ entre si.
 No obstante, nuestro objetivo es encontrar una combinación de estados
 de polarización que resulten en una baja modulación de amplitud y
 buena tramitancia. 
-
 \subsection{Medida de múltiples estados para alimentar un modelo de
   caja negra.}
 \label{sec:ChGV_med_mod_amp}
-
-La curva anterior caracteriza la modulación de amplitud del SLM para
+La curva de la Fig. \ref{fig:amp_H_V_SLM_2002} caracteriza la modulación de amplitud del SLM para
 una sola combinación de PSG y PSD. Una forma de buscar buenas
 combinaciones de PSG y PSD consiste en plantear muchos estados
-distintos y medir la modulación hasta encontrar un estado con las
-condicienes adecuadas. Hacer esto experimentalmente es un proceso
-engorroso y requiere de mucho tiempo porque hay infinidad de
-combinaciones posibles. 
-En cambio, vamos a medir experimentalmente sólo 12 combinaciones de PSG y PSD y con
+distintos y medir la modulación hasta encontrar un estado que produzca
+los efectos deseados. Hacer esto experimentalmente es un proceso
+engorroso y requiere de mucho tiempo porque hay muchas combinaciones
+posibles que implican rotar elementos ópticos de forma precisa y con
+alta repetibilidad. 
+En cambio, vamos a medir experimentalmente sólo 6 combinaciones de PSG
+y PSD propuestas por \citetChGen{Ma2010} y con
 ellas alimentaremos un modelo de caja negra en el cual la matriz de
 Jones para cada nivel de gris será encontrada por un método de ajuste
 de parámetros.
-% basado en un algorítmo de minimización basado en la búsqueda del
+% basado en un algoritmo de minimización basado en la búsqueda del
 % gradiente. 
 Una vez conocido el modelo del SLM se puede buscar el
-estado que cumple las condiciones haciendo experimentos simulados con
-los cuales si es práctico hacer una búsqueda entre múltiples estados.
+estado que mejor satisface las condiciones de operación haciendo experimentos simulados con
+los cuales sí es práctico hacer una búsqueda entre múltiples estados.
 
 En esta sección se introducirá una notación alternativa para la
 representación de estadodes de polarización, y se describiran los
@@ -1687,13 +1714,13 @@ la notación de BraKets de Dirac como Ket's:
 |J> = \begin{pmatrix} J_x \\ J_y\end{pmatrix} = \left( \mathbf{QWP_1}\
 \mathbf{HWP}\right)\ In.
 \end{equation}
-Y por consigiente el PSD correspondiente a un PSG dado es el Bra,
-o el vector que es complejo conjugado del Ket.
+Y siguiendo esta interpretación, el PSD correspondiente a un PSG dado
+es el Bra, es decir, el vector que es complejo conjugado del Ket.
 \begin{equation}
 <J|= |J>^{\dagger} = \begin{pmatrix} J_x &  J_y\end{pmatrix} 
 \end{equation}
 Por otra parte, la matriz de Jones del SLM cumple el papel que tendría un
-operador en la mecánica cuántica. Es decir que si los Bra y Ket representan vectores normalizados, la
+operador en la mecánica cuántica. Si los Bra y Ket representan vectores normalizados, la
 intensidad del campo a la salida puede ser obtenida como el valor
 esperado del operador del SLM cuando la base del PSG es proyectada
 sobre la del PSD.
@@ -1714,27 +1741,114 @@ J_x \\ J_y
 \end{equation}
 %donde $A$ y $B$ son números complejos.
 
-Los estados que determinan una matriz 
-Basandonos en el trabajo de Moreno, y con la convicción de que
-parametrizaban una variedad suficientemente diversa de situaciones
-escogimos las siguientes configuraciones de PSG y PSD para alimentar
-el algorítmo de ajuste.  
-
+La intensidad es una variable que se puede medir, y los vectores
+correspondientes a los estados producidos por el PSG y el PSD son
+conocidos. Encontrar los números complejos $A$ y $B$ para ensamblar la
+matriz de Jones es un problema de polarimetría que requiere de
+plantear un conjunto de medidas que den la información suficiente
+sobre los cambios en polarización introducidos por el SLM. 
+Tras implementar los métodos de caracterización basados en modelos de
+caja negra, tanto de \citetChGen{Moreno2003} como de
+\citetChGen{Ma2010}, y realizar nuestro propio método concluimos que
+las siguientes 6 medidas de modulación son suficientes para una
+correcta caracterización:
+% Basandonos en el trabajo de Moreno, y con la convicción de que
+% parametrizaban una variedad suficientemente diversa de situaciones
+% escogimos las siguientes configuraciones de PSG y PSD para alimentar
+% el algorítmo de ajuste.  
+% \begin{align*}
+% I_1 &= <\mathbf{V}|SLM|\mathbf{V}>& I_5 &=
+%                                           <\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_9
+%   &= <\mathbf{R}|SLM|\mathbf{R}>\\
+% I_2 &= <\mathbf{H}|SLM|\mathbf{V}>&I_6 &=
+%                                          <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_{10}
+%   &= <\mathbf{L}|SLM|\mathbf{R}>\\
+% I_3 &= <\mathbf{V}|SLM|\mathbf{H}>&I_7 &= <\mathbf{45^{\circ}}|SLM|\mathbf{-45^{\circ}}>&I_{11} &= <\mathbf{R}|SLM|\mathbf{L}>\\
+% I_4 &= <\mathbf{H}|SLM|\mathbf{H}>&I_8 &=
+%                                          <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_{12}
+%   &= <\mathbf{L}|SLM|\mathbf{L}> 
+% \end{align*}
 \begin{align*}
-I_1 &= <\mathbf{V}|SLM|\mathbf{V}>& I_5 &=
-                                          <\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_9
-  &= <\mathbf{R}|SLM|\mathbf{R}>\\
-I_2 &= <\mathbf{H}|SLM|\mathbf{V}>&I_6 &=
-                                         <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_{10}
-  &= <\mathbf{L}|SLM|\mathbf{R}>\\
-I_3 &= <\mathbf{V}|SLM|\mathbf{H}>&I_7 &= <\mathbf{45^{\circ}}|SLM|\mathbf{-45^{\circ}}>&I_{11} &= <\mathbf{R}|SLM|\mathbf{L}>\\
-I_4 &= <\mathbf{H}|SLM|\mathbf{H}>&I_8 &=
-                                         <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_{12}
-  &= <\mathbf{L}|SLM|\mathbf{L}> 
+I_1 &= <\mathbf{V}|SLM|\mathbf{V}>,& I_3 &=
+                                          <\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>,&I_5
+  &= <\mathbf{CD}|SLM|\mathbf{CD}>,\\
+I_2 &= <\mathbf{H}|SLM|\mathbf{V}>,&I_4 &=
+                                         <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>,&I_{6}
+  &= <\mathbf{CI}|SLM|\mathbf{CD}>.
 \end{align*}
+Las curvas de modulación correspondientes a cada una de las medidas se
+ilustran en la Fig \ref{fig:six_input_measures}. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.55]{six_input_measures.pdf}
+\caption[Curvas de modulación que sirven de entrada para el ajuste de
+parámetros de la matriz de Jones del SLM]{Curvas de modulación que sirven de entrada para el ajuste de
+parámetros de la matriz de Jones del SLM}
+\label{fig:six_input_measures}
+\end{figure}
+Sólo con estas 6
+curvas se observa que la modulación de amplitud es muy similar entre
+polarizaciones lineales y que, como sería de esperarse, hay
+complementariedad entre estados ortogonales.  Por otra parte, se
+observa claramente que el SLM es transparente ante todo el rango de niveles cuando se genera y
+detecta polarización circular derecha, y opaco cuando se genera
+izquierda y se detecta derecha.
 
-Y medir la modulación de fase implica medir cómo cambia la fase del
-frente de onda. 
+\subsubsection{Funcion a minimizar}
+
+Una matriz de Jones que represente correctamente al SLM debe poder
+emular al menos estas 6 medidas. Nosotros planteamos el siguiente
+funcional a minimizar que actúa como una medida de la similitud entre
+intensidades simuladas e intensidades adquiridas experimentalmente
+
+\begin{equation}
+\mathcal{L}(\mathbf{X,Y,Z,W}) = \sum_{ng=0}^{255}\sum_{i=1}^6 | I_{ng,i} -
+<\mathbf{J_{i}}|\mathbf{SLM_{ng}}|\mathbf{J_{i}}>^2|.
+\label{eq:ChGen_SLM_model_functional}  
+\end{equation}
+En la Eq. \ref{eq:ChGen_SLM_model_functional} el funcional consiste en
+la suma de las diferencias cuadradas entre intensidades para cada
+nivel de gris ($n$) y para cada combinación de PSG y PSD ($i$). Los
+argumentos del funcional son vectores que representan el conjunto de números
+reales $x_n, y_n, z_n, w_n$ que componen a los elementos complejos $A$ y $B$
+de la matriz de Jones del SLM (ver 
+Eq. \ref{eq:general_jones_matrix}) para un $n$ dado,
+\begin{align*}
+\mathbf{X} &= \sum_{n=0}^{255}x_n,&\mathbf{Y} &= \sum_{n=0}^{255}y_n,&\mathbf{Z} &= \sum_{n=0}^{255}z_n,&\mathbf{W} &= \sum_{n=0}^{255}w_n.
+\end{align*}
+Este funcional puede ser minimizado variando los 1024 posibles valores
+de $X,Y,Z,W$ dentro del rango $-1..1$ en un algorítmo numérico de
+minimización. La minimización de los datos presentados en la
+Fig. {fig:six_input_measures} se llevo a cabo usando la función \python{}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.55]{xyzw.pdf}
+\caption[Parametros reales que conforman la matriz de Jones del SLM]{Parametros reales que conforman la matriz de Jones del SLM}
+\label{fig:xyzw}
+\end{figure}
+\subsubsection{Algunos estados elípticos}
+En la Fig. \ref{fig:elliptic_states} se ilustran estados de
+polarización elípticos que hemos propuesto para evaluar
+la exactitud del modelo obtenido. Estos estados son también
+ortonormales 
+\begin{figure}
+\centering
+\includegraphics[scale = .5]{EVD_EHI_E45D_Em45I.pdf}
+\caption[Estados de polarización elípticos]{.}
+\label{fig:elliptic_states}
+\end{figure}
+
+
+\newpage
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{some_caracterization_results.pdf}
+\caption[Curvas de modulación experimentales comparadas con las
+simuladas usando el modelo obtenido]{Curvas de modulación experimentales comparadas con las
+simuladas usando el modelo obtenido}
+\label{fig:some_caracterization_results}
+\end{figure}
 
 
 \begin{itemize}

@@ -23,31 +23,29 @@
 
 ("cha:Gen_intro" "s" "\\graphicspath{{Figures/ch2_img/}{../Figures/ch2_img/}} \\lhead{Generación de Vórtices Ópticos: \\texti" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    1.1 Estado del Arte" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "1.1" "\\section{Estado del Arte}" 423)
+(toc "toc" "    1.1 Estado del Arte" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "1.1" "\\section{Estado del Arte}" 424)
 
-("sec:estado_del_arte" "s" "\\lhead{Generación de Vórtices Ópticos: \\textit{Estado del Arte}} Los haces con OAM distinto de cero " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("sec:ChGen_estado_del_arte" "s" "\\lhead{Generación de Vórtices Ópticos: \\textit{Estado del Arte}} Los haces con OAM distinto de cero " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      1.1.1 Moduladores Espaciales de Luz" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.1.1" "\\subsection{Moduladores Espaciales de Luz}" 2167)
+(toc "toc" "      1.1.1 Moduladores Espaciales de Luz" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.1.1" "\\subsection{Moduladores Espaciales de Luz}" 2210)
 
-("fig:LCDSLM" "f" "Moduladores espaciales PLUTO y LC2012 de reflexión y transmisión marca Holoeye basados en la tecnolo" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:LCDSLM" "f" "Comparación entre TN-SLM" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "        1.1.1.1 Moduladores basados en micro espejos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.1.1.1" "\\subsubsection{Moduladores basados en micro espejos}" 3200)
+(toc "toc" "        1.1.1.1 Moduladores basados en micro espejos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.1.1.1" "\\subsubsection{Moduladores basados en micro espejos}" 3281)
 
-("fig:MEMSLM" "f" "Modulador espacial basado en arreglos de micro espejos marca Texas Instruments." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:MEMSLM" "f" "Modulador espacial basado en arreglos de micro espejos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "        1.1.1.2 Moduladores de cristal líquido" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.1.1.2" "\\subsubsection{Moduladores de cristal líquido}" 4318)
+(toc "toc" "        1.1.1.2 Moduladores de cristal líquido" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.1.1.2" "\\subsubsection{Moduladores de cristal líquido}" 4487)
 
-(toc "toc" "      1.1.2 Aberraciones ópticas" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.1.2" "\\subsection{Aberraciones ópticas}" 8716)
+("fig:discrete_mask" "f" "Efecto de pixelado eb el SLM sobre las aberraciones en VO" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" 11627)
 
-("fig:discrete_mask" "f" "a) Magnificación de una mascara tipica proyectada al SLM. b) Imagen de un VO de poca calidad produci" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+(toc "toc" "    1.2 Marco Teórico de la Caracterización de SLMs de Trasmisión" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "1.2" "\\section{Marco Teórico de la Caracterización de SLMs de Trasmisión}" 12305)
 
-(toc "toc" "    1.2 Marco Teórico de la Caracterización de SLMs de Trasmisión" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "1.2" "\\section{Marco Teórico de la Caracterización de SLMs de Trasmisión}" 11640)
+("sec:ChGen_marco_teorico" "s" "\\lhead{Generación de Vórtices Ópticos: \\textit{Marco Teórico}} Dado que los SLMs de transmisión se e" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    1.3 Marco teórico y conceptual" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "1.3" "\\section{Marco teórico y conceptual}" 11707)
+(toc "toc" "      1.2.1 Cristales líquidos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.2.1" "\\subsection{Cristales líquidos}" 13105)
 
-(toc "toc" "      1.3.1 Cristales líquidos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.3.1" "\\subsection{Cristales líquidos}" 11833)
-
-(toc "toc" "        1.3.1.1 Características de los CL" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.3.1.1" "\\subsubsection{Características de los CL}" 11865)
+(toc "toc" "        1.2.1.1 Características de los LC" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.2.1.1" "\\subsubsection{Características de los LC}" 13137)
 
 ("fig:solido" "f" "Moléculas con orden posicional y orientacional en un sólido cristalino." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -55,13 +53,13 @@
 
 ("fig:estados" "f" "Dos estados de la materia comunes en la naturaleza." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:LCMolecule" "f" "Esquema de la composición química general en una molécula de CL." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:LCMolecule" "f" "Esquema de la composición química general en una molécula de LC." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "        1.3.1.2 Clasificación de los CL" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.3.1.2" "\\subsubsection{Clasificación de los CL}" 17472)
+(toc "toc" "        1.2.1.2 Clasificación de los LC" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.2.1.2" "\\subsubsection{Clasificación de los LC}" 18784)
 
-("sec:LC-clasification" "s" "En 1922 y sintetizando los hallazgos de 30 años desde su descubrimiento el cristalógrafo George Frie" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("sec:LC-clasification" "s" "En 1922 y sintetizando los hallazgos de 30 años desde el descubrimiento de los LCs, el cristalógrafo" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:angulo_director" "f" "Orientación de una molécula de CL con respecto al ángulo director en su vecindad." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:angulo_director" "f" "Orientación de una molécula de LC con respecto al ángulo director en su vecindad." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("fig:smetic" "f" "Cristal líquido smético." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -71,15 +69,15 @@
 
 ("fig:CL_clasificacion" "f" "Clasificación de los cristales líquidos según su orden." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "        1.3.1.3 Las pantallas de cristal líquido nematico retorcido." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.3.1.3" "\\subsubsection{Las pantallas de cristal líquido nematico retorcido.}" 21888)
+(toc "toc" "        1.2.1.3 Las pantallas de cristal líquido nematico retorcido." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.2.1.3" "\\subsubsection{Las pantallas de cristal líquido nematico retorcido.}" 23202)
 
 ("fig:tn-lc" "f" "Esquema de un TN-LCD cuando no hay un voltaje entre las placas." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("fig:tn-lc-voltage" "f" "Esquema de un TN-LCD dónde se aplica una diferencia de potencial entre placas" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:tn-lcd" "f" "Arquitectura de un TN-LCD cuando (a) está apagado, y (b) se le aplica una diferencia de potencial. T" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:tn-lcd" "f" "Arquitectura de un TN-LCD" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      1.3.2 Polarización de la luz" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.3.2" "\\subsection{Polarización de la luz}" 24937)
+(toc "toc" "      1.2.2 Polarización de la luz" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.2.2" "\\subsection{Polarización de la luz}" 26346)
 
 ("eq:complex_field" "e" "\\mathbf{E} &=\\Re\\left[\\mathbf{A}e^{i\\left( \\omega t -\\mathbf{k}\\cdot \\mathbf{r}\\right)}\\right]," "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -91,7 +89,7 @@
 
 ("fig:trayectory_clean" "f" " " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:general_field" "f" "Representaciones de la posición de un vector de campo eléctrico con polarización elíptica cuando (a)" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:general_field" "f" "Distintas representaciones del campo eléctrico para ilustrar la polarización" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("eq:Ey-2" "e" "E_y = A_y\\left( \\cos{\\omega t}\\cos{\\delta}+\\sin{\\omega t}\\sin{\\delta}\\right). " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -99,22 +97,22 @@
 
 ("eq:ellipse" "e" "\\left(\\frac{E_x}{A_x}\\right)^2+\\left(\\frac{E_y}{A_y}\\right)^2-2\\frac{\\cos{\\delta}}{A_xA_y}E_xE_y = \\" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:ellipse" "f" "Rotación del sistema de coordenadas un ángulo $\\phi$." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:ellipse" "f" "Rotación del sistema de coordenadas de la elipse de polarización" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("eq:new_ellipse" "e" "\\left(\\frac{E_{x'}}{a}\\right)^2+\\left(\\frac{E_{y'}}{b}\\right)^2 = 1,  " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:circular_polarizations" "f" "(a) Esquema de una polarizaciónes circular en donde los semiejes de la elipse son iguales. La polari" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:circular_polarizations" "f" "Estados de polarización circular" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      1.3.3 El formalismo de Jones" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.3.3" "\\subsection{El formalismo de Jones}" 36870)
+(toc "toc" "      1.2.3 El formalismo de Jones" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.2.3" "\\subsection{El formalismo de Jones}" 38593)
 
 ("eq:jones_vector" "e" "\\mathbf{J} =\\begin{pmatrix} A_xe^{i\\delta_x}" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("eq:normalized_jones_vector" "e" "\\mathbf{J(\\psi,\\delta)} =\\begin{pmatrix} \\cos{\\psi}" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "        1.3.3.1 Algunos estados de polarización importantes" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.3.3.1" "\\subsubsection{Algunos estados de polarización importantes}" 38537)
+(toc "toc" "        1.2.3.1 Algunos estados de polarización importantes" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.2.3.1" "\\subsubsection{Algunos estados de polarización importantes}" 40326)
 
-(toc "toc" "        1.3.3.2 Elementos ópticos como operadores en la representación de Jones" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.3.3.2" "\\subsubsection{Elementos ópticos como operadores en la representación
-  de Jones}" 40623)
+(toc "toc" "        1.2.3.2 Elementos ópticos como operadores en la representación de Jones" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.2.3.2" "\\subsubsection{Elementos ópticos como operadores en la representación
+  de Jones}" 43570)
 
 ("eq:right_propagation" "e" "\\begin{pmatrix} V_x^{out}" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -124,17 +122,19 @@
 
 ("fig:linear_polarizer" "f" "Propagación de un estado de polarización lineal a través de un polarizador horizontal." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("eq:retarder" "s" " " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("eq:retarder" "e" "WP = \\begin{pmatrix} e^{i\\beta/2} & 0 " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("eq:retarder" "s" " " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("eq:retarder_2" "s" " " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:qwp_retarder" "f" "Propagación de un estado de polarización lineal a $45^{\\circ}$ a través de una placa de retardo de c" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:qwp_retarder" "f" "Generación de estados de polarización circulares" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:hwp_retarder" "f" "Propagación de un estado de polarización lineal a $45^{\\circ}$ a través de una placa de retardo de c" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:hwp_retarder" "f" "Generación de estados de polarización lineales" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      1.3.4 Propiedades ópticas de los cristales líquidos nemáticos enroscados (TN-LCD)" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.3.4" "\\subsection{Propiedades ópticas de los cristales líquidos nemáticos enroscados (TN-LCD)}" 53387)
+(toc "toc" "      1.2.4 Propiedades ópticas de los cristales líquidos nemáticos enroscados (TN-LCD)" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.2.4" "\\subsection{Propiedades ópticas de los cristales líquidos nemáticos enroscados (TN-LCD)}" 56492)
 
-("fig:tn-lcd_sticks" "f" "Propagación de la luz en un cristal líquido del tipo Twisted Nematic. En este diagrama el ángulo de " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("sec:Propiedades_opticas_de_TNLCD" "s" "Los cristales líquidos del tipo TN-LCD son medios ópticos inhomogeneos y anisotrópicos que localment" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+("fig:tn-lcd_sticks" "f" "Propagación de la luz en un TN-LC" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("eq:twist_angle" "e" "\\psi(z) =\\alpha z. " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -144,11 +144,44 @@
 
 ("eq:TN-LCD_Jones_Matrix" "e" "M= \\begin{pmatrix} \\cos{\\phi} & -\\sin{\\phi}" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:lcd_models" "f" "Modelos de TN-LCD tomado de Marquez et al en \\cite{Marquez2000}." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:lcd_models" "f" "Modelos de TN-LCD" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    1.4 Revisión de la literatura" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "1.4" "\\section{Revisión de la literatura}" 61458)
+(toc "toc" "    1.3 Revisión de la literatura" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "1.3" "\\section{Revisión de la literatura}" 64628)
 
-("fig:articulos_metodos" "f" "Tabla de publicaciones en relación con caracterización de moduladores tipo TN-LCD. Los rectángulos r" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:articulos_metodos" "f" "Publicaciones en relación a la caracterización de TN-LCD" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+(toc "toc" "    1.4 Caracterización de TN-SLM" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "1.4" "\\section{Caracterización de TN-SLM}" 69786)
+
+("sec:ChGV_Caracterizacion_de_SLM" "s" "\\lhead{Generación de Vórtices Ópticos: \\textit{Caracterización de un TN-SLM}} Como se mencionó antes" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+(toc "toc" "      1.4.1 Medida de la modulación de amplitud" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.4.1" "\\subsection{Medida de la modulación de amplitud}" 70342)
+
+("sec:ChGV_med_mod_amp" "s" "En la figura \\ref{fig:PSG_PSD} se presenta un esquema del sistema óptico usado para medir la modulac" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+("fig:PSG_PSD" "f" "Esquema de un sistema generador y analizador de estados de polarización" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+("eq:ChGV_Out" "e" "Out = \\left( \\mathbf{P}\\ \\mathbf{QWP_2}\\ \\right) \\mathbf{SLM}\\ \\left( \\mathbf{QWP_1}\\ \\mathbf{HWP}\\r" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+("fig:amp_H_V_SLM_2002" "f" "Curva de modulación de amplitud para un estado no óptimo" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+(toc "toc" "      1.4.2 Medida de múltiples estados para alimentar un modelo de caja negra." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "1.4.2" "\\subsection{Medida de múltiples estados para alimentar un modelo de
+  caja negra.}" 74094)
+
+("sec:ChGV_med_mod_amp" "s" "La curva de la Fig. \\ref{fig:amp_H_V_SLM_2002} caracteriza la modulación de amplitud del SLM para un" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+(toc "toc" "        1.4.2.1 La notación de Dirac" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.4.2.1" "\\subsubsection{La notación de Dirac}" 75477)
+
+("eq:valor_esperado" "e" "I = <J|\\mathbf{SLM} |J> = \\begin{pmatrix} J_x & J_y " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+("fig:six_input_measures" "f" "Curvas de modulación que sirven de entrada para el ajuste de parámetros de la matriz de Jones del SL" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+("fig:xyzw" "f" "Parametros reales que conforman la matriz de Jones del SLM" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+(toc "toc" "        1.4.2.2 Algunos estados elípticos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "1.4.2.2" "\\subsubsection{Algunos estados elípticos}" 79772)
+
+("fig:elliptic_states" "f" "Estados de polarización elípticos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+
+("fig:some_caracterization_results" "f" "Curvas de modulación experimentales comparadas con las simuladas usando el modelo obtenido" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 (eof "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex")
 ))
