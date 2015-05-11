@@ -240,7 +240,10 @@
 
 % For use of listings code
 \usepackage{listings}
-
+% For including pdf pages
+%\usepackage{pdfpages}
+% misc
+\usepackage{cprotect}
 % date and time
 \usepackage{datetime}
 
@@ -260,7 +263,7 @@
 \usepackage[pdftex, pdftitle={GENERACIÓN Y CARACTERIZACIÓN DE VÓRTICES
                   ÓPTICOS MEDIANTE MODULADORES ESPACIALES DE LUZ}, pdfauthor={Santiago Echeverri},
 pdfsubject={Optical Vortices, SLM Characterization, Phase retrieval}, pdfkeywords={Optical Vortices, SLM Characterization, Phase retrieval}, pdfpagemode=UseOutlines,bookmarks,bookmarksopen,pdfstartview=FitH,colorlinks,linkcolor=blue,
-urlcolor=blue, cite color=blue]{hyperref} %
+urlcolor=black, cite color=red]{hyperref} %
 
 \usepackage[hyperpageref]{backref} 
 %\usepackage[inline]{trackchanges}

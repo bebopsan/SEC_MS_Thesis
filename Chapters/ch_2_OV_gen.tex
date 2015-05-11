@@ -1815,41 +1815,142 @@ de la matriz de Jones del SLM (ver
 Eq. \ref{eq:general_jones_matrix}) para un $n$ dado,
 \begin{align*}
 \mathbf{X} &= \sum_{n=0}^{255}x_n,&\mathbf{Y} &= \sum_{n=0}^{255}y_n,&\mathbf{Z} &= \sum_{n=0}^{255}z_n,&\mathbf{W} &= \sum_{n=0}^{255}w_n.
-\end{align*}
-Este funcional puede ser minimizado variando los 1024 posibles valores
-de $X,Y,Z,W$ dentro del rango $-1..1$ en un algorítmo numérico de
+\end{align*} 
+El funcional \ref{eq:ChGen_SLM_model_functional}  puede ser minimizado
+variando los 1024 posibles valores 
+de $X,Y,Z,W$ dentro del rango $-1:1$ en un algoritmo de
 minimización. La minimización de los datos presentados en la
-Fig. {fig:six_input_measures} se llevo a cabo usando la función \python{}
+Fig. \ref{fig:six_input_measures} se llevo a cabo usando la función
+ \href{http://goo.gl/tv5Iyz}{\bf{scipy.optimize.fmin\_l\_bfgs\_b}} del
+ paquete de calculo científico \href{http://goo.gl/fRhz8s}{Scipy} del
+ lenguaje de programación \href{https://www.python.org}{Python}. Ésta
+ función conocida como \href{http://en.wikipedia.org/wiki/Limited-memory\_BFGS}{L-BFGS-B} implementa una versión de memoria limitada (L) del método quasi
+ Newton conocido como Broyden-Fletcher-Goldfarb-Shano (BFGS) y permite
+ la definición de condiciones de frontera (B) sobre los argumentos de
+ entrada.  
+La implementación en el lenguaje Python de la función a minimizar se muestra en el siguiente
+recuadro, 
+\begin{python}
+def min_sq(x0,I_exp):
+    """ Calculates squared differences for a minimization procedure.
 
+    Given the experimental meassures of intensity and arbitrary values for 
+    the parameters of an SLM Jones Matrix, this function gives a value to
+    minimize. That value tells how close is the estimation of x, y, z, w 
+    to the value that correctly models the SLM.
+
+    :param x,y,z,w: Are a guess of real scalars that conform the Joung Matrix for the SLM.
+    :param I_exp: Is a dictionary contanining intensities for every polarization state.
+    """
+    # brakets is a dictionary containing each pair of Jones vectors
+    brakets = {1:translate_Ellipse_to_Jones([ 0,   0],      [0,0]),\
+           2:translate_Ellipse_to_Jones([ pi/2,0],      [0,0]),\
+           3:translate_Ellipse_to_Jones([ pi/4, 0],    [pi/4,0]),\
+           4:translate_Ellipse_to_Jones([-pi/4, 0],    [pi/4,0]),\
+           5:translate_Ellipse_to_Jones([pi/4,-pi/4],   [pi/4,-pi/4]),\
+           6:translate_Ellipse_to_Jones([ -pi/4,pi/4],  [pi/4,-pi/4])}
+    [x,y,z,w] = x0
+    M = matrix([[ x + y*1j, z + w*1j],\
+                [-z + w*1j, x - y*1j]])
+    min_sum = 0
+    I_sim = {}
+    for i in range(1,nMeasures):
+        Out, In = brakets[i]
+        I_sim[i] = (In.H*M.H*Out * Out.H*M*In)
+        min_sum += ((I_sim[i]-I_exp[i])**2)[0,0].real    
+    return min_sum
+\end{python}
+\pagebreak
+Y la llamada a la función de minimización se hace como se muestra a
+continuación,\\
+
+\begin{python}
+bnds = ((-1, 1), (-1, 1),(-1, 1), (-1, 1))
+cons = ({'type': 'eq', 'fun': lambda x:  x[0]**2+x[1]**2+x[2]**2+x[3]**2 - 1})
+x,y,z,w = [0.0001, 0.0001, -0.0001, -0.0001] 
+res_f = {}
+for g in range(52):
+    I_exp = I_list[g]
+    res = fmin_l_bfgs_b(min_sq, [ x,y,z,w], fprime = None,\
+                         approx_grad = 1,args = (I_exp,brakets),\
+                         pgtol=1e-05, bounds =bnds)
+    x,y,z,w = res[0]
+    res_f[g] = res[0]
+    print(res[0])
+\end{python}
+En este caso usamos un valor semilla para los valores de entrada muy
+cercano a cero, utilizamos la opción de aproximación del gradiente
+por medio de diferencias finitas y definimos la tolerancia de
+convergencia como criterio de parada cuando el valor del funcional no
+cambie a menos de $1e^{-5}$. Los detalles sobre las variables,
+preprocesamiento, y los resultados se han subido a la red a un
+repositorio de GitHub y se pueden observar en un la siguiente página
+web \href{http://goo.gl/QQtcQX}{http://goo.gl/QQtcQX}.
+
+En la figura \ref{fig:xyzw} se ilustran los valores de $X,Y,Z,W$ obtenidos luego de
+ejecutar la minimización. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.55]{xyzw.pdf}
-\caption[Parametros reales que conforman la matriz de Jones del SLM]{Parametros reales que conforman la matriz de Jones del SLM}
+\caption[Parametros reales que conforman la matriz de Jones del SLM]{Parametros reales que conforman la matriz de Jones del SLM.}
 \label{fig:xyzw}
 \end{figure}
-\subsubsection{Algunos estados elípticos}
-En la Fig. \ref{fig:elliptic_states} se ilustran estados de
-polarización elípticos que hemos propuesto para evaluar
-la exactitud del modelo obtenido. Estos estados son también
-ortonormales 
+Estos valores , y en particular los de $X$ y
+$Z$ siguen la misma tendencia que resultados de caracterizaciones
+similares por \citetChGen{Moreno2003} y \citetChGen{Ma2010}, cosa que
+da un primer indicio de un modelo adecuado. 
+La siguiente sección trata la introducción de estados elípticos que
+fueron planteados para corroborar la caracterización, y los resultados
+experimentales obtenidos. 
+
+\subsubsection{Comprobación experimental}
+
+Con el fín de comprobar que la matriz obtenida era un modelo adecuado
+del SLM se hicieron 100 medidas nuevas de modulación de amplitud y se
+compararon con las simuladas por el SLM. En esas medidas se hicieron
+todas las combinaciones posibles entre 10 vectores Ket y Bra usando la
+numeración que se esquematiza en la Fig. \ref{fig:braket_100_notation}.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.4]{brakets.pdf}
+\caption[Numeración de medidas experimentales de modulación para
+corroboración del modelo de SLM]{Numeración de medidas experimentales de modulación para
+corroboración del modelo del SLM. Por cada Ket hay 10 Bra y la
+numeración se hace entre parejas en orden descendente con los pares
+representados en la figura. }
+\label{fig:braket_100_notation}
+\end{figure}
+Entre los estados usados se incluyeron dos parejas de estados
+elípticos ortonormales no usados
+como entrada del algorítmo de minimización. Los estados elípticos
+corresponden a polarizaciónes elípticas horizontal, vertical, a
+$45^{\circ}$ y a $-45^{\circ}$ con ángulo de elípticidad $\theta
+=22.5^{\circ}$ como se muestra en la Fig. \ref{fig:elliptic_states}.
 \begin{figure}
 \centering
-\includegraphics[scale = .5]{EVD_EHI_E45D_Em45I.pdf}
-\caption[Estados de polarización elípticos]{.}
+\includegraphics[scale = .6]{EVD_EHI_E45D_Em45I.pdf}
+\caption[Estados de polarización elípticos]{Dos pares de estados de polarización
+  elípticos ortonormales con ángulo de elipticidad $\theta = 22.5^{\circ}$. (a) Polarización Elíptica Vertical Derecha,
+  (b) Elíptica Horizontal Izquierda, (c) Elíptica a $45^{\circ}$
+  Derecha, y (d) Elíptica a $-45^{\circ}$ Izquierda.}
 \label{fig:elliptic_states}
 \end{figure}
-
-
+Cuatro de los 100 resultados se muestran en la
+Fig. \ref{fig:some_caracterization_results} y el resto se pueden
+observar en la página web mencionada anteriormente \href{http://goo.gl/QQtcQX}{http://goo.gl/QQtcQX}. 
 \newpage
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{some_caracterization_results.pdf}
 \caption[Curvas de modulación experimentales comparadas con las
-simuladas usando el modelo obtenido]{Curvas de modulación experimentales comparadas con las
-simuladas usando el modelo obtenido}
+simuladas usando el modelo obtenido]{Curvas de modulación
+  experimentales de 4 de las 100 medidas comparadas con sus
+  equivalentes simuladas usando la matriz recuperada por minimización.}
 \label{fig:some_caracterization_results}
 \end{figure}
-
+Lo que muestran los resultados es que se logró una aproximación
+excelente, y que el modelo de la matriz de Jones del SLM efectivamente
+reproduce el comportamiento del elemento real. 
 
 \begin{itemize}
 \item Describir los dos algor[itmos que usamos para la reconstrucción
