@@ -240,8 +240,6 @@
 
 % For use of listings code
 \usepackage{listings}
-% For including pdf pages
-%\usepackage{pdfpages}
 % misc
 \usepackage{cprotect}
 % date and time
@@ -324,6 +322,11 @@ urlcolor=black, cite color=red]{hyperref} %
         \definecolor{deepblue}{rgb}{0,0,0.5}
         \definecolor{deepred}{rgb}{0.6,0,0}
         \definecolor{deepgreen}{rgb}{0,0.5,0}
+        \definecolor{mygreen}{rgb}{0,0.6,0}
+        \definecolor{mygray}{rgb}{0.47,0.47,0.33}
+        \definecolor{myorange}{rgb}{0.8,0.4,0}
+        \definecolor{mywhite}{rgb}{0.98,0.98,0.98}
+        \definecolor{myblue}{rgb}{0.01,0.61,0.98}
 \fi
 
 % Linking and pdf options
@@ -356,11 +359,79 @@ urlcolor=black, cite color=red]{hyperref} %
 	\renewcommand{\subsubsectionautorefname}{Section}
 	\RequirePackage[all]{hypcap}
 }
+% For including pdf pages
+\usepackage{pdfpages}
 
+% Arduino style 
+\newcommand*{\FormatDigit}[1]{\ttfamily\textcolor{mygreen}{#1}}
+\lstdefinestyle{FormattedNumber}{%
+    literate=*{0}{{\FormatDigit{0}}}{1}%
+             {1}{{\FormatDigit{1}}}{1}%
+             {2}{{\FormatDigit{2}}}{1}%
+             {3}{{\FormatDigit{3}}}{1}%
+             {4}{{\FormatDigit{4}}}{1}%
+             {5}{{\FormatDigit{5}}}{1}%
+             {6}{{\FormatDigit{6}}}{1}%
+             {7}{{\FormatDigit{7}}}{1}%
+             {8}{{\FormatDigit{8}}}{1}%
+             {9}{{\FormatDigit{9}}}{1}%
+             {.0}{{\FormatDigit{.0}}}{2}% Following is to ensure that only periods
+             {.1}{{\FormatDigit{.1}}}{2}% followed by a digit are changed.
+             {.2}{{\FormatDigit{.2}}}{2}%
+             {.3}{{\FormatDigit{.3}}}{2}%
+             {.4}{{\FormatDigit{.4}}}{2}%
+             {.5}{{\FormatDigit{.5}}}{2}%
+             {.6}{{\FormatDigit{.6}}}{2}%
+             {.7}{{\FormatDigit{.7}}}{2}%
+             {.8}{{\FormatDigit{.8}}}{2}%
+             {.9}{{\FormatDigit{.9}}}{2}%
+             %{,}{{\FormatDigit{,}}{1}% depends if you want the "," in color
+             {\ }{{ }}{1}% handle the space
+             ,%
+}
+\lstset{%
+  backgroundcolor=\color{mywhite},   
+  basicstyle=\footnotesize,       
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                   
+  commentstyle=\color{red},    
+  deletekeywords={...},           
+  escapeinside={\%*}{*)},          
+  extendedchars=true,              
+  frame=tb,                    
+  keepspaces=true,                 
+  keywordstyle=\color{myorange},       
+  language=Octave,                
+  morekeywords={*,...},            
+  %numbers=left,                    
+  %numbersep=5pt,                   
+  %numberstyle=\tiny\color{mygray}, 
+  %rulecolor=\color{black},         
+  %rulesepcolor=\color{myblue},
+  showspaces=false,                
+  showstringspaces=false,          
+  showtabs=false,                  
+  stepnumber=2,                    
+  stringstyle=\color{myorange},    
+  tabsize=2,                       
+  title=\lstname,
+  emphstyle=\bfseries\color{blue},%  style for emph={} 
+} 
+\lstdefinestyle{Arduino}{%
+    style=FormattedNumber,
+    keywords={void},%                 define keywords
+    morecomment=[l]{//},%             treat // as comments
+    morecomment=[s]{/*}{*/},%         define /* ... */ comments
+    emph={HIGH, OUTPUT, LOW},%        keywords to emphasize
+}
+\newtoggle{InString}{}% Keep track of if we are within a string
+\togglefalse{InString}% Assume not initally in string
 % Python style for highlighting
 \newcommand\pythonstyle{\lstset{
 language=Python,
-basicstyle=\ttm,
+commentstyle=\color{red},
+basicstyle=\footnotesize,%\ttm,
 otherkeywords={self},             % Add keywords here
 keywordstyle=\ttb\color{deepblue},
 emph={MyClass,__init__},          % Custom highlighting
@@ -376,8 +447,6 @@ showstringspaces=false            %
 \lstset{#1}
 }
 {}
-
-
 % These macros define an environment for front matter that is always 
 % single column even in a double-column document.
 
@@ -597,7 +666,8 @@ showstringspaces=false            %
 % Label and title options
 {\filleft}%
 % Label format and text
-{\color{Gray}{\filleft\small{\bfseries ANEXO}} {\linebreak\fontsize{90}{90}\selectfont\selectfont {\bfseries \thechapter}}}	   
+{\color{Gray}{\filleft\small{\bfseries ANEXO}}
+  {\linebreak\fontsize{90}{90}\selectfont\selectfont {\bfseries \thechapter}}}	   
 % Label and title distance
 {2ex}
 % Title format

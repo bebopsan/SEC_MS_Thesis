@@ -1952,6 +1952,47 @@ Lo que muestran los resultados es que se logró una aproximación
 excelente, y que el modelo de la matriz de Jones del SLM efectivamente
 reproduce el comportamiento del elemento real. 
 
+\subsubsection{Instrumento para la automatización del proceso de medida.}
+
+Ahora bien, cualquiera que haya tenido experiencia con la
+caracterización de SLMs se sorprenderá por la cantidad de medidas que
+hemos hecho. La toma de cientos de medidas y todo el proceso de
+aprendizaje sobre la polarimetría de por medio fue posible sólo
+porque usamos un instrumento mecatrónico desarrollado por nosotros
+antes y durante este trabajo de grado. El Instrumento se muestra en la
+Fig. \ref{fig:montaje_real_polarimetro} y consiste en
+cuatro rotadores ópticos motorizados manipulados por un computador a
+traves de la interfaz de prototipado rápido Arduino. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.91]{montaje_real_polarimetro.pdf}
+\caption[Hardware del instrumento de polarimetría y montaje
+experimental ]{(a) Hardware del instrumento de polarimetría que se
+  compone de 4 rotadores de elementos ópticos, una fuente de voltaje,
+  y una caja de circuitos electrónicos en donde está el Arduino y la
+  electrónica de potencia. (b) Montaje experimental correspondiente a
+  la implementación de la Fig. \ref{fig:PSG_PSD}. }
+\label{fig:montaje_real_polarimetro}
+\end{figure}
+
+ La interfaz de usuario del instrumento para toma de medidas y
+calibración de motores fue programada como un
+instrumento virtual del entorno de programación gráfica LabView, y los
+comandos de movimiento para los motores son enviados al Arduino a
+travéz de una librería de comunicación serial implementada en Python.
+
+La componente mecánica del instrumento se describe a profundidad en el
+apéndice \ref{AppendixA}, y los programas de interf[az de usuario y
+comunicación serial se describen el apéndice B.
+
+El proceso de toma de medidas que a una persona podría llevarle varios
+días de trabajo se hace con la interfaz en cuestión de una o dos horas
+sin necesidad de supervisión.    
+
+\subsection{Medida de la modulación de fase}
+
+La modulación de fase se midió usando un montaje interferométrico
+
 \begin{itemize}
 \item Describir los dos algor[itmos que usamos para la reconstrucción
   de la modulación de fase y el de reconstrucción de modulación de
