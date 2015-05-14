@@ -25,7 +25,7 @@ pasos por vuelta de cada motor para saber la relación entre pasos y
 grados de rotación que es esencial para establecer un PSG o PSD
 determinado.
 
-La Fig. \ref{fig:plano_ensamble} muestra un recorte de
+La Fig. \ref{fig:polarizer_calib} muestra un recorte de
 pantalla del instrumento de calibración de motores y cada una de sus secciones.
 \begin{figure}
 \centering
@@ -39,17 +39,17 @@ motores.]{Instrumento virtual para calibración de rotadores. (a)
   vuelta de cada rotador, y enviar un rotador dado a una posición
   deseada y (e) permite visualizar la evolución de la intensidad
   medida por la cámara. }
-\label{fig:plano_ensamble}
+\label{fig:polarizer_calib}
 \end{figure}
-En la sección (a) del instrumento se encuentra la dirección del
+En el recuadro (a) del instrumento se encuentra la dirección del
 directorio en el cual está alojada la librería de comunicación serial
 (copiada en la sección \ref{sec:python_serial})
-que envía los comandos al Arduino. Adicionalmente se muestran en dos
-recuadros los comandos seriales que están siendo enviados a la
+que envía los comandos al Arduino. Adicionalmente se muestran, en dos
+recuadros, los comandos seriales que están siendo enviados a la
 terminal de python, y los que están siendo retornados como respuesta.
-Luego, en la sección (b) hay botones para cada una de las acciones que
+Luego, en el recuadro (b) hay botones para cada una de las acciones que
 se pueden ejecutar sobre un motor dado, y se incluyen dos botones que
-controlan un obtulador que también es controlado por el
+controlan un obtulador que también es activado por el
 instrumento. Las casillas de esta sección 
 permiten definir el número del motor al cual se está enviando el
 comando y el argumento asociado si aplica. En el caso que quedó
@@ -75,10 +75,95 @@ con respecto al cero de su elemento óptico.
 
 \section{Interfaz para toma de medidas}
 
+El instrumento para toma de medidas integra las rutinas de movimiento
+de rotadores mencionadas en la sección anterior con los algoritmos de
+medida de modulación implementados en Matlab para automatizar la
+medida de múltiples estados. Siendo así es un instrumento virtual con
+múltiples pestañas y aplicaciones que permiten tanto un contról
+fino para medidas y observaciones simples como funciones para automatización y la
+toma de conjuntos de medidas. 
+
+En las Fig. \ref{fig:SLM_calib} y \ref{fig:SLM_calib2} se muestran
+casi todas las pestañas y recuadros del instrumento virtual para tomas
+de medidas. De forma similar al instrumento anterior, la pestaña de directorios
+\ref{fig:SLM_calib}(a) permite al usuario especificar los directorios
+en los cuales se han almacenado los archivos para comunicación serial
+escritos en Python y los de adquisición de curvas de modulación
+escritos en Matlab. En esta misma sección se puede seleccionar el
+archivo .txt que contiene la lista de medidas a realizar en un proceso
+automatizado de medida. El contenido de dicho archivo es una lista de
+configuraciones de polarizador y retardadores que generan todos los
+PSG y PSD. 
+% Un archivo para medir las primeras 10 combinaciones de la
+% notación de la Fig. \ref{fig:braket_100_notation} sería el siguiente:
+% \begin{lstlisting}
+% 0	0	90	0
+% 0	0	90	90
+% 0	0	0	45
+% 0	0	90	45
+% 0	0	-45	45
+% 0	0	45	-45
+% 0	0	0	67.5
+% 0	0	90	22.5
+% 0	0	-45	22.5
+% 0	0	-45	-67.5
+% \end{lstlisting}
+El recuadro \ref{fig:SLM_calib}(b) muestra la pestaña en la cual se
+encuentra el botón para ejecutar el conjunto de medidas listadas en el
+archivo mencionado anteriormente. Adicionalmente, ésta contiene una casilla
+para escribir el nombre del archivo de salida que contiene las curvas
+de modulación para cada medida, y 4 casillas de lectura que indican
+el ángulo actual de cada rotador. El recuadro \ref{fig:SLM_calib}(c)
+resalta la pestaña que contiene la ventana para visualizar las
+imágenes adquiridas por la cámara, y el recuadro
+\ref{fig:SLM_calib}(d) es un inserto del instrumento para controlar
+rotadores. La ventana de visualización es de particular interés para
+observar y calibrar los patrones de franjas en medidas de modulación
+de fase.
+\begin{figure}
+\centering
+\includegraphics[scale = .4]{SLM_calib.pdf} 
+\caption[Interfaz del programa para toma de medidas 1.]{Instrumento
+  virtual para toma de medidas. (a) Directorios donde se alojan las rutinas de comunicación serial, y
+  de medición de modulación, así como los archivos .txt con la lista
+  de combinaciones de PSG y PSD. (b) Sección para ejecutar un conjunto de
+  medidas de forma automatizada. (c) Monitor que muestra las imagenes
+  detectadas por la cámara, y (d) panel de control para usar cada función de
+  los rotadores.}
+\label{fig:SLM_calib}
+\end{figure}
+
+Por otra parte, el recuadro \ref{fig:SLM_calib2}(a) contiene los
+botones usados para la configuración de propiedades de la cámara como
+ganancia, brillo y tiempo de exposición. La pestaña de
+\ref{fig:SLM_calib2}(b) tiene botones y casillas que permiten medir
+curvas de modulación de amplitud y fase de forma manual y a diferencia
+de la pestaña \ref{fig:SLM_calib}(b) en ésta se pueden especificar los
+ángulos de cada rotador para una medida específica sin necesidad de
+cargar un archivo de texto. Finalmente, el recuadro
+\ref{fig:SLM_calib2}(c) contiene un deslizador que permite proyectar
+al SLM una imagen con dos rectángulos, uno homogéneo con nivel de gris constante como
+referencia y otro con diferentes valores de gris.  
+\begin{figure}[h!]
+\centering
+\includegraphics[scale = .4]{SLM_calib2.pdf} 
+\caption[Interfaz del programa para toma de medidas 1.]{Otras pestañas
+  del Instrumento virtual para toma de medidas. (a) Configuración de
+  las propiedades de la cámara, (b) sección para realizar medidas de
+  modulación de forma manual y (c) pánel de control para cambiar de
+  forma manual las imágenes proyectadas en el SLM para modulación de fase.}
+\label{fig:SLM_calib2}
+\end{figure}
+
+A continuación, en las siguientes secciones se presenta el código
+usado para la programación del microcontrolador Arduino Leonardo, y el
+de comunicación entre el computador y el microcontrolador implementado
+en el lenguaje Python.
+\pagebreak
 \section{Programa del Arduino para control de motores de paso}
 \begin{lstlisting}[style=Arduino]
 #include <AccelStepper.h>
-/*  Program to control two or more stepper motors, with posibility of using acceleration 
+/*  Program to control two or more stepper motors, with possibility of using acceleration 
     or deceleration ramps
     From serial port send:
      H: To check the status of the serial connection
@@ -96,7 +181,8 @@ con respecto al cero de su elemento óptico.
   Author3  Camilo Cano, ccanoba@eafit.edu.co
 */
 // Definition of output pins as stepper wires.
-AccelStepper motores[]={AccelStepper (4,5,4,3,2), AccelStepper (4,9,8,7,6), AccelStepper (4,13,12,11,10), AccelStepper (4,A3,A2,A1,A0)};  //This line if rotating clockwise.
+AccelStepper motores[]={AccelStepper (4,5,4,3,2), AccelStepper(4,9,8,7,6), 
+                                        AccelStepper (4,13,12,11,10), AccelStepper (4,A3,A2,A1,A0)};
 int speedIni, paso,n,dummy,engine,rev,cp;    //Definition of variables.
 char parar, vel, cambiar, command;
 float valor,cs;
@@ -461,42 +547,34 @@ if __name__ == "__main__":
     
     if options.run != None:       
         stepper = ArduinoStepper(options.run, port = comPort)
-        #stepper = ArduinoStepper(options.run, port = "/dev/tty.usbmodem1411")
         stepper.run(args[0])
         stepper.ser.close()
     if options.setSpeed != None:
         stepper = ArduinoStepper(options.setSpeed, port = comPort)
-        #stepper = ArduinoStepper(options.run, port = "/dev/tty.usbmodem1411")
         stepper.setSpeed(args[0])
         stepper.ser.close()
     if options.setZero != None:
         stepper = ArduinoStepper(options.setZero, port = comPort)
-        #stepper = ArduinoStepper(options.run, port = "/dev/tty.usbmodem1411")
         stepper.setZero()
         stepper.ser.close()
     if options.currentStep != None:
         stepper = ArduinoStepper(options.currentStep, port = comPort)
-        #stepper = ArduinoStepper(options.run, port = "/dev/tty.usbmodem1411")
         stepper.currentStep()
         stepper.ser.close()
     if options.stop != None:
         stepper = ArduinoStepper(options.run, port = comPort)
-        #stepper = ArduinoStepper(options.run, port = "/dev/tty.usbmodem1411")
         stepper.stop()
         stepper.ser.close()
     if options.shutterOn != None:
         stepper = ArduinoStepper(options.shutterOn, port = comPort)
-        #stepper = ArduinoStepper(options.run, port = "/dev/tty.usbmodem1411")
         stepper.shutter_on()
         stepper.ser.close()
     if options.shutterOff != None:
         stepper = ArduinoStepper(options.shutterOff, port = comPort)
-        #stepper = ArduinoStepper(options.run, port = "/dev/tty.usbmodem1411")
         stepper.shutter_off()
         stepper.ser.close()
     if options.step != None:
         stepper = ArduinoStepper(options.step, port = comPort)
-        #stepper = ArduinoStepper(options.step, port = "/dev/tty.usbmodem1411")
         stepper.goTo(args[0])
         confirmation = stepper.readReply()
         while confirmation != b'F':

@@ -1,0 +1,44 @@
+;; RefTeX parse info file
+;; File: /Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex
+;; User: Santiago (Santiago)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/")
+
+(label-numbers)
+
+(bof "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex")
+
+(toc "toc" "  1 Interfáz y programas del instrumento de calibración" "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil 1 "1" "\\chapter{Interfáz y programas del instrumento de calibración}" 15)
+
+("AppendixB" "s" "% For referencing this appendix elsewhere, use \\ref{AppendixA} \\lhead{Appendix B. \\emph{ Interfáz y " "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil)
+
+(toc "toc" "    1.1 Interfaz de calibración de motores" "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil 2 "1.1" "\\section{Interfaz de calibración de motores}" 535)
+
+("fig:polarizer_calib" "f" "Interfaz del programa para calibración de motores." "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil)
+
+(toc "toc" "    1.2 Interfaz para toma de medidas" "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil 2 "1.2" "\\section{Interfaz para toma de medidas}" 4222)
+
+("fig:SLM_calib" "f" "Interfaz del programa para toma de medidas 1." "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil)
+
+("fig:SLM_calib2" "f" "Interfaz del programa para toma de medidas 1." "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil)
+
+(toc "toc" "    1.3 Programa del Arduino para control de motores de paso" "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil 2 "1.3" "\\section{Programa del Arduino para control de motores de paso}" 6892)
+
+(toc "toc" "    1.4 Programa de Python para comunicación serial" "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil 2 "1.4" "\\section{Programa de Python para comunicación serial}" 12803)
+
+("sec:python_serial" "s" "\\begin{python} #!/usr/bin/env python \"\"\" Library for communication with an Arduino that powers stepp" "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex" nil)
+
+(eof "/Users/Santiago/Documents/SEC_Master_thesis/Appendices/AppendixB.tex")
+))
+

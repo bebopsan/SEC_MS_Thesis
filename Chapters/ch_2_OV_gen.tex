@@ -11,8 +11,7 @@
 
 \section{Estado del Arte} %Introducción????
 \label{sec:ChGen_estado_del_arte}
-\lhead{Generación de Vórtices Ópticos: \textit{Estado
-    del Arte}}
+\lhead{Generación de Vórtices Ópticos: \textit{Estado del Arte}}
 Los haces con OAM distinto de cero inicialmente fueron generados en el
 laboratorio por medio de técnicas analógicas entre las que se destacan
 el uso de conversores modales \citepChGen{Alekseev1998}, placas de fase espiral grabadas en sustratos
@@ -1962,7 +1961,8 @@ porque usamos un instrumento mecatrónico desarrollado por nosotros
 antes y durante este trabajo de grado. El Instrumento se muestra en la
 Fig. \ref{fig:montaje_real_polarimetro} y consiste en
 cuatro rotadores ópticos motorizados manipulados por un computador a
-traves de la interfaz de prototipado rápido Arduino. 
+traves de la tarjeta de prototipado rápido
+\href{http://www.arduino.cc/en/Main/ArduinoBoardLeonardo}{\bf{Arduino Leonardo}}. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.91]{montaje_real_polarimetro.pdf}
@@ -1974,40 +1974,55 @@ experimental ]{(a) Hardware del instrumento de polarimetría que se
   la implementación de la Fig. \ref{fig:PSG_PSD}. }
 \label{fig:montaje_real_polarimetro}
 \end{figure}
-
  La interfaz de usuario del instrumento para toma de medidas y
 calibración de motores fue programada como un
 instrumento virtual del entorno de programación gráfica LabView, y los
 comandos de movimiento para los motores son enviados al Arduino a
-travéz de una librería de comunicación serial implementada en Python.
-
-La componente mecánica del instrumento se describe a profundidad en el
-apéndice \ref{AppendixA}, y los programas de interf[az de usuario y
+través de una librería de comunicación serial implementada en Python.
+Las componentes mecánicas y electrónicas del instrumento se describen a profundidad en el
+apéndice \ref{AppendixA}, y los programas de interfáz de usuario y
 comunicación serial se describen el apéndice B.
-
-El proceso de toma de medidas que a una persona podría llevarle varios
+El proceso de toma de cientos de medidas que a una persona podría llevarle varios
 días de trabajo se hace con la interfaz en cuestión de una o dos horas
 sin necesidad de supervisión.    
 
 \subsection{Medida de la modulación de fase}
+% El proceso de caracterización del SLM no queda completo sin antes
+% comprobar que el modelo puede predecir modulaciones de fase. 
+El paso siguiente en la caracterización del SLM consiste en medir la
+modulación de fase y comprobar si la matriz de Jones encontrada es
+capaz de predecir el comportamiento de la modulación. 
 
-La modulación de fase se midió usando un montaje interferométrico
+La fase del frente de onda se midió usando un interferómetro
+\href{http://en.wikipedia.org/wiki/Mach–Zehnder_interferometer}{\bf{Mach–Zehnder}}
+que ante brazos con iluminación coherente y fase plana produce franjas
+de interferencia verticales paralelas como las que se ilustran en la Fig. (). 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1.1]{mach_zehnder.pdf}
+\caption[Hardware del instrumento de polarimetría y montaje
+experimental ]{(a) Hardware del instrumento de polarimetría que se
+  compone de 4 rotadores de elementos ópticos, una fuente de voltaje,
+  y una caja de circuitos electrónicos en donde está el Arduino y la
+  electrónica de potencia. (b) Montaje experimental correspondiente a
+  la implementación de la Fig. }
+\label{fig:mach_zehnder}
+\end{figure}
+
+modulación de fase se midió usando un montaje interferométrico 
 
 \begin{itemize}
 \item Describir los dos algor[itmos que usamos para la reconstrucción
   de la modulación de fase y el de reconstrucción de modulación de
   amplitud. 
-\item Describir el sistema de rotadores
-\item Describir las aplicaciones para caracterización de motores
-\item Describir el funcionamiento y la idea detrás de los programas de
-  iPython para la detección de las matrices de Jones.
-\item Describir la idea que tenemos para caracterizar LC utilizando
-  interferometría.
+%\item Describir el sistema de rotadores
+%\item Describir las aplicaciones para caracterización de motores
+%\item Describir el funcionamiento y la idea detrás de los programas de
+%  iPython para la detección de las matrices de Jones.
 \item mostrar los Vórtices obtenidos con buenas modulaciones y
   compararlos con los v[ortices que se obtenían antes.
 \end{itemize}
-
-
 \newpage
 \pagebreak[4]
 \bibliographystyleChGen{ezspanish}
