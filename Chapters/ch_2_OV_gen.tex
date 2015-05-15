@@ -1829,6 +1829,7 @@ Fig. \ref{fig:six_input_measures} se llevo a cabo usando la función
  entrada.  
 La implementación en el lenguaje Python de la función a minimizar se muestra en el siguiente
 recuadro, 
+\begin{figure}
 \begin{python}
 def min_sq(x0,I_exp):
     """ Calculates squared differences for a minimization procedure.
@@ -1859,6 +1860,9 @@ def min_sq(x0,I_exp):
         min_sum += ((I_sim[i]-I_exp[i])**2)[0,0].real    
     return min_sum
 \end{python}
+\label{list:aa}
+\caption{Este es un caption.}
+\end{figure}
 \pagebreak
 Y la llamada a la función de minimización se hace como se muestra a
 continuación,\\
@@ -1965,7 +1969,7 @@ traves de la tarjeta de prototipado rápido
 \href{http://www.arduino.cc/en/Main/ArduinoBoardLeonardo}{\bf{Arduino Leonardo}}. 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=.91]{montaje_real_polarimetro.pdf}
+\includegraphics[scale=.96]{montaje_real_polarimetro.pdf}
 \caption[Hardware del instrumento de polarimetría y montaje
 experimental ]{(a) Hardware del instrumento de polarimetría que se
   compone de 4 rotadores de elementos ópticos, una fuente de voltaje,
@@ -1991,29 +1995,96 @@ sin necesidad de supervisión.
 % comprobar que el modelo puede predecir modulaciones de fase. 
 El paso siguiente en la caracterización del SLM consiste en medir la
 modulación de fase y comprobar si la matriz de Jones encontrada es
-capaz de predecir el comportamiento de la modulación. 
-
-La fase del frente de onda se midió usando un interferómetro
+capaz de predecir el comportamiento del SLM. 
+La fase del frente de onda se midió usando el interferómetro
 \href{http://en.wikipedia.org/wiki/Mach–Zehnder_interferometer}{\bf{Mach–Zehnder}}
-que ante brazos con iluminación coherente y fase plana produce franjas
-de interferencia verticales paralelas como las que se ilustran en la Fig. (). 
-
+de la Fig. \ref{fig:mach_zehnder}. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=1.1]{mach_zehnder.pdf}
-\caption[Hardware del instrumento de polarimetría y montaje
-experimental ]{(a) Hardware del instrumento de polarimetría que se
-  compone de 4 rotadores de elementos ópticos, una fuente de voltaje,
-  y una caja de circuitos electrónicos en donde está el Arduino y la
-  electrónica de potencia. (b) Montaje experimental correspondiente a
-  la implementación de la Fig. }
+\caption[Interferómetro Mach-Zehnder para caracterización de curvas de
+modulación de fase]{Interferómetro Mach-Zehnder para caracterización de curvas de
+modulación de fase. }
 \label{fig:mach_zehnder}
 \end{figure}
 
-modulación de fase se midió usando un montaje interferométrico 
+En este montaje la fuente de iluminación es un láser de estado sólido
+de diodo bombeado (DPSS) de longitud de onda 532nm y potencia nominal
+50mW. El haz pasa por un filtro de densidad neutra ($NDF_1$) que sirve como
+atenuador, y luego por un polarizador (P) de recubrimiento de
+nanopartículas que garantiza una polarización lineal vertical con
+relación  10.000:1. Este polarizador es usado porque el estado de
+polarización a la salida del diodo láser es ligeramente elíptica y no
+está perfectamente alineada con la vertical de la mesa óptica. 
+Luego de ser redireccionado, el haz es filtrado, expandido y colimado
+por medio de un filtro espacial (SF) en combinación con una lente
+($L_1$). Una vez colimado, el haz pasa por un cubo divisor de haz no
+polarizador ($BS_1$) que lo divide en un haz de referencia en la parte
+superior y uno objeto en la parte inferior que ilumina
+al SLM. El haz de entrada es reflejado en el espejo de primera
+superficie $M_1$ y pasa a través del PSG, el SLM, y el PSD para luego
+reencontrarse con el haz de referencia en un segundo cubo ($BS_2$) y
+continuar su camino hasta la cámara CCD. A diferencia del haz objeto,
+el haz de referencia sólo pasa por un segundo NDF que sirve para
+compensar la relación entre intensidades de los dos haces. El elemento
+$S$ es un obturador que se controla desde el computador y sirve para cambiar
+del modo de medida de modulación de amplitud a modulación de fase.  
+
+Al haber recorrido un camino que contiene elementos polarizadores y
+birrefringentes, el haz objeto sufre cambios en su fase y en su estado
+de polarización. Estos cambios se ven reflejados en la posición y
+contraste de las franjas de los interferogramas registrados por la
+cámara. En la figura \ref{fig:fringes} se pueden observar dos
+interferogramas que se han tomado cuando a la salida del PSD hay (a)
+un estado vertical, y (b) un estado horizontal.  
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{fringes.pdf}
+\caption[Interferogramas obtenidos en el montaje experimental para
+caracterización de modulación de fase]{Interferogramas obtenidos en el montaje experimental para
+caracterización de modulación de fase. (a) Franjas de interferencia
+cuando la polarización en los dos brazos es igual, y (b) cuando son
+estados ortogonales.}
+\label{fig:fringes}
+\end{figure}
+
+La caracterización de las curvas de modulación de amplitud está
+asociada al cambio de contraste, y la modulación de fase es
+proporcional al desplazamiento de las franjas. Un cambio de fase de
+$\pi$ radianes hace que las franjas se desplazan hasta un punto en el cual las que eran brillantes son ahora
+oscuras, y viseversa. Caracterizar la modulación consiste en medir los
+desplazamientos de las franjas para cada nivel de gris de la pantalla
+del SLM, y dado que cualquier vibración puede mover las franjas es preferible capturar simultaneamente imágenes con
+las franjas en una posición de referencia e imagenes con franjas
+desplazadas. Para ello varios autores como \citetChGen{Moreno2003} y
+\citetChGen{Ma2010} han proyectado al SLM una máscara con dos
+secciones rectangulares, una con un nivel de gris constante (255) y
+otra en la que el nivel de gris varía de 0 a 255. La máscara usada y
+el interferograma resultante se muestran en la Fig. \ref{fig:split}.  
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1]{split.pdf}
+\caption[Máscara dividida e interferograma obtenido para
+caracterización de modulación de fase]{(a) Máscara dividida y (b)
+  interferograma registrado para
+caracterización de modulación de fase. En esta combinación de PSG y
+PSD se logró una modulación de aproximadamente $\pi/2$}
+\label{fig:split}
+\end{figure}
+
+El interferograma de la Fig. \ref{fig:split}(b) se descompone en 3
+imágenes, la imagen central se desecha, pues presenta un efecto de
+borde indeseado que resulta de la difracción producida por el escalón
+entre un nivel de gris y otro. Las imágenes superior e inferior corresponden a las franjas
+de referencia y desplazadas respectivamente, y se conservan para
+extraer la fase entre ellas. 
+
+Una forma de extraer la fase es buscar la diferencia en frecuencia
+entre las señales sinusoidales representadas por el promedio de las
+filas de los interferogramas. 
 
 \begin{itemize}
-\item Describir los dos algor[itmos que usamos para la reconstrucción
+\item Describir los dos algoritmos que usamos para la reconstrucción
   de la modulación de fase y el de reconstrucción de modulación de
   amplitud. 
 %\item Describir el sistema de rotadores
@@ -2021,7 +2092,7 @@ modulación de fase se midió usando un montaje interferométrico
 %\item Describir el funcionamiento y la idea detrás de los programas de
 %  iPython para la detección de las matrices de Jones.
 \item mostrar los Vórtices obtenidos con buenas modulaciones y
-  compararlos con los v[ortices que se obtenían antes.
+  compararlos con los vórtices que se obtenían antes.
 \end{itemize}
 \newpage
 \pagebreak[4]
