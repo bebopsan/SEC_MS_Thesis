@@ -1827,8 +1827,8 @@ Fig. \ref{fig:six_input_measures} se llevo a cabo usando la función
  Newton conocido como Broyden-Fletcher-Goldfarb-Shano (BFGS) y permite
  la definición de condiciones de frontera (B) sobre los argumentos de
  entrada.  
-La implementación en el lenguaje Python de la función a minimizar se muestra en el siguiente
-recuadro, 
+La implementación en el lenguaje Python de la función a minimizar se
+muestra en la Fig. \ref{SLM_functional}. 
 \begin{figure}
 \begin{python}
 def min_sq(x0,I_exp):
@@ -1860,16 +1860,17 @@ def min_sq(x0,I_exp):
         min_sum += ((I_sim[i]-I_exp[i])**2)[0,0].real    
     return min_sum
 \end{python}
-\label{list:aa}
-\caption{Este es un caption.}
+\caption{Funcional a minimizar para el ajuste de parámetros basado en
+  6 medidas de modulaciòn de amplitud.}
+\label{fig:SLM_functional}
 \end{figure}
 \pagebreak
-Y la llamada a la función de minimización se hace como se muestra a
-continuación,\\
-
+La llamada a la función de minimización se hace como se muestra en la
+Fig. \ref{fig:SLM_minimization}.
+%cons = ({'type': 'eq', 'fun': lambda x:  x[0]**2+x[1]**2+x[2]**2+x[3]**2 - 1})
+\begin{figure}
 \begin{python}
 bnds = ((-1, 1), (-1, 1),(-1, 1), (-1, 1))
-cons = ({'type': 'eq', 'fun': lambda x:  x[0]**2+x[1]**2+x[2]**2+x[3]**2 - 1})
 x,y,z,w = [0.0001, 0.0001, -0.0001, -0.0001] 
 res_f = {}
 for g in range(52):
@@ -1881,6 +1882,10 @@ for g in range(52):
     res_f[g] = res[0]
     print(res[0])
 \end{python}
+\caption{Condiciones de frontera, argumentos iniciales y llamado de la
+función de minimización (fmin\_l\_bfgs\_b) para cada nivel de gris.}
+\label{fig:SLM_minimization}
+\end{figure}
 En este caso usamos un valor semilla para los valores de entrada muy
 cercano a cero, utilizamos la opción de aproximación del gradiente
 por medio de diferencias finitas y definimos la tolerancia de
@@ -2077,11 +2082,72 @@ imágenes, la imagen central se desecha, pues presenta un efecto de
 borde indeseado que resulta de la difracción producida por el escalón
 entre un nivel de gris y otro. Las imágenes superior e inferior corresponden a las franjas
 de referencia y desplazadas respectivamente, y se conservan para
-extraer la fase entre ellas. 
+extraer la fase entre ellas. La diferencia de fase $\Delta\phi$ puede ser extraída de los
+interferogramas midiendo el periodo y la distancia entre crestas ($\delta S$) de la imagen de
+referencia y la imagen desplazada haciendo el siguiente cálculo \citepChGen{Ma2010},
+$$\Delta\phi = 2\pi \Delta S/P.$$
+Para visualizar mejor las crestas
+promediamos el valor de las primeras y últimas 100 filas y generamos
+dos curvas en 1D de la intensidad normalizada por píxel como se
+observa en la Fig. \ref{fig:fringes_plot}.  
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{fringes_plot_edited.pdf}
+\caption[Patrones de interferencia 1D de interferogramas con y sin
+desfase]{Patrones de interferencia 1D suavizados de los interferogramas con y sin
+  desfase de la Fig. \ref{fig:split}. La imagen original tiene 1208
+  píxeles y se tomó la mitad como cero.}
+\label{fig:fringes_plot}
+\end{figure}
+%De los datos en esta representación, se puede extraer la diferencia de
+%fase $\Delta \phi$ a partir del periodo ($P$) sabiendo que $$\Delta
+Extraer la fase de esta forma resulta bastante directo e intuitivo,
+pero se aprovecha muy poca información de la señal y se pierde
+precisión en comparación con otras alternativas. Además, este método resulta dificil de
+automatizar en forma de un algorítmo. 
 
-Una forma de extraer la fase es buscar la diferencia en frecuencia
-entre las señales sinusoidales representadas por el promedio de las
-filas de los interferogramas. 
+Otra forma de extraer la fase consiste en aplicar una \textbf{Transformada de
+Fourier} (FT) a las señales e identificar los picos correspondientes a
+la función seno o coseno asociada al patron de interferencia. La fase
+de cada interferograma es la fase o ángulo del número complejo 
+correspondiente al mayor pico de la FT.  
+Los picos se pueden identificar calculando el valor absoluto de la FT de
+la señal y buscando el elemento más grande. La representación gráfica
+de la FT se ilustra en la Fig. \ref{fig:fringes_f} con respecto a las
+coordenadas de frecuencia espacial. Nosotros adaptamos una implementación en Matlab de este método que fue inicialmente propuesto
+para esta aplicación por el profesor Alberto Lencina del Centro de
+Investigaciones Ópticas de Argentina.    
+
+% \begin{figure}
+\begin{lstlisting}[style=Matlab]
+%  Reference image
+imaref=mean(imaref,1);
+%  FT scaled and with filter
+TFimaref=ifftshift(fft(fftshift(imaref)));
+fac=sqrt(1/(size(TFimaref,2)*size(TFimaref,1)));
+TFimaref=TFimaref.*fac;
+radio_mask=2;
+TFimaref(:,floor(size(TFimaref,2)/2)+1-radio_mask:floor(size(TFimaref,2)/2)+1+radio_mask)=0;
+% Position of max value
+[~, IX] = sort(abs(TFimaref),'descend');
+% Phase
+fase_ref =atan2(imag(TFimaref(1,IX(1))),real(TFimaref(1,IX(1))));
+\end{lstlisting}
+% \caption{Script para el cálculo de la fase de un interferograma usando
+% FT.}
+% \label{fig:fourier_script}
+% \end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{fringes_f_both.pdf}
+\caption[Transformada de Fourier de un patrón de
+interferencia]{Transformada de Fourier del patrón de interferencia de referencia de la Fig. \ref{fig:fringes_plot}. Como es de
+  esperarse para señales sinusoidales hay dos picos simétricos ambos
+  lados de la coordenada frecuencial 0. Estos picos señalan correctamente que hay 8
+  periodos en el interferograma.}
+\label{fig:fringes_f}
+\end{figure}
 
 \begin{itemize}
 \item Describir los dos algoritmos que usamos para la reconstrucción

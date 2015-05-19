@@ -327,6 +327,8 @@ urlcolor=black, cite color=red]{hyperref} %
         \definecolor{myorange}{rgb}{0.8,0.4,0}
         \definecolor{mywhite}{rgb}{0.98,0.98,0.98}
         \definecolor{myblue}{rgb}{0.01,0.61,0.98}
+        \definecolor{mylilas}{RGB}{170,55,241}
+        \definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0}
 \fi
 
 % Linking and pdf options
@@ -361,7 +363,28 @@ urlcolor=black, cite color=red]{hyperref} %
 }
 % For including pdf pages
 \usepackage{pdfpages}
-
+% Matlab style
+\lstloadlanguages{Matlab}%
+\lstset{language=Matlab,                        % Use MATLAB
+       %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    %numbers=left,%
+    %numberstyle={\tiny \color{black}},% size of the numbers
+    %numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+        }
+\lstdefinestyle{Matlab}{%
+    keywords={void},%                 define keywords
+    morecomment=[l]{\%},%             treat // as comments
+}
 % Arduino style 
 \newcommand*{\FormatDigit}[1]{\ttfamily\textcolor{mygreen}{#1}}
 \lstdefinestyle{FormattedNumber}{%
