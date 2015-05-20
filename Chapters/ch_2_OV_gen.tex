@@ -1912,7 +1912,7 @@ fueron planteados para corroborar la caracterización, y los resultados
 experimentales obtenidos. 
 
 \subsubsection{Comprobación experimental}
-
+\label{sec:exp_validation}
 Con el fín de comprobar que la matriz obtenida era un modelo adecuado
 del SLM se hicieron 100 medidas nuevas de modulación de amplitud y se
 compararon con las simuladas por el SLM. En esas medidas se hicieron
@@ -2056,12 +2056,14 @@ estados ortogonales.}
 La caracterización de las curvas de modulación de amplitud está
 asociada al cambio de contraste, y la modulación de fase es
 proporcional al desplazamiento de las franjas. Un cambio de fase de
-$\pi$ radianes hace que las franjas se desplazan hasta un punto en el cual las que eran brillantes son ahora
-oscuras, y viseversa. Caracterizar la modulación consiste en medir los
+$\pi$ radianes hace que las franjas se desplazan hasta un punto en el
+cual las que eran brillantes son ahora oscuras, y
+viseversa. Caracterizar la modulación consiste en medir los 
 desplazamientos de las franjas para cada nivel de gris de la pantalla
-del SLM, y dado que cualquier vibración puede mover las franjas es preferible capturar simultaneamente imágenes con
-las franjas en una posición de referencia e imagenes con franjas
-desplazadas. Para ello varios autores como \citetChGen{Moreno2003} y
+del SLM, y dado que cualquier vibración puede mover las franjas es
+preferible capturar simultaneamente imágenes con las franjas en una
+posición de referencia e imagenes con franjas 
+desplazadas. Para ello, varios autores como \citetChGen{Moreno2003} y
 \citetChGen{Ma2010} han proyectado al SLM una máscara con dos
 secciones rectangulares, una con un nivel de gris constante (255) y
 otra en la que el nivel de gris varía de 0 a 255. La máscara usada y
@@ -2082,10 +2084,7 @@ imágenes, la imagen central se desecha, pues presenta un efecto de
 borde indeseado que resulta de la difracción producida por el escalón
 entre un nivel de gris y otro. Las imágenes superior e inferior corresponden a las franjas
 de referencia y desplazadas respectivamente, y se conservan para
-extraer la fase entre ellas. La diferencia de fase $\Delta\phi$ puede ser extraída de los
-interferogramas midiendo el periodo y la distancia entre crestas ($\delta S$) de la imagen de
-referencia y la imagen desplazada haciendo el siguiente cálculo \citepChGen{Ma2010},
-$$\Delta\phi = 2\pi \Delta S/P.$$
+extraer la fase entre ellas. 
 Para visualizar mejor las crestas
 promediamos el valor de las primeras y últimas 100 filas y generamos
 dos curvas en 1D de la intensidad normalizada por píxel como se
@@ -2099,33 +2098,43 @@ desfase]{Patrones de interferencia 1D suavizados de los interferogramas con y si
   píxeles y se tomó la mitad como cero.}
 \label{fig:fringes_plot}
 \end{figure}
+La diferencia de fase $\Delta\phi$ puede ser extraída de los
+interferogramas midiendo el periodo (P) y la distancia entre crestas ($\Delta S$) de la imagen de
+referencia y la imagen desplazada haciendo el siguiente cálculo \citepChGen{Ma2010},
+$$\Delta\phi = 2\pi \Delta S/P.$$
 %De los datos en esta representación, se puede extraer la diferencia de
 %fase $\Delta \phi$ a partir del periodo ($P$) sabiendo que $$\Delta
 Extraer la fase de esta forma resulta bastante directo e intuitivo,
 pero se aprovecha muy poca información de la señal y se pierde
 precisión en comparación con otras alternativas. Además, este método resulta dificil de
-automatizar en forma de un algorítmo. 
+programar en un algorítmo. 
 
 Otra forma de extraer la fase consiste en aplicar una \textbf{Transformada de
 Fourier} (FT) a las señales e identificar los picos correspondientes a
 la función seno o coseno asociada al patron de interferencia. La fase
 de cada interferograma es la fase o ángulo del número complejo 
-correspondiente al mayor pico de la FT.  
+correspondiente al mayor pico de la FT una vez se ha filtrado el delta
+de Dirac central correspondiente a la FT de la intensidad de fondo.  
 Los picos se pueden identificar calculando el valor absoluto de la FT de
 la señal y buscando el elemento más grande. La representación gráfica
 de la FT se ilustra en la Fig. \ref{fig:fringes_f} con respecto a las
-coordenadas de frecuencia espacial. Nosotros adaptamos una implementación en Matlab de este método que fue inicialmente propuesto
-para esta aplicación por el profesor Alberto Lencina del Centro de
-Investigaciones Ópticas de Argentina.    
-
-% \begin{figure}
+coordenadas de frecuencia espacial, se observa claramente que se ha
+filtrado el pico central y que la información de la FT se encuentra
+alrededor de los picos en las frecuencias  8 y -8. Nosotros adaptamos
+una implementación en Matlab de este método que fue inicialmente
+propuesta para esta aplicación por el profesor Alberto Lencina del Centro de
+Investigaciones Ópticas de Argentina. En la figura \ref{fig:fourier_script}, se muestra un
+pequeño script que ilustra cómo se haría el cálculo de la fase del
+interferograma de referencia.     
+ \begin{figure}
 \begin{lstlisting}[style=Matlab]
 %  Reference image
 imaref=mean(imaref,1);
-%  FT scaled and with filter
+%  FT scaled 
 TFimaref=ifftshift(fft(fftshift(imaref)));
 fac=sqrt(1/(size(TFimaref,2)*size(TFimaref,1)));
 TFimaref=TFimaref.*fac;
+% Filtering of backround peak
 radio_mask=2;
 TFimaref(:,floor(size(TFimaref,2)/2)+1-radio_mask:floor(size(TFimaref,2)/2)+1+radio_mask)=0;
 % Position of max value
@@ -2133,12 +2142,11 @@ TFimaref(:,floor(size(TFimaref,2)/2)+1-radio_mask:floor(size(TFimaref,2)/2)+1+ra
 % Phase
 fase_ref =atan2(imag(TFimaref(1,IX(1))),real(TFimaref(1,IX(1))));
 \end{lstlisting}
-% \caption{Script para el cálculo de la fase de un interferograma usando
-% FT.}
-% \label{fig:fourier_script}
-% \end{figure}
-
-\begin{figure}[h!]
+ \caption{Script para el cálculo de la fase de un interferograma usando
+ FT.}
+ \label{fig:fourier_script}
+ \end{figure}
+\begin{figure}
 \centering
 \includegraphics[scale=0.4]{fringes_f_both.pdf}
 \caption[Transformada de Fourier de un patrón de
@@ -2148,6 +2156,23 @@ interferencia]{Transformada de Fourier del patrón de interferencia de referenci
   periodos en el interferograma.}
 \label{fig:fringes_f}
 \end{figure}
+Si se realiza este proceso para cada una de las dos imágenes se pueden restar las
+fases de ambos interferogramas y obtener la diferencia de fase
+introducida por un nivel de gris particular. A diferencia del
+mencionado anteriormente, este proceso es más preciso y mucho más fácil de implementar en fórma de
+un algorítmo que calcule la modulación para cada nivel de gris. 
+ 
+\subsubsection{Resultados de la medida de modulación de fase}
+
+Implementando el método de transformadas de Fourier comon uno de los
+pasos en la caracterización automatizada del SLM, se obtuvieron curvas de modulación
+de fase para cada uno de los 100 estados menciondos en la sección
+\ref{sec:exp_validation}. 
+
+Las 100 curvas se han 
+
+
+
 
 \begin{itemize}
 \item Describir los dos algoritmos que usamos para la reconstrucción
