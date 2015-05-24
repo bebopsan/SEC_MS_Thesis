@@ -989,7 +989,7 @@ M^{-1}=M^{\dagger}=
     \end{pmatrix}.
 \end{equation*}
 \item Las matrices de Jones son unimodulares es decir
-$$det(M) = det(M^{\dagger})  = M_{11}M_{22}-M_{12}M_{21} = 1.$$ 
+\begin{equation}det(M) = det(M^{\dagger})  = M_{11}M_{22}-M_{12}M_{21} = 1.\label{eq:unimodular}\end{equation} 
 Si asumimos que $M^{-1}$ es
 \begin{equation*}
   M=
@@ -1554,10 +1554,11 @@ También se ha concluido que los artículos que buscaban encontrar todos los
 parámetros del modulador como el de \citetChGen{Marquez2000} y
 el de \citetChGen{Zhisheng1998} en 1998 preceden en el tiempo a los artículos
 donde se busca simplificar el modelo y asumir el comportamiento del
-LCD como una caja negra, como los dos artículos de \citetChGen{Ma2010, Ma2011} en 2010 y
-2011 o el de \citetChGen{Moreno2003} en 2003, que es en el cual nos
-hemos inspirado para caracterizar nuestros SLMs. Los autores de esta
-última referencia identificaron una necesidad de 
+LCD como una caja negra, como el de \citetChGen{Moreno2003} en 2003, o
+como los dos artículos de \citetChGen{Ma2010, Ma2011} en 2010 y
+2011, que son en los cuales nos
+hemos inspirado para caracterizar nuestros SLMs. Los autores de estas
+últimas referencias identificaron una necesidad de 
 simplificar el proceso de caracterización, y entre sus argumentos 
 están la simplicidad matemática y número reducido de medidas necesarias.
 \begin{figure}[h!]
@@ -1578,18 +1579,25 @@ investigador Ignacio Moreno que, junto con otros investigadores en
 universidades de España y California ha dirigido los avances en aplicaciones
 científicas de pantallas TN-LCD. 
 
-En lo que sigue de este capítulo presentaremos una variación del
-método de caracterización \citetChGen{Moreno2003} implementada por nosotros y que
-tambien considera el SLM como una caja negra. Esta implementación
-involucró no solo análisis de datos sino también el diseño y
-construcción de un sistema automatizado para la toma de medidas. 
-Una vez caracterizado el SLM se
-procedió a encontrar los autovalores de la matriz de Jones que
-representan estados de polarización a la entrada y la salida del SLM 
-que permiten una modulación de solo fase con la cual se pueden emular
-elementos difractivos digitales tales como máscaras espiral de fase, prismas,
-lentes de Fresnel e inclusive aberraciones. Los elementos difractivos producidos de forma
-digital son la clave para producir haces Laguerre-Gauss.
+En lo que sigue de este capítulo presentaremos el resultado de la
+caracterizaación de un SLM modelo LC2002 de marca Holoeye con el
+método de \citetChGen{Ma2010}.
+% una variación del método de caracterización de
+% \citetChGen{Moreno2003} implementada por nosotros y que 
+%tambien considera el SLM como una caja negra. 
+Veremos que la implementación de este método y los resultados
+obtenidos involucraron no solo el análisis de datos experimentales sino también el diseño y
+construcción de un sistema automatizado para la toma de medidas.  
+También se mostrará un método alternativo propuesto por nosotros que requiere más medidas
+y permite obtener resultados más veraces. 
+
+Una vez caracterizado el SLM se identificaron estados de polarización
+a la entrada y la salida del SLM que permiten una modulación de solo
+fase con la cual se pueden emular elementos difractivos digitales
+tales como máscaras espiral de fase, prismas, lentes de Fresnel e
+inclusive aberraciones. Los elementos difractivos producidos de forma 
+digital, y en particular, las máscaras espiral 
+ son la clave para producir haces Laguerre-Gauss.  
 
 \section{Caracterización de TN-SLM}
 \label{sec:ChGV_Caracterizacion_de_SLM}
@@ -1643,7 +1651,7 @@ este campo
 I = |Out|^2 = Out^{\dagger}Out.
 \end{equation}
 
-A continuación, en la figura \ref{fig:amp_H_V_SLM_2002} se presenta
+En la Fig. \ref{fig:amp_H_V_SLM_2002} se presenta
 una curva de modulación de amplitud que se consigue graficando los
 valores de intensidad normalizada cuando se varían los niveles de gris discretos
 del SLM de 0 a 255. Como se mencionó antes, el nivel de gris es
@@ -1652,7 +1660,7 @@ cuando el ángulo de inclinación de las moléculas es de 90º con
 respecto a la dirección de propagación. La
 figura \ref{fig:amp_H_V_SLM_2002} es especialmente interesante porque
 muestra el comportamiento del SLM marca Holoeye modelo LC2002 en la
-configuración típica de pantallas LCD para royección, es decir, cuando
+configuración típica de pantallas LCD para proyección, es decir, cuando
 el PSG genera un estado de polarización a la entrada vertical y el
 PSD detecta un estado horizontal. Como es de esperarse, en esta
 configuración el SLM modula amplitud en un rango de 0 a 1 y con una
@@ -1691,14 +1699,16 @@ posibles que implican rotar elementos ópticos de forma precisa y con
 alta repetibilidad. 
 En cambio, vamos a medir experimentalmente sólo 6 combinaciones de PSG
 y PSD propuestas por \citetChGen{Ma2010} y con
-ellas alimentaremos un modelo de caja negra en el cual la matriz de
-Jones para cada nivel de gris será encontrada por un método de ajuste
-de parámetros.
+ellas alimentaremos un modelo anallítico en el cual se derivan los elementos de la matriz de
+Jones para cada nivel de gris por medio de operaciones aritméticas simples.
+% serán encontrada por un método de ajuste
+% de parámetros.
+% de caja negra 
 % basado en un algoritmo de minimización basado en la búsqueda del
 % gradiente. 
 Una vez conocido el modelo del SLM se puede buscar el
-estado que mejor satisface las condiciones de operación haciendo experimentos simulados con
-los cuales sí es práctico hacer una búsqueda entre múltiples estados.
+estado que mejor satisface las condiciones de operación haciendo simulaciones con
+las cuales sí es práctico hacer una búsqueda entre múltiples estados.
 
 En esta sección se introducirá una notación alternativa para la
 representación de estadodes de polarización, y se describiran los
@@ -1716,16 +1726,17 @@ la notación de BraKets de Dirac como Ket's:
 Y siguiendo esta interpretación, el PSD correspondiente a un PSG dado
 es el Bra, es decir, el vector que es complejo conjugado del Ket.
 \begin{equation}
-<J|= |J>^{\dagger} = \begin{pmatrix} J_x &  J_y\end{pmatrix} 
+<J|= |J>^{\dagger} = \begin{pmatrix} J_x^* &  J_y^*\end{pmatrix} 
 \end{equation}
 Por otra parte, la matriz de Jones del SLM cumple el papel que tendría un
 operador en la mecánica cuántica. Si los Bra y Ket representan vectores normalizados, la
-intensidad del campo a la salida puede ser obtenida como el valor
-esperado del operador del SLM cuando la base del PSG es proyectada
-sobre la del PSD.
+intensidad del campo a la salida puede ser obtenida como el módulo
+cuadrado del valor
+esperado del operador del SLM  (Eq. \ref{eq:general_jones_matrix})
+cuando la base del PSG es proyectada sobre la del PSD.
 \begin{equation}
 \label{eq:valor_esperado}
-I = <J|\mathbf{SLM} |J> = 
+I = |<J|\mathbf{SLM} |J>|^2 = 
 \begin{pmatrix}
 J_x & J_y
 \end{pmatrix}
@@ -1740,9 +1751,106 @@ J_x \\ J_y
 \end{equation}
 %donde $A$ y $B$ son números complejos.
 
-La intensidad es una variable que se puede medir, y los vectores
+La intensidad es una variable que se puede medir con una cámara, y los vectores
 correspondientes a los estados producidos por el PSG y el PSD son
-conocidos. Encontrar los números complejos $A$ y $B$ para ensamblar la
+conocidos. Como los vectores de Jones que utilizamos están
+normalizados lo más adecuado es normalizar también las medidas de
+intensidad. Una forma de normalizar las medidas consiste en medir no
+solo el BraKet deseado sino también un Braket en el cual el Bra o PSD es un
+vector ortogonal al PSD original.  La intensidad medida con el PSD
+ortogonal es entonces un complemento de la original y su suma debe ser
+un valor constante. Si se divide cualquiera de las dos intensidades
+sobre la suma de las dos, obtenemos una intensidad que ha sido
+normalizada y que es equivalente a las resultantes del producto
+analítico de la Eq. \ref{eq:valor_esperado}. 
+
+\begin{align*}
+\hat{I} &= \frac{I}{I+I^{\perp}}&\hat{I}^{\perp} &= \frac{I^{\perp}}{I+I^{\perp}}
+\end{align*}
+
+\subsubsection{El método de Ma et al.}
+
+Según \citetChGen{Ma2010}, hay tres combinaciones de PSD y PSG a partir
+de las cuales se pueden encontrar los valores X,Y,Z, y W. Si para
+normalizar cada una de ellas requerimos medir otra en la cual el Bra
+es el vector ortogonal del Bra original, se requiere de las siguientes
+6 medidas, 
+\begin{align*}
+I_1 &= |<\mathbf{H}|SLM|\mathbf{H}>|^2,& I_2 &= |<\mathbf{CD}|SLM|\mathbf{CD}>|^2,&I_3
+  &= |<\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2,\\
+I_1^{\perp} &= |<\mathbf{V}|SLM|\mathbf{H}>|^2,&I_2^{\perp} &= |<\mathbf{CI}|SLM|\mathbf{CD}>|^2,&I_{3}^{\perp} &= |<\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2.
+\end{align*}
+Dónde básicamente se está midiendo qué tan transparente es el SLM ante
+los estados vertical, circular derecho, y lineal a $45^{\circ}$. 
+Estas tres medidas son interesantes porque se puede encontrar una
+relación entre la intensidad medida 
+y los valores desconocidos de la matriz de Jones. 
+A continuación se muestra el procedimiento matemático expuesto por Ma
+et al.~que relaciona cada una de las intensidades con los valores de
+la matriz de Jones. 
+Analizar la tramitancia ante el estado lineal derecho entrega un valor
+de intensidad que es función de $X$ y $Y$
+\begin{align*}
+I_1 &= |<\mathbf{H}|SLM|\mathbf{H}>|^2 = X^2+Y^2,\\
+&=  \left|\begin{pmatrix} 1&0\end{pmatrix} 
+       \begin{pmatrix}
+         x+iy & z+iw \\-z+iw & x-iy
+       \end{pmatrix} \begin{pmatrix}1\\0\end{pmatrix}\right|^2, \\
+&=  \left|\begin{pmatrix} 1&0\end{pmatrix} 
+       \begin{pmatrix} x+iy \\-z+iw \end{pmatrix} \right|^2, \\
+&=  \left|x+iy\right|^2 =  X^2+Y^2.\\
+\end{align*}
+Y analizar la tramitancia ante un estado circular derecho entrega un
+valor de intensidad función de $X$ y $Z$.
+\begin{align*}
+I_2 &= |<\mathbf{CD}|SLM|\mathbf{CD}>|^2 = X^2+Z^2,\\
+&=  1/\sqrt{2}\left|\begin{pmatrix} 1&-i\end{pmatrix} 
+       \begin{pmatrix}
+         x+iy & z+iw \\-z+iw & x-iy
+       \end{pmatrix} 1/\sqrt{2}\begin{pmatrix}1\\i\end{pmatrix}\right|^2 ,\\
+&=  \left|1/2\begin{pmatrix} 1&-i\end{pmatrix} 
+       \begin{pmatrix} x+iy +iz-w\\-z+iw +ix+y\end{pmatrix} \right|^2 ,\\
+&=  \left|1/2\left(x+iy+iz-iw+iz+w+x-iy\right)\right|^2 =  X^2+Z^2.\\
+\end{align*}
+Como en los casos anteriores, se muestra que la intensidad medida
+cuando se genera y detecta un estado inclinado a $45^{\circ}$ depende
+ahora de $X$ y $W$.
+\begin{align*}
+I_3 &= |<\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2 = X^2+W^2,\\
+&=  1/\sqrt{2}\left|\begin{pmatrix} 1&1\end{pmatrix} 
+       \begin{pmatrix}
+         x+iy & z+iw \\-z+iw & x-iy
+       \end{pmatrix} 1/\sqrt{2}\begin{pmatrix}1\\1\end{pmatrix}\right|^2 ,\\
+&=  \left|1/2\begin{pmatrix} 1&1\end{pmatrix} 
+       \begin{pmatrix} x+iy +z+iw\\-z+iw +x-iy\end{pmatrix} \right|^2, \\
+&=  \left|1/2\left(x+iy+z+iw-z+iw+x-iy\right)\right|^2 =  X^2+W^2.\\
+\end{align*}
+Adicionalmente, de la Eq. \ref{eq:unimodular} podemos deducir la siguiente condición de
+normalización que está relacionada con el hecho de ser una matriz
+unitaria y por ende unimodular,
+\begin{equation*}
+X^2+Y^2+Z^2+W^2 =1.
+\end{equation*}
+Con esta última relación tenemos 4 ecuaciones para 4 incógnitas, y
+tras realizar operaciones simples de sustitución podemos despejar
+$X^2$, $Y^2$, $Z^2$ y $W^2$ en función de $I_1$, $I_2$, y $I_3$,
+\begin{align*}
+X^2 &= \frac{1}{2}\left( I_1+I_2+I_3-1\right), & Y^2 &=
+                                                       \frac{1}{2}\left(
+                                                       I_1-I_2-I_3+1\right),\\
+Z^2 &= \frac{1}{2}\left( I_2-I_1-I_3+1\right), & W^2 &=
+                                                       \frac{1}{2}\left(
+                                                       I_3-I_1-I_2+1\right).\\
+\end{align*}
+
+Nosotros medimos estas tres intensidades para 52 de los 255 niveles de
+gris del SLM y obtuvimos un resultado muy similar al de Ma et al. La
+comparaci'on entre medidas de intensidad normalizadas se observa en la
+Fig. %\ref{}
+
+
+
+Encontrar los números complejos $A$ y $B$ para ensamblar la
 matriz de Jones es un problema de polarimetría que requiere de
 plantear un conjunto de medidas que den la información suficiente
 sobre los cambios en polarización introducidos por el SLM. 
@@ -1767,14 +1875,14 @@ correcta caracterización:
 %                                          <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>&I_{12}
 %   &= <\mathbf{L}|SLM|\mathbf{L}> 
 % \end{align*}
-\begin{align*}
-I_1 &= <\mathbf{V}|SLM|\mathbf{V}>,& I_3 &=
-                                          <\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>,&I_5
-  &= <\mathbf{CD}|SLM|\mathbf{CD}>,\\
-I_2 &= <\mathbf{H}|SLM|\mathbf{V}>,&I_4 &=
-                                         <\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>,&I_{6}
-  &= <\mathbf{CI}|SLM|\mathbf{CD}>.
-\end{align*}
+% \begin{align*}
+% I_1 &= |<\mathbf{V}|SLM|\mathbf{V}>|^2,& I_3 &=
+%                                           |<\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2,&I_5
+%   &= |<\mathbf{CD}|SLM|\mathbf{CD}>|^2,\\
+% I_2 &= |<\mathbf{H}|SLM|\mathbf{V}>|^2,&I_4 &=
+%                                          |<\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2,&I_{6}
+%   &= |<\mathbf{CI}|SLM|\mathbf{CD}>|^2.
+% \end{align*}
 Las curvas de modulación correspondientes a cada una de las medidas se
 ilustran en la Fig \ref{fig:six_input_measures}. 
 \begin{figure}[h!]
@@ -1802,7 +1910,7 @@ intensidades simuladas e intensidades adquiridas experimentalmente
 
 \begin{equation}
 \mathcal{L}(\mathbf{X,Y,Z,W}) = \sum_{ng=0}^{255}\sum_{i=1}^6 | I_{ng,i} -
-<\mathbf{J_{i}}|\mathbf{SLM_{ng}}|\mathbf{J_{i}}>^2|.
+|<\mathbf{J_{i}}|\mathbf{SLM_{ng}}|\mathbf{J_{i}}>|^2|^2.
 \label{eq:ChGen_SLM_model_functional}  
 \end{equation}
 En la Eq. \ref{eq:ChGen_SLM_model_functional} el funcional consiste en
@@ -2161,15 +2269,35 @@ fases de ambos interferogramas y obtener la diferencia de fase
 introducida por un nivel de gris particular. A diferencia del
 mencionado anteriormente, este proceso es más preciso y mucho más fácil de implementar en fórma de
 un algorítmo que calcule la modulación para cada nivel de gris. 
- 
+\pagebreak
 \subsubsection{Resultados de la medida de modulación de fase}
 
 Implementando el método de transformadas de Fourier comon uno de los
 pasos en la caracterización automatizada del SLM, se obtuvieron curvas de modulación
-de fase para cada uno de los 100 estados menciondos en la sección
-\ref{sec:exp_validation}. 
+de fase para 60 de los 100 estados menciondos en la sección
+\ref{sec:exp_validation}, correspondientes a las polarizaciones de
+entrada lineales y circulares.  Las 60 curvas se han puesto al alcance del
+lector en el siguiente vínculo web en forma de un notebook de IPython:
+\href{http://goo.gl/RtRCX0}{\textbf{http://goo.gl/RtRCX0}}.  
 
-Las 100 curvas se han 
+Con estos datos, y con las curvas de modulación de amplitud pudimos
+seleccionar dos combinaciones de PSD y PSG que tienen condiciones
+suficientes para usar el SLM dentro del rango de operación
+deseado. Observamos que tal y como se ha reportado en la literatura
+estos moduladores acoplan la modulación de fase con la modulación de
+amplitud, y que al menos con nuestro SLM no es posible encontrar
+estados en los cuales el SLM sea completamente transparente y al mismo
+tiempo permita modulaciones de fase de rango alto.  
+Encontramos que el estado 5 produce modulaciones de fase con rango de
+modulación muy alto, de casi $1.9\pi$
+radianes, y que, sin embargo, está acoplado a una modulacion de intensidad de muy mala calidad en
+la cual la tramitancia se reduce hasta un $80\%$.
+
+%Insertar figura con comparación de modulación de amplitud y fase.
+
+Así mismo encontramos varios de estados en los cuales hay modulación
+de amplitu mínima
+
 
 
 
