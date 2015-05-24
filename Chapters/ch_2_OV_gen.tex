@@ -3,7 +3,8 @@
 
 %------------------------------------------------------------------------- 
 
-\chapter{Generación de Vórtices Ópticos}
+%\chapter{Generación de Vórtices Ópticos}
+\chapter{Generalidades y Marco Teórico}
 \label{cha:Gen_intro}
 
 \graphicspath{{Figures/ch2_img/}{../Figures/ch2_img/}}
@@ -1599,7 +1600,9 @@ inclusive aberraciones. Los elementos difractivos producidos de forma
 digital, y en particular, las máscaras espiral 
  son la clave para producir haces Laguerre-Gauss.  
 
-\section{Caracterización de TN-SLM}
+
+\chapter{Caracterización de TN-SLM}
+\label{cha:Gen_carac}
 \label{sec:ChGV_Caracterizacion_de_SLM}
 \lhead{Generación de Vórtices Ópticos: \textit{Caracterización de un TN-SLM}}
 
@@ -1611,7 +1614,8 @@ Por ende es necesario medir las modulaciones de amplitud y de fase. En
 las siguientes secciones se muestra cómo medimos las modulaciones de
 amplitud y fase. 
 
-\subsection{Medida de la modulación de amplitud}
+%\subsection{Medida de la modulación de amplitud}
+\section{Medida de la modulación de amplitud}
 \label{sec:ChGV_med_mod_amp}
 
 En la figura \ref{fig:PSG_PSD} se presenta un esquema del sistema
@@ -1682,13 +1686,13 @@ entre si.
 %  si el ángulo de torsión de las moléculas en el SLM es de $90^{\circ}$ y
 % las moléculas a la entrada están alineadas con el eje horizontal, el
 % estado de polarización a la salida será aproximadamente vertical.
-
 No obstante, nuestro objetivo es encontrar una combinación de estados
 de polarización que resulten en una baja modulación de amplitud y
 buena tramitancia. 
-\subsection{Medida de múltiples estados para alimentar un modelo de
-  caja negra.}
-\label{sec:ChGV_med_mod_amp}
+
+% \subsection{Medida de múltiples estados para alimentar un modelo de
+%  caja negra.}
+%\label{sec:ChGV_med_mod_amp}
 La curva de la Fig. \ref{fig:amp_H_V_SLM_2002} caracteriza la modulación de amplitud del SLM para
 una sola combinación de PSG y PSD. Una forma de buscar buenas
 combinaciones de PSG y PSD consiste en plantear muchos estados
@@ -1714,8 +1718,8 @@ En esta sección se introducirá una notación alternativa para la
 representación de estadodes de polarización, y se describiran los
 estados ortogonales usados para la caracterización. 
 
-\subsubsection{La notación de Dirac}
-
+%\subsubsection{La notación de Dirac}
+\subsection{La notación de Dirac}
 De forma similar a cómo sucede en la mecánica cuántica, los estados de
 polarización arbitrarios generados por un PSG se pueden representar en
 la notación de BraKets de Dirac como Ket's:
@@ -1768,8 +1772,9 @@ analítico de la Eq. \ref{eq:valor_esperado}.
 \hat{I} &= \frac{I}{I+I^{\perp}}&\hat{I}^{\perp} &= \frac{I^{\perp}}{I+I^{\perp}}
 \end{align*}
 
-\subsubsection{El método de Ma et al.}
-
+%\subsubsection{El método de Ma et al.}
+\subsection{El método de Ma et al.}
+\label{sec:metodo_ma}
 Según \citetChGen{Ma2010}, hay tres combinaciones de PSD y PSG a partir
 de las cuales se pueden encontrar los valores X,Y,Z, y W. Si para
 normalizar cada una de ellas requerimos medir otra en la cual el Bra
@@ -1844,11 +1849,65 @@ Z^2 &= \frac{1}{2}\left( I_2-I_1-I_3+1\right), & W^2 &=
 \end{align*}
 
 Nosotros medimos estas tres intensidades para 52 de los 255 niveles de
-gris del SLM y obtuvimos un resultado muy similar al de Ma et al. La
-comparaci'on entre medidas de intensidad normalizadas se observa en la
-Fig. %\ref{}
-
-
+gris del SLM y obtuvimos unas curvas muy similares a las de \citetChGen{Ma2014}. La
+comparación entre medidas de intensidad normalizadas de Ma y de nosotros se observa en la
+Fig. \ref{fig:Ma_and_our_Is}.
+\begin{figure}[h!]
+\includegraphics[scale = .27]{Ma_and_our_Is.pdf}
+\caption[Comparación entre las tres intensidades para calibración
+medidas por Ma et al.~ para un SLM similar y por
+nosotros.]{Comparación entre las tres intensidades para calibración 
+medidas por \citetChGen{Ma2014}~ (a) y por nosotros (b).}
+\label{fig:Ma_and_our_Is}
+\end{figure}
+Asimismo, calculamos los valores de los cuadrados de los parámetros de
+Jones siguiendo las ecuaciones mencionadas y obtuvimos los resultados
+presentados en la Fig. \ref{fig:Our_Ma_X2Y2Z2W2}. 
+\begin{figure}[h!]
+\includegraphics[scale = .55]{Our_Ma_X2Y2Z2W2_long.pdf}
+\caption[Comparación entre los valores de $X$, $Y$ $Z$ y $W$ encontrados por
+Ma et al.~ para un SLM similar y por nosotros.]{Comparación entre los
+  valores de X, Y Z y W encontrados porpor \citetChGen{Ma2014}~ 
+  (a) y por nosotros (b). Dado que no queda explícito cómo encontrar
+  el signo de los parámetros en ninguna de sus publicaciones, asumimos
+  que $Z$ y $W$ son negativos como ellos lo presentan.}   
+\label{fig:Our_Ma_X2Y2Z2W2}
+\end{figure}
+Una primera dificultad que identificamos aplicando el método de Ma fue
+la ausencia de un mecanismo para definir el signo de la raíz
+cuadrada de $X^2$, $Y^2$, $Z^2$ y $W^2$. Por otra parte, observamos
+que aproximadamente a partir del nivel 200 aparecen valores negativos
+en la curva del parámetro $W^2$. Esto produce raíces complejas no
+permitidas por la teoría y puede ser debido a variaciones leves
+en la intensidad registrada por la cámara. La presencia de
+valores negativos no es discutida en los artículos consultados y no
+hemos identificado una restricción teórica que impida observar este
+fenomeno al hacer las restas de las intensidades. Con el fin de
+obtener un resultado similar al de \citetChGen{Ma2014} asumimos
+  que $Z$ y $W$ son negativos y calculamos el parámetro $W$ como
+  $W=\sqrt{|W^2|}$ para evitar valores complejos. Nuestros
+  resultados se comparan con los de Ma et al en la Fig. \ref{fig:Ma_and_our_XYZW}.
+\begin{figure}[h!]
+\includegraphics[scale = .26]{Ma_and_our_XYZW.pdf}
+\caption[Comparación entre los valores de $X$, $Y$ $Z$ y $W$ encontrados por
+Ma et al.~ para un SLM similar y por nosotros.]{Comparación entre los
+  valores de X, Y Z y W encontrados por \citetChGen{Ma2014}~ 
+  (a) y por nosotros (b). Dado que no queda explícito cómo encontrar
+  el signo de los parámetros en ninguna de sus publicaciones, asumimos
+  que $Z$ y $W$ son negativos como ellos lo presentan.}   
+\label{fig:Ma_and_our_XYZW}
+\end{figure}
+En primera medida, se observa que las curvas de los parámetros $X$, y
+$Y$ siguen la misma tendencia descendente que la encontrada por
+\citetChGen{Moreno2003}, dónde la matriz comienza siendo muy similar a
+una matriz identidad con $X$ cercano a uno y el resto de parámetros
+tendientes a cero. Por otra parte, y también de acuerdo con otros
+autores se observan valores de $W$ cercanos a cero y valores de $Y$
+que aumentan proporcionalmente al nivel de gris. El hecho de que $W$
+sea muy cercano a cero es consistente con el modelo basado en los
+parámetros físicos del modulador de
+\citetChGen{Saleh1990,Marquez2000} y con la
+Eq. \ref{eq:TN-LCD_Jones_Matrix} derivada en la sección \ref{sec:Propiedades_opticas_de_TNLCD} de este documento.
 
 Encontrar los números complejos $A$ y $B$ para ensamblar la
 matriz de Jones es un problema de polarimetría que requiere de
@@ -1901,7 +1960,7 @@ observa claramente que el SLM es transparente ante todo el rango de niveles cuan
 detecta polarización circular derecha, y opaco cuando se genera
 izquierda y se detecta derecha.
 
-\subsubsection{Funcion a minimizar}
+\subsubsection{Función a minimizar}
 
 Una matriz de Jones que represente correctamente al SLM debe poder
 emular al menos estas 6 medidas. Nosotros planteamos el siguiente
@@ -2103,7 +2162,8 @@ El proceso de toma de cientos de medidas que a una persona podría llevarle vari
 días de trabajo se hace con la interfaz en cuestión de una o dos horas
 sin necesidad de supervisión.    
 
-\subsection{Medida de la modulación de fase}
+%\subsection{Medida de la modulación de fase}
+\section{Medida de la modulación de fase}
 % El proceso de caracterización del SLM no queda completo sin antes
 % comprobar que el modelo puede predecir modulaciones de fase. 
 El paso siguiente en la caracterización del SLM consiste en medir la
@@ -2270,7 +2330,8 @@ introducida por un nivel de gris particular. A diferencia del
 mencionado anteriormente, este proceso es más preciso y mucho más fácil de implementar en fórma de
 un algorítmo que calcule la modulación para cada nivel de gris. 
 \pagebreak
-\subsubsection{Resultados de la medida de modulación de fase}
+%\subsubsection{Resultados de la medida de modulación de fase}
+\subsection{Resultados de la medida de modulación de fase}
 
 Implementando el método de transformadas de Fourier comon uno de los
 pasos en la caracterización automatizada del SLM, se obtuvieron curvas de modulación
@@ -2299,7 +2360,8 @@ Así mismo encontramos varios de estados en los cuales hay modulación
 de amplitu mínima
 
 
-
+\chapter{Generación de Vórtices Ópticos}
+\label{sec:OV_gen}
 
 
 \begin{itemize}
