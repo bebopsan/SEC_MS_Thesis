@@ -834,12 +834,19 @@ Como se dijo antes, las polarizaciones lineales se obtienen cuando las
 componentes están en fase, es decir que $\delta =
 \delta_y-\delta_x=0$. Sin embargo, la condición también se cumple cuando las
 diferencias de fase entre las componentes son múltiplos de $\pi$. 
-Por otra parte, las polarizaciónes lineales ($\delta = n\pi$ ) horizontal y vertical se dan cuando $\psi
+A continuación se muestran seis estados de polarización conocidos
+como los \textbf{estados degenerados de polarización}
+\citepChGen{Collett2005} que son importantes tanto en la teoría de
+polarización de Jones como en la de Stokes para la composición y
+detección de estados de polarización elípticos.
+Los primeros dos estados degenerados corresponden a las polarizaciónes
+lineales ($\delta = n\pi$ ) horizontal y vertical que se dan cuando $\psi
 = n\pi$ y $\psi = \frac{\pi}{2}(2n+1)$ respectivamente:
 \begin{align*}
 \mathbf{H} &=\begin{pmatrix}1\\0\end{pmatrix},& \mathbf{V} &=\begin{pmatrix}0\\1\end{pmatrix}.
 \end{align*}
-Y la polarización lineal a $45^{\circ}$ se da cuando las componentes $x$
+Luego, están los estados con polarización lineal a $45^{\circ}$ y
+$-45^{\circ}$. El primero se da cuando las componentes $x$
 y $y$ tienen la misma magnitud y dirección, es decir cuando
 $\psi=\frac{\pi}{4}(4n+1)$. La polarización a  $-45^{\circ}$ se da cuando
 $\psi=\frac{\pi}{4}(4n-1)$.
@@ -850,9 +857,11 @@ $\psi=\frac{\pi}{4}(4n-1)$.
 \mathbf{-45^{\circ}} 
 &=\begin{pmatrix}\cos{-\pi/4}\\\sin{-\pi/4}\end{pmatrix}=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}. 
 \end{align*} 
-Las polarizaciones circular izquierda y circular derecha son tales que
-ambas componentes tienen la misma magnitud como en la de $45^{\circ}$,
-pero el retardo en fase es de $\delta = \frac{\pi}{2}$:
+Finalmente, se tienen los estados circulares que consisten en las
+polarizaciones circular izquierda y circular derecha. Los estados de
+polarozación circulares son tales que
+ambas componentes tienen la misma magnitud que los de $\pm45^{\circ}$,
+pero el retardo en fase entre ellas es de $\delta = \frac{\pi}{2}$:
 \begin{align*}
 \mathbf{CD}
 &=\begin{pmatrix}\cos{\pi/4}\\\sin{\pi/4}e^{i\frac{\pi}{2}}\end{pmatrix}=\frac{1}{\sqrt{2}}
@@ -876,7 +885,7 @@ Los vectores de las tres parejas de estados que hemos visto hasta
 ahora son bases
 ortonormales. Esto quiere decir que fuera de estar normalizados,
 %son linealmente independientes entre sí, 
-si calculamos el producto escalar elementos de una misma pareja obtenemos un
+si calculamos el producto escalar entre elementos de una misma pareja obtenemos un
 valor de 0,
 % \begin{equation*}
 % \begin{pmatrix}1&0\end{pmatrix}\begin{pmatrix}0\\1\end{pmatrix}=
@@ -888,11 +897,11 @@ valor de 0,
 \mathbf{H^{\dagger}V} = \mathbf{45^{\circ\dagger}45^{\circ}} =
 \mathbf{CD^{\dagger}CI = 0.}   
 \end{equation*}
-Fuera de eso, estos estados se han mencionado porque sirven como base para el espacio
+Estos estados se han mencionado porque sirven como base para el espacio
 de posibles estados de polarización y serán usados en la sección
-\ref{sec:ChGV_med_mod_amp} para producir 6 curvas de modulación de
-amplitud que alimentan un modelo inspirado en el de \citetChGen{Ma2010}  capaz de predecir la modulación para
-cualquier otro estado. 
+\ref{sec:ChGV_med_mod_amp} para producir curvas de modulación de
+amplitud que alimentan un modelo de calibración de moduladores capaz
+de predecir la modulación para otros estados. 
 
 \subsubsection{Elementos ópticos como operadores en la representación
   de Jones}
@@ -1997,24 +2006,41 @@ evidente que el método de Ma et al falla en reproducir el comportamiento del SL
 para algunos estados. Más aún, si se revisan las 100 medidas se observa que el
 método sólo acierta a reproducir la modulación de los 12 estados $
 [1,2,11,12,25,26,35,35,43,44,73,74]$ que están estrechamente ligados a
-los estados usados para la construcción de las matrices. 
+los estados usados para la construcción de las matrices. Observamos
+que la divergencia del método se hace muy notoria a partir del nivel
+de gris 200 y esto puede estar relacionado con el cambio de pendiente
+que sufre la curva del parámetro $Y^2$ en la
+Fig. \ref{fig:Our_Ma_X2Y2Z2W2} que posiblemente se debe a un cambio de
+signo de $Y$. Creemos que este error está asociado con la
+falta de un criterio para la selección de signos y que en vez de
+adivinar signos hasta tener un modelo adecuado conviene proponer un
+método de caracterización que no dependa explicitamente de $X^2$, $Y^2$, $Z^2$ y $W^2$.
 
-Con el fin de obtener un modelo más preciso, y que solucionara los
-vacíos del que hemos presentado, propusimos un método de
-caracterización basado en ajuste numérico de parámetros. El ajuste se
-logra por medio de rutinas de minimización que actúan sobre un
-funcional propuesto por nosotros que se expone en la sección
-siguiente.   
-\section{Un método numérico basado en minimización de parámetros}
+% Con el fin de obtener un modelo más preciso, y que solucionara los
+% vacíos del que hemos presentado, propusimos un método de
+% caracterización basado en búsquedas numéricas de parámetros basándonos
+% en rutinas de minimización. 
+
+\section{Un método basado en minimización de parámetros}
 Encontrar los números complejos $A$ y $B$ (o reales $X$, $Y$, $Z$,
 $W$) necesarios para ensamblar la
-matriz de Jones puede ser implementado como un problema de polarimetría que requiere de
-plantear un conjunto de medidas que den la información suficiente
-sobre los cambios en polarización introducidos por el SLM. 
-Tras implementar el método de caracterización basados en un modelos de
-caja negra de \citetChGen{Ma2010}, y realizar nuestro propio método concluimos que
-las siguientes 6 medidas de modulación son suficientes para una
-correcta caracterización:
+matriz de Jones puede ser interpretado como un problema de
+minimización desde el punto de vista de ingeniería inversa. Desde esta
+perspectiva, se puede tratar el SLM realmente como una caja negra y
+conservar sólo la condición de unicidad de la matriz
+como restriccion de la minimización.  
+En primera medida, usamos el mismo conjunto de 6 medidas 
+% polarimetría que requiere de
+% plantear un conjunto de medidas que den la información suficiente
+% sobre los cambios en polarización introducidos por el SLM. 
+del método de caracterización 
+% basados en un modelos de caja negra 
+de \citetChGen{Ma2010}, que son también los estados de polarización
+degenerados (lineales
+$\mathbf{H}$, $\mathbf{V}$, $\mathbf{\pm 45^{\circ}}$ y circulares) que según la
+teoría de polarización de Jones y de Stokes brindan la información suficiente para
+caracterizar los cambios de polarización introducidos por un elemento
+óptico \citepChGen{Collett2005}.
 % Basandonos en el trabajo de Moreno, y con la convicción de que
 % parametrizaban una variedad suficientemente diversa de situaciones
 % escogimos las siguientes configuraciones de PSG y PSD para alimentar
@@ -2039,37 +2065,44 @@ correcta caracterización:
 %                                          |<\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2,&I_{6}
 %   &= |<\mathbf{CI}|SLM|\mathbf{CD}>|^2.
 % \end{align*}
-Las curvas de modulación correspondientes a cada una de las medidas se
+Las curvas de modulación correspondientes a cada una de las medidas en
+la notación de Ma y en la de la Fig. \ref{fig:braket_100_notation} se
 ilustran en la Fig \ref{fig:six_input_measures}. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.55]{six_input_measures.pdf}
 \caption[Curvas de modulación que sirven de entrada para el ajuste de
-parámetros de la matriz de Jones del SLM]{Curvas de modulación que sirven de entrada para el ajuste de
-parámetros de la matriz de Jones del SLM}
+parámetros de la matriz de Jones del SLM]{Curvas de modulación que
+  sirven de entrada para el ajuste de parámetros de la matriz de Jones
+  del SLM. La leyenda indica la equivalencia entre las 6 curvas del
+  método de Ma et al y la notación usada para las 100 medidas de comprobación. }
 \label{fig:six_input_measures}
 \end{figure}
-Sólo con estas 6
-curvas se observa que la modulación de amplitud es muy similar entre
+Se puede observar que la modulación de amplitud es muy similar entre
 polarizaciones lineales y que, como sería de esperarse, hay
 complementariedad entre estados ortogonales.  Por otra parte, se
-observa claramente que el SLM es transparente ante todo el rango de niveles cuando se genera y
-detecta polarización circular derecha, y opaco cuando se genera
-izquierda y se detecta derecha.
-
-\subsection{Función a minimizar}
-
-Una matriz de Jones que represente correctamente al SLM debe poder
-emular al menos estas 6 medidas. Nosotros planteamos el siguiente
-funcional a minimizar que actúa como una medida de la similitud entre
-intensidades simuladas e intensidades adquiridas experimentalmente
-
+observa claramente que el SLM es cercano a ser transparente en un
+amplio rango de niveles cuando se genera y detecta polarización
+circular derecha, y opaco cuando se genera derecha y se detecta izquierda.
+A continuación se describe la el funcional usado para la función de
+minimización y la implementación del método. 
+\subsection{Funciónal a minimizar}
+Una matriz de Jones que represente correctamente al SLM, encontrada por
+métodos de minimización, debería en principio poder
+emular al menos estas 6 medidas para lograr resultados tan buenos como
+los del método de Ma et al. Nosotros planteamos un funcional a
+minimizar ($\mathcal{L}$) que actúa como una medida de la similitud entre 
+intensidades simuladas e intensidades adquiridas experimentalmente. El
+funcional sirve como un criterio de selección para evaluar si los
+parámetros propuestos ($(\mathbf{X,Y,Z,W})$) en alguna de las iteraciones de la rutina de
+minimización son parámetros que reproduzcan las medidas
+experimentales.  
 \begin{equation}
 \mathcal{L}(\mathbf{X,Y,Z,W}) = \sum_{ng=0}^{255}\sum_{i=1}^6 | I_{ng,i} -
 |<\mathbf{J_{i}}|\mathbf{SLM_{ng}}|\mathbf{J_{i}}>|^2|^2.
 \label{eq:ChGen_SLM_model_functional}  
 \end{equation}
-En la Eq. \ref{eq:ChGen_SLM_model_functional} el funcional consiste en
+El funcional de la Eq. \ref{eq:ChGen_SLM_model_functional}  consiste en
 la suma de las diferencias cuadradas entre intensidades para cada
 nivel de gris ($n$) y para cada combinación de PSG y PSD ($i$). Los
 argumentos del funcional son vectores que representan el conjunto de números
@@ -2077,22 +2110,22 @@ reales $x_n, y_n, z_n, w_n$ que componen a los elementos complejos $A$ y $B$
 de la matriz de Jones del SLM (ver 
 Eq. \ref{eq:general_jones_matrix}) para un $n$ dado,
 \begin{align*}
-\mathbf{X} &= \sum_{n=0}^{255}x_n,&\mathbf{Y} &= \sum_{n=0}^{255}y_n,&\mathbf{Z} &= \sum_{n=0}^{255}z_n,&\mathbf{W} &= \sum_{n=0}^{255}w_n.
+\mathbf{X} &= \sum_{n=0}^{255}X_n,&\mathbf{Y} &= \sum_{n=0}^{255}Y_n,&\mathbf{Z} &= \sum_{n=0}^{255}Z_n,&\mathbf{W} &= \sum_{n=0}^{255}W_n.
 \end{align*} 
 El funcional \ref{eq:ChGen_SLM_model_functional}  puede ser minimizado
-variando los 1024 posibles valores 
+variando los 1024 ($256\times 4$) posibles valores 
 de $X,Y,Z,W$ dentro del rango $-1:1$ en un algoritmo de
 minimización. La minimización de los datos presentados en la
 Fig. \ref{fig:six_input_measures} se llevo a cabo usando la función
  \href{http://goo.gl/tv5Iyz}{\bf{scipy.optimize.fmin\_l\_bfgs\_b}} del
- paquete de calculo científico \href{http://goo.gl/fRhz8s}{Scipy} del
- lenguaje de programación \href{https://www.python.org}{Python}. Ésta
- función conocida como \href{http://en.wikipedia.org/wiki/Limited-memory\_BFGS}{L-BFGS-B} implementa una versión de memoria limitada (L) del método quasi
+ paquete de calculo científico \href{http://goo.gl/fRhz8s}{\textbf{Scipy}} del
+ lenguaje de programación \href{https://www.python.org}{\textbf{Python}}. Ésta
+ función conocida como \href{http://en.wikipedia.org/wiki/Limited-memory\_BFGS}{\textbf{L-BFGS-B}} implementa una versión de memoria limitada (L) del método quasi
  Newton conocido como Broyden-Fletcher-Goldfarb-Shano (BFGS) y permite
  la definición de condiciones de frontera (B) sobre los argumentos de
  entrada.  
 La implementación en el lenguaje Python de la función a minimizar se
-muestra en la Fig. \ref{SLM_functional}. 
+muestra en la Fig. \ref{fig:SLM_functional},  
 \begin{figure}
 \begin{python}
 def min_sq(x0,I_exp):
@@ -2125,11 +2158,11 @@ def min_sq(x0,I_exp):
     return min_sum
 \end{python}
 \caption{Funcional a minimizar para el ajuste de parámetros basado en
-  6 medidas de modulaciòn de amplitud.}
+  6 medidas de modulación de amplitud.}
 \label{fig:SLM_functional}
 \end{figure}
 \pagebreak
-La llamada a la función de minimización se hace como se muestra en la
+y la llamada a la función de minimización se hace como se muestra en la
 Fig. \ref{fig:SLM_minimization}.
 %cons = ({'type': 'eq', 'fun': lambda x:  x[0]**2+x[1]**2+x[2]**2+x[3]**2 - 1})
 \begin{figure}
@@ -2155,10 +2188,9 @@ cercano a cero, utilizamos la opción de aproximación del gradiente
 por medio de diferencias finitas y definimos la tolerancia de
 convergencia como criterio de parada cuando el valor del funcional no
 cambie a menos de $1e^{-5}$. Los detalles sobre las variables,
-preprocesamiento, y los resultados se han subido a la red a un
-repositorio de GitHub y se pueden observar en un la siguiente página
-web \href{http://goo.gl/QQtcQX}{http://goo.gl/QQtcQX}.
-
+preprocesamiento, y los resultados se han subido a internét en un
+repositorio de GitHub y se pueden observar en la siguiente página web:\\
+\hspace*{\fill} \href{http://goo.gl/QQtcQX}{\textbf{http://goo.gl/QQtcQX}}.\hspace*{\fill} \\
 En la figura \ref{fig:xyzw} se ilustran los valores de $X,Y,Z,W$ obtenidos luego de
 ejecutar la minimización. 
 \begin{figure}[h!]
