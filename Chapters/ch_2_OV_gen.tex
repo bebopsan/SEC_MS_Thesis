@@ -1703,8 +1703,10 @@ posibles que implican rotar elementos ópticos de forma precisa y con
 alta repetibilidad. 
 En cambio, vamos a medir experimentalmente sólo 6 combinaciones de PSG
 y PSD propuestas por \citetChGen{Ma2010} y con
-ellas alimentaremos un modelo anallítico en el cual se derivan los elementos de la matriz de
-Jones para cada nivel de gris por medio de operaciones aritméticas simples.
+ellas alimentaremos un modelo analítico y otro modelo numérico con los
+cuales se obtienen los parámetros de la matriz de 
+Jones para cada nivel de gris por medio de operaciones aritméticas
+simples en el caso del primero, y funciones de minimización en el segundo.
 % serán encontrada por un método de ajuste
 % de parámetros.
 % de caja negra 
@@ -1714,9 +1716,11 @@ Una vez conocido el modelo del SLM se puede buscar el
 estado que mejor satisface las condiciones de operación haciendo simulaciones con
 las cuales sí es práctico hacer una búsqueda entre múltiples estados.
 
-En esta sección se introducirá una notación alternativa para la
-representación de estadodes de polarización, y se describiran los
-estados ortogonales usados para la caracterización. 
+A continuación se introducirá una notación alternativa para la
+representación de estadodes de polarización que es de uso generalizada
+en las referencias consultadas y que facilita la
+representación de las combinaciones de PSG y PSD para medidas de
+intensidad.  
 
 %\subsubsection{La notación de Dirac}
 \subsection{La notación de Dirac}
@@ -1728,19 +1732,19 @@ la notación de BraKets de Dirac como Ket's:
 \mathbf{HWP}\right)\ In.
 \end{equation}
 Y siguiendo esta interpretación, el PSD correspondiente a un PSG dado
-es el Bra, es decir, el vector que es complejo conjugado del Ket.
+es el Bra, es decir, el vector que es complejo conjugado de un Ket
 \begin{equation}
-<J|= |J>^{\dagger} = \begin{pmatrix} J_x^* &  J_y^*\end{pmatrix} 
+<J|= |J>^{\dagger} = \begin{pmatrix} J_x^* &  J_y^*\end{pmatrix}. 
 \end{equation}
 Por otra parte, la matriz de Jones del SLM cumple el papel que tendría un
 operador en la mecánica cuántica. Si los Bra y Ket representan vectores normalizados, la
 intensidad del campo a la salida puede ser obtenida como el módulo
 cuadrado del valor
 esperado del operador del SLM  (Eq. \ref{eq:general_jones_matrix})
-cuando la base del PSG es proyectada sobre la del PSD.
-\begin{equation}
+cuando la base del PSG es proyectada sobre la del PSD \citepChGen{Moreno2003,Ma2010}.
+\begin{align}
 \label{eq:valor_esperado}
-I = |<J|\mathbf{SLM} |J>|^2 = 
+I = |<J|\mathbf{SLM} |J>|^2 &= 
 \begin{pmatrix}
 J_x & J_y
 \end{pmatrix}
@@ -1751,32 +1755,45 @@ A & B\\
 \begin{pmatrix}
 J_x \\ J_y
 \end{pmatrix}
-,
-\end{equation}
+,\nonumber\\
+&= 
+\begin{pmatrix}
+J_x & J_y
+\end{pmatrix}
+\begin{pmatrix}
+X+iY & Z+iW\\
+ -Z+iW & X-iY 
+\end{pmatrix}
+\begin{pmatrix}
+J_x \\ J_y
+\end{pmatrix}
+.
+\end{align}
 %donde $A$ y $B$ son números complejos.
 
-La intensidad es una variable que se puede medir con una cámara, y los vectores
+La intensidad es una variable que se puede medir con una cámara o fotodiodo, y los vectores
 correspondientes a los estados producidos por el PSG y el PSD son
 conocidos. Como los vectores de Jones que utilizamos están
-normalizados lo más adecuado es normalizar también las medidas de
+normalizados, lo más adecuado es normalizar también las medidas de
 intensidad. Una forma de normalizar las medidas consiste en medir no
 solo el BraKet deseado sino también un Braket en el cual el Bra o PSD es un
 vector ortogonal al PSD original.  La intensidad medida con el PSD
 ortogonal es entonces un complemento de la original y su suma debe ser
-un valor constante. Si se divide cualquiera de las dos intensidades
-sobre la suma de las dos, obtenemos una intensidad que ha sido
-normalizada y que es equivalente a las resultantes del producto
-analítico de la Eq. \ref{eq:valor_esperado}. 
+un valor constante. Si se divide cualquiera de las dos intensidades experimentales
+sobre la suma de las dos, obtenemos un valor que ha sido
+normalizado y que es equivalente a aquellos obtenidos usando del producto
+analítico de la Eq. \ref{eq:valor_esperado}, 
 
 \begin{align*}
-\hat{I} &= \frac{I}{I+I^{\perp}}&\hat{I}^{\perp} &= \frac{I^{\perp}}{I+I^{\perp}}
+\hat{I} &= \frac{I}{I+I^{\perp}},&\hat{I}^{\perp} &= \frac{I^{\perp}}{I+I^{\perp}}.
 \end{align*}
 
 %\subsubsection{El método de Ma et al.}
-\subsection{El método de Ma et al.}
+\section{El método de Ma et al.~ para la caracterización del SLM}
 \label{sec:metodo_ma}
 Según \citetChGen{Ma2010}, hay tres combinaciones de PSD y PSG a partir
-de las cuales se pueden encontrar los valores X,Y,Z, y W. Si para
+de las cuales se pueden encontrar los valores X,Y,Z, y W de la matriz
+de Jones de un SLM. Si para
 normalizar cada una de ellas requerimos medir otra en la cual el Bra
 es el vector ortogonal del Bra original, se requiere de las siguientes
 6 medidas, 
@@ -1785,7 +1802,8 @@ I_1 &= |<\mathbf{H}|SLM|\mathbf{H}>|^2,& I_2 &= |<\mathbf{CD}|SLM|\mathbf{CD}>|^
   &= |<\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2,\\
 I_1^{\perp} &= |<\mathbf{V}|SLM|\mathbf{H}>|^2,&I_2^{\perp} &= |<\mathbf{CI}|SLM|\mathbf{CD}>|^2,&I_{3}^{\perp} &= |<\mathbf{-45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2.
 \end{align*}
-Dónde básicamente se está midiendo qué tan transparente es el SLM ante
+Dónde el símbolo $^{\perp}$ denota ortogonalidad, y básicamente se
+está midiendo qué tan transparente es el SLM ante 
 los estados vertical, circular derecho, y lineal a $45^{\circ}$. 
 Estas tres medidas son interesantes porque se puede encontrar una
 relación entre la intensidad medida 
@@ -1793,42 +1811,42 @@ y los valores desconocidos de la matriz de Jones.
 A continuación se muestra el procedimiento matemático expuesto por Ma
 et al.~que relaciona cada una de las intensidades con los valores de
 la matriz de Jones. 
-Analizar la tramitancia ante el estado lineal derecho entrega un valor
-de intensidad que es función de $X$ y $Y$
+Analizar la tramitancia ante el estado lineal horizontal entrega un valor
+de intensidad que es función de $X$ y $Y$,
 \begin{align*}
-I_1 &= |<\mathbf{H}|SLM|\mathbf{H}>|^2 = X^2+Y^2,\\
+I_1 = |<\mathbf{H}|SLM|\mathbf{H}>|^2 &= X^2+Y^2,\\
 &=  \left|\begin{pmatrix} 1&0\end{pmatrix} 
        \begin{pmatrix}
-         x+iy & z+iw \\-z+iw & x-iy
+         X+iY & Z+iW \\-Z+iW & X-iY
        \end{pmatrix} \begin{pmatrix}1\\0\end{pmatrix}\right|^2, \\
 &=  \left|\begin{pmatrix} 1&0\end{pmatrix} 
-       \begin{pmatrix} x+iy \\-z+iw \end{pmatrix} \right|^2, \\
-&=  \left|x+iy\right|^2 =  X^2+Y^2.\\
+       \begin{pmatrix} X+iY \\-Z+iW \end{pmatrix} \right|^2, \\
+&=  \left|X+iY\right|^2 =  X^2+Y^2.\\
 \end{align*}
 Y analizar la tramitancia ante un estado circular derecho entrega un
 valor de intensidad función de $X$ y $Z$.
 \begin{align*}
-I_2 &= |<\mathbf{CD}|SLM|\mathbf{CD}>|^2 = X^2+Z^2,\\
-&=  1/\sqrt{2}\left|\begin{pmatrix} 1&-i\end{pmatrix} 
+I_2 = |<\mathbf{CD}|SLM|\mathbf{CD}>|^2 &= X^2+Z^2,\\
+&=  \left|\frac{1}{\sqrt{2}}\begin{pmatrix} 1&-i\end{pmatrix} 
        \begin{pmatrix}
-         x+iy & z+iw \\-z+iw & x-iy
-       \end{pmatrix} 1/\sqrt{2}\begin{pmatrix}1\\i\end{pmatrix}\right|^2 ,\\
-&=  \left|1/2\begin{pmatrix} 1&-i\end{pmatrix} 
-       \begin{pmatrix} x+iy +iz-w\\-z+iw +ix+y\end{pmatrix} \right|^2 ,\\
-&=  \left|1/2\left(x+iy+iz-iw+iz+w+x-iy\right)\right|^2 =  X^2+Z^2.\\
+         X+iY & Z+iW \\-Z+iW & X-iY
+       \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix}1\\i\end{pmatrix}\right|^2 ,\\
+&=  \left|\frac{1}{2}\begin{pmatrix} 1&-i\end{pmatrix} 
+       \begin{pmatrix} X+iY +iZ-W\\-Z+iW +iX+Y\end{pmatrix} \right|^2 ,\\
+&=  \left|\frac{1}{2}\left(X+iY+iZ-iW+iZ+W+X-iY\right)\right|^2 =  X^2+Z^2.\\
 \end{align*}
 Como en los casos anteriores, se muestra que la intensidad medida
 cuando se genera y detecta un estado inclinado a $45^{\circ}$ depende
 ahora de $X$ y $W$.
 \begin{align*}
-I_3 &= |<\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2 = X^2+W^2,\\
-&=  1/\sqrt{2}\left|\begin{pmatrix} 1&1\end{pmatrix} 
+I_3 = |<\mathbf{45^{\circ}}|SLM|\mathbf{45^{\circ}}>|^2 &= X^2+W^2,\\
+&=  \left|\frac{1}{\sqrt{2}}\begin{pmatrix} 1&1\end{pmatrix} 
        \begin{pmatrix}
-         x+iy & z+iw \\-z+iw & x-iy
-       \end{pmatrix} 1/\sqrt{2}\begin{pmatrix}1\\1\end{pmatrix}\right|^2 ,\\
-&=  \left|1/2\begin{pmatrix} 1&1\end{pmatrix} 
-       \begin{pmatrix} x+iy +z+iw\\-z+iw +x-iy\end{pmatrix} \right|^2, \\
-&=  \left|1/2\left(x+iy+z+iw-z+iw+x-iy\right)\right|^2 =  X^2+W^2.\\
+         X+iY & Z+iW \\-Z+iW & X-iY
+       \end{pmatrix} \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}\right|^2 ,\\
+&=  \left|\frac{1}{2}\begin{pmatrix} 1&1\end{pmatrix} 
+       \begin{pmatrix} X+iY +Z+iW\\-Z+iW +X-iY\end{pmatrix} \right|^2, \\
+&=  \left|\frac{1}{2}\left(X+iY+Z+iW-Z+iW+X-iY\right)\right|^2 =  X^2+W^2.\\
 \end{align*}
 Adicionalmente, de la Eq. \ref{eq:unimodular} podemos deducir la siguiente condición de
 normalización que está relacionada con el hecho de ser una matriz
@@ -1849,8 +1867,8 @@ Z^2 &= \frac{1}{2}\left( I_2-I_1-I_3+1\right), & W^2 &=
 \end{align*}
 
 Nosotros medimos estas tres intensidades para 52 de los 255 niveles de
-gris del SLM y obtuvimos unas curvas muy similares a las de \citetChGen{Ma2014}. La
-comparación entre medidas de intensidad normalizadas de Ma y de nosotros se observa en la
+gris del SLM y obtuvimos curvas muy similares a las de \citetChGen{Ma2014}. La
+comparación entre las medidas de intensidad normalizadas y las de Ma se observa en la
 Fig. \ref{fig:Ma_and_our_Is}.
 \begin{figure}[h!]
 \includegraphics[scale = .27]{Ma_and_our_Is.pdf}
@@ -1876,8 +1894,9 @@ Ma et al.~ para un SLM similar y por nosotros.]{Comparación entre los
 Una primera dificultad que identificamos aplicando el método de Ma fue
 la ausencia de un mecanismo para definir el signo de la raíz
 cuadrada de $X^2$, $Y^2$, $Z^2$ y $W^2$. Por otra parte, observamos
-que aproximadamente a partir del nivel 200 aparecen valores negativos
-en la curva del parámetro $W^2$. Esto produce raíces complejas no
+que aproximadamente a partir del nivel 200 la curva de $Y^2$ cambia de
+direcci'on sugiriendo un cambio de signo en $Y$ y aparecen valores negativos
+en la curva del parámetro $W^2$. Lo segundo produce raíces complejas no
 permitidas por la teoría y puede ser debido a variaciones leves
 en la intensidad registrada por la cámara. La presencia de
 valores negativos no es discutida en los artículos consultados y no
@@ -1897,25 +1916,103 @@ Ma et al.~ para un SLM similar y por nosotros.]{Comparación entre los
   que $Z$ y $W$ son negativos como ellos lo presentan.}   
 \label{fig:Ma_and_our_XYZW}
 \end{figure}
-En primera medida, se observa que las curvas de los parámetros $X$, y
+En primera medida, en la Fig. \ref{fig:Ma_and_our_XYZW} se observa que
+las curvas de los parámetros $X$, y 
 $Y$ siguen la misma tendencia descendente que la encontrada por
 \citetChGen{Moreno2003}, dónde la matriz comienza siendo muy similar a
 una matriz identidad con $X$ cercano a uno y el resto de parámetros
 tendientes a cero. Por otra parte, y también de acuerdo con otros
-autores se observan valores de $W$ cercanos a cero y valores de $Y$
+autores \citepChGen{Saleh1990,Marquez2000} se observan valores de $W$
+cercanos a cero y valores de $Y$ 
 que aumentan proporcionalmente al nivel de gris. El hecho de que $W$
 sea muy cercano a cero es consistente con el modelo basado en los
 parámetros físicos del modulador de
-\citetChGen{Saleh1990,Marquez2000} y con la
-Eq. \ref{eq:TN-LCD_Jones_Matrix} derivada en la sección \ref{sec:Propiedades_opticas_de_TNLCD} de este documento.
+\citetChGen{Marquez2000} y con la
+Eq. \ref{eq:TN-LCD_Jones_Matrix} derivada en la sección
+\ref{sec:Propiedades_opticas_de_TNLCD} de este documento. 
 
-Encontrar los números complejos $A$ y $B$ para ensamblar la
-matriz de Jones es un problema de polarimetría que requiere de
+\subsection{Comprobación experimental con 100 medidas}
+\label{sec:exp_validation}
+Hemos comparado las intensidades predichas por las matrices obtenidas
+y encontramos que el modelo emula con muy buena exactitud tanto las 3 medidas
+de entrada como las 3 medidas ortogonales. Para cada uno de los 6
+estados el error relativo promedio es menor al $1\%$.  Se
+calcula el error relativo porcentual promedio para cada estado como: 
+\begin{equation*}
+error = \left(\sum_{n=1}^{52}\frac{|I_n^e-I_n^s|}{I_n^e}\right) \times \frac{100}{52}.
+\end{equation*}   
+No obstante, observamos que la predicción del modelo no tiene una
+exactitud igual de buena para estados distintos a los estados usados
+para la caracterización. 
+Con el fin de comprobar que las matrices obtenidas eran un modelo adecuado
+del SLM se hicieron 100 medidas nuevas de modulación de amplitud y se
+compararon con las simuladas. En esas medidas se hicieron todas las combinaciones
+posibles entre 10 vectores Ket y Bra usando la 
+numeración que se esquematiza en la Fig. \ref{fig:braket_100_notation}.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.4]{brakets.pdf}
+\caption[Numeración de medidas experimentales de modulación para
+corroboración del modelo de SLM]{Numeración de medidas experimentales de modulación para
+corroboración del modelo del SLM. Por cada Ket hay 10 Bra y la
+numeración se hace entre parejas en orden descendente con los pares
+representados en la figura. }
+\label{fig:braket_100_notation}
+\end{figure}
+Entre los estados se incluyeron dos parejas de estados
+elípticos ortonormales no usados
+como entrada del algoritmo de minimización. Los estados elípticos
+corresponden a polarizaciones elípticas horizontal, vertical, a
+$45^{\circ}$ y a $-45^{\circ}$ con ángulo de elípticidad $\theta
+=22.5^{\circ}$ como se muestra en la Fig. \ref{fig:elliptic_states}.
+\begin{figure}
+\centering
+\includegraphics[scale = .6]{EVD_EHI_E45D_Em45I.pdf}
+\caption[Estados de polarización elípticos]{Dos pares de estados de polarización
+  elípticos ortonormales con ángulo de elipticidad $\theta = 22.5^{\circ}$. (a) Polarización Elíptica Vertical Derecha,
+  (b) Elíptica Horizontal Izquierda, (c) Elíptica a $45^{\circ}$
+  Derecha, y (d) Elíptica a $-45^{\circ}$ Izquierda.}
+\label{fig:elliptic_states}
+\end{figure}
+Cuatro de los 100 resultados que incluyen estados elípticos se muestran en la
+Fig. \ref{fig:Ma_caracterization_results} y el resto de medidas se pueden
+observar en la siguiente página web:\\
+\hspace*{\fill}\href{http://goo.gl/69kSu2}{\textbf{http://goo.gl/69kSu2}}. \hspace*{\fill}\\
+Ese vínculo dirige a una copia del archivo que
+usamos para cargar y calcular los parámetros de las matrices de Jones
+del SLM usando el método de Ma et al.~ Allí se incluye tanto el código
+de nuestra implementación como las figuras de los resultados. 
+\newpage
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{some_Ma_caracterization_results.pdf}
+\caption[Curvas de modulación experimentales comparadas con las
+simuladas usando el modelo obtenido con el método de Ma et al]{Curvas de modulación
+  experimentales de 4 de las 100 medidas comparadas con sus
+  equivalentes simuladas usando la matriz recuperada con el método de Ma et al.}
+\label{fig:Ma_caracterization_results}
+\end{figure}
+Los resultados de la Fig. \ref{fig:Ma_caracterization_results} hacen
+evidente que el método de Ma et al falla en reproducir el comportamiento del SLM
+para algunos estados. Más aún, si se revisan las 100 medidas se observa que el
+método sólo acierta a reproducir la modulación de los 12 estados $
+[1,2,11,12,25,26,35,35,43,44,73,74]$ que están estrechamente ligados a
+los estados usados para la construcción de las matrices. 
+
+Con el fin de obtener un modelo más preciso, y que solucionara los
+vacíos del que hemos presentado, propusimos un método de
+caracterización basado en ajuste numérico de parámetros. El ajuste se
+logra por medio de rutinas de minimización que actúan sobre un
+funcional propuesto por nosotros que se expone en la sección
+siguiente.   
+\section{Un método numérico basado en minimización de parámetros}
+Encontrar los números complejos $A$ y $B$ (o reales $X$, $Y$, $Z$,
+$W$) necesarios para ensamblar la
+matriz de Jones puede ser implementado como un problema de polarimetría que requiere de
 plantear un conjunto de medidas que den la información suficiente
 sobre los cambios en polarización introducidos por el SLM. 
-Tras implementar los métodos de caracterización basados en modelos de
-caja negra, tanto de \citetChGen{Moreno2003} como de
-\citetChGen{Ma2010}, y realizar nuestro propio método concluimos que
+Tras implementar el método de caracterización basados en un modelos de
+caja negra de \citetChGen{Ma2010}, y realizar nuestro propio método concluimos que
 las siguientes 6 medidas de modulación son suficientes para una
 correcta caracterización:
 % Basandonos en el trabajo de Moreno, y con la convicción de que
@@ -1960,7 +2057,7 @@ observa claramente que el SLM es transparente ante todo el rango de niveles cuan
 detecta polarización circular derecha, y opaco cuando se genera
 izquierda y se detecta derecha.
 
-\subsubsection{Función a minimizar}
+\subsection{Función a minimizar}
 
 Una matriz de Jones que represente correctamente al SLM debe poder
 emular al menos estas 6 medidas. Nosotros planteamos el siguiente
@@ -2078,57 +2175,12 @@ La siguiente sección trata la introducción de estados elípticos que
 fueron planteados para corroborar la caracterización, y los resultados
 experimentales obtenidos. 
 
-\subsubsection{Comprobación experimental}
-\label{sec:exp_validation}
-Con el fín de comprobar que la matriz obtenida era un modelo adecuado
-del SLM se hicieron 100 medidas nuevas de modulación de amplitud y se
-compararon con las simuladas por el SLM. En esas medidas se hicieron
-todas las combinaciones posibles entre 10 vectores Ket y Bra usando la
-numeración que se esquematiza en la Fig. \ref{fig:braket_100_notation}.
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.4]{brakets.pdf}
-\caption[Numeración de medidas experimentales de modulación para
-corroboración del modelo de SLM]{Numeración de medidas experimentales de modulación para
-corroboración del modelo del SLM. Por cada Ket hay 10 Bra y la
-numeración se hace entre parejas en orden descendente con los pares
-representados en la figura. }
-\label{fig:braket_100_notation}
-\end{figure}
-Entre los estados usados se incluyeron dos parejas de estados
-elípticos ortonormales no usados
-como entrada del algorítmo de minimización. Los estados elípticos
-corresponden a polarizaciónes elípticas horizontal, vertical, a
-$45^{\circ}$ y a $-45^{\circ}$ con ángulo de elípticidad $\theta
-=22.5^{\circ}$ como se muestra en la Fig. \ref{fig:elliptic_states}.
-\begin{figure}
-\centering
-\includegraphics[scale = .6]{EVD_EHI_E45D_Em45I.pdf}
-\caption[Estados de polarización elípticos]{Dos pares de estados de polarización
-  elípticos ortonormales con ángulo de elipticidad $\theta = 22.5^{\circ}$. (a) Polarización Elíptica Vertical Derecha,
-  (b) Elíptica Horizontal Izquierda, (c) Elíptica a $45^{\circ}$
-  Derecha, y (d) Elíptica a $-45^{\circ}$ Izquierda.}
-\label{fig:elliptic_states}
-\end{figure}
-Cuatro de los 100 resultados se muestran en la
-Fig. \ref{fig:some_caracterization_results} y el resto se pueden
-observar en la página web mencionada anteriormente \href{http://goo.gl/QQtcQX}{http://goo.gl/QQtcQX}. 
-\newpage
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=.5]{some_caracterization_results.pdf}
-\caption[Curvas de modulación experimentales comparadas con las
-simuladas usando el modelo obtenido]{Curvas de modulación
-  experimentales de 4 de las 100 medidas comparadas con sus
-  equivalentes simuladas usando la matriz recuperada por minimización.}
-\label{fig:some_caracterization_results}
-\end{figure}
 Lo que muestran los resultados es que se logró una aproximación
 excelente, y que el modelo de la matriz de Jones del SLM efectivamente
 reproduce el comportamiento del elemento real. 
 
-\subsubsection{Instrumento para la automatización del proceso de medida.}
 
+\subsubsection{Instrumento para la automatización del proceso de medida.}
 Ahora bien, cualquiera que haya tenido experiencia con la
 caracterización de SLMs se sorprenderá por la cantidad de medidas que
 hemos hecho. La toma de cientos de medidas y todo el proceso de
