@@ -1683,8 +1683,11 @@ pendiente relativamente suave y lineal.
 \includegraphics[scale=.55]{amp_H_V_SLM_2002.pdf}
 \caption[Curva de modulación de amplitud para un estado no
 óptimo]{Medida de la intensidad normalizada del SLM Holoeye LC-2002 en la configuración típica
-  de pantallas LCD para royección. En este caso el PSG genera un estado de
-  polarización a la entrada vertical y el PSD detecta un estado horizontal.}
+  de pantallas LCD para proyección. Los primeros tres valores de la parte superior indican la
+configuración de brillo (Bm) y contraste (Cm) del SLM, así como la
+exposición de la cámara (Ec). Los siguientes 4 indican las posiciones
+de los elementos ópticos usados para generar y detectar
+estados de polarización.}
 \label{fig:amp_H_V_SLM_2002}
 \end{figure}
 Este tipo de modulaciónes
@@ -1945,10 +1948,10 @@ Eq. \ref{eq:TN-LCD_Jones_Matrix} derivada en la sección
 Hemos comparado las intensidades predichas por las matrices obtenidas
 y encontramos que el modelo emula con muy buena exactitud tanto las 3 medidas
 de entrada como las 3 medidas ortogonales. Para cada uno de los 6
-estados el error relativo promedio es menor al $1\%$.  Se
-calcula el error relativo porcentual promedio para cada estado como: 
+estados el error absoluto promedio es menor a $2\times10^{-4}$.  Se
+calcula el error absoluto promedio para cada estado como: 
 \begin{equation*}
-error = \left(\sum_{n=1}^{52}\frac{|I_n^e-I_n^s|}{I_n^e}\right) \times \frac{100}{52}.
+error_i = \sum_{n=1}^{52}\frac{|I_n^e-I_n^s|}{52}.
 \end{equation*}   
 No obstante, observamos que la predicción del modelo no tiene una
 exactitud igual de buena para estados distintos a los estados usados
@@ -1972,9 +1975,35 @@ Entre los estados se incluyeron dos parejas de estados
 elípticos ortonormales no usados
 como entrada del algoritmo de minimización. Los estados elípticos
 corresponden a polarizaciones elípticas horizontal, vertical, a
-$45^{\circ}$ y a $-45^{\circ}$ con ángulo de elípticidad $\theta
+$45^{\circ}$ y a $-45^{\circ}$ con ángulo de elipticidad $\theta
 =22.5^{\circ}$ como se muestra en la Fig. \ref{fig:elliptic_states}.
-\begin{figure}
+\\
+Para saber cómo ubicar los
+elementos ópticos que generan y detectan estados de polarización
+elípticos arbitrarios usamos un software desarrollado y registrado por nosotros en el Grupo de
+Óptica Aplicada y presentado como una ponencia de póster en el evento
+\href{http://www.eafit.edu.co/focuslatinoamerica2014/Paginas/Inicio.aspx}{\textbf{FOCUS
+    Latinoamérica}} en Noviembre del 2014. El póster junto con la
+interfaz gráfica y las librerías pueden ser descargadas sin costo en
+el siguiente vínculo web:\\
+\hspace*{\fill}
+\href{https://github.com/bebopsan/Ellipsometry\_for\_dummies.git}{\textbf{https://github.com/bebopsan/Ellipsometry\_for\_dummies.git}}\hspace*{\fill}.\\
+
+Aún cuando la imprecisión del método se hace evidente de forma
+cualitativa, se midió un error promedio global para las 100 para los
+100 estados como medida cuantitativa, $$error_g =
+\sum_{i=1}^{100}\frac{error_i}{100},$$ y se obtuvo un valor de $error_g
+= 0.085628$. Es decir que con intensidades normalizadas la diferencia
+entre la medida y la simulación es de alrededor de $8\%$.
+Cuatro de los 100 resultados que incluyen estados elípticos se muestran en la
+Fig. \ref{fig:Ma_caracterization_results} y el resto de medidas se han
+puesto al alcance del lector como un notebook de iPython en un
+repositorio alojado también en GitHub en el enlace: \href{http://goo.gl/69kSu2}{\textbf{http://goo.gl/69kSu2}}. 
+Ese vínculo dirige a una copia del archivo que
+usamos para cargar y calcular los parámetros de las matrices de Jones
+del SLM usando el método de Ma et al.~ Allí se incluye tanto el código
+de nuestra implementación como las figuras de los resultados. 
+\begin{figure}[h!]
 \centering
 \includegraphics[scale = .6]{EVD_EHI_E45D_Em45I.pdf}
 \caption[Estados de polarización elípticos]{Dos pares de estados de polarización
@@ -1983,15 +2012,7 @@ $45^{\circ}$ y a $-45^{\circ}$ con ángulo de elípticidad $\theta
   Derecha, y (d) Elíptica a $-45^{\circ}$ Izquierda.}
 \label{fig:elliptic_states}
 \end{figure}
-Cuatro de los 100 resultados que incluyen estados elípticos se muestran en la
-Fig. \ref{fig:Ma_caracterization_results} y el resto de medidas se pueden
-observar en la siguiente página web:\\
-\hspace*{\fill}\href{http://goo.gl/69kSu2}{\textbf{http://goo.gl/69kSu2}}. \hspace*{\fill}\\
-Ese vínculo dirige a una copia del archivo que
-usamos para cargar y calcular los parámetros de las matrices de Jones
-del SLM usando el método de Ma et al.~ Allí se incluye tanto el código
-de nuestra implementación como las figuras de los resultados. 
-\newpage
+%\newpage
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{some_Ma_caracterization_results.pdf}
@@ -2028,7 +2049,7 @@ matriz de Jones puede ser interpretado como un problema de
 minimización desde el punto de vista de ingeniería inversa. Desde esta
 perspectiva, se puede tratar el SLM realmente como una caja negra y
 conservar sólo la condición de unicidad de la matriz
-como restriccion de la minimización.  
+como restricción de la minimización.  
 En primera medida, usamos el mismo conjunto de 6 medidas 
 % polarimetría que requiere de
 % plantear un conjunto de medidas que den la información suficiente
@@ -2086,7 +2107,7 @@ amplio rango de niveles cuando se genera y detecta polarización
 circular derecha, y opaco cuando se genera derecha y se detecta izquierda.
 A continuación se describe la el funcional usado para la función de
 minimización y la implementación del método. 
-\subsection{Funciónal a minimizar}
+\subsection{Funcional a minimizar}
 Una matriz de Jones que represente correctamente al SLM, encontrada por
 métodos de minimización, debería en principio poder
 emular al menos estas 6 medidas para lograr resultados tan buenos como
@@ -2161,7 +2182,7 @@ def min_sq(x0,I_exp):
   6 medidas de modulación de amplitud.}
 \label{fig:SLM_functional}
 \end{figure}
-\pagebreak
+%\pagebreak
 y la llamada a la función de minimización se hace como se muestra en la
 Fig. \ref{fig:SLM_minimization}.
 %cons = ({'type': 'eq', 'fun': lambda x:  x[0]**2+x[1]**2+x[2]**2+x[3]**2 - 1})
@@ -2189,29 +2210,100 @@ por medio de diferencias finitas y definimos la tolerancia de
 convergencia como criterio de parada cuando el valor del funcional no
 cambie a menos de $1e^{-5}$. Los detalles sobre las variables,
 preprocesamiento, y los resultados se han subido a internét en un
-repositorio de GitHub y se pueden observar en la siguiente página web:\\
-\hspace*{\fill} \href{http://goo.gl/QQtcQX}{\textbf{http://goo.gl/QQtcQX}}.\hspace*{\fill} \\
-En la figura \ref{fig:xyzw} se ilustran los valores de $X,Y,Z,W$ obtenidos luego de
+repositorio de GitHub y se pueden observar en la siguiente página
+web:\\
+\hspace*{\fill} \href{http://goo.gl/FLIGE0}{\textbf{http://goo.gl/FLIGE0}}.\hspace*{\fill} \\
+%\hspace*{\fill} \href{http://goo.gl/QQtcQX}{\textbf{http://goo.gl/QQtcQX}}.\hspace*{\fill} \\
+En la figura \ref{fig:xyzw} se presentan los valores de $X,Y,Z,W$ obtenidos luego de
 ejecutar la minimización. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.55]{xyzw.pdf}
-\caption[Parametros reales que conforman la matriz de Jones del SLM]{Parametros reales que conforman la matriz de Jones del SLM.}
+\caption[Parametros reales que conforman la matriz de Jones del SLM
+encontrados por minimización con 6 medidas]{Parametros reales que
+  conforman la matriz de Jones del SLM encontrados por medio de
+  minimización con 100 entradas.} 
 \label{fig:xyzw}
 \end{figure}
-Estos valores , y en particular los de $X$ y
-$Z$ siguen la misma tendencia que resultados de caracterizaciones
-similares por \citetChGen{Moreno2003} y \citetChGen{Ma2010}, cosa que
-da un primer indicio de un modelo adecuado. 
-La siguiente sección trata la introducción de estados elípticos que
-fueron planteados para corroborar la caracterización, y los resultados
-experimentales obtenidos. 
-
-Lo que muestran los resultados es que se logró una aproximación
+Contrario a lo que pensábamos, resultó que aún cuando el método de
+minimización se basa directamente en los valores $X,Y,Z$, y $W$, y no
+en sus cuadrados, los resultados son casi idénticos a los que
+obtuvimos en la sección anterior con el método de Ma et al. Las curvas
+de los parámetros del modulador siguen la misma tendencia y producen
+los mismos valores de intensidad en las simulaciones. Las 4 medidas
+con estados elípticos que se  
+presentaron en la Fig. \ref{fig:Ma_caracterization_results} se
+repitieron para el nuevo método y se presentan junto con el valor del
+error relativo promedio porcentual en la
+Fig. \ref{fig:6m_caracterization_results}. 
+%\newpage
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{some_6min_caracterization_results.pdf}
+\caption[Curvas de modulación experimentales comparadas con las
+simuladas usando el modelo obtenido con el método de minimización de 6
+medidas]{Curvas de modulación
+  experimentales, y error de 4 de las 100 medidas comparadas con sus
+  equivalentes simuladas usando la matriz recuperada con el método de
+  minimización con 6 medidas.}
+\label{fig:6m_caracterization_results}
+\end{figure}
+El error en las 6 medidas usadas como entrada es en este caso menor a
+$2\times10^{-4}$, y el error absoluto global es de $error_g
+=0.077673$, que es un poco menor que el anterior. Sin embargo, sigue ocurriendo que la exactitud se pierde a partir del
+nivel de gris 200 en la mayoría de los estados. Es decir, que con estas medidas como entrada
+nuestro método es tan bueno como el de la literatura pero no significativamente mejor.
+\subsection{Una ampliación de la función de minimización}
+El funcional de minimización puede ser modificado
+fácilmente para incluir como valores de entrada cuantos BraKet's
+distintos se deseen siempre y cuando se conozcan los vectores de Jones 
+correspondientes al PSG y PSD de cada uno.   
+Siguiendo la idea de utilizar la información extra de la que disponemos, modificamos la
+función para recibir no 6 sino 100 estados de entrada y 
+ejecutamos de nuevo el algoritmo de minimización. Los parámetros de
+Jones para cada nivel de gris del método de minimización extendido
+se presentan en la Fig. \ref{fig:xyzw_100}, e inmediatamente se puede observar un
+cambio importante en el comportamiento de las curvas $X$, $Y$, y $W$
+en comparación con las figuras \ref{fig:Ma_and_our_XYZW} y
+\ref{fig:xyzw}. 
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.55]{xyzw_100.pdf}
+\caption[Parametros reales que conforman la matriz de Jones del
+SLM encontrados por minimización con 100 medidas]{Parametros reales
+  que conforman la matriz de Jones del SLM 
+  encontrados por medio de minimización con 100 entradas.}
+\label{fig:xyzw_100}
+\end{figure}
+Como se había supuesto, se puede ver que los valores de $Y$
+para los niveles más allá del 200 son negativos, y que $W$ es
+virtualente cero para todo el rango de niveles. Además, se observa que
+$X$ también adquiere valores negativos para niveles de gris por encima
+de 200.   
+Con respecto a las medidas de intensidad, se obtuvo una mejoría cuantitativa
+significativa con un error absoluto global de $error_g= 0.024162$ que
+es 3.5 veces menor que el obtenido con el método de Ma et al. No
+obstante, la calidad de la solución se hace más evidente cuando se
+comparan los resultados cualitativamente, y se observa que los cambios
+de dirección que surgían a partir del nivel de gris 200 han
+desaparecido. Como antes, se presentan 4 de las medidas con estados
+elípticos en la Fig. \ref{fig:100m_caracterization_results} y los
+resultados completos han sido 
+alojados en \href{http://goo.gl/kZjVGU}{\textbf{http://goo.gl/kZjVGU}}.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.5]{some_100_caracterization_results.pdf}
+\caption[Curvas de modulación experimentales comparadas con las
+simuladas usando el modelo obtenido con el método de minimización de 100
+medidas]{Curvas de modulación
+  experimentales, y error de 4 de las 100 medidas comparadas con sus
+  equivalentes simuladas usando la matriz recuperada con el método de
+  minimización con 100 medidas de entrada.}
+\label{fig:100m_caracterization_results}
+\end{figure}
+En conclusión, Lo que muestran los resultados es que se logró una aproximación
 excelente, y que el modelo de la matriz de Jones del SLM efectivamente
-reproduce el comportamiento del elemento real. 
-
-
+reproduce la modulación de amplitud del elemento real. 
 \subsubsection{Instrumento para la automatización del proceso de medida.}
 Ahora bien, cualquiera que haya tenido experiencia con la
 caracterización de SLMs se sorprenderá por la cantidad de medidas que
