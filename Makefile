@@ -51,7 +51,9 @@ pdflatex: clean
 	bibtex ChGen
 	bibtex ChPD
 	pdflatex ${FILE_TEX}.tex
-	makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
+	#makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
+	#makeindex -t ${FILE_TEX}.glg -s nomencl.ist -o ${FILE_TEX}.gls ${FILE_TEX}.glo
+	makeglossaries ${FILE_TEX}
 	pdflatex ${FILE_TEX}.tex
 	pdflatex ${FILE_TEX}.tex
 	# Backup tex, bib and generated pdf files

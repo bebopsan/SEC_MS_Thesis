@@ -245,18 +245,6 @@
 % date and time
 \usepackage{datetime}
 
-%\usepackage{nomencl}
-\usepackage[intoc]{nomencl} % load nomencl extension; include in TOC
-%\nomrefpage % to include page numbers after abbrevations
-%\renewcommand{\nomname}{Glossary} % rename nomenclature
-% As we are using the glossary to list the acronyms we change the label of the section
-\renewcommand{\nomname}{Acr\'onimos y Nomenclatura} % rename nomenclature
-\renewcommand{\nomlabel}[1]{\textbf{#1}} % make abbreviations bold
-\makenomenclature % used to be \makeglossary
-\newcommand{\g}{\footnote{For all abbreviations see the glossary on page \pageref{nom}.}} % type "\g" to refer to glossary
-
-\usepackage{quotchap}
-
 %Para incluir detalles cucas del pdf
 \usepackage[pdftex, pdftitle={GENERACIÓN Y CARACTERIZACIÓN DE VÓRTICES
                   ÓPTICOS MEDIANTE MODULADORES ESPACIALES DE LUZ}, pdfauthor={Santiago Echeverri},
@@ -307,6 +295,7 @@ urlcolor=black, cite color=red]{hyperref} %
 	{\vskip.5in\newpage}
 
 \newcommand{\TitleBlock}[2][\ez@blockfill]{#1{#2\par}\let\ez@blockfill\vfill}
+
 
 
 %% Graphics and colors
@@ -470,6 +459,23 @@ showstringspaces=false            %
 \lstset{#1}
 }
 {}
+
+% Load the package
+\usepackage[toc]{glossaries}
+ % Generate the glossary
+\makeglossaries
+% %\usepackage{nomencl}
+% \usepackage[intoc]{nomencl} % load nomencl extension; include in TOC
+% %\nomrefpage % to include page numbers after abbrevations
+% %\renewcommand{\nomname}{Glossary} % rename nomenclature
+% % As we are using the glossary to list the acronyms we change the label of the section
+% \renewcommand{\nomname}{Acr\'onimos y Nomenclatura} % rename nomenclature
+% \renewcommand{\nomlabel}[1]{\textbf{#1}} % make abbreviations bold
+% \makenomenclature % used to be \makeglossary
+% \newcommand{\g}{\footnote{For all abbreviations see the glossary on page \pageref{nom}.}} % type "\g" to refer to glossary
+
+%\usepackage{quotchap}
+
 % These macros define an environment for front matter that is always 
 % single column even in a double-column document.
 

@@ -13,13 +13,13 @@
 \section{Estado del Arte} %Introducción????
 \label{sec:ChGen_estado_del_arte}
 \lhead{Generación de Vórtices Ópticos: \textit{Estado del Arte}}
-Los haces con OAM distinto de cero inicialmente fueron generados en el
+Los haces con \acrshort{OAM} distinto de cero inicialmente fueron generados en el
 laboratorio por medio de técnicas analógicas entre las que se destacan
 el uso de conversores modales \citepChGen{Alekseev1998}, placas de fase espiral grabadas en sustratos
 transparentes \citepChGen{Jun2009}, y hologramas de fase impresos en acetato
 \citepChGen{Carpentier2008} . La conversión modal utiliza sucesiones de
 lentes astigmáticas para convertir los modos Hermite Gauss en modos
-Laguerre Gauss, y fue la primera forma en la cual se produjeron VO en
+Laguerre-Gauss, y fue la primera forma en la cual se produjeron VOs en
 el laboratorio. A diferencia de la conversión modal, - que requiere un
 montaje experimental muy sensible a desplazamientos -  las técnicas que utilizan máscaras
 de fase se caracterizan por necesitar sólo un elemento óptico que
@@ -34,8 +34,8 @@ flexibilidad como para corregir aberraciones ópticas, se
 necesita de dispositivos digitales con propiedades similares a los
 dispositivos analógicos mencionados anteriormente. Estos dispositivos
 se conocen como moduladores espaciales de luz o SLM por sus siglas en
-inglés. En este proyecto se pretende generar VO y caracterizar su
-frente de onda utilizando un tipo de SLM's que modifican la fase de la
+inglés. En este proyecto se pretende generar VOs y caracterizar su
+frente de onda utilizando un tipo de SLMs que modifican la fase de la
 luz cuando ésta pasa a través de ellos. 
 
 \subsection{Moduladores Espaciales de Luz}
@@ -43,21 +43,20 @@ luz cuando ésta pasa a través de ellos.
 Como su nombre lo indica, los moduladores espaciales de luz sirven
 para modular punto a punto las propiedades de la luz sobre un
 plano. Ya sea solamente su amplitud como en los dispositivos de
-visualización de cristal líquido (pantallas LCD), o su fase, como en
-los dispositivos que se ilustran en la figura \ref{fig:LCDSLM}.
+visualización de cristal líquido (pantallas \acrshort{LCD}), o su fase, como en
+los dispositivos que se ilustran en la Fig.~\ref{fig:LCDSLM}.
 \begin{figure}[h!]
 \centering
     \includegraphics[width=0.5\textwidth]{LCDSLM.png}
 \caption[Comparación entre TN-SLM]{Moduladores espaciales modelo PLUTO y LC2012 de reflexión y
   transmisión marca Holoeye basados en la tecnología de cristal
-  líquido. Por ser fabricado a partir de un LCD comercial el modulador de
-  la derecha es ensamblado a una cuarta parte del costo del izquierdo.}
+  líquido.}% Por ser fabricado a partir de un LCD comercial el modulador de  la derecha es ensamblado a una cuarta parte del costo del izquierdo.}
 \label{fig:LCDSLM}
 \end{figure}
 
 Si diferenciamos los SLM por el tipo de tecnología, estos pueden ser
 agrupados en dos categorías: basados en cristales líquidos, o en
-arreglos de micro espejos (figura \ref{fig:MEMSLM}), mejor 
+arreglos de micro espejos (Fig.~\ref{fig:MEMSLM}), mejor 
 conocidos en la industria de la proyección como DLP (de Digital Light
 Processing).  
 \subsubsection{Moduladores basados en micro espejos}
@@ -69,10 +68,10 @@ intensidad. Sin embargo, con el interés de modular fase además de
 intensidad se han desarrollado nuevos micro mecanismos que
 permiten desplazar verticalmente el espejo sin modificar su
 inclinación, introduciendo así un cambio en la distancia del camino
-óptico y por ende, la fase tal y como se presenta en los trabajos de
+óptico y por ende, la fase. Tal y como se presenta en los trabajos de
 \citetChGen{Wu2010} y \citetChGen{Liesener2006}. Dado que es una
 tecnología incipiente y ha tenido menor tiempo en el mercado que los
-cristales líquidos, estos sistemas y en particular los de tipo pistón,
+cristales líquidos, estos sistemas de micromecanismos y en particular los de tipo pistón,
 siguen teniendo precios elevados y aún están lejos de ser utilizados
 en muchos laboratorios. 
 \begin{figure}[h!]
@@ -83,7 +82,7 @@ en muchos laboratorios.
 \end{figure}
 
 \subsubsection{Moduladores de cristal líquido}
-Los SLM basados en Cristales Líquidos (LCs) aprovechan las propiedades
+Los SLM basados en Cristales Líquidos (\acrshort{LCs}) aprovechan las propiedades
 físicas de ciertos polímeros que dada su forma alargada y propiedades
 electrónicas polares, cambian su orientación ante la presencia de
 campos eléctricos.  Esta sensibilidad a los campos eléctricos, en
@@ -100,7 +99,7 @@ propiedades físicas no lo es y desde los años 60’s la investigación ha
 sido respaldada por grandes empresas interesadas en desarrollar
 productos tecnológicos de generación y procesamiento de imágenes como
 RTC, Hamamatsu, Hitachi, HP, Texas Instruments, Sony y otros. Dado
-el interés por entender los LC, se ha llegado a modelos matemáticos y  técnicas de  
+el interés por entender los LCs, se ha llegado a modelos matemáticos y  técnicas de  
 caracterización robustas que permiten extraer los parámetros de un SLM para
  simular su comportamiento. 
 El desarrollo de estas técnicas ha permitido a investigadores 
@@ -117,7 +116,7 @@ modulador marca Holoeye LC2012 que gracias a usar un LCD comercial
 marca Sony es ensamblado a una cuarta parte del precio de otros
 moduladores. 
 
-Adicionalmente, cabe mencionar que los moduladores en base a LC se
+Adicionalmente, cabe mencionar que los moduladores en base a LCs se
 dividen en dos tipos, de reflexión y de transmisión. Sin entrar en
 detalle, los primeros permiten modulaciones de fase que van hasta $2\pi$
 radianes, tienen mayor resolución, necesitan menos elementos de
@@ -145,16 +144,16 @@ para modelar el comportamiento de dispositivos ópticos de Fourier que
 involucran polarización. 
 
 En el laboratorio de metrología óptica del grupo de Óptica Aplicada de
-la Universidad EAFIT se encuentran dos moduladores de transmisión
-marca Holoeye modelos LC-2002 y LC- 2012 que en el contexto de este
-trabajo han sido caracterizados para optimizar su uso en aplicaciones metrológicas
+la Universidad EAFIT se encuentra un moduladores de transmisión
+marca Holoeye modelos LC-2002 que en el contexto de este
+trabajo ha sido caracterizado para optimizar su uso en aplicaciones metrológicas
 tales como la creación y corrección de aberraciones en haces LG.  
-La generación de VO se da entonces una vez se tenga apropiada la
+La generación de VOs se da entonces de forma expedita una vez se tenga apropiada la
 herramienta que los produce.  
 A lo largo de este capítulo se presentarán los conceptos teóricos
 necesarios para entender la caracterización de SLMs y luego se
 presentarán las diversas herramientas y métodos que se implementaron
-para lograr la generación de VO.
+para lograr la generación de VOs.
 
 % En la sección que sige se introduce la segunda mitad del
 % problema, es decir, ¿Cómo caracterizar y corregir las aberraciones ópticas de un VO?
@@ -232,7 +231,7 @@ un LC y se hará una breve revisión de la literatura de la
 caracterización de SLMs. 
 
 \subsection{Cristales líquidos}
-\subsubsection{Características de los LC}  
+\subsubsection{Características de los Cristales Líquidos}  
 Un cristal Líquido es una sustancia que posee propiedades que
 se asemejan tanto a las de los sólidos cristalinos como a las de los
 líquidos, y puede ser visto como un líquido en el cual existe
@@ -240,10 +239,10 @@ orden entre sus moléculas. Para ilustrar esta idea recordemos que los
 sólidos cristalinos son un estado de la materia que se caracteriza por
 su rigidez y fuertes enlaces químicos, en el cual se puede
 establecer un orden posicional en todas las direcciones tal y como se
-ilustra en la figura \ref{fig:solido}. Esto implica que la posición de
+ilustra en la Fig.~\ref{fig:solido}. Esto implica que la posición de
 las moléculas o átomos que lo componen puede ser abstraída como una
 red periódica que cumple ciertas reglas de simetría. En cambio, un
-líquido amorfo como el de la figura \ref{fig:liquido} tiene enlaces
+líquido amorfo como el de la Fig.~\ref{fig:liquido} tiene enlaces
 más débiles por lo cual puede fluir y está compuesto
 por moléculas que están completamente desorganizadas. 
 \begin{figure}[h!]
@@ -271,14 +270,15 @@ Por otra parte, los LCs pueden ser clasificados en tres tipos o fases distintas
 conocidas como, \textit{nemáticos},
 \textit{smeticos} y \textit{colestéricos}, y más adelante se abordará esta
 clasificación. No obstante su diversidad (más de 100.000 compuestos
-distintos según \url{http://www.lci-publisher.com}), la característica común de los LC es que están
+distintos según \url{http://www.lci-publisher.com}), la característica
+común de los LCs es que están 
 compuestos de moléculas altamente anisotrópicas, esto es, que sus
 propiedades (ópticas, eléctricas y mecánicas) dependen de la
 dirección desde la que se observen. La anisotropía se debe tanto a la
 geometría alargada o achatada de las moléculas, como a las propiedades
-electrónicas de sus componentes.  En el caso de moléculas
-alargadas de LCs como la de la figura \ref{fig:LCMolecule} la
-estructura química de un LC genéral se
+electrónicas de sus componentes \citepChGen{Gennes1995,Yeh1999,Yariv2002}. En el caso de moléculas
+alargadas de LCs como la de la Fig.~\ref{fig:LCMolecule} la
+estructura química de un LC general se
 compone de un sistema de anillos aromáticos que pueden ser o no
 saturados conectados por un grupo de conexión A, y sujetos a dos
 cadenas o grupos terminales X y Y \citepChGen{Yeh1999}. 
@@ -294,8 +294,8 @@ son necesarias para formar fases nemáticas y el tipo de anillos
 (saturado o no saturado) determina la presencia o no de enlaces $\pi$
 que se asocian a orbitales $P_z$ de los electrones. Esto a su vez
 afecta la absorción en el ultravioleta y la birefringencia; se observa mayor
-birefringencia en LC con anillos no saturados y mejor comportamiento
-en el ultravioleta para anillos saturados.  Luego, las cadenas del
+birefringencia en LCs con anillos no saturados y mejor comportamiento
+en el ultravioleta para anillos saturados \citepChGen{Gennes1995}.  Luego, las cadenas del
 grupo terminal X pueden ser de tres tipos:
 \begin{itemize}
 \item Cadenas alquilos (alkyl)  $C_nH_{2n+1}$: 
@@ -306,7 +306,7 @@ grupo terminal X pueden ser de tres tipos:
  como las temperaturas de transición de fase. Para cadenas cortas con
  uno o dos átomos de carbono los grupos son muy cortos como para
  presentar fases de LC. Los grupos terminales de tamaño medio: n = 3-8
- son los más adecuados para para construir fases nemáticas por su
+ son los más adecuados para construir fases nemáticas por su
  mayor anisotropía, y los compuestos con cadenas aún más largas
  exhiben fases smeticas. La temperatura a la cual la solución pasa de
  ser nemática a isotrópica se conoce como el punto de aclarado o
@@ -318,7 +318,7 @@ grupo terminal X pueden ser de tres tipos:
  de esto, las propiedades mecánicas como la viscosidad también se ven
  afectadas por el tamaño de los grupos terminales, cadenas
  largas implican viscosidades más altas, y por ello frecuencias de
- operación más bajas. 
+ operación más bajas \citepChGen{Gennes1995}. 
 Finalmente, las cadenas que forman el grupo terminal Y son las que
 tienen mayor influencia en las constantes dieléctricas de la molécula
 ($\epsilon_x,\epsilon_y$), y asimismo su anisotropía dieléctrica
@@ -336,38 +336,38 @@ Las cadenas del grupo terminal Y pueden ser:
   cianuro CN No son buenos para operar a  altas temperaturas como por
   ejemplo proyectores, y sufren de degradación en el UV. Para esas
   aplicaciones se utilizan compuestos menos polares como el flúor o
-  cloro que tienen menor birrefringencia.
+  cloro que tienen menor birrefringencia \citepChGen{Gennes1995}.
 \end{itemize}
 
 \subsubsection{Clasificación de los LC}  
 \label{sec:LC-clasification}
 En 1922 y sintetizando los hallazgos de 30 años desde el descubrimiento
 de los LCs, el cristalógrafo George Friedel publicó un artículo \citepChGen{Friedel1922}
-en el que clasifica los LC en tres tipos básicos conocidos como
+en el que clasifica los LCs en tres tipos básicos conocidos como
 cristales smeticos, nemáticos y colestéricos.
-En términos de orden, los LC sméticos son los más similares a un
+En términos de orden, los LCs sméticos son los más similares a un
 sólido, y los nemáticos se asemejan más a un líquido, y en la medida
 en la que se calienta un LC éste realiza una transición desde cristal
 smetico hasta líquido isotrópico pasando por la fase nemática. Los estados
-colestéricos son un tipo particular de LC nemáticos que a diferencia
+colestéricos son un tipo particular de LCs nemáticos que a diferencia
 de los anteriores tienen propiedades inhomogeneas. 
-La principal característica que le da una medida de orden a los LC es
+La principal característica que le da una medida de orden a los LCs es
 la tendencia de sus moléculas a orientarse en una dirección
 preferente gracias a su distribución polar de cargas. Esta tendencia
 se puede observar claramente en las figuras \ref{fig:smetic} y
 \ref{fig:nematic} como si las moléculas fueran vagones de un tren que
-se siguen uno detrás del otro en forma de hilo \footnote{La palabra
+se siguen uno detrás del otro en forma de hilo \footnote{La palabraa
 \textit{Nematic} proviene de la expresión griega \textit{nema} que
 significa hilo.}.  
 
 La orientación preferencial de las moléculas les
-otorga una cierta medida de orden a los LC que en adelante llamaremos orden
+otorga una cierta medida de orden a los LCs que en adelante llamaremos orden
 orientacional. La \textit{cantidad} de orden se medirá por medio de un
-parámetro estadístico conocido como parámetro de orden que relaciona
+parámetro estadístico conocido como parámetro de orden, que relaciona
 la orientación de las moléculas individuales con la orientación
 preferencial o vector director $\vec{n}$ en las vecindades de
 la molécula. Si se tiene un conjunto de moléculas como la que se
-ilustra en la figura \ref{fig:angulo_director} dónde 
+ilustra en la Fig.~\ref{fig:angulo_director} dónde 
 $\theta$ es el ángulo que se forma entre el eje mayor de la molécula
 $\vec{v}$ y el vector director, el parámetro de orden orientacional
 del cristal se da como el siguiente promedio estadístico sobre todas
@@ -416,7 +416,7 @@ rangos de temperatura especiales y se necesite garantizar anisotropía.
 \label{fig:CL_clasificacion}
 \end{figure}
 
-Los Cristales smeticos como el que se ilustra en la figura
+Los Cristales smeticos como el que se ilustra en la Fig.~
 \ref{fig:smetic} se diferencian de los nemáticos en que poseen orden
 posicional en una dirección además de orden orientacional. Sin embargo,
 este orden viene acompañado de propiedades mecánicas que son menos
@@ -1617,7 +1617,7 @@ digital, y en particular, las máscaras espiral
 
 Como se mencionó antes, en la caracterización del SLM se pretende
 encontrar estados de polarización a la entrada y salida del modulador
-que produzcan modulaciones de solo fase, con buena tramitancia y con
+que produzcan modulaciones de solo fase, con buena transmitancia y con
 un rango amplio de valores de fase. 
 Por ende es necesario medir las modulaciones de amplitud y de fase. En
 las siguientes secciones se muestra cómo medimos las modulaciones de
@@ -1692,7 +1692,7 @@ estados de polarización.}
 \end{figure}
 Este tipo de modulaciónes
 sirven para proyectar imágenes en niveles de gris y se pueden lograr
-con dos polarizadores como PSG y PSD que generen estados líneales ortogonales
+con dos polarizadores como PSG y PSD que generen estados lineales ortogonales
 entre si.
 % Como se explicó en la sección \ref{sec:Propiedades_opticas_de_TNLCD}
 %  si el ángulo de torsión de las moléculas en el SLM es de $90^{\circ}$ y
@@ -1700,7 +1700,7 @@ entre si.
 % estado de polarización a la salida será aproximadamente vertical.
 No obstante, nuestro objetivo es encontrar una combinación de estados
 de polarización que resulten en una baja modulación de amplitud y
-buena tramitancia. 
+buena transmitancia. 
 
 % \subsection{Medida de múltiples estados para alimentar un modelo de
 %  caja negra.}
@@ -1729,7 +1729,7 @@ estado que mejor satisface las condiciones de operación haciendo simulaciones c
 las cuales sí es práctico hacer una búsqueda entre múltiples estados.
 
 A continuación se introducirá una notación alternativa para la
-representación de estadodes de polarización que es de uso generalizada
+representación de estados de polarización que es de uso generalizada
 en las referencias consultadas y que facilita la
 representación de las combinaciones de PSG y PSD para medidas de
 intensidad.  
@@ -1823,7 +1823,7 @@ y los valores desconocidos de la matriz de Jones.
 A continuación se muestra el procedimiento matemático expuesto por Ma
 et al.~que relaciona cada una de las intensidades con los valores de
 la matriz de Jones. 
-Analizar la tramitancia ante el estado lineal horizontal entrega un valor
+Analizar la transmitancia ante el estado lineal horizontal entrega un valor
 de intensidad que es función de $X$ y $Y$,
 \begin{align*}
 I_1 = |<\mathbf{H}|SLM|\mathbf{H}>|^2 &= X^2+Y^2,\\
@@ -1835,7 +1835,7 @@ I_1 = |<\mathbf{H}|SLM|\mathbf{H}>|^2 &= X^2+Y^2,\\
        \begin{pmatrix} X+iY \\-Z+iW \end{pmatrix} \right|^2, \\
 &=  \left|X+iY\right|^2 =  X^2+Y^2.\\
 \end{align*}
-Y analizar la tramitancia ante un estado circular derecho entrega un
+Y analizar la transmitancia ante un estado circular derecho entrega un
 valor de intensidad función de $X$ y $Z$.
 \begin{align*}
 I_2 = |<\mathbf{CD}|SLM|\mathbf{CD}>|^2 &= X^2+Z^2,\\
@@ -1897,7 +1897,7 @@ presentados en la Fig. \ref{fig:Our_Ma_X2Y2Z2W2}.
 \includegraphics[scale = .55]{Our_Ma_X2Y2Z2W2_long.pdf}
 \caption[Comparación entre los valores de $X$, $Y$ $Z$ y $W$ encontrados por
 Ma et al.~ para un SLM similar y por nosotros.]{Comparación entre los
-  valores de X, Y Z y W encontrados porpor \citetChGen{Ma2014}~ 
+  valores de X, Y Z y W encontrados por \citetChGen{Ma2014}~ 
   (a) y por nosotros (b). Dado que no queda explícito cómo encontrar
   el signo de los parámetros en ninguna de sus publicaciones, asumimos
   que $Z$ y $W$ son negativos como ellos lo presentan.}   
@@ -2252,7 +2252,9 @@ El error en las 6 medidas usadas como entrada es en este caso menor a
 $2\times10^{-4}$, y el error absoluto global es de $error_g
 =0.077673$, que es un poco menor que el anterior. Sin embargo, sigue ocurriendo que la exactitud se pierde a partir del
 nivel de gris 200 en la mayoría de los estados. Es decir, que con estas medidas como entrada
-nuestro método es tan bueno como el de la literatura pero no significativamente mejor.
+nuestro método es tan bueno como el de la literatura pero no
+significativamente mejor.
+\pagebreak
 \subsection{Una ampliación de la función de minimización}
 El funcional de minimización puede ser modificado
 fácilmente para incluir como valores de entrada cuantos BraKet's
@@ -2337,7 +2339,7 @@ comunicación serial se describen el apéndice B.
 El proceso de toma de cientos de medidas que a una persona podría llevarle varios
 días de trabajo se hace con la interfaz en cuestión de una o dos horas
 sin necesidad de supervisión.    
-
+\pagebreak
 %\subsection{Medida de la modulación de fase}
 \section{Medida de la modulación de fase}
 % El proceso de caracterización del SLM no queda completo sin antes
@@ -2451,7 +2453,7 @@ $$\Delta\phi = 2\pi \Delta S/P.$$
 Extraer la fase de esta forma resulta bastante directo e intuitivo,
 pero se aprovecha muy poca información de la señal y se pierde
 precisión en comparación con otras alternativas. Además, este método resulta dificil de
-programar en un algorítmo. 
+programar en forma de un algorítmo. 
 
 Otra forma de extraer la fase consiste en aplicar una \textbf{Transformada de
 Fourier} (FT) a las señales e identificar los picos correspondientes a
@@ -2470,7 +2472,7 @@ propuesta para esta aplicación por el profesor Alberto Lencina del Centro de
 Investigaciones Ópticas de Argentina. En la figura \ref{fig:fourier_script}, se muestra un
 pequeño script que ilustra cómo se haría el cálculo de la fase del
 interferograma de referencia.     
- \begin{figure}
+ \begin{figure}[H]
 \begin{lstlisting}[style=Matlab]
 %  Reference image
 imaref=mean(imaref,1);
@@ -2490,7 +2492,7 @@ fase_ref =atan2(imag(TFimaref(1,IX(1))),real(TFimaref(1,IX(1))));
  FT.}
  \label{fig:fourier_script}
  \end{figure}
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{fringes_f_both.pdf}
 \caption[Transformada de Fourier de un patrón de
@@ -2505,36 +2507,124 @@ fases de ambos interferogramas y obtener la diferencia de fase
 introducida por un nivel de gris particular. A diferencia del
 mencionado anteriormente, este proceso es más preciso y mucho más fácil de implementar en fórma de
 un algorítmo que calcule la modulación para cada nivel de gris. 
-\pagebreak
+%\pagebreak
 %\subsubsection{Resultados de la medida de modulación de fase}
 \subsection{Resultados de la medida de modulación de fase}
 
-Implementando el método de transformadas de Fourier comon uno de los
+Implementando el método de transformadas de Fourier como uno de los
 pasos en la caracterización automatizada del SLM, se obtuvieron curvas de modulación
-de fase para 60 de los 100 estados menciondos en la sección
+de fase para 60 de los 100 estados mencionados en la sección
 \ref{sec:exp_validation}, correspondientes a las polarizaciones de
 entrada lineales y circulares.  Las 60 curvas se han puesto al alcance del
 lector en el siguiente vínculo web en forma de un notebook de IPython:
 \href{http://goo.gl/RtRCX0}{\textbf{http://goo.gl/RtRCX0}}.  
 
 Con estos datos, y con las curvas de modulación de amplitud pudimos
-seleccionar dos combinaciones de PSD y PSG que tienen condiciones
+seleccionar una combinaciones de PSD y PSG que tiene condiciones
 suficientes para usar el SLM dentro del rango de operación
-deseado. Observamos que tal y como se ha reportado en la literatura
+deseado. Observamos que tal y como se ha reportado en la literatura,
 estos moduladores acoplan la modulación de fase con la modulación de
 amplitud, y que al menos con nuestro SLM no es posible encontrar
-estados en los cuales el SLM sea completamente transparente y al mismo
-tiempo permita modulaciones de fase de rango alto.  
-Encontramos que el estado 5 produce modulaciones de fase con rango de
-modulación muy alto, de casi $1.9\pi$
-radianes, y que, sin embargo, está acoplado a una modulacion de intensidad de muy mala calidad en
-la cual la tramitancia se reduce hasta un $80\%$.
-
+estados en los cuales el SLM sea transparente al variar niveles de gris y al mismo
+tiempo permita modulaciones de fase de rango superior a $1.3\pi$.  
+Encontramos que el estado 6 (Fig. \ref{amp_and_phase_I6}) produce
+modulaciones de fase con rango de modulación muy alto, de casi $1.9\pi$
+radianes, y que, sin embargo, está acoplado a una modulación de
+intensidad de muy mala calidad en la cual la transmitancia máxima es de
+un $60\%$ y se reduce hasta un $10\%$. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.52]{amp_and_phase_I6.pdf}
+\caption[Modulación de amplitud y fase del estado con máximo rango de
+fase]{Posición de elementos ópticos y curvas de modulación de amplitud
+  y fase del BraKet 6 que es el estado con máximo rango de modulación
+  fase encontrado.} 
+\label{fig:amp_and_phase_I6}
+\end{figure}
 %Insertar figura con comparación de modulación de amplitud y fase.
+Asimismo encontramos varios BraKets en los cuales hay transmitancia
+máxima con modulación de amplitud mínima, pero sufren de una muy mala
+modulación de fase. Ejemplo de ellos es el BraKet 43
+(Fig.~\ref{fig:amp_and_phase_I43}), que tiene alta 
+transmitancia, alrededor de $10\%$ de modulación de amplitud y una
+ modulación de fase casi nula. Es decir que este SLM es básicamente
+ transparente ante la generación y detección estados circulares.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.52]{amp_and_phase_I43.pdf}
+\caption[Modulación de amplitud y fase del estado con mínima
+modulación de amplitud]{Posición de elementos ópticos y curvas de modulación de amplitud
+  y fase del BraKet 43 que es uno de los estados con mínimo rango de modulación
+  amplitud.} 
+\label{fig:amp_and_phase_I43}
+\end{figure}
 
-Así mismo encontramos varios de estados en los cuales hay modulación
-de amplitu mínima
+A diferencia de estos puntos extremos, en la configuración que
+seleccionamos para la generación de OVs hay un compromiso de uno de
+los dos fenómenos. El BraKet seleccionado es el número 10 de la
+Fig. \ref{fig:braket_100_notation} que corresponde a un estado
+horizontal $\mathbf{H}$ a la entrada y elíptico a $\mathbf{-45^{\circ}}$ a la
+salida, las posiciones de los elementos ópticos que lo generan y las
+curvas de modulación se presentan en la
+Fig. \ref{fig:amp_and_phase_I100}. 
+En este estado la transmitancia es baja
+($~45\%$) y la modulación de amplitud es relativamente baja ($<20\%$),
+pero el rango de modulación de fase es de casi $1.6\pi$ radianes, cosa que como
+veremos adelante, resulta suficientemente alta para la generación de
+OVs. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.52]{amp_and_phase_I10.pdf}
+\caption[Modulación de amplitud y fase óptima]{Posición de elementos
+  ópticos y curvas de modulación de amplitud y fase del BraKet 10 que
+  se identificó como la configuración óptima para la generación de OVs.} 
+\label{fig:amp_and_phase_I100}
+\end{figure}
 
+En un principio se pensó que una forma efectiva de encontrar un estado
+óptimo podía ser usando un método de minimización similar al que se
+usó para encontrar los parámetros de la matriz de Jones. Tál método se
+implementó con una función de minimización inspirada en la propuesta
+por \citetChGen{Moreno2003} que buscaba simultaneamente
+una alta tramitancia, baja modulación de amplitud y alto rango de
+modulación de fase. Este planteamiento tiene varios problemas, uno de
+ellos es que el espacio de valores de la función para cada
+combinación de posibles estados PSG y PSD no es convexo. Es decir que
+dependiendo de la semilla usada uno puede obtener un BraKet que
+minimice la función de forma local, y que aún así tenga desempeño
+regular. Esto lo vimos en muchas ocaciones cuando medimos
+experimentalmente los BraKets propuestos por las simulaciones. 
+Otro problema, es que se pierde mucho tiempo tratando de proponer
+manualmente valores de peso que den mayor o menor importancia a la
+sensibilidad de los parámetros con respecto a su efecto sobre la
+modulación de fase o la de amplitud. Generalmente ocurre que la minimización
+converge a estados circulares que tienen muy buena transmitancia y
+baja modulación de amplitud pero mínima modulación de fase. Y si se
+modifican ligeramente los factores de peso, la minimización retorna
+modulaciones de fase de menos de $1.3\pi$ con modulaciones de amplitud
+de entre $15$ y $40\%$. Cosa que no es mejor al resultado de la
+Fig. \ref{fig:amp_and_phase_I100}. Por último, encontramos que las
+modulaciones de fase predichas por medio de simulaciones con las
+matrices encontradas no predicen con suficiente exactitud muchas de las
+modulaciones de fase registradas en el laboratorio. Esto sucede porque los
+cambios de estado de polarización introducidos por el SLM afectan el
+contraste de las franjas debido a la interferencia destructiva que
+sucede con el haz de referencia del interferómetro
+Mach-Zehnder. Ante interferogramas como el de la
+Fig.~\ref{fig:fringes}(b) el algoritmo de reconstrucción de fase no
+tiene como detectar la diferencia de fase entre medidas porque se
+pierden las franjas.
+
+Al final, dado que el interés fundamental de este proyecto radicaba en generar
+OVs, y no en desarrollar metodos de caracterización, nos resultó mejor
+seleccionar el mejor de los 100 estados disponibles (encontrados sin
+dificultad por el instrumento de automatización), 
+que manipular funciones de peso hasta encontrar un estado simulado con
+las condiciones deseadas.
+
+En adelante se mostrará la aplicación que desarrollamos para proyectar
+máscaras de fase arbitrarias al SLM, y se mostrarán los OVs que se
+pueden generar con un SLM calibrado para la modulación de fase. 
 
 \chapter{Generación de Vórtices Ópticos}
 \label{sec:OV_gen}
