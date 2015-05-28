@@ -1,0 +1,24 @@
+;; RefTeX parse info file
+;; File: /Users/Santiago/Documents/SEC_Master_thesis/SETUP/ezthesis.cls
+;; User: Santiago (Santiago)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/Santiago/Documents/SEC_Master_thesis/SETUP/")
+
+(label-numbers)
+
+(bof "/Users/Santiago/Documents/SEC_Master_thesis/SETUP/ezthesis.cls")
+
+(eof "/Users/Santiago/Documents/SEC_Master_thesis/SETUP/ezthesis.cls")
+))
+

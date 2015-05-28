@@ -67,6 +67,8 @@
 \def\title#1{\gdef\inserttitle{#1}\gdef\@title{#1}}
 \def\supervisor#1{\gdef\insertsupervisor{#1}}
 \def\supervisoremail#1{\gdef\insertsupervisoremail{#1}}
+\def\othersupervisor#1{\gdef\insertothersupervisor{#1}}
+\def\othersupervisoremail#1{\gdef\insertothersupervisoremail{#1}}
 \def\institution#1{\gdef\insertinstitution{#1}}
 \def\degree#1{\gdef\insertdegree{#1}}
 \def\program#1{\gdef\insertprogram{#1}}
@@ -85,6 +87,8 @@
   \program{Doctorado en...}
   \supervisor{Falta nombre del supervisor}
   \supervisoremail{Falta nombre del supervisor}
+  \othersupervisor{Falta nombre del supervisor}
+  \othersupervisoremail{Falta nombre del supervisor}
   \institution{Universidad de Alg\'un Sitio}
   \faculty{Facultad de Ingenier\'ia y Ciencias}
   \department{Escuela de C\'omputo}
@@ -99,6 +103,8 @@
   \program{Doctor of Philosophy}
   \supervisor{Supervisor name missing}
   \supervisoremail{Supervisor name missing}
+  \othersupervisor{Supervisor name missing}
+  \othersupervisoremail{Supervisor name missing}
   \institution{The University of Somewhere}
   \faculty{Faculty of Engineering and Physical Sciences}
   \department{School of Computer Science}
