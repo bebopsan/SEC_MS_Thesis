@@ -296,11 +296,11 @@ que se asocian a orbitales $P_z$ de los electrones. Esto a su vez
 afecta la absorción en el ultravioleta y la birefringencia; se observa mayor
 birefringencia en LCs con anillos no saturados y mejor comportamiento
 en el ultravioleta para anillos saturados \citepChGen{Gennes1995}.  Luego, las cadenas del
-grupo terminal X pueden ser de tres tipos:
+grupo terminal X pueden ser de tres tipos,
 \begin{itemize}
-\item Cadenas alquilos (alkyl)  $C_nH_{2n+1}$: 
-\item Grupos alcoxy $C_nH_{2n+1}O$
-\item Grupos alilos (alkenyl) $CH_2=CH-CH_2-$
+\item Cadenas alquilos (alkyl)  $C_nH_{2n+1}$,
+\item Grupos alcoxy $C_nH_{2n+1}O$,
+\item Grupos alilos (alkenyl) $CH_2=CH-CH_2-$.
 \end{itemize}
  La longitud de las cadenas X influencia tanto las constantes elásticas
  como las temperaturas de transición de fase. Para cadenas cortas con
@@ -427,7 +427,7 @@ A diferencia de las fases smetica y nemática que tienen un solo vector
 de orientación, en los cristales líquidos colestéricos el vector
 director varía a través del medio de una forma bien
 definida y por ello se consideran medios inhomogeneos. Generalmente la
-variación es helicoidal como la que se ve en la figura \ref{fig:cholesteric}.   
+variación es helicoidal como la que se ve en la Fig.~\ref{fig:cholesteric}.   
 La variable que caracteriza un cristal líquido colestérico es el
 ángulo de inclinación o pitch que forman las moléculas inclinadas con
 respecto al eje óptico del material. 
@@ -437,18 +437,20 @@ respecto al eje óptico del material.
 
 
 Los moduladores de LC de transmisión que se usan para proyección se
-construyen usando una configuración conocida como Twisted
-Nematic (TN-LCD) o nematicos retorcidos. Los TN-LCD son
-dispositivos como el que se ilustra en la figura \ref{fig:tn-lcd} en
-los cuales una  solución de cristal líquido nemático 
-se inyecta entre dos superficies rígidas transparentes que han sido frotadas
-a lo largo de una dirección preestablecida. Las moléculas del LC en contacto con las
-superficies transparentes se adhieren a los canales microscópicos que
-resultan del frotado, tomando así su dirección. Cuando las direcciones
-de frotado de las superficies en ambos extremos no coinciden, la
-dirección preferente de orientación de las moléculas cambia
-gradualmente en profundidad desde la dirección del plano de entrada hasta la del
-plano de salida como se ve en la figura
+construyen usando una configuración conocida como \textbf{Twisted
+Nematic} (\acrshort{TN-LCD}) o nemáticos retorcidos. Los TN-LCD son
+dispositivos como el que se ilustra en la Fig.~\ref{fig:tn-lcd} en
+los cuales una  solución de cristal líquido nemático se inyecta entre
+dos superficies rígidas transparentes que han sido rayadas o frotadas
+a lo largo de una dirección preestablecida. Este proceso se conoce
+rayado direccional. Las moléculas del LC en
+contacto con las superficies transparentes se adhieren a los canales
+microscópicos que resultan del rayado, tomando así una
+dirección preferencial en ese plano. Cuando las 
+direcciones de rayado de las superficies en ambos extremos no
+coinciden, la dirección preferente de orientación de las moléculas
+cambia gradualmente en profundidad desde la dirección del plano de
+entrada hasta la del plano de salida como se ve en la Fig.~
 \ref{fig:tn-lc}.  El resultado es un cristal líquido inhomogeneo
 parecido a un cristal colestérico en el cual la orientación de las
 moléculas varía de forma lineal.
@@ -478,22 +480,23 @@ y salida son ortogonales de tal forma que las moléculas a la salida experimenta
 una rotación de 90 grados con respecto a las de la entrada. Ante la
 presencia de un campo eléctrico a lo largo del cristal las moléculas
 experimentan una inclinación que es proporcional a la diferencia de
-potencial entre las placas tal y como se ilustra en la figura
+potencial entre las placas tal y como se ilustra en la Fig.~
 \ref{fig:tn-lc-voltage}. Al ser moléculas alargadas y polares
 experimentan un torque que atrae a la parte negativa de la molécula
 hacia el electrodo positivo del  dispositivo y viceversa. La
 inclinación es proporcional al voltaje aplicado y es de mayor magnitud
 en las regiones más alejadas de las paredes del dispositivo. La
-configuración Twisted Nematic ha sido seleccionada para muchos
+configuración TN ha sido seleccionada para muchos
 dispositivos electro ópticos comerciales porque afecta 
 la polarización de la luz que incide sobre ella. El objetivo de los
 autores que han caracterizado moduladores de transmisión ha sido
 principalmente el de describir matemáticamente y de forma robusta las
-propiedades ópticas de dispositivos que tienen cristales líquidos de esta naturaleza. 
+propiedades ópticas de dispositivos que tienen cristales líquidos de
+esta naturaleza.  
 
-En lo que sigue se presentarán las herramientas matemáticas que son
+En lo que sigue se presentarán las herramientas que son
 base para la descripción matemática de campos ópticos polarizados, y
-se aplicará para la descripción de un modelo de LC.
+se aplicará para la construcción de un modelo de TN-LCD.
 
 \subsection{Polarización de la luz}
 
@@ -545,14 +548,14 @@ frecuencia. Si se dibuja la suma vectorial de las componentes $x$, y $y$ como
 un vector que va desde el origen hasta el punto ($E_x,E_y$) y luego se
 avanza en el tiempo, la trayectoria que describe la punta del vector
 será una curva elíptica como la que 
-se muestra en la figura \ref{fig:ellipse_clean} . Si en cambio se congela el tiempo y se gráfica
+se muestra en la Fig.~\ref{fig:ellipse_clean} . Si en cambio se congela el tiempo y se gráfica
 el desplazamiento de la punta del vector en el espacio se obtiene una curva
-helicoidal como en la figura \ref{fig:trayectory_clean}. En estos dibujos se ha
+helicoidal como en la Fig.~\ref{fig:trayectory_clean}. En estos dibujos se ha
 escogido representar una elipse por que es el caso más general de polarización. Sin
 embargo, la relación entre las amplitudes ($A_y/A_x$) y la
 diferencia de fases ($\delta = \delta_y-\delta_x$) entre las componentes del
 campo determina si la polarización es lineal ($\delta = 0$), circular
-($\delta =\pm \frac{\pi}{2}$) o elíptica, y la orientación del eje
+($\delta =\pm \frac{\pi}{2}, A_y/A_x=1$) o elíptica, y la orientación del eje
 mayor de la elipse con respecto al eje $x$.
 
 \begin{figure}[h!]
@@ -580,11 +583,10 @@ la polarización]{Representaciones de la posición de un vector de campo
 \label{fig:general_field}
 \end{figure} 
 
-Desde el punto de vista matemático, la figura
-\ref{fig:ellipse_clean} se describe por medio de la ecuación
-\ref{eq:ellipse} que es la ecuación de una cónica y se puede obtener
-a partir de las expresiones (\ref{eq:xcomp}) y (\ref{eq:ycomp}) como se
-muestra a continuación. Si $\delta = \delta_y-\delta_x$ y $z=0$,
+Desde el punto de vista matemático, la Fig.~\ref{fig:ellipse_clean} se describe por medio de la Eq.~\ref{eq:ellipse} que es la ecuación de una cónica y se puede obtener
+a partir de las expresiones (\ref{eq:xcomp}) y (\ref{eq:ycomp}). 
+
+Si $\delta = \delta_y-\delta_x$ y $z=0$,
 entonces el campo se puede escribir como
 
 \begin{align*}
@@ -611,9 +613,9 @@ A_y\sqrt{1-\frac{E_x}{A_x}}\sin{\delta},\notag\\
 \frac{E_y}{A_y} - \frac{E_x}{A_x}\cos{\delta}  &= 
 \sqrt{1-\left(\frac{E_x}{A_x}\right)^2}\sin{\delta}.\label{eq:ellipse_nos}
 \end{align}
-Elevando al cuadrado la igualdad (\ref{eq:ellipse_nos}) y organizando
+Elevando al cuadrado la Eq.~(\ref{eq:ellipse_nos}) y organizando
 términos, obtenemos la ecuación general de una elipse inscrita en un
-rectángulo con lados $2A_x$, $2A_y$: 
+rectángulo con lados $2A_x$, $2A_y$ 
 \begin{equation}
 \left(\frac{E_x}{A_x}\right)^2+\left(\frac{E_y}{A_y}\right)^2-2\frac{\cos{\delta}}{A_xA_y}E_xE_y
 = \sin^2{\delta}.
@@ -621,7 +623,7 @@ rectángulo con lados $2A_x$, $2A_y$:
 \end{equation}
 Se puede ahora plantear una rotación de un ángulo $\phi$ con respecto
 al eje horizontal ($x$) sobre el sistema de coordenadas  como se
-muestra en la figura \ref{fig:ellipse} para que
+muestra en la Fig.~\ref{fig:ellipse} para que
 el eje mayor de la elipse quede alineado con el eje
 \textit{horizontal} del nuevo sistema. 
 \begin{figure}[h!]
@@ -631,15 +633,15 @@ el eje mayor de la elipse quede alineado con el eje
 \label{fig:ellipse}
 \end{figure}
 Haciendo esto, se lleva la
-ecuación (\ref{eq:ellipse}) a la forma más conocida de la ecuación
-(\ref{eq:new_ellipse})
+Eq.~(\ref{eq:ellipse}) a la forma más conocida de la Eq.~(\ref{eq:new_ellipse})
 \begin{equation}
 \left(\frac{E_{x'}}{a}\right)^2+\left(\frac{E_{y'}}{b}\right)^2 = 1,
 \label{eq:new_ellipse}
 \end{equation}
 dónde $a$ y $b$ son los semi ejes mayor y menor, y $E_{x'}$, $E_{y'}$
 son las componentes del campo eléctrico en las direcciones $x'$,
-$y'$. Los semiejes de la elipse están dados por las siguientes expresiones:
+$y'$. Los semiejes de la elipse están dados por las siguientes
+expresiones \citepChGen{Yariv2002}:
 \begin{align*}
 a^2 = A_x\cos^2{\phi}+A_y^2\sin^2{\phi} +2A_xA_y \cos{\delta}\cos{\phi}\sin{\phi},\\
 b^2 = A_x\sin^2{\phi}+A_y^2\cos^2{\phi} -2A_xA_y \cos{\delta}\cos{\phi}\sin{\phi}.
@@ -651,18 +653,22 @@ menor es cero, la elipse se vuelve una linea y por tanto se dice que
 la polarización es lineal en la dirección de $a$. Si por el contrario
 los dos semi ejes tienen  la misma longitud, la ecuación de la elipse
 se vuelve la de un círculo, y se dice que la polarización es
-circular como en la figura \ref{fig:circular_polarizations}a. 
-El signo de la elipticidad determina el sentido
+circular como en la Fig.~\ref{fig:circular_polarizations}(a). 
+El signo de la elipticidad determina el sentido 
 de giro de la hélice, si el signo es positivo la elipse es circular
-izquierda como en la figura \ref{fig:circular_polarizations}b y es circular derecha
-cuando el signo es negativo \ref{fig:circular_polarizations}c. Cabe
+izquierda como en la Fig.~\ref{fig:circular_polarizations}(b) y es
+circular derecha 
+cuando el signo es negativo (Fig.~\ref{fig:circular_polarizations}(c)). Cabe
 anotar que el sentido de giro de la polarización es una convención
-que varía según el autor, algunos interpretan el sentido de giro como
+que varía según el autor, algunos autores como \citetChGen{Yariv2002} interpretan el sentido de giro como
 si se congelara el tiempo y se siguiera la punta del vector
-$\mathbf{E}$ desde el cero en adelante. Sin embargo otros autores
+$\mathbf{E}$ desde el momento inicial en adelante. Sin embargo, otros
+autores como \citetChGen{Hecht2001}
 interpretan el sentido de giro como si en un punto fijo vieran girar
 el vector $\mathbf{E}$ que les llega en la medida que pasa el tiempo. 
-
+En este documento hemos decidido escoger la primera convención dado
+que es la predominante en las referencias que tratan el análisis de
+cristales líquidos como elementos que afectan la polarización. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{circular_polarizations}
@@ -672,15 +678,14 @@ cuando $e=\frac{b}{a}$ y la derecha (c) cuando  $e=-\frac{b}{a}$.}
 \label{fig:circular_polarizations}
 \end{figure}
 
-Una ellipse de polarización arbitraria se puede expresar entonces conociendo su
-elipticidad y su ángulo de inclinación con respecto al eje
-horizontal. Estas dos características se pueden parametrizar como dos
-ángulos que se dan en
+Una ellipse de polarización arbitraria se puede expresar entonces
+conociendo su elipticidad ($e$) y su ángulo de inclinación ($\phi$)
+con respecto al eje horizontal. Estas dos características se pueden
+parametrizar como dos ángulos que se dan en
 términos de las amplitudes máximas del campo $A_x$, $A_y$
 y el retardo entre componentes $\delta$. Por una parte, el ángulo de
-inclinación se encuentra interpretando la ecuación (\ref{eq:ellipse}) en
+inclinación se encuentra interpretando la Eq.~(\ref{eq:ellipse}) en
 su forma bilineal de la forma
-
 \begin{equation}
 \begin{pmatrix}
 E_x & E_y
@@ -694,9 +699,7 @@ E_x \\ E_y
 \end{pmatrix}
 =\sin^2{\delta},
 \end{equation}
-
 sacando factor común $\frac{1}{A_x^2} $ se obtiene
-
 \begin{equation}
 \begin{pmatrix}
 E_x & E_y
@@ -726,8 +729,7 @@ E_x \\ E_y
 \end{equation}
 %http://mpalffy.lci.kent.edu/Optics/Chapters/Ch7_Polarized%20Light.pdf
 
-Una \href{http://es.wikipedia.org/wiki/Cu\%C3\%A1drica}{cuádrica o
-  superficie cuádrica} es una  hipersuperficie D-dimensional
+Una \href{http://es.wikipedia.org/wiki/Cu\%C3\%A1drica}{\textbf{cuádrica o superficie cuádrica}} es una  hipersuperficie D-dimensional
 representada por una ecuación de segundo grado con 
 coordenadas espaciales. Si estas coordenadas son $\{x_1,
 x_2, ... x_D\}$, entonces la cuádrica típica en ese espacio se define
@@ -801,8 +803,7 @@ vectorial para describir campos ópticos coherentes y monocromáticos cuando es
 importante la naturaleza vectorial de la luz y la polarización.  
 En el esquema de Jones los campos ópticos con dos componentes ortogonales se
 representan como un vector con elementos complejos conocido como
-vector de Jones. Las dos componentes complejas del campo en la ecuación
-(\ref{eq:complex_field}) se representan como elementos de un vector
+vector de Jones. Las dos componentes complejas del campo en la Eq.~(\ref{eq:complex_field}) se representan como elementos de un vector
 columna conocido como vector de Jones:
  
 \begin{equation}
@@ -810,15 +811,15 @@ columna conocido como vector de Jones:
 \label{eq:jones_vector}
 \end{equation}
 Siendo un vector complejo, $\mathbf{J}$ no es una cantidad observable
-en el espacio físico. Para obtener obtener por ejemplo, la
+en el espacio físico. Para obtener por ejemplo, la
 componentente  $x$ del campo eléctrico se hace la operación $E_x(t) = \Re
 \left[J_xe^{i\omega t}\right]$.
 Para el estudio de la polarización conviene representar el vector de
 Jones en su forma normalizada, es decir tal que cumpla la
-condición $$\mathbf{J}^{\dagger}\mathbf{J}=1,$$
+condición, $$\mathbf{J}^{\dagger}\mathbf{J}=1,$$
 dónde el símbolo $\dagger$ representa la transpuesta conjugada.
 La normalización se logra parametrizando las amplitudes con el ángulo
-del vector que forman: $$\tan{\psi}=\frac{\sin{\psi}}{\cos{\psi}}=\frac{A_y}{A_x},$$
+del vector que forman, $$\tan{\psi}=\frac{\sin{\psi}}{\cos{\psi}}=\frac{A_y}{A_x},$$
 de esta forma $A_y=\sin{\psi}$ y $A_x = \cos{\psi}$. Adicionalmente,
 la fase de las componentes se acostumbra a escribir en su forma
 relativa y con respecto a la componente $y$ como se muestra en la
@@ -882,11 +883,10 @@ que se pueden dar unos como combinación lineal de los otros:
   \mathbf{CI}\right).
 \end{align*}
 Los vectores de las tres parejas de estados que hemos visto hasta
-ahora son bases
-ortonormales. Esto quiere decir que fuera de estar normalizados,
-%son linealmente independientes entre sí, 
-si calculamos el producto escalar entre elementos de una misma pareja obtenemos un
-valor de 0,
+ahora son bases ortonormales. Esto quiere decir que fuera de estar
+normalizados, %son linealmente independientes entre sí, 
+si calculamos el producto escalar entre elementos de una misma pareja
+obtenemos un valor de 0,
 % \begin{equation*}
 % \begin{pmatrix}1&0\end{pmatrix}\begin{pmatrix}0\\1\end{pmatrix}=
 % \left(\frac{1}{\sqrt{2}}\begin{pmatrix}1&1\end{pmatrix}\right)\left(\frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}\right)  = \left(\frac{1}{\sqrt{2}}
@@ -894,7 +894,7 @@ valor de 0,
 % = 0.
 % \end{equation*}
 \begin{equation*}
-\mathbf{H^{\dagger}V} = \mathbf{45^{\circ\dagger}45^{\circ}} =
+\mathbf{H^{\dagger}V} = \mathbf{45^{\circ\dagger}-45^{\circ}} =
 \mathbf{CD^{\dagger}CI = 0.}   
 \end{equation*}
 Estos estados se han mencionado porque sirven como base para el espacio
@@ -917,8 +917,7 @@ propiedades generales \citepChGen{Yariv2002} que se listan a continuación:
 \item La dirección de propagación de un campo determina las
   componentes de la matriz que representa al elemento polarizador. Si
   la incidencia es desde la izquierda $(z=0)$ definimos la matriz $M$ como aquella
-  que transforma el vector de entrada en el de salida
-
+  que transforma el vector de entrada en el de salida,
   \begin{equation}
     \begin{pmatrix}
       V_x^{out}\\V_y^{out}
@@ -948,12 +947,11 @@ definiremos una matriz distinta $N$ para representar la transformación:
   \end{equation*}
 
 Para que se cumpla el principio de simetría temporal, se debe cumplir
-que $NM=1$. Si se rebobina la propagación en la expresión
+que $NM=1$. Si se \textit{rebobina} la propagación en la expresión
 (\ref{eq:right_propagation}) el haz de salida 
 debería seguir el mismo camino que recorrió a la entrada, y ser
 afectado por la matriz $N$ de tal forma que vuelva a la forma que
-tenía en un principio 
-
+tenía en un principio,
  \begin{align*}
     \begin{pmatrix}
       V_x^{in}\\V_y^{in}
@@ -986,23 +984,23 @@ luz debe pasar dos veces por el LC en sentidos opuestos, caso especial
 es el de los SLM's de reflexión en los cuales hay una
 superficie especular de un lado.
 
-\item Tanto la matriz $M$ como la $N$ son operadores unitarios:
+\item Tanto la matriz $M$ como la $N$ son operadores unitarios,
   \begin{align*}
     M^{\dagger} M &= 1,& N^{\dagger}N &=1.
   \end{align*}
 Dónde el símbolo $\dagger$ indica que se saca el conjugado hermítico
-de $M$:
+de $M$,
 \begin{equation*}
 M^{-1}=M^{\dagger}=
   \begin{pmatrix}
       M_{11}^*&M_{21}^*\\M_{12}^* & M_{22}^*
     \end{pmatrix}.
 \end{equation*}
-\item Las matrices de Jones son unimodulares es decir
+\item Las matrices de Jones son también unimodulares es decir
 \begin{equation}det(M) = det(M^{\dagger})  = M_{11}M_{22}-M_{12}M_{21} = 1.\label{eq:unimodular}\end{equation} 
 Si asumimos que $M^{-1}$ es
 \begin{equation*}
-  M=
+  M^{-1}=
   \begin{pmatrix}
     M_{22}&-M_{12}\\-M_{21}&M_{11}
   \end{pmatrix},
@@ -1026,7 +1024,7 @@ se ve que cumple con la relación $M^{-1}M = 1$:
 \end{pmatrix}.
 \end{align*}
 Con esto, se puede simplificar la forma de una matriz de Jones a
-partir de las siguientes relaciones:
+partir de las siguientes relaciones,
 \begin{align*}
   M_{21} &= - M_{12}^*, & M_{22} = M_{11}^*,
 \end{align*}
@@ -1039,7 +1037,7 @@ complejos:
   \end{pmatrix}\\
 &=
   \begin{pmatrix}
-    x+iy & z+iw \\-z+iw & x-iy
+    X+iY & Z+iW \\-Z+iW& X-iY
   \end{pmatrix}
 \label{eq:general_jones_matrix}
 \end{align}
@@ -1057,14 +1055,14 @@ son elementos que afectan únicamente la amplitud y los
 retardadores introducen retardos de la fase entre las componentes del campo.
 Por una parte, los polarizadores horizontales son elementos que sólo
 dejan pasar la componente $x$ del campo, y se representan con la
-matriz de la expresión (\ref{eq:Px_matrix}).
+matriz de la Eq.~(\ref{eq:Px_matrix}),
 \begin{equation}
 P_x = \begin{pmatrix}1 &0\\0&0\end{pmatrix}.
 \label{eq:Px_matrix}
 \end{equation}
 Si llega cualquier campo al polarizador horizontal este dejará pasar
 sólo la componente $x$ tal y
-como se muestra en la figura \ref{fig:linear_polarizer}. 
+como se muestra en la Fig.~\ref{fig:linear_polarizer}. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale = .7]{linear_polarizer}
@@ -1110,10 +1108,10 @@ P_{\theta}
 En adelante se seguirá usando este método para representar la matriz de cualquier
 elemento óptico rotado.
 Reemplazando $\theta = \frac{\pi}{2}$ y $\theta = \frac{\pi}{4}$
-obtenemos las matrices $P_V$ y $P_{45^{\circ}}$ correspondientes al
-polarizador horizontal y al que está inclinado $45^{\circ}$:
+obtenemos las matrices $P_y$ y $P_{45^{\circ}}$ correspondientes al
+polarizador alineado con $y$ y al que está inclinado $45^{\circ}$:
 \begin{align*}
-P_{V}
+P_{y}
 &=
 \begin{pmatrix}
   \cos{\frac{\pi}{2}} &-\sin{\frac{\pi}{2}}\\\sin{\frac{\pi}{2}}&\cos{\frac{\pi}{2}}
@@ -1173,7 +1171,7 @@ Por otra parte, los retardadores ópticos modifican tanto la amplitud
 como la fase de las componentes del campo y sus elementos son
 complejos. La matriz general para un retardador óptico con desfase
 $\beta $ y orientación del eje rápido con el eje
-$x$ es:
+$x$ es,
 \begin{equation}
 WP = 
 \begin{pmatrix}
@@ -1187,13 +1185,13 @@ proporcional a la diferencia de índices de refracción, y a la
 profundidad $d$ del medio birrefringente,
 $$\beta= \frac{\pi}{2}d\left(n_e-n_o\right).$$ 
 Dónde el índice de refracción extraordinario corresponde al eje rápido
-del medio, y el extraordinario al eje lento. Si multiplicamos la
-ecuación (\ref{eq:retarder}) por $e^{-i\beta/2} $ 
+del medio, y el extraordinario al eje lento \citepChGen{Yariv2002}. Si multiplicamos la
+Eq.~(\ref{eq:retarder}) por $e^{-i\beta/2} $ 
 obtenemos la forma no normalizada que es muy común en los libros de
-texto porque en ella se hace evidente que la componente $E_y$ del campo sufre un
-retardo en fase de $\beta$ con respecto a $E_x$: 
+texto porque en ella se hace evidente que la componente $E_y$ del
+campo sufre un retardo en fase de $\beta$ con respecto a $E_x$,  
 \begin{equation*}
-WP = 
+W = 
 \begin{pmatrix}
 1& 0 \\0&e^{-i\beta}  
 \end{pmatrix}.
@@ -1201,21 +1199,20 @@ WP =
 \end{equation*}
 Los retardadores más usados en el laboratorio son aquellos que
 introducen retardos de cuarto de onda:
-\begin{align*}
-QWP &= \begin{pmatrix} e^{i\frac{\pi}{4}}  &0\\0&e^{-i\frac{\pi}{4}}\end{pmatrix},\\
-&=  \begin{pmatrix} 1 &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix},\\
-&=  \begin{pmatrix} 1 &0\\0&-i\end{pmatrix},
-\end{align*}
+\begin{equation*}
+QWP = \begin{pmatrix} e^{i\frac{\pi}{4}}  &0\\0&e^{-i\frac{\pi}{4}}\end{pmatrix}
+=  \begin{pmatrix} 1 &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix}
+=  \begin{pmatrix} 1 &0\\0&-i\end{pmatrix}.
+\end{equation*}
 y retardos de
 media onda:
-\begin{align*}
-HWP &= \begin{pmatrix} e^{i\frac{\pi}{2}}  &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix},\\
-&=  \begin{pmatrix} 1 &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix},\\
-&=  \begin{pmatrix} 1 &0\\0&-1\end{pmatrix},\\
-\end{align*}
+\begin{equation*}
+HWP = \begin{pmatrix} e^{i\frac{\pi}{2}}
+  &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix} =  \begin{pmatrix} 1
+  &0\\0&e^{-i\frac{\pi}{2}}\end{pmatrix} =  \begin{pmatrix} 1 &0\\0&-1\end{pmatrix},
+\end{equation*}
 Los de cuarto de onda permiten obtener polarizaciones
-circulares o elípticas a partir de polarizaciones lineales. La figura
-\ref{fig:qwp_retarder} muestra cómo conseguir un campo con
+circulares o elípticas a partir de polarizaciones lineales. La Fig.~\ref{fig:qwp_retarder} muestra cómo conseguir un campo con
 polarización circular derecha a partir de polarización lineal y un 
 retardador $QWP$.
 \begin{figure}[h!]
@@ -1228,7 +1225,7 @@ placas de cuarto de onda introducen un retardo de fase de
 $\frac{\pi}{2}$ radianes.}
 \label{fig:qwp_retarder}
 \end{figure}
-La operación correspondiente en el formalismo de Jones es:
+La operación correspondiente en el formalismo de Jones es,
 \begin{align*}
 \mathbf{CD} &=
 R^{T}\left(\frac{\pi}{2}\right)\left(QWP\right)R\left(\frac{\pi}{2}\right)\mathbf{45}^{\circ},\\ 
@@ -1312,18 +1309,23 @@ R^{T}\left(\frac{\pi}{4}\right)\left(HWP\right)R\left(\frac{\pi}{4}\right)\mathb
 0\\1
 \end{pmatrix}.
 \end{align*}
-Combinando rotadores ópticos (HWP) y retardadores de cuarto de onda (QWP),
+Combinando rotadores ópticos (HWP) y retardadores de cuarto de onda
+(QWP), 
 podemos generar polarizaciones elípticas con cualquier inclinación y
-elipticidad. Esto será de utilidad más adelante pues los autovectores
-de las matrices de Jones indican los estados de polarización para los
-cuales el sistema es transparente, es decir, no se modifica el vector
-tras la operación de la matriz,
-\[\mathbf{M}J_{\lambda} = \lambda J_{\lambda}.\]
-Cuando se desea modulación de sólo fase en un SLM lo que se busca es
-precisamente que no se modifique la polarización y por ende la
-amplitud. El problema de calibrar moduladores se reduce a encontrar la
-matriz que define el LC y extraer sus autoestados tal y como dicen
-Pezzanitti y Davis en \citepChGen{Pezzaniti1993,Davis1998,Davis2003}.
+elipticidad. Así como estos elementos pueden ser modelados por una
+matriz, el SLM, que es también un elemento birrefringente que
+transforma los estados de polarización puede ser modelado con matrices
+de Jones que cumplen las mismas propiedades generales. 
+% Esto será de utilidad más adelante pues los autovectores
+% de las matrices de Jones indican los estados de polarización para los
+% cuales el sistema es transparente, es decir, no se modifica el vector
+% tras la operación de la matriz,
+% \[\mathbf{M}J_{\lambda} = \lambda J_{\lambda}.\]
+% Cuando se desea modulación de sólo fase en un SLM lo que se busca es
+% precisamente que no se modifique la polarización y por ende la
+% amplitud. El problema de calibrar moduladores se reduce a encontrar la
+% matriz que define el LC y extraer sus autoestados tal y como dicen
+% Pezzanitti y Davis en \citepChGen{Pezzaniti1993,Davis1998,Davis2003}.
 En la sección que sigue se construirá un modelo para describir el
 comportamiento de un cristal líquido enroscado (TN-LCD) en términos de
 matrices de Jones.
@@ -1341,8 +1343,7 @@ función de su posición. Las propiedades ópticas se estudian suponiendo
 que el material se puede representar como láminas delgadas perpendiculares a la
 dirección de propagación, cada una de ellas actuando como si fuera un
 cristal birrefringente uniaxial con su eje óptico rotado respecto al eje $x$ un ángulo
-$\psi$ como se ilustra en la figura
-\ref{fig:tn-lcd_sticks}.  
+$\psi$ como se ilustra en la Fig.~\ref{fig:tn-lcd_sticks}.  
 \begin{figure}[h!]
 \centering
 \includegraphics[scale = .3]{TN-LCD_sticks}
@@ -1353,7 +1354,7 @@ $\psi$ como se ilustra en la figura
 \end{figure}
 La rotación de cada \textit{lámina} de
 moléculas se asume proporcional a la distancia desde la superficie de
-entra da del LCD,
+entra da del LCD \citepChGen{Yariv2002},
 \begin{equation}
   \label{eq:twist_angle}
 \psi(z)  =\alpha z.  
@@ -1372,7 +1373,7 @@ continuación:
 \[ M= W_NW_{N-1}\cdots W_3W_2W_1=\prod_{m=1}^NW_m = \prod_{m=1}^NR(m\rho)^TW_0R(m\rho), \]
 dónde $R$ es la matriz de rotación, $W_m$ es la matriz de Jones para
 el retardador $m$ rotada, y $W_0$ es aquella lámina en donde el eje rápido está
-orientado con el eje $x$:
+orientado con el eje $x$,
 \begin{equation*}
 W_0 =
 \begin{pmatrix}
@@ -1401,8 +1402,8 @@ R^T(\psi_m)R^T(\psi_{m-1}) &= R^T\left(\psi_m+\psi_{m-1}\right),\\
   \sin{\left(\psi_m+\psi_{m-1}\right)}&  \cos{\left(\psi_m+\psi_{m-1}\right)} 
 \end{pmatrix}.
 \end{align*}
-Usando esto sobre las matrices de rotación, se puede realizar el
-siguiente razonamiento, si $N=1$ entonces
+Usando esta propiedad de las matrices de rotación, se puede seguir el
+siguiente razonamiento, si $N=1$ entonces,
 \begin{equation*}
   M = R^T(\rho)W_0R(\rho).
 \end{equation*}
@@ -1411,7 +1412,7 @@ Si en cambio $N=2$ se tiene
   M &= R^T(2\rho)W_0R(2\rho)R^T(\rho)W_0R(\rho),\\
       &=R^T(2\rho)W_0R(\rho)R(\rho)R^T(\rho)W_0R(\rho).
 \end{align*}
-Como $R(\rho)R^T(\rho)=\mathds{1}$ entonces
+Como $R(\rho)R^T(\rho)=\mathds{1}$ entonces,
 \begin{align*}
  M &= R^T(2\rho)W_0R(\rho)W_0R(\rho),\\
      &=R^T(2\rho)\left[W_0R(\rho)\right]^2.
@@ -1424,7 +1425,7 @@ Y para $N=3$:
       &=R^T(3\rho)W_0R(\rho)\left[W_0R(\rho)\right]^2,\\
       &=R^T(3\rho)\left[W_0R(\rho)\right]^3.
 \end{align*}
-Ahora para una cantidad arbitraria $m$:
+Ahora, para una cantidad arbitraria $m$:
 \begin{align*}
   M &= R^T(m\rho)W_0R(m\rho)R^T((m-1)\rho)\left[W_0R(\rho)\right]^{m-1},\\
       &=R^T(m\rho)W_0R(\rho)R((m-1)\rho)R^T((m-1)\rho)\left[W_0R(\rho)\right]^{m-1},\\  
@@ -1444,7 +1445,7 @@ M&=R^T\left( \phi\right)
 \end{pmatrix}^N.
 \label{eq:general_lcd_matrix}
 \end{align}
-La ecuación (\ref{eq:general_lcd_matrix}) puede ser simplificada aún
+La Eq.~(\ref{eq:general_lcd_matrix}) puede ser simplificada aún
 mas como muestran \citetChGen{Yeh1999} si se usa la identidad de Chebyshev
 para matrices unimodulares  
 \begin{equation}
@@ -1460,8 +1461,9 @@ para matrices unimodulares
   \label{eq:chebyshev}
 \end{equation}
 con \[Z = \cos^{-1}{\left[\frac{1}{2}(A+D)\right]}.\]
-Si se saca el límite cuando $(N\rightarrow \infty)$ se obtiene la
-siguiente matriz
+Si se saca el límite cuando $(N\rightarrow \infty)$
+\citetChGen{Saleh1990} muestran que se puede obtener la
+siguiente matriz,
 \begin{equation}
   \label{eq:TN-LCD_Jones_Matrix}
   M=
@@ -1473,12 +1475,12 @@ siguiente matriz
 -\phi\frac{\sin{\gamma}}{\gamma}   & \cos{\gamma}-i\beta\frac{\sin{\gamma}}{\gamma}
   \end{pmatrix},
 \end{equation} 
-dónde:
+dónde
 \[\gamma=\sqrt{\phi^2+\beta^2}.\]
 
-Ahora, la matriz de la ecuación (\ref{eq:TN-LCD_Jones_Matrix})  es la
-matriz que todos los autores encontrados en el
-estudio del estado del arte referencian y a partir de la cual se basan
+Ahora, la matriz de la Eq.~(\ref{eq:TN-LCD_Jones_Matrix})  es la
+matriz que todos los autores referenciados en el
+estudio del estado del arte usan, y a partir de la cual se basan
 para caracterizar moduladores. La matriz que representa un
 SLM  tal como se estudió en esta sección es la forma más
 simple de representar un cristal líquido del tipo twisted nematic y se
@@ -1492,12 +1494,12 @@ parte de asumir las siguientes aproximaciones:
   salida y formando un ángulo de rotación conocido como twist angle. 
 \item El ángulo de rotación (twist angle) es una función lineal
   proporcional a la profundidad en el cristal tal y como se expresa en
-  la ecuación (\ref{eq:twist_angle}).
+  la Eq.~(\ref{eq:twist_angle}).
 \item El ángulo de inclinación (tilt angle) se produce cuando se
   introduce un campo eléctrico que hace rotar las moléculas para
   alinearlas en su dirección. Éste ángulo se asume constante a lo
   largo del cristal para un voltaje específico. Si la birrefringencia
-  es proporcional al ángulo de inclinación entonces al variar el
+  es proporcional al ángulo de inclinación, entonces al variar el
   voltaje ésta variará linealmente con respecto al voltaje.
 \end{itemize}
 
@@ -1506,7 +1508,7 @@ En modelos posteriores como los de \citetChGen{Coy1996} y
 corrigen comportamientos no lineales no previstos por  Lu y Saleh. El
 principal factor a corregir en un LCD es la tendencia de las moléculas
 cercanas a las paredes del cristal a conservar la dirección de pulido
-de los vidrios que las contienen como se ilustra en la figura \ref{fig:lcd_models}.
+de los vidrios que las contienen como se ilustra en la Fig.~\ref{fig:lcd_models}.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{lcd_models}
@@ -1536,8 +1538,7 @@ Hay dos formas básicas de caracterizar el
 SLM, por una parte se puede seguir el camino riguroso y analizar el
 TN-LCD desde el punto de vista físico como se hizo en la sección
 anterior. Para este caso se deben encontrar los parámetros físicos que
-determinan la matriz que se presentó en la fórmula
-(\ref{eq:TN-LCD_Jones_Matrix}), es decir, la 
+determinan la matriz que se presentó en la Eq.~(\ref{eq:TN-LCD_Jones_Matrix}), es decir, la 
 birrefringencia como función del voltaje, el ángulo de rotación de las
 moléculas a la entrada del modulador, y el ángulo de rotación total
 que experimentan las moléculas hasta la salida del modulador. Estos
@@ -1545,12 +1546,11 @@ parámetros son encontrados en la mayoría de los casos por medio de
 ajuste de curvas con medidas experimentales de la tramitancia.  La
 otra forma en la que se obtiene la matriz de Jones es asumiendo que el
 sistema es como una caja negra que debe cumplir reglas menos
-exigentes. En la figura \ref{fig:articulos_metodos} se ilustra por
+exigentes. En la Fig.~\ref{fig:articulos_metodos} se ilustra por
 medio de dos columnas la cantidad y fecha en las cuales se han
-publicado artículos científicos en los cuales se usa uno u otro método
-para caracterizar los moduladores. Adicionalmente se identificaron los
-grupos que más han publicado sobre el tema. De la figura
-\ref{fig:articulos_metodos} y de las fechas en los artículos de la
+publicado artículos científicos en donde se usa uno u otro método
+para caracterizar los moduladores. Adicionalmente, se identificaron los
+grupos que más han publicado sobre el tema. De la Fig.~\ref{fig:articulos_metodos} y de las fechas en los artículos de la
 bibliografía se puede observar que la investigación en TN-LCD para
 aplicación en procesamiento óptico tuvo su auge entre 1990 y 2010
 aproximadamente, esto se debe como afirman \citetChGen{Kirsch1992}
@@ -1597,18 +1597,18 @@ método de \citetChGen{Ma2010}.
 %tambien considera el SLM como una caja negra. 
 Veremos que la implementación de este método y los resultados
 obtenidos involucraron no solo el análisis de datos experimentales sino también el diseño y
-construcción de un sistema automatizado para la toma de medidas.  
-También se mostrará un método alternativo propuesto por nosotros que requiere más medidas
-y permite obtener resultados más veraces. 
+construcción de un sistema automatizado para la toma de medidas que se
+describe en la sección \ref{sec:instrumento} y el apéndice \ref{AppendixA} 
+También se mostrará un método alternativo propuesto por nosotros que
+requiere más medidas y permite obtener resultados más veraces. 
 
-Una vez caracterizado el SLM se identificaron estados de polarización
-a la entrada y la salida del SLM que permiten una modulación de solo
-fase con la cual se pueden emular elementos difractivos digitales
-tales como máscaras espiral de fase, prismas, lentes de Fresnel e
-inclusive aberraciones. Los elementos difractivos producidos de forma 
-digital, y en particular, las máscaras espiral 
+Una vez caracterizado el SLM se identificó una combinación de estados
+de polarización a la entrada y la salida del SLM que permiten una
+modulación de solo fase con la cual se pueden emular elementos
+difractivos digitales tales como máscaras espiral de fase, prismas,
+lentes de Fresnel e inclusive aberraciones. Los elementos difractivos
+producidos de forma digital, y en particular, las máscaras espiral 
  son la clave para producir haces Laguerre-Gauss.  
-
 
 \chapter{Caracterización de TN-SLM}
 \label{cha:Gen_carac}
@@ -1627,7 +1627,7 @@ amplitud y fase.
 \section{Medida de la modulación de amplitud}
 \label{sec:ChGV_med_mod_amp}
 
-En la figura \ref{fig:PSG_PSD} se presenta un esquema del sistema
+En la Fig.~\ref{fig:PSG_PSD} se presenta un esquema del sistema
 óptico usado para medir la modulación de amplitud. Si el haz tiene una
 polarización lineal y se propaga en la dirección de $z$ la combinación
 de un HWP y un primer QWP conocida como generador de estados de
@@ -1664,14 +1664,14 @@ este campo
 I = |Out|^2 = Out^{\dagger}Out.
 \end{equation}
 
-En la Fig. \ref{fig:amp_H_V_SLM_2002} se presenta
+Luego, en la Fig. \ref{fig:amp_H_V_SLM_2002} se presenta
 una curva de modulación de amplitud que se consigue graficando los
 valores de intensidad normalizada cuando se varían los niveles de gris discretos
 del SLM de 0 a 255. Como se mencionó antes, el nivel de gris es
 proporcional al voltaje sobre las celdas de CL y corresponde a 0
 cuando el ángulo de inclinación de las moléculas es de 90º con
 respecto a la dirección de propagación. La
-figura \ref{fig:amp_H_V_SLM_2002} es especialmente interesante porque
+Fig.~\ref{fig:amp_H_V_SLM_2002} es especialmente interesante porque
 muestra el comportamiento del SLM marca Holoeye modelo LC2002 en la
 configuración típica de pantallas LCD para proyección, es decir, cuando
 el PSG genera un estado de polarización a la entrada vertical y el
@@ -2306,7 +2306,9 @@ medidas]{Curvas de modulación
 En conclusión, Lo que muestran los resultados es que se logró una aproximación
 excelente, y que el modelo de la matriz de Jones del SLM efectivamente
 reproduce la modulación de amplitud del elemento real. 
-\subsubsection{Instrumento para la automatización del proceso de medida.}
+\subsubsection{Instrumento para la automatización del proceso de
+  medida.}
+\label{sec:instrumento}
 Ahora bien, cualquiera que haya tenido experiencia con la
 caracterización de SLMs se sorprenderá por la cantidad de medidas que
 hemos hecho. La toma de cientos de medidas y todo el proceso de
