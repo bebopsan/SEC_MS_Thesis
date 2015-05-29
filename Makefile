@@ -50,6 +50,7 @@ pdflatex: clean
 	bibtex Int
 	bibtex ChGen
 	bibtex ChPD
+	bibtex ApC
 	pdflatex ${FILE_TEX}.tex
 	#makeindex ${FILE_TEX}.nlo -s nomencl.ist -o ${FILE_TEX}.nls
 	#makeindex -t ${FILE_TEX}.glg -s nomencl.ist -o ${FILE_TEX}.gls ${FILE_TEX}.glo

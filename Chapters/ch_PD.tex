@@ -10,24 +10,24 @@
   \textit{Introducción}} % This is for the header on each page -
                          % perhaps a shortened title
 \section{Introducción}
-En capítulos anteriores ha quedado claro que para producir VO es
+En capítulos anteriores ha quedado claro que para producir \acrshort{VOs} es
 necesario contar con un sistema óptico en el cual sea posible
 manipular con precisión la fase de un frente de onda.  Asimismo, se
-presentó un montaje experimental en el cual logramos generar VO a
+presentó un montaje experimental en el cual logramos generar VOs a
 partir del uso de dispositivos difractivos conocidos como SLMs. 
-No obstante, los VO obtenidos distan de ser de suficiente calidad como
+No obstante, los VOs obtenidos distan de ser de suficiente calidad como
 para ser usados en aplicaciones científicas o tecnológicas. 
 
 Esta segunda parte de la tesis abarca el trabajo que se realizó para
 mejorar la calidad óptica de nuestro montaje con el fin de mejorar los
-VO que se obtuvieron en la parte anterior. 
+VO que se obtuvieron en el capítulo anterior. 
 
 \subsection{Aberraciones ópticas}
 % Try not to modify this...
 Los sistemas ópticos formadores de imagen que se encuentran en
 aplicaciones de la vida real están sujetos a aberraciones de fase que
 limitan su resolución. Es por ello que en la industria y en laboratorios se hace un gran esfuerzo para
-detectar aberraciones y corregirlas vía Óptica Adaptativa (AO) \citepChPD{Kubby2013} o por
+detectar aberraciones y corregirlas vía Óptica Adaptativa (\acrshort{AO}) \citepChPD{Kubby2013} o por
 medio de técnicas digitales posteriores a la adquisición
 \citepChPD{Korkiakoski2012}. 
 
@@ -38,10 +38,9 @@ elementos que los componen. O de fuentes extrínsecas como variaciones
 en el índice de refracción de muestras microscópicas y turbulencia atmosférica en
 imágenes capturadas usando telescopios. 
 % Return from this point if necessary.
-
 Adicionalmente, y siguiendo con el tema del capítulo anterior, los
 SLMs de transmisión basados en pantallas de LC introducen otras fuentes
-de aberraciones. En primera medida, los LCD son dispositivos discretos en dos de los
+de aberraciones. En primera medida, los LCDs son dispositivos discretos en dos de los
 sentidos de la palabra; por un lado, son discretos espacialmente y
 las señales de control son asignadas a subdivisiones del cristal de tamaño finito
 conocidas como píxeles. El arreglo rectangular de todos los píxeles
@@ -50,9 +49,9 @@ horizontales combinadas. Esto quiere decir que el SLM separa los
 órdenes de difracción de la luz que pasa a travez de él. Asimismo, el
 hecho de ser una cuadrícula discreta hace que el modulador no pueda
 generar distribuciones de fase en regiones infinitamente pequeñas como
-sería deseado alrededor de una singularidad óptica. Como ejemplo, en la figura
-\ref{fig:discrete_mask} a) se muestra una imagen de la región donde
-resultaría una singularidad óptica en una máscara de
+sería deseado alrededor de una singularidad óptica. Como ejemplo, en
+la Fig.~\ref{fig:discrete_mask} a) se muestra una imagen de la región
+donde resultaría una singularidad óptica en una máscara de
 fase espiral enviada al SLM. Como se puede ver, la máscara de fase
 discreta resulta muy distinta a la máscara ideal presentada en la
 figura \ref{fig:oam_intro}b), y por lo tanto introduce deformaciones
@@ -74,64 +73,111 @@ transmisión modelo Holoeye LC2002.}
 
 Por otra parte, el SLM es discreto en la medida que sólo puede asignar
 níveles de voltaje discretos (0-255 divisiónes de 5V) a cada una de
-las celdas. Este fenómeno también es observable en la figura
-\ref{fig:discrete_mask}a) y puede introducir efectos
+las celdas. Este fenómeno también es observable en la
+Fig.~\ref{fig:discrete_mask}a) y puede introducir efectos 
 indeseados. Más aún, si el modulador no llega a una
 modulación de sólo fase, o si tiene una modulación que no llega al
 rango de $2\pi$ radianes.  
 Todas las posibles fuentes de error mencionadas anteriormente se
 combinan para generar haces Laguerre-Gauss de poca calidad como el que se muestra
-en la figura \ref{fig:discrete_mask} b). 
+en la Fig.~\ref{fig:discrete_mask} b). 
 
 Así tengan orígenes distintos, las fuentes de distorsión en
 la fase del frente de onda pueden ser identificadas y corregidas como
 una sóla aberración usando métodos de reconstrucción de fase. A
 continuación presentamos un novedoso método de reconstrucción de fase
 no interferométrico por medio del cual logramos identificar las
-aberraciones de nuestro montaje óptico y corregirlas para generar VO
+aberraciones de nuestro montaje óptico y corregirlas para generar VOs
 de calidad.   
 
-\section{Estado del Arte}
+\subsection{Las técnicas de reconstrucción de fase no interferométricas}
 \label{sec:ChPD_estado_del_arte}
-\lhead{Caracterización de aberraciones en Vórtices Ópticos: \textit{Estado
-    del Arte}}
-
+\lhead{Caracterización de aberraciones en Vórtices Ópticos: \textit{Introducción}}
 La presencia de aberraciones extrínsecas
 %del último tipo 
 en imágenes adquiridas por telescopios terrestres, y
 la dificultad de modificar estos sistemas para incluir brazos de
 referencia han sido las motivaciones principales para 
-el desarrollo de varias técnicas de Sensado de Fase no
-Interferométricas (NI-WFS). La técnica de Diversidad de Fases o Phase
-Diversity (PD) pertenece a una familia de NI-WFS conocida como de
+el desarrollo de varias \textbf{técnicas de Sensado de Fase no
+Interferométricas} (\acrshort{NI-WFS}). La técnica de Diversidad de Fases o \textbf{Phase
+Diversity} (\acrshort{PD}) pertenece a una familia de NI-WFS conocida como de
 Reconstrucción de Fase o phase retrieval. A diferencia de técnicas
 directas que requieren de óptica y sensores adicionales como los
-sistemas que usan sensores Shack-Hartman, las técnicas de Phase
-Retrieval consisten en la determinación de la fase de una función
+sistemas que usan sensores Shack-Hartman, las implementaciones del PD
+consisten en rutinas iterativas por medio de las cuales se 
+logra determinar la fase de una función
 compleja a partir de medidas de su magnitud usando 
-información a priori de la función o de su transformada \citepChPD{Fienup1993}. 
-Específicamente, la técnica de reconstrucción  PD ha sido usada
-exitosamente en el contexto de sistemas de AO para incrementar la resolución de sistemas ópticos
+información a priori de la función o de su transformada
+\citepChPD{Fienup1993}. 
+Una posible clasificación de las implementaciones del PD, se
+da en la forma en la cual se lleva a cabo el proceso iterativo. Por un
+parte, están los algorítmos en los cuales la fase se encuentra luego de
+simular múltiples propagaciones, y por el otro las aplicaciones en las
+cuales se encuentra la fase por medio de algorítmos de minimización
+basados en la búsqueda del gradiente o \textbf{Gradient Search
+  Algorithms} (\acrshort{GSAs}) \citepChPD{Fienup1982}. 
+En términos generales, el tipo de implementación a usar depende de la
+fuente a analizar; las aberraciones presentes en sistemas que hacen
+imagen de fuentes distantes (como las estrellas) son caracterizadas
+con implementaciones de PD que se basan en múltiples propagaciones
+siguiendo esquemas como el método de \textbf{Gerchberg-Saxton} (\acrshort{GS})
+\citepChPD{RWGerchberga}. Por otra parte, las implementaciones basadas en GSAs son
+usadas para mejorar la resolución de sistemas que hacen imagen de
+fuentes incoherentes y dispersas como por ejemplo la superficie del
+sol \citepChPD{Bonet2005}.  
+% Esta determinación puede consistir en un
+% proceso de múltiples propagaciones cómo es el caso o en 
+La técnica de PD ha sido usada
+exitosamente en el contexto de sistemas de AO para incrementar la
+resolución de sistemas ópticos 
 tales como el Telescopio Espacial Hubble \citepChPD{Fienup1993}, y en
 post procesamiento de imágenes de astronomía en las cuales la
 resolución es crítica. Dos casos muy relevantes son el estudio de
-manchas solares y la detección de planetas extrasolares \citepChPD{Lofdahl1994,Bonet2005,Korkiakoski2012,Sauvage2007,Sauvage2012}. 
+manchas solares y la detección de planetas extrasolares \citepChPD{Lofdahl1994,Korkiakoski2012,Sauvage2007,Sauvage2012}. 
 Así como con otras técnicas desarrolladas para aplicaciones en
 astronomía, los métodos de reconstrucción de fase como el
-Gerchberg-Sachston (GS) y PD han migrado a aplicaciones en el
+GS y el PD han migrado a aplicaciones en el
 laboratorio, y más específicamente a aplicaciones en microscopía de
-fase \citepChPD{Jesacher2007,Camacho2010,Kner2013a}. Tal es el caso
+fase \citepChPD{Jesacher2007,Camacho2010,Kner2013}. Tal es el caso
 del trabajo de \citetChPD{Jesacher2007} que implementó una versión del
-método GS para la optimización de pinzas ópticas utilizadas como
-iluminación en sistemas de microscopía de contraste de fase espiral. \\
+método GS mejorada con VOs para la optimización de sistemas de
+generación de pinzas ópticas en un montaje de microscopía de
+contraste de fase espiral.  Ellos mostraron que el uso de VOs a la
+entrada del sistema óptico era más adecuado que los haces con fase
+plana para la caracterización de aberraciones porque las
+singuladridades ópticas que portan tinen mayor sensibilidad a la 
+presencia de aberraciones. 
+
 En este capítulo se presenta un método novedoso de reconstrucción de
-fase del tipo PD inspirado en la aplicación antes mencionada, y por
-medio del cual fue posible detectar y corregir las aberraciones ópticas
-del sistema generador de VO presentado en el capítulo
-\ref{cha:Gen_intro}.  A continuación, se presenta el marco teórico que
+fase del tipo PD, que se encuentra en el proceso de publicación en la
+revista Optics Letters. Éste método fue desarrollado por el Grupo de Óptica Aplicada en
+colaboración con un investigador de la Universidad de Medicina de
+Harvard y es una variación del PD tradicional basada en GSAs, en la
+cual se asume iluminación coherente a la entrada. Como en el método de
+\citetChPD{Jesacher2007}, éste también es mejorado con VOs y la
+introducción de una nuevo funcional permite determinar con gran exactitud las
+aberraciones de sistemas ópticos formadores de imagen como es el caso
+de sistemas 4F.  Específicamente, con este método logramos corregir las aberraciones ópticas
+de un sistema formador de imagen en el cual se introducen las
+diversidades con el SLM ubicado en un plano de Fourier.
+Lá técnica que propusimos consiste en tomar imágenes con multiples
+diversidades de fase introducidas por el SLM, y minimizar un funcional 
+para obtener las aberraciones del sistema óptico. 
+Creemos que una vez caracterizado, un sistema óptico formador de
+imagen simple como el que presentamos, puede ser usado como una herramienta para
+caracterizar aberraciones en sistemas formadores de imagen generales;
+ya que al ser ubicado a la entrada de estos permite introducir
+máscaras de diversidad de fase con efectos conocidos con las cuales se
+puede ejecutar de nuevo el proceso de caracterización sobre el sistema
+combinado. Se espera que por medio de un convenio de colaboración con
+el Instituto Nacional de Técnica Aeroespacial de España  (INTA) se
+pueda probar esta conjetura en sistemas ópticos
+complejos para uso en astrofísica. 
+
+A continuación, se presenta el marco teórico que
 soporta la implementación del método. En la sección
 \ref{sec:ChPD_materiales_y_metodos} se presenta el montaje óptico y se
-describe el algoritmo general para la reconstrucción de fase. Lugo, en
+describe el algoritmo general para la reconstrucción de fase. Luego, en
 la sección \ref{sec:ChPD_resultados} se presentan los resultados de
 simulaciones y experimentos que permiten corroborar la efectividad del
 método para la corrección de aberraciones. 
@@ -139,13 +185,12 @@ método para la corrección de aberraciones.
 \section{Marco Teórico}
 \label{sec:ChPD_marco_teorico}
 Los métodos de reconstrucción de fase no interferométricos dependen de
-la medida de la intensidad de la intensidad del campo óptico que se
+la medida de la intensidad del campo óptico que se
 propaga a traves de un sistema formador de imagen. Si el sistema
 formador de imagen se
-caracteriza por su Función de Dispersión de Punto (PSF), la intensidad
+caracteriza por su \textbf{función de dispersión de punto} (\acrshort{PSF}), la intensidad
 a la salida puede ser descrita como una convolución entre la imagen a
-la entrada y la PSF tal y como se ilustra en la ecuación
-(\ref{eq:Output_Image}).
+la entrada y la PSF tal y como se ilustra en la Eq.~(\ref{eq:Output_Image}).
 \begin{equation}\label{eq:Output_Image}
 d(\vec{x}) = d_{obj}(\vec{x}) \otimes s(\vec{x}).
 \end{equation}
@@ -153,16 +198,15 @@ En este caso hemos usado la notación de \citetChPD{Paxman1992} dónde
 la PSF se representa como $s$, $d_{obj}$ es la intensidad del objeto a
 la entrada y $d$ es la intensidad de la imagen a la salida, todas
 ellas evaluadas en el espacio de coordenadas naturales ($\vec{x}$). El
- \href{http://es.wikipedia.org/wiki/Teorema_de_convolución}{Teorema de
-   Convolución} permite representar la operación de la expresión
- (\ref{eq:Output_Image}) como un simple producto punto entre las
- Transformadas de Fourier (FT) de la intensidad a la entrada y la
+ \href{http://es.wikipedia.org/wiki/Teorema_de_convolución}{teorema de
+   convolución} permite representar la operación de la Eq.~(\ref{eq:Output_Image}) como un simple producto punto entre las
+ \textbf{Transformadas de Fourier} (\acrshort{FT}s) de la intensidad a la entrada y la
  PSF como se muestra a continuación. 
 \begin{equation}\label{eq:Output_Image_fourier}
 D(\vec{u}) = D_{obj}(\vec{u})S(\vec{u}).
 \end{equation}
-En \ref{eq:Output_Image_fourier} el término $S$ denota la Función de
-Transferencia Óptica (OTF) del sistema formador de imagen, y así como
+En la Eq.~\ref{eq:Output_Image_fourier} el término $S$ denota la \textbf{Función de
+Transferencia Óptica} (\acrshort{OTF}) del sistema formador de imagen, y así como
 con los otros términos, letras mayúscula denotan una transformada de
 Fourier sobre la función con notación minúscula.
 \begin{align*} 
@@ -172,49 +216,50 @@ Hasta el momento hemos trabajado únicamente con funciones reales que
 representan la intensidad del campo punto a punto en los planos objeto
 e imagen de un sistema óptico. Este tipo de notación es de gran utilidad para las
 aplicaciones clásicas del método PD que hacen imagen de objetos
-lejanos, y con fuentes de iluminación no coherentes. Sin embargo, en
-sistemas ópticos con fuentes de iluminación coherentes, como el que se presentó en la primera parte de este documento
+extendidos, y con fuentes de iluminación no coherentes. Sin embargo, en
+sistemas ópticos con fuentes de iluminación coherentes, como el que se
+presentó en la primera parte de este documento 
 para la generación de VO, tenemos la ventaja de trabajar con
 campos complejos que proporcionan información de amplitud y fase. Para
 adaptar el método clásico de PD a una versión de iluminación coherente
 es necesario trabajar con campos complejos. Es bien sabido que la OTF
 y la PSF forman un par de Fourier en el dominio no coherente, y cada
 una de ellas tiene un equivalente en el dominio de la luz
-coherente. Por una parte, la contraparte coherente de la PSF es la
+coherente. De un lado, la contraparte coherente de la PSF es la
 Función de Respuesta al Impulso en amplitud o PSF de amplitud y de
 aquí en adelante se denotará como $h(\vec{x})$. La PSF es el módulo
-cuadrado de la PSF de amplitud (APSF), 
+cuadrado de la \textbf{PSF de amplitud} (\acrshort{APSF}), 
 \begin{equation}\label{eq:PSF}
 s(\vec{x}) = |h(\vec{x})|^2.
 \end{equation}
-Y así
-como la PSF relaciona intensidades de campo a la entrada y salida de
-un sistema por medio de una convolución, la PSF de amplitud relaciona
-los campos ópticos complejos.
+Y así como la PSF relaciona intensidades de campo a la entrada y salida de
+un sistema por medio de una convolución, la APSF relaciona
+los campos ópticos complejos,
  \begin{equation}\label{eq:Output_Image_complex}
 u(\vec{x}) = u_{obj}(\vec{x}) \otimes h(\vec{x}).
 \end{equation}
-Del otro lado, el equivalente coherente de la OTF es la Función de
-Transferencia Óptica de amplitud, o Pupila Generalizada del sistema
-(GP) y por ser el par de Fourier de la APSF se cumple la relación (\ref{eq:GP}). 
+Por otra parte, el equivalente coherente de la OTF es la Función de
+Transferencia Óptica de amplitud, o \textbf{Pupila Generalizada} (\acrshort{GP}) del sistema
+y por ser el par de Fourier de la APSF se cumple la Eq.~(\ref{eq:GP}). 
 \begin{equation}\label{eq:GP}
  H(\vec{u}) = \mathcal{F} \{h(\vec{x})\} =  A(\vec{u}) e^{i\phi(\vec{u})}
 \end{equation}
-En (\ref{eq:GP}) se observa que fuera de ser la FT de la APSF, la GP es
+En la Eq.~(\ref{eq:GP}) se observa que fuera de ser la FT de la APSF, la GP es
 una función compleja que describe tanto la forma y
 tramitancia de la apertura $A(\vec{u})$ como la fase introducida por sistema
-óptico $\phi(\vec{u})$. Esta fase generalmente es sinónimo de las
+óptico $\phi(\vec{u})$ en un plano de Fourier. La fase $\phi$ generalmente es sinónimo de las
 aberraciones del sistema y se describe matemáticamente de forma
-parametrizada como una combinación de polinomios de polinomios de Zernike.\\
-La OTF de un sistema formador de imagen con iluminación coherente se
-puede obtener mediante la autocorrelación normalizada de la GP como se
-muestra a continuación.
+parametrizada como una combinación de polinomios de Zernike
+\footnote{El anexo \ref{cha:Anexo3} hace referencia a los polinomios
+  de Zernike y a la composición de aberraciones en esta base.}
+\citepChPD{Paxman1992}. Finalmente, la OTF de un sistema formador de
+imagen con iluminación coherente se puede obtener mediante la
+autocorrelación normalizada de la GP como se muestra a continuación,
 \begin{equation}\label{eq:OTF}
-S(\vec{u}) = \frac{H(\vec{u}) \star H(\vec{u})}{|H(\vec{u})|^2}
+S(\vec{u}) = \frac{H(\vec{u}) \star H(\vec{u})}{|H(\vec{u})|^2}.
 \end{equation}
 Todo lo mencionado anteriormente ha sido ingeniosamente condensado por
-\citetChPD{UribePatarroyo2011} en una versión de la figura
-\ref{fig:ChPD_kernels_sistemas_formadores_de_imagen}. 
+\citetChPD{UribePatarroyo2011} en una versión de la Fig.~\ref{fig:ChPD_kernels_sistemas_formadores_de_imagen}. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.8]{kernels_sistemas_formadores_de_imagen.pdf}
@@ -233,24 +278,24 @@ notación tradicional del PD. A continuación se describen los aspectos
  explica el efecto de introducir máscaras espiral como diversidades de
  fase. 
 
-\subsection{PD tradicional}
+\subsection{Phase Diversity tradicional}
 \label{sec:ChPD_PD_tradicional}
 Si la GP del sistema es modificada por un cambio conocido en la fase o
-diversidad de fase de la forma:
-$$H_{\Delta}=e^{\phi_1(\vec{u})}.$$ 
-Obtenemos una nueva GP que se puede describir como el producto entre
+diversidad de fase de la forma,
+$$H_{\Delta}=e^{\phi_1(\vec{u})},$$ 
+obtenemos una nueva GP que se puede describir como el producto entre
 la GP original ($H_{0}$) y la GP con el cambio o diversidad de fase
 ($H_{\Delta}$). Estas diversidades son generalmente desenfoques
 introducidos al cambiar el camino óptico de haces esféricos, o pueden
 ser otro tipo de distribuciones de fase fácilmente parametrizables en
 polinomios de Zernike como el astigmatismo. Tomando la autocorrelación normalizada de la GP con
-diversidad como se muestra en la expresión (\ref{eq:first_diversity_OTF})
+diversidad como se muestra en la Eq.~(\ref{eq:first_diversity_OTF}),
 \begin{equation}\label{eq:first_diversity_OTF}
-S_1 = \frac{H_1\star H_1}{|H_1|^2} = \frac{H_0H_{\Delta} \star H_0H_{\Delta}}{|H_0H_{\Delta}|^2}
+S_1 = \frac{H_1\star H_1}{|H_1|^2} = \frac{H_0H_{\Delta} \star H_0H_{\Delta}}{|H_0H_{\Delta}|^2},
 \end{equation}
 obtenemos una OTF con diversidad $\phi_1$ que nos permitirá predecir cómo son
 las imagenes registradas a la salida del sistema cuando se introduce
-un cambio de fase: $$D_1 = D_{obj} S_1.$$ 
+un cambio de fase, $$D_1 = D_{obj} S_1.$$ 
 La tarea de encontrar las aberraciones del sistema óptico en el PD
 tradicional consiste entonces en encontrar una distribución de fase
 inicial $\phi(\vec{u})$ que en combinación con la función pupila
@@ -259,23 +304,21 @@ sistema. Esta OTF debe predecir, a partir de una entrada dada
 ($D_{obj}$)  no solo la imagen nominal ($D_0$), sino tambien
 las imágenes distorsionadas $D_{1...k}$ que resultan de la adición de
 $k$ diversidades de fase distintas. Y la adición de más de una
-diversidad de fase es la que diferencia al método PD de métodos
+diversidad de fase es lo que diferencia al método PD de métodos
 similares, en particular, la inclusión de diversidades implica que la
 fase del frente de onda recuperado debe ser una solución para un
 conjunto de sistemas y no sólo para uno, esto le otorga al método una
-mayor precisión.  La fase del frente de onda a recuperar puede ser
-encontrada utilizando Algoritmos de Propagación Iterativos como el GS o por
-métodos de búsqueda basados en el Gradiente \citepChPD{Fienup1993}.
-Las implementaciones de PD basadas en algoritmos de búsqueda del
-gradiente usan métodos de búsqueda de la mayor pendiente para
-minimizar funcionales de la forma:
+mayor exactitud. Las implementaciones de PD basadas en GSAs, como por
+ejemplo la de \citetChPD{Paxman1992}, usan
+métodos de búsqueda de la mayor pendiente para 
+minimizar funcionales de la forma,
 \begin{equation}\label{eq:metric}
 L(\bar{D}_{obj}, \phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |D_{j} - \bar{D}_{obj} S_{j} \right | ^2.
 \end{equation}
 
 Dónde $\bar{D}_{obj}$ es la FT del objeto a la entrada limitada por las frecuencia
 de corte establecidas en la apertura, y $D_{j}$ es la FT de la intensidad
-medida experimentalmente por una cámara en el pixel con coordenadas $(u,v)$ luego de
+medida experimentalmente por una cámara en el pixel con coordenadas $\vec{u}$ luego de
 introducir una diversidad de fase conocida con índice $j$.      
 Este funcional actua como una medida de la similitud entre la
 intensidad de un objeto que se propaga por un sistema modelado por
@@ -284,33 +327,39 @@ evaluar el funcional para todas las diversidades $j$ implica que el objeto a la 
 sistema se conocen de forma suficientemente precisa como para emular
 el sistema real.   
 
-Es importante fijarse en que el funcional clásico de PD
-(\ref{eq:metric}) debe solucionarse simultaneamente con respecto a dos
-variables. Esto se debe a que en aplicaciones de PD para sensado
+Es importante fijarse en que el funcional clásico de PD de la
+Eq.~(\ref{eq:metric}) debe solucionarse simultaneamente con respecto a
+dos variables. Esto se debe a que en aplicaciones de PD para sensado
 remoto se desconoce tanto la fase introducida por el sistema, como las
-propiedades del objeto a la entrada. Puesto que solucionar un funcional
+propiedades del objeto a la entrada \citepChPD{Bonet2005}. Puesto que solucionar un funcional
 simultaneamente para dos funciones resulta complejo y muy costoso
-computacionalmente, desde los inicios de la técnica autores como \citetChPD{Gonsalves1982} han propuesto
-una transformación de (\ref{eq:metric}) que permite describir el funcional sólo en términos
+computacionalmente, desde los inicios de la técnica autores como
+\citetChPD{Gonsalves1982} han propuesto 
+una transformación de la Eq.~(\ref{eq:metric}) que permite describir el funcional sólo en términos
 de la fase del frente de onda. Esta transformación está descrita
-de forma muy completa y generalizada en el trabajo de \citetChPD{Paxman1992}, y ha
-sido implementada exitosamente por \citetChPD{Katkovnik2012}. No
-obstante, ha sido demostrado que la forma reducida del funcional es
+de forma muy completa y generalizada en el trabajo de
+\citetChPD{Paxman1992}.
+% y ha sido implementada exitosamente por \citetChPD{Katkovnik2012}. 
+No obstante, ha sido demostrado que la forma reducida del funcional es
 mucho más susceptible a devolver mínimos locales en la presencia de
-ruido Gaussiano, y por tanto se ha propuesto el uso de métodos de
-regularización y metaheurísticos para incrementar la convergencia.  
+ruido Gaussiano, y por tanto, se ha propuesto el uso de métodos de
+regularización y metaheurísticos para incrementar la convergencia \citetChPD{Paxman1992}.  
 
-En la siguiente sección se propone una modificación al PD clásico que
-soluciona estos problemas con la condición de limitar el método a
-rangos de aplicación en los cuales es posible conocer el frente de
-onda a la entrada del sistema óptico. 
+En la siguiente sección se propone traer los conceptos del PD
+tradicional a sistemas que pueden ser iluminados con fuentes
+coherentes como aquellos donde son aplicables métodos de
+propagaciones iterativas como el método de GS.
+
+% una modificación al PD clásico que
+% soluciona estos problemas con la condición de limitar el método a
+% rangos de aplicación en los cuales es posible conocer el frente de
+% onda a la entrada del sistema óptico. 
 
 \subsection{PD con iluminación coherente}
 \label{sec:ChPD_PD_il_coherente}
 
 La variación de PD que nosotros proponemos puede llamarse PD con
-iluminación coherente, y requiere de 
-conocer el frente de onda a la entrada del sistema. En nuestro caso,
+iluminación coherente, e implica asumir un frente de onda a la entrada del sistema. En nuestro caso,
 como los VO van a ser generados para aplicaciones en microscopia,
 el sistema óptico es un microscopio 4F compuesto por dos lentes. 
  Dado que en el montaje que usamos para generar VO usamos una fuente laser, podemos asumir que el campo óptico a la entrada ($u_{obj}$) se puede representar
