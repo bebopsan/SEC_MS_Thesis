@@ -1629,13 +1629,13 @@ amplitud y fase.
 
 En la Fig.~\ref{fig:PSG_PSD} se presenta un esquema del sistema
 óptico usado para medir la modulación de amplitud. Si el haz tiene una
-polarización lineal y se propaga en la dirección de $z$ la combinación
-de un HWP y un primer QWP conocida como generador de estados de
-polarización (PSG), permite producir estados de polarización
+polarización lineal y se propaga en la dirección de $z$, la combinación
+de un HWP y un primer QWP, conocida como \textbf{generador de estados de
+polarización} (\acrshort{PSG}), permite producir estados de polarización
 arbitrarios a la entrada del SLM. Luego, el haz llega al SLM y la modulación de amplitud se
-da porque las moléculas de LC en el SLM cambian el estado de
-polarización dependiendo del valor de voltaje aplicado. Cuando se añade un detector de estados de
-polarización (PSD) compuesto por un segundo QWP y un polarizador, la amplitud del campo a la salida del polarizador
+debe a que las moléculas de LC en el SLM cambian el estado de
+polarización dependiendo del valor de voltaje aplicado. Cuando se añade un \textbf{detector de estados de
+polarización} (\acrshort{PSD}) compuesto por un segundo QWP y un polarizador, la amplitud del campo a la salida del polarizador
 (P) dependerá de la matriz de Jones del SLM para el nivel de gris
 actual y de los vectores de Jones asociados al PSG y PSD. A la salida
 del PSD hay un estado con polarización lineal cuya intensidad puede
@@ -1658,7 +1658,7 @@ Out = \left( \mathbf{P}\ \mathbf{QWP_2}\ \right) \mathbf{SLM}\ \left( \mathbf{QW
 \mathbf{HWP}\right)\ In.
 \end{equation}
 La intensidad medida por la cámara no es más que el módulo cuadrado de
-este campo
+este campo,
 
 \begin{equation}
 I = |Out|^2 = Out^{\dagger}Out.
@@ -1730,7 +1730,8 @@ las cuales sí es práctico hacer una búsqueda entre múltiples estados.
 
 A continuación se introducirá una notación alternativa para la
 representación de estados de polarización que es de uso generalizada
-en las referencias consultadas y que facilita la
+en las referencias consultadas \citepChGen{Moreno2003,Ma2010} (entre
+otras) y que facilita la
 representación de las combinaciones de PSG y PSD para medidas de
 intensidad.  
 
@@ -1895,12 +1896,9 @@ Jones siguiendo las ecuaciones mencionadas y obtuvimos los resultados
 presentados en la Fig. \ref{fig:Our_Ma_X2Y2Z2W2}. 
 \begin{figure}[h!]
 \includegraphics[scale = .55]{Our_Ma_X2Y2Z2W2_long.pdf}
-\caption[Comparación entre los valores de $X$, $Y$ $Z$ y $W$ encontrados por
-Ma et al.~ para un SLM similar y por nosotros.]{Comparación entre los
-  valores de X, Y Z y W encontrados por \citetChGen{Ma2014}~ 
-  (a) y por nosotros (b). Dado que no queda explícito cómo encontrar
-  el signo de los parámetros en ninguna de sus publicaciones, asumimos
-  que $Z$ y $W$ son negativos como ellos lo presentan.}   
+\caption[Valores de $X^2$, $Y^2$ $Z^2$ y $W^2$ encontrados por
+nosotros utilizando el método de Ma et al.]{Valores de $X^2$, $Y^2$ $Z^2$ y $W^2$ encontrados por
+nosotros utilizando el método de Ma et al.}   
 \label{fig:Our_Ma_X2Y2Z2W2}
 \end{figure}
 Una primera dificultad que identificamos aplicando el método de Ma fue
@@ -1909,7 +1907,7 @@ cuadrada de $X^2$, $Y^2$, $Z^2$ y $W^2$. Por otra parte, observamos
 que aproximadamente a partir del nivel 200 la curva de $Y^2$ cambia de
 direcci'on sugiriendo un cambio de signo en $Y$ y aparecen valores negativos
 en la curva del parámetro $W^2$. Lo segundo produce raíces complejas no
-permitidas por la teoría y puede ser debido a variaciones leves
+permitidas por la teoría, y puede ser debido a variaciones leves
 en la intensidad registrada por la cámara. La presencia de
 valores negativos no es discutida en los artículos consultados y no
 hemos identificado una restricción teórica que impida observar este
@@ -1949,7 +1947,7 @@ Hemos comparado las intensidades predichas por las matrices obtenidas
 y encontramos que el modelo emula con muy buena exactitud tanto las 3 medidas
 de entrada como las 3 medidas ortogonales. Para cada uno de los 6
 estados el error absoluto promedio es menor a $2\times10^{-4}$.  Se
-calcula el error absoluto promedio para cada estado como: 
+calcula el error absoluto promedio para cada estado como,
 \begin{equation*}
 error_i = \sum_{n=1}^{52}\frac{|I_n^e-I_n^s|}{52}.
 \end{equation*}   
@@ -1990,7 +1988,7 @@ el siguiente vínculo web:\\
 \href{https://github.com/bebopsan/Ellipsometry\_for\_dummies.git}{\textbf{https://github.com/bebopsan/Ellipsometry\_for\_dummies.git}}\hspace*{\fill}.\\
 
 Aún cuando la imprecisión del método se hace evidente de forma
-cualitativa, se midió un error promedio global para las 100 para los
+cualitativa, se midió un error promedio global para los
 100 estados como medida cuantitativa, $$error_g =
 \sum_{i=1}^{100}\frac{error_i}{100},$$ y se obtuvo un valor de $error_g
 = 0.085628$. Es decir que con intensidades normalizadas la diferencia
@@ -2058,7 +2056,7 @@ del método de caracterización
 % basados en un modelos de caja negra 
 de \citetChGen{Ma2010}, que son también los estados de polarización
 degenerados (lineales
-$\mathbf{H}$, $\mathbf{V}$, $\mathbf{\pm 45^{\circ}}$ y circulares) que según la
+$\mathbf{H}$, $\mathbf{V}$, $\mathbf{\pm 45^{\circ}}$ y circulares), que según la
 teoría de polarización de Jones y de Stokes brindan la información suficiente para
 caracterizar los cambios de polarización introducidos por un elemento
 óptico \citepChGen{Collett2005}.
@@ -2087,8 +2085,8 @@ caracterizar los cambios de polarización introducidos por un elemento
 %   &= |<\mathbf{CI}|SLM|\mathbf{CD}>|^2.
 % \end{align*}
 Las curvas de modulación correspondientes a cada una de las medidas en
-la notación de Ma y en la de la Fig. \ref{fig:braket_100_notation} se
-ilustran en la Fig \ref{fig:six_input_measures}. 
+la notación de Ma y en notación la de la
+Fig.~\ref{fig:braket_100_notation}, pueden verse en la Fig.~\ref{fig:six_input_measures}. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.55]{six_input_measures.pdf}
@@ -2104,7 +2102,8 @@ polarizaciones lineales y que, como sería de esperarse, hay
 complementariedad entre estados ortogonales.  Por otra parte, se
 observa claramente que el SLM es cercano a ser transparente en un
 amplio rango de niveles cuando se genera y detecta polarización
-circular derecha, y opaco cuando se genera derecha y se detecta izquierda.
+circular derecha, y opaco cuando se genera polarización circular
+derecha y se detecta circular izquierda.
 A continuación se describe la el funcional usado para la función de
 minimización y la implementación del método. 
 \subsection{Funcional a minimizar}
@@ -2127,7 +2126,7 @@ El funcional de la Eq. \ref{eq:ChGen_SLM_model_functional}  consiste en
 la suma de las diferencias cuadradas entre intensidades para cada
 nivel de gris ($n$) y para cada combinación de PSG y PSD ($i$). Los
 argumentos del funcional son vectores que representan el conjunto de números
-reales $x_n, y_n, z_n, w_n$ que componen a los elementos complejos $A$ y $B$
+reales $X_n, Y_n, Z_n, W_n$ que componen a los elementos complejos $A$ y $B$
 de la matriz de Jones del SLM (ver 
 Eq. \ref{eq:general_jones_matrix}) para un $n$ dado,
 \begin{align*}
@@ -2137,13 +2136,14 @@ El funcional \ref{eq:ChGen_SLM_model_functional}  puede ser minimizado
 variando los 1024 ($256\times 4$) posibles valores 
 de $X,Y,Z,W$ dentro del rango $-1:1$ en un algoritmo de
 minimización. La minimización de los datos presentados en la
-Fig. \ref{fig:six_input_measures} se llevo a cabo usando la función
- \href{http://goo.gl/tv5Iyz}{\bf{scipy.optimize.fmin\_l\_bfgs\_b}} del
+Fig. \ref{fig:six_input_measures} se llevo a cabo usando la función,\\
+\hspace*{\fill}
+\href{http://goo.gl/tv5Iyz}{\bf{scipy.optimize.fmin\_l\_bfgs\_b}}, \hspace*{\fill}\\ del
  paquete de calculo científico \href{http://goo.gl/fRhz8s}{\textbf{Scipy}} del
  lenguaje de programación \href{https://www.python.org}{\textbf{Python}}. Ésta
- función conocida como \href{http://en.wikipedia.org/wiki/Limited-memory\_BFGS}{\textbf{L-BFGS-B}} implementa una versión de memoria limitada (L) del método quasi
- Newton conocido como Broyden-Fletcher-Goldfarb-Shano (BFGS) y permite
- la definición de condiciones de frontera (B) sobre los argumentos de
+ función conocida como \href{http://en.wikipedia.org/wiki/Limited-memory\_BFGS}{\textbf{L-BFGS-B}} implementa una versión de memoria limitada del método quasi
+ Newton conocido como Broyden-Fletcher-Goldfarb-Shano y permite
+ la definición de condiciones de frontera sobre los argumentos de
  entrada.  
 La implementación en el lenguaje Python de la función a minimizar se
 muestra en la Fig. \ref{fig:SLM_functional},  
@@ -2208,7 +2208,7 @@ En este caso usamos un valor semilla para los valores de entrada muy
 cercano a cero, utilizamos la opción de aproximación del gradiente
 por medio de diferencias finitas y definimos la tolerancia de
 convergencia como criterio de parada cuando el valor del funcional no
-cambie a menos de $1e^{-5}$. Los detalles sobre las variables,
+cambie menos de $1e^{-5}$. Los detalles sobre las variables,
 preprocesamiento, y los resultados se han subido a internét en un
 repositorio de GitHub y se pueden observar en la siguiente página
 web:\\
@@ -2228,7 +2228,7 @@ encontrados por minimización con 6 medidas]{Parametros reales que
 Contrario a lo que pensábamos, resultó que aún cuando el método de
 minimización se basa directamente en los valores $X,Y,Z$, y $W$, y no
 en sus cuadrados, los resultados son casi idénticos a los que
-obtuvimos en la sección anterior con el método de Ma et al. Las curvas
+obtuvimos en la sección anterior con el método de Ma et~al. Las curvas
 de los parámetros del modulador siguen la misma tendencia y producen
 los mismos valores de intensidad en las simulaciones. Las 4 medidas
 con estados elípticos que se  
@@ -2303,8 +2303,7 @@ medidas]{Curvas de modulación
   minimización con 100 medidas de entrada.}
 \label{fig:100m_caracterization_results}
 \end{figure}
-En conclusión, Lo que muestran los resultados es que se logró una aproximación
-excelente, y que el modelo de la matriz de Jones del SLM efectivamente
+En conclusión, Lo que muestran los resultados es que se logró una muy buena aproximación, y que el modelo de la matriz de Jones del SLM efectivamente
 reproduce la modulación de amplitud del elemento real. 
 \subsubsection{Instrumento para la automatización del proceso de
   medida.}
@@ -2312,7 +2311,7 @@ reproduce la modulación de amplitud del elemento real.
 Ahora bien, cualquiera que haya tenido experiencia con la
 caracterización de SLMs se sorprenderá por la cantidad de medidas que
 hemos hecho. La toma de cientos de medidas y todo el proceso de
-aprendizaje sobre la polarimetría de por medio fue posible sólo
+aprendizaje sobre la polarimetría fue posible sólo
 porque usamos un instrumento mecatrónico desarrollado por nosotros
 antes y durante este trabajo de grado. El Instrumento se muestra en la
 Fig. \ref{fig:montaje_real_polarimetro} y consiste en
@@ -2348,7 +2347,7 @@ sin necesidad de supervisión.
 % comprobar que el modelo puede predecir modulaciones de fase. 
 El paso siguiente en la caracterización del SLM consiste en medir la
 modulación de fase y comprobar si la matriz de Jones encontrada es
-capaz de predecir el comportamiento del SLM. 
+capaz de predecir el comportamiento de este SLM. 
 La fase del frente de onda se midió usando el interferómetro
 \href{http://en.wikipedia.org/wiki/Mach–Zehnder_interferometer}{\bf{Mach–Zehnder}}
 de la Fig. \ref{fig:mach_zehnder}. 
@@ -2360,7 +2359,6 @@ modulación de fase]{Interferómetro Mach-Zehnder para caracterización de curva
 modulación de fase. }
 \label{fig:mach_zehnder}
 \end{figure}
-
 En este montaje la fuente de iluminación es un láser de estado sólido
 de diodo bombeado (DPSS) de longitud de onda 532nm y potencia nominal
 50mW. El haz pasa por un filtro de densidad neutra ($NDF_1$) que sirve como
@@ -2423,7 +2421,9 @@ el interferograma resultante se muestran en la Fig. \ref{fig:split}.
 caracterización de modulación de fase]{(a) Máscara dividida y (b)
   interferograma registrado para
 caracterización de modulación de fase. En esta combinación de PSG y
-PSD se logró una modulación de aproximadamente $\pi/2$}
+PSD se logró una modulación de aproximadamente $\pi/2$ que se puede
+identificar con la línea de referencia punteada. La linea roja indica
+que esa parte del interferograma se desecha.}
 \label{fig:split}
 \end{figure}
 
@@ -2466,7 +2466,7 @@ de Dirac central correspondiente a la FT de la intensidad de fondo.
 Los picos se pueden identificar calculando el valor absoluto de la FT de
 la señal y buscando el elemento más grande. La representación gráfica
 de la FT se ilustra en la Fig. \ref{fig:fringes_f} con respecto a las
-coordenadas de frecuencia espacial, se observa claramente que se ha
+coordenadas de frecuencia espacial, y se observa claramente que se ha
 filtrado el pico central y que la información de la FT se encuentra
 alrededor de los picos en las frecuencias  8 y -8. Nosotros adaptamos
 una implementación en Matlab de este método que fue inicialmente
@@ -2474,6 +2474,16 @@ propuesta para esta aplicación por el profesor Alberto Lencina del Centro de
 Investigaciones Ópticas de Argentina. En la figura \ref{fig:fourier_script}, se muestra un
 pequeño script que ilustra cómo se haría el cálculo de la fase del
 interferograma de referencia.     
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{fringes_f_both.pdf}
+\caption[Transformada de Fourier de un patrón de
+interferencia]{Transformada de Fourier del patrón de interferencia de referencia de la Fig. \ref{fig:fringes_plot}. Como es de
+  esperarse para señales sinusoidales hay dos picos simétricos ambos
+  lados de la coordenada frecuencial 0. Estos picos señalan correctamente que hay 8
+  periodos en el interferograma.}
+\label{fig:fringes_f}
+\end{figure}
  \begin{figure}[H]
 \begin{lstlisting}[style=Matlab]
 %  Reference image
@@ -2494,16 +2504,6 @@ fase_ref =atan2(imag(TFimaref(1,IX(1))),real(TFimaref(1,IX(1))));
  FT.}
  \label{fig:fourier_script}
  \end{figure}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.4]{fringes_f_both.pdf}
-\caption[Transformada de Fourier de un patrón de
-interferencia]{Transformada de Fourier del patrón de interferencia de referencia de la Fig. \ref{fig:fringes_plot}. Como es de
-  esperarse para señales sinusoidales hay dos picos simétricos ambos
-  lados de la coordenada frecuencial 0. Estos picos señalan correctamente que hay 8
-  periodos en el interferograma.}
-\label{fig:fringes_f}
-\end{figure}
 Si se realiza este proceso para cada una de las dos imágenes se pueden restar las
 fases de ambos interferogramas y obtener la diferencia de fase
 introducida por un nivel de gris particular. A diferencia del
@@ -2529,7 +2529,7 @@ estos moduladores acoplan la modulación de fase con la modulación de
 amplitud, y que al menos con nuestro SLM no es posible encontrar
 estados en los cuales el SLM sea transparente al variar niveles de gris y al mismo
 tiempo permita modulaciones de fase de rango superior a $1.3\pi$.  
-Encontramos que el estado 6 (Fig. \ref{amp_and_phase_I6}) produce
+Encontramos que el estado 6 (Fig. \ref{fig:amp_and_phase_I6}) produce
 modulaciones de fase con rango de modulación muy alto, de casi $1.9\pi$
 radianes, y que, sin embargo, está acoplado a una modulación de
 intensidad de muy mala calidad en la cual la transmitancia máxima es de
@@ -2594,17 +2594,18 @@ ellos es que el espacio de valores de la función para cada
 combinación de posibles estados PSG y PSD no es convexo. Es decir que
 dependiendo de la semilla usada uno puede obtener un BraKet que
 minimice la función de forma local, y que aún así tenga desempeño
-regular. Esto lo vimos en muchas ocaciones cuando medimos
+regular. Esto se vio en diferentes ocaciones cuando medimos
 experimentalmente los BraKets propuestos por las simulaciones. 
-Otro problema, es que se pierde mucho tiempo tratando de proponer
+Otro problema, es que el tiempo invertido tratando de proponer
 manualmente valores de peso que den mayor o menor importancia a la
 sensibilidad de los parámetros con respecto a su efecto sobre la
-modulación de fase o la de amplitud. Generalmente ocurre que la minimización
+modulación de fase o la de amplitud es excesivo. Generalmente ocurre
+que la minimización 
 converge a estados circulares que tienen muy buena transmitancia y
 baja modulación de amplitud pero mínima modulación de fase. Y si se
 modifican ligeramente los factores de peso, la minimización retorna
 modulaciones de fase de menos de $1.3\pi$ con modulaciones de amplitud
-de entre $15$ y $40\%$. Cosa que no es mejor al resultado de la
+de entre $15$ y $40\%$. Esto no es mejor al resultado de la
 Fig. \ref{fig:amp_and_phase_I100}. Por último, encontramos que las
 modulaciones de fase predichas por medio de simulaciones con las
 matrices encontradas no predicen con suficiente exactitud muchas de las
@@ -2659,7 +2660,7 @@ vorticidad óptica está cuantizado por el número entero $l$.
  
 La carga topologica $l$ del VO, es una propiedad  depende de la cantidad de veces que la fase
 de la máscara varíe entre $0$ y $2\pi$. 
-
+\pagebreak
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{mask_app.png}

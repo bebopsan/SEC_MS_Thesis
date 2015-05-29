@@ -216,7 +216,7 @@ FUNCTION {bbl.and}
 { "y"}
 
 FUNCTION {bbl.etal}
-{ "et~al." }
+{ "\textit{et~al.}" }
 
 FUNCTION {bbl.editors}
 { "eds." }
