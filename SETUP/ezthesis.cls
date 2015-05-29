@@ -270,7 +270,8 @@ urlcolor=black, cite color=red]{hyperref} %
 \usepackage{booktabs} %tablas
 \usepackage{tabularx}
 \usepackage{rotating}  %rotar tablas
-
+%\usepackage{mdframed} % Color blocks
+%\usepackage{soul} % for underline
 \usepackage{colortbl} %color tablas
 \usepackage{setspace} %espaciado
 \usepackage{url}

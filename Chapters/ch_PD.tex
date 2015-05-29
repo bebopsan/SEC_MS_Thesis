@@ -184,6 +184,8 @@ método para la corrección de aberraciones.
 
 \section{Marco Teórico}
 \label{sec:ChPD_marco_teorico}
+\lhead{Caracterización de aberraciones en Vórtices Ópticos:
+  \textit{Marco Teórico}}
 Los métodos de reconstrucción de fase no interferométricos dependen de
 la medida de la intensidad del campo óptico que se
 propaga a traves de un sistema formador de imagen. Si el sistema
@@ -359,42 +361,53 @@ propagaciones iterativas como el método de GS.
 \label{sec:ChPD_PD_il_coherente}
 
 La variación de PD que nosotros proponemos puede llamarse PD con
-iluminación coherente, e implica asumir un frente de onda a la entrada del sistema. En nuestro caso,
-como los VO van a ser generados para aplicaciones en microscopia,
-el sistema óptico es un microscopio 4F compuesto por dos lentes. 
- Dado que en el montaje que usamos para generar VO usamos una fuente laser, podemos asumir que el campo óptico a la entrada ($u_{obj}$) se puede representar
-como un haz de luz coherente con perfil Gaussiano y frente de onda
-plano. 
+iluminación coherente, e implica asumir un frente de onda a la entrada
+del sistema. 
+Como se mencionó antes, el sistema óptico a caracterizar es un sistema
+4F compuesto por dos lentes. La razón por la que se escogío este tipo
+de sistemas formadores de imágen es porque a futuro se espera utilizar
+los VOs generados para aplicaciones en microscopia de fase dónde
+ubicar un SLM en un plano de Fourier puede permitir la introducción de
+filtros y máscaras que mejoren el contraste de muestras biológicas transparentes
+\citepChPD{Maurer2011}. 
+Dado que usamos  una fuente láser para generar VOs, podemos asumir que el campo óptico a la entrada, $u_{obj}$, se puede representar
+como un haz de luz coherente con perfil Gaussiano,
 $$u_{obj} = e^{\frac{-(x^2+y^2)}{\sigma}}.$$
- Ese sería el campo óptico a la entrada del 4F, es decir, a una distancia focal de la primera lente. La FT del
- objeto ($U_{obj}$) con coordenadas de frecuencia espacial puede ser
+ Ese sería el campo óptico en el plano objeto, es decir, a una
+ distancia focal de la primera lente. La FT del 
+ objeto , $U_{obj}$ puede ser
  observada en el plano focal de la
- primera lente (2F), y el campo a la salida del sistema está de nuevo
- en coordenadas naturales y se puede observar a 4 distancias
- focales. Si se define la GP en términos de la apertura en el dominio de Fourier, y
- la fase de la GP se asocia a la fase introducida
- tanto por aberraciones del sistema como por las diversidades, el
+ primera lente (2F), que es también el plano de Fourier del
+ sistema. Es allí donde se ubica el SLM para proyectar máscaras de
+ fase con diversidades. Luego, el campo a la salida del sistema, que
+ ha sido modificado por las distintas aperturas y aberraciones del sistema se puede
+ observar en el plano imágen a 4 distancias 
+ focales del plano objeto. Si se define la GP como el producto entre
+ la GP asociada a las aberraciones del sistema ($H_0$) y a las diversidades
+ introducidas por el SLM ($H_j$), usando la Eq.~\ref{eq:Output_Image_complex} el
  campo a la salida se puede expresar en términos del campo a la
- entrada como se muestra en la ecuación \ref{eq:field}.
+ entrada como se muestra en la Eq.~\ref{eq:field}.
 \begin{equation}\label{eq:field}
 u_{j}(\vec{x}) = \mathcal{F}^{- 1}\{ U_{obj} H_0(\vec{u}) H_j(\vec{u}) \}.
 \end{equation} 
-Con la expresión (\ref{eq:field}) se puede plantear un equivalente coherente del
-funcional (\ref{eq:metric}) en el cual la única incógnita son las
-aberraciones introducidas por el sistema óptico.
+Con la Eq.~(\ref{eq:field}) se puede plantear un equivalente coherente del
+funcional de la Eq.~ (\ref{eq:metric}) en el cual la única incógnita son las
+aberraciones ($\phi$) introducidas por el sistema óptico,
 \begin{equation}
 L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
 \right | ^2.
 \label{eq:metric_coherent}
 \end{equation}
-Si la apertura es circular y el objeto es un haz Gaussiano con frente
-de onda plano, las distribuciones de intensidad a la salida para cada diversidad ($d_{j}$)
-son patrones de Airy distorsionados 
-localizados en el centro de la imagen.  
+Si la apertura es circular y el objeto es un haz Gaussiano, las
+distribuciones de intensidad a la salida para cada diversidad
+($d_{j}$) son patrones de Airy distorsionados, y localizados en el centro de la imagen.  
 Es importante notar que a diferencia del PD tradicional, nosotros
 comparamos las imágenes en coordenadas naturales en vez del dominio de
-frecuencia espacial. Esto se debe a que el sistema formador de
-imágenes es un 4F. Otra diferencia muy importante es que podemos saber
+frecuencia espacial. Esto se debe a que analizamos las distribuciones
+de intensidad que
+produce un sistema formador de
+imágenes cuando se introducen las máscaras con diversidades en un
+plano de Fourier. Otra diferencia muy importante es que podemos saber
 cómo será la fase a la salida, cosa que no se podría hacer con
 iluminación no coherente. Esto es esencial si queremos garantizar un
 perfil de fase específico como por ejemplo una vorticidad particular. 
@@ -415,96 +428,93 @@ precisión, y en un aumento en la convergencia que hacen del método una alterna
 atractiva para la optimización de sistemas ópticos en los cuales se
 necesita contról preciso de la fase. 
 
-Los resultados de \citetChPD{ Jesacher2007} pueden ser extendidos al
-método de PD con iluminación coherente si se modifica el funcional (\ref{eq:metric_coherent}) de la
-sección \ref{sec:ChPD_PD_il_coherente} para recibir una nueva familia de
-diversidades de fase que introduzcan OAM al haz de entrada. \\
+Nosotros también proponemos el uso de VOs para mejorar la exactitud de
+la reconstrucción, pero llevamos la idea más adelante al proponer el
+uso VOs no como una fuente de iluminación sino como una nueva familia
+de diversidades que se combina con las diversidades usadas
+tradicionalmente en el PD como el desenfoque y el astigmatismo. La
+introducción de estas nuevas diversidades al método de PD con
+iluminación coherente se logra si se modifica el funcional de la
+Eq.~(\ref{eq:metric_coherent})  para recibir diversidades de fase que
+introduzcan OAM al haz de entrada.
 Estas diversidades son máscaras espiral de fase parametrizadas por el
 valor de su carga topológica $l$ y definidas como:
-
-$$\psi_l = arg(\exp{(il \theta)})$$
-
-tal y como se mostró en la sección (referenciar la sección en la que
-se habla del programa para generación de máscaras). 
+$$\psi_l = arg(\exp{(il \theta)}),$$
+tál y como se mostró en el capítulo \ref{sec:OV_gen}. 
 
 Al incluir las máscaras espiral en un plano de Fourier del sistema, la fase del frente de
-onda se puede representar aproximadamente suma de:
+onda se puede representar aproximadamente como la suma de:
 \begin{itemize}
 \item Las aberraciones inherentes al sistema ($\phi$) representadas como una
   combinación ponderada de polinomios de Zernike. En nuestro caso la
   combinación se hace con los primeros 15 coeficientes siguiendo la
   convención de numeración de \citetChPD{Noll1976}. 
-\item La diversidad de fase espiral ($\psi_l$).
-\item La diversidad de fase de aberración ($\psi_l$) que consiste en
+\item La diversidad de fase espiral $\psi_l$.
+\item La diversidad de fase de aberración $\phi_j$ que consiste en
   un solo elemento de la base de Zernike, como desenfoque o
   astigmatismo. 
 \end{itemize}
 El campo complejo a la salida del sistema cuando se introduce una diversidad de
 aberración $j$ y una diversidad de espiral de fase $l$ en un plano de
-Fourier es entonces:
+Fourier es entonces,
 \begin{equation}\label{eq:newGP}
  u_j^l =  \mathcal{F}^{- 1}\{U_{obj} A e^{i\left(
      \phi+ \psi_l + \phi_j \right)} \}.
 \end{equation}
 
-Usando la ecuación (\ref{eq:newGP}) se puede definir el funcional de
-PD coherente mejorado con VO que se muestra en la ecuación
-(\ref{eq:metric_coherent_OAMs}). %a continuación:
+Finalmente, usando la Eq.~(\ref{eq:newGP}) se puede definir el funcional de
+PD coherente mejorado con VOs que se muestra en la Eq.~(\ref{eq:metric_coherent_OAMs}). %a continuación:
 \begin{equation}\label{eq:metric_coherent_OAMs}
 L(\phi)= \sum_{l=0}^L\sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j}^l - |u_j^l|^2 \right | ^2.
 \end{equation}
-
-Con ese funcional se puede plantear una metodología de solución para
+Con este funcional se puede plantear una metodología de solución para
 el problema de reconstrucción de fase como se ilustra en el diagrama
-de flujo de la figura  \ref{fig:flowchart}.
-
+de flujo de la Fig.~\ref{fig:flowchart}.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=1.2]{PDLightFlux_simple_esp.pdf}
 \caption[Diagrama de flujo del PD con iluminación coherente]{Diagrama de flujo de una implementación de PD con iluminación
-  coherente mejorado con VO.}
+  coherente mejorado con VOs.}
 \label{fig:flowchart}
 \end{figure}
+A continuación, en lo que resta de este capitulo se ahondará en los
+detalles de la metodología, y se presentarán los 
+resultados obtenidos.
 
-A continuación, en lo que resta de este capitulo se ahondará en el método y en los detalles del proceso
-para entender qué es lo que sucede en cada una de las etapas. 
-
-\section{Materiales y Métodos}
+\section{Metodología}
 \label{sec:ChPD_materiales_y_metodos}
-
-Como se mencionó en la sección \ref{sec:ChPD_PD_il_coherente}, para
+\lhead{Caracterización de aberraciones en Vórtices Ópticos:
+  \textit{Metodología}}
+Como se mencionó en la Sección \ref{sec:ChPD_PD_il_coherente}, para
 poder generar imágenes simuladas $|u_j^l|^2$ nuestro método se basa en
 la premisa de conocer el campo óptico a la entrada del sistema
 formador de imagen. Es decir que si usamos un láser de buena calidad
-para obtener las imágenes del brazo izquierdo del diagrama
-\ref{fig:flowchart} podemos asumir que el campo a la entrada del
-sistema simulado ($u_{obj}$)
+para obtener las imágenes del brazo izquierdo del diagrama en la Fig.~\ref{fig:flowchart} podemos asumir que el campo a la entrada del
+sistema simulado ($u_{obj}$) 
 %que produce las imágenes del brazo derecho
 , tiene las características
 ópticas de una fuente láser coherente, es decir: amplitud Gaussiana, perfil
 de fase plano, y que además está limitado por una
-apertura circular correspondiente a la geometría de las lentes (En esta parte se podría hacer referencia a
-un montaje óptico descrito en el capítulo pasado. Idealmente a una fotografía).  
+apertura circular correspondiente a la geometría de las lentes.  
 
 Como el nuestro es un sistema formador de imagen y vamos a introducir las
-máscaras de diversidades en un plano de Fourier para simular la autocorrelación, se debe obtener la
-transformada de Fourier del campo mencionado anteriormente y colimar
-el haz para evitar que siga divergiendo. En adelante haremos
-referencia a la figura \ref{fig:set-up} para ilustrar las diferentes
-partes del sistema para reconstrucción de fase como si se tratara de
+máscaras de diversidades en un plano de Fourier para simular la
+autocorrelación, se debe obtener la transformada de Fourier del campo
+mencionado anteriormente y colimar el haz para evitar que siga
+divergiendo. En adelante haremos 
+referencia a la Fig.~\ref{fig:set-up} para ilustrar las diferentes
+partes del sistema de reconstrucción de fase como si se tratara de
 un sistema 4F.
 Suponiendo que el frente de onda ya ha sido transformado al dominio de Fourier y que se
-encuentra colimado, representamos en el extremo izquierdo de la figura
-\ref{fig:set-up} la FT del campo a la entrada ($U_{obj}$) como un haz
-circular que incide sobre un TN-SLM (El mismo Holoeye 2002 que se
-present[o anteriormente).  Dado que el campo ha sido
+encuentra colimado, representamos en el extremo izquierdo de la Fig.~\ref{fig:set-up} la FT del campo a la entrada ($U_{obj}$) como un haz
+circular que incide sobre el SLM.  Dado que el campo ha sido
 colimado luego de obtener su FT, se puede asumir que todos los planos desde que
 se colima el haz hasta que vuelve a pasar por una lente son
 equivalentes al plano de Fourier de un sistema 4F, y eso nos brinda un
 espacio adecuado para introducir el SLM como se muestra en el recuadro
-azul de la figura \ref{fig:set-up}. 
+azul de la Fig.~\ref{fig:set-up}. 
 
-Si se trabaja en aplicaciones de microscopía en las cuales los objetos
+Si se trabaja en aplicaciones de microscopía, en las cuales los objetos
 son de tamaños micrométricos, sus transformadas de Fourier son campos
 ópticos más extensos y la información en coordenadas de frecuencia
 espacial puede dispersarse en tamaños comparativamente más
@@ -525,18 +535,20 @@ precisos de elementos ópticos. Más aún, el uso de elementos de
 la base de Zernike (diferentes al desenfoque) como diversidad de aberración tiene la ventaja de
 producir distorsiones más grandes y más facilmente detectables en la
 distribución de intensidad del plano imagen. Esto es particularmente
-cierto cuando los las distribuciones pertenecen a objetos altamente
-sensibles a aberraciones como es el caso de los OV. Polinomios de
+cierto cuando las distribuciones pertenecen a objetos altamente
+sensibles a aberraciones como es el caso de los OVs. Adicionalmente, polinomios de
 Zernike como los dos correspondientes al astigmatismo primario han
-sido usados por \citetChPD{Kner2013} como diversidad de aberración en PD para reconstrucción de
-fase de objetos tridimensionales en aplicaciones de microscopía donde
-el desenfoque no añade una cantidad significante de información. 
+sido usados por \citetChPD{Kner2013} como diversidad de aberración en
+PD para reconstrucción de fase de objetos tridimensionales en
+aplicaciones de microscopía donde el desenfoque es usado para
+muestrear en la dirección del propagación y no añade información
+sobre las aberraciones.  
  
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=.5]{PhaseDiversitySetup_esp.pdf}
 \caption[Diagrama del sistema óptico para PD con iluminación coherente.]{Un SLM es usado para introducir diversidades de fase en un
-  plano de Fourier. La máscara que se asigna al CL es una combinación de:
+  plano de Fourier. La máscara que se asigna al SLM es una combinación de:
   (a) Máscara espiral de fase con OAM 1, (b) rejilla de difracción
   tipo Blazed, y (c) +0.5 astigmatismo primario como diversidad de
   aberración. El primer orden de difracción producido por la rejilla
@@ -545,35 +557,35 @@ el desenfoque no añade una cantidad significante de información.
 \label{fig:set-up}
 \end{figure}
 
-Cuando $U_{obj}$ llega al SLM se encuentra con una combinación de tres
-máscaras de fase que han sido asignadas a los píxeles del CL. La
-primera de estas máscaras, visible en la figura \ref{fig:set-up}(a)  es una máscara de espiral de fase con carga
-topologica $l$ que (como
-se vio en la sección ``referenciar sección'') introduce un una
+Cuando el campo $U_{obj}$ llega al SLM se encuentra con una combinación de tres
+máscaras de fase que han sido asignadas a los píxeles del LCD. La
+primera de estas máscaras, visible en la Fig.~\ref{fig:set-up}(a)  es una máscara de espiral de fase con carga
+topologica $l$ que, como se vio en el Capítulo \ref{sec:OV_gen}, introduce un una
 singularidad de fase de orden $l$ al campo. La segunda máscara
-(\ref{fig:set-up}(b)) corresponde a una rejilla de difracción del tipo
-blazed que se usa para separar la luz que ha sido difractada al primer
-orden del resto. Esta rejilla mejora de forma significativa la calidad
+(Fig.~\ref{fig:set-up}(b)) corresponde a una rejilla de difracción del tipo
+blazed que representa una cuña delgada, y se usa para separar la luz
+que ha sido difractada al primer orden del resto. 
+Esta rejilla mejora de forma significativa la calidad
 de los vórtices ópticos porque evita efectos de interferencia causados
 por partes del campo que no son correctamente difractadas por el
 modulador. La poca eficiencia de difracción se debe a la no linealidad
 de la modulación y al hecho de que los TN-SLM de transmisión no logran
 modulaciones de $2\pi$.  Finalmente, la tercera máscara
-(Fig. \ref{fig:set-up}(c)) introduce la diversidad de fase de
-aberración, en este caso, y en adelante corresponde al polinomio de
+(Fig.~\ref{fig:set-up}(c)) introduce la diversidad de fase de
+aberración, en este caso, y en adelante,  corresponde al polinomio de
 Zernike de astigmatismo primario (De índice 4 en la notación de
 Noll). La suma de las tres máscaras tal y como se le presenta al SLM
-en el montaje experimental se muestra en la figura
-\ref{{fig:mixed_mask}} superpuesta a una
+en el montaje experimental se muestra en la Fig.~\ref{fig:mixed_mask} superpuesta a una
 apertura circular que corresponde al tamaño del haz en el SLM.   
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=.5]{mixed_mask.pdf}
+\includegraphics[scale=.5]{mixed_mask_compact.pdf}
 \caption[Ejemplo de una máscara tenedor con astigmatismo.]{Ejemplo de una máscara tenedor que resulta de combinar una
   máscara de espiral con $l=1$, con una red de difracción y una
   máscara de diversidad de aberración con astigmatismo primario de
-  $Z_4=0.5\lambda$.} 
+  $Z_4=0.5\lambda$. Se muestra sólo la parte de la imagen que tiene el
+tamaño del haz proyectado en el SLM.º} 
 \label{fig:mixed_mask}
 \end{figure}
 
@@ -589,10 +601,11 @@ de la figura \ref{fig:flowchart} corresponden sólo a una pequeña parte
 de la imagen en la cual está el orden +1 de la rejilla de
 difracción. Dado que los spots tienen un tamaño microscópico, para observar sólo
 el orden 1 en el plano de enfoque usamos un objetivo de 
-microscopio de magnificación 10x y una cámara CCD marca Imaging
+microscopio de magnificación 10x y una cámara \acrshort{CCD} marca Imaging
 Source.    
 
-En conclusión, para realizar la reconstrucción de fase de un sistema
+% \begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+\emph{En conclusión, para realizar la reconstrucción de fase de un sistema
 óptico formador de imagen usando nuestro método, se deben registrar varias de las
 imágenes que éste forma cuando se le introducen cambios conocidos en
 la fase. Los cambios en la fase se introducen a partir de máscaras de
@@ -604,7 +617,9 @@ sistema en cuestión. El hecho de generar varias combinaciones de
 diversidades y registrar varias imagenes con distorsiones distintas,
 lleva a limitar el espacio de soluciones posibles y acerca el método a
 una solución única. Esta es la gran ventaja del PD sobre otros métodos
-de reconstrucción de fase. 
+de reconstrucción de fase.}
+% \end{mdframed}
+
 
 Adicionalmente, el hecho de usar la familia
 de diversidades de espiral, aumenta la sensibilidad del método ante
@@ -623,24 +638,27 @@ simulamos el sistema óptico y producimos imágenes artificiales
 experimentales. Así como las distorsiones en las imágenes
 experimentales son función de las aberraciones que desconocemos, las
 distorsiones de las imágenes artificiales van a ser función de una
-fase conocida y parametrizada ($\phi$) que vamos a variar hasta que el funcional
-\ref{eq:metric_coherent_OAMs} retorne un mínimo. 
+fase conocida y parametrizada ($\phi$) que vamos a variar hasta que el
+funcional de la Eq.~\ref{eq:metric_coherent_OAMs} retorne un mínimo. 
 Cuando acabe el esquema de búsqueda de un mínimo, y la fase
 propuesta ($\phi$) produzca imágenes artificiales ($|u_j^l|^2$)
 idénticas a las imágenes experimentales, y siempre y cuando las
 condiciones de la simulación sean idénticas a las condiciones del
 laboratorio, significará que hemos identificado las aberraciones del
-sistema óptico correctamente.
+sistema óptico correctamente. Adicionalmente, el inverso de las aberraciones
+encontradas puede ser proyectado en el SLM para corregirlas y así mejorar la resolución
+del sistema.
 
-Una vez presentado el método, procedemos a presentar los resultados
+Una vez presentado el método, procedemos a describir los resultados
 logrados. 
 %introducir un TN-SLM en un plano de Fourier 
 
 \section{Resultados}
 \label{sec:ChPD_resultados}
-
-Nuestro método fue probado extensivamente con el fin de validar
-nuestras premisas y evaluar su comportamiento ante diversas entradas. 
+\lhead{Caracterización de aberraciones en Vórtices Ópticos:
+  \textit{Resultados}}
+El método de PD coherente mejorado con VOs fue probado extensivamente
+con el fin de validar nuestras premisas y evaluar su comportamiento ante diversas entradas. 
 En esta sección se describen las pruebas simuladas y experimentales
 que se realizaron, y se muestran los resultados para cada una. 
 
@@ -658,14 +676,14 @@ Una vez comprobamos que nuestra implementación del PD reconstruía de
 forma precisa aberraciones simples, procedimos a probarlo con
 aberraciones generadas aleatoriamente, y luego con aberraciones aleatorias de
 diferente magnitud. Asimismo, comparamos el desempeño del PD contra el
-método GS con y sin VO, y contra sí mismo con conjuntos diferentes de
-diversidades con y sin VO.  
+método GS con y sin VOs, y contra sí mismo con conjuntos diferentes de
+diversidades con y sin VOs.  
 
 \subsubsection{Preparación de las fases de referencia}
 
 Si las aberraciones se conforman como una combinación lineal de
-elementos de la base de Zernike como se muestra en
-\ref{eq:ChPD_phase_Zernike}, un frente de onda aleatorio puede ser
+elementos de la base de Zernike como se muestra en la
+Eq.~\ref{eq:ChPD_phase_Zernike}; un frente de onda aleatorio puede ser 
 facilmente compuesto asignando valores aleatorios a los coeficientes $a_i$. 
 \begin{equation}
 \label{eq:ChPD_phase_Zernike}
@@ -686,65 +704,71 @@ problema si los métodos no son lo suficientemente sensibles como para
 distinguirlas. Asimismo, aberraciones de magnitudes muy altas pueden
 introducir distorsiones tan grandes en las imágenes de entrada que
 impiden que los métodos converjan a un mínimo global, o incluso pueden
-causar divergencia. Con el fin de evaluar el desempeño de nuestro
+causar divergencia \citepChPD{Jesacher2007}. Con el fin de evaluar el desempeño de nuestro
 PD ante magnitudes variables, generamos aberraciones aleatorias en diferentes
-escalas. Se tomó como métrica de la escala el valor de la media
-cuadrática (RMS) del frente de onda, que para una base normalizada es:
+escalas. Se tomó como métrica de la escala el valor de la \textbf{media
+cuadrática} (\acrshort{RMS}) \citepChPD{Schmidt2010} del frente de
+onda, que para una base normalizada como la de Zernike es,
 $$RMS =  \sqrt{\sum_{i=1}^{N=15}a_i^2 }.$$
 Los coeficientes aleatorios que entrega la función \textbf{normrnd}
-fueron escalados en una rutina de minimización (Referenciar el código)
-hasta obtener una combinación con RMS definido. 
-Se corrió la rutina de PD para 6 escalas distintas desde $RMS = 1/14\lambda$ (límite de
+fueron escalados en una rutina de minimización hasta obtener una
+combinación con RMS definido.  
+Se corrió la rutina de PD para 6 escalas distintas  $\sum_{i=1}^6\sigma_i$ desde
+$RMS = 1/14\lambda$ (límite de 
 difracción) hasta $RMS = 1\lambda$. Y cada una de las reconstrucciones
-de una escala particular fue repetida con fases distintas 15 veces
+de una escala particular ($i$) fue repetida con fases distintas 15 veces
 para que el resultado fuera estadísticamente significativo. Es decir
 que en total se hicieron  90 reconstrucciones de fase por cada método
-a evaluar. Se evaluó el método de GS con y sin VO, y el método de PD
-de iluminación coherente sin VO, y con VO bajo dos combinaciones
+a evaluar. Se evaluó el método de GS con y sin VOs, y el método de PD
+de iluminación coherente sin VOs, y con VOs bajo dos combinaciones
 distintas de diversidades haciendo un total de 450 reconstrucciones de
 fase.  
-Los resultados de estas simulaciones se han condensado en la figura
-\ref{fig:ChPD_RMS_error} y se discuten en adelante. 
+Los resultados de estas simulaciones se han condensado en la
+Fig.~\ref{fig:ChPD_RMS_error} y se discuten en adelante.  
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=.6]{WF_errors_new_colors_esp.pdf}
+\includegraphics[scale=.5]{mixed_wf_errors_esp.pdf}
 \caption[Resultados de simulaciones con PD de iluminación
-coherente.]{Las marcas en el eje x denotan el error RMS para
-  diferentes escalas con respecto a
-  un haz plano para cada conjunto de 15 réplicas. El eje y denota el
-  error RMS promedio para entre la aberración de referencia y la
-  aberración reconstruída.} 
+coherente.]{(a) Las marcas en el eje $x$ denotan la magnitud de la
+  aberración para cada escala $\sigma_i$ como el error RMS con
+  respecto a un frente de onda plano. El eje $y$ denota el promedio de
+  los errores RMS entre las 15 réplicas de aberración de referencia y
+  fase reconstruída. (b) Desviación estándar del error para cada
+  método y para cada $\sigma_i$.} 
 \label{fig:ChPD_RMS_error}
 \end{figure}
 
 \subsubsection{Descripción y análisis de resultados simulados}
-Comenzamos por describir brevemente los datos que componen la gráfica
-\ref{fig:ChPD_RMS_error}. De un lado están los cuadrados rojos que representan el error
+Comenzamos por describir brevemente los datos que componen las curvas
+de la Fig.~\ref{fig:ChPD_RMS_error}(a). 
+De un lado está la curva con marcas cuadradas rojas que representan el error 
 para cada escala cuando se reconstruyen las aberraciones usando el
-método GS tradicional. Los rombos azules son también de GS y
+método GS tradicional. Los rombos azules son también resultado de la
+reconstrucción con GS y
 representan la solución cuando se añaden VO de OAM1 a la entrada, tal
-y como lo presenta \citetChPD{Jesacher2007}. Por otra parte, del lado
+y como lo presenta \citetChPD{Jesacher2007}. En ambos casos el GS se
+ejecuto por 60 iteraciones. Por otra parte, del lado
 de PD con iluminación coherente, los datos con cruces verdes
-representan el método PD cuando no ha sido mejorado con
+representan el método PD coherente cuando no ha sido mejorado con
 diversidades de fase espiral.
 %, presentado en la sección \ref{sec:ChPD_PD_il_coherente}. 
 En ese caso se usaron sólo tres imágenes como entrada, la nominal y
 dos con diversidades. No se usaron máscaras espiral ($l=0$), y las
 diversidades de aberración consisten en los siguientes dos valores de
 astigmatismo $j=Z_4:\pm 0.5$. Tanto los datos con triángulos dorados
-como los que tienen  $\times$ púrpura representan resultados del
+como los que tienen círculos púrpura representan resultados del
 método de PD con iluminación coherente mejorado con VO y fueron
 obtenidos con nueve imágenes. Las diversidades de aberración para
 estos casos son las mismas y se añaden las diversidades de espiral
 $l=0,1,2$ para el primer caso y $l=-2,0,2$ para el segundo.  
 
-En la figura \ref{fig:ChPD_RMS_error} se puede observar claramente que
+En la Fig.~\ref{fig:ChPD_RMS_error} se puede observar claramente que
 el método de PD coherente supera en 
 exactitud al GS por al menos un orden de magnitud en cualquiera de las
 selecciones de diversidades. La precision de la aproximación con PD
-también en evidencia cuando se comparan las fases reconstruidas y los pesos
+también se evidencia cuando se comparan las fases reconstruidas y los pesos
 de los coeficientes recuperados para un frente de onda particular como
-se muestra en la figura \ref{fig:ChPD_visual_comparison}. En ese caso se
+se muestra en la Fig.~\ref{fig:ChPD_visual_comparison}. En ese caso se
 compararon las fases de la réplica número 10 para la reconstrucción de
 un perfil de fase con aberraciones de $1/14\lambda$ RMS, y se ve
 que la reconstrucción de los pesos con PD es casi exacta. 
@@ -771,22 +795,39 @@ vórtices de $l=2$ son mejores que los de $l=1$ y estos a su vez
 mejores que los haces Gaussianos $l=0$ es el hecho de que tienen un
 tamaño mayor. Al ocupar una parte mayor de la imagen los cambios en el
 perfil debidos a las aberraciones son más evidentes y pueden ser
-muestreados con una mayor cantidad de píxeles. Luego, pensamos que
+muestreados con una mayor cantidad de píxeles. Adicionalmente, se
+demostrado que las
+singularidades de VOs con cargas topológicas mayores a 1 son altamente
+inestables y tienden a
+dividirse en varios VOs de carga menor ante la presencia de
+aberraciones \citepChPD{Dennis2009,Dennis2012}. Por otra parte, pensamos que 
 incluir VO con carga negativa y positiva es preferible ya que se le
 introducen al método máscaras de diversidad cuya redundancia puede ``desenvolver''
 aberraciones simétricas. Una aberración simétrica puede afectar de
 distinta forma vórtices ópticos cuya fase se envuelve en sentido
-derecho, y vórtices cuya fase se envuelve hacia la izquierda.\\
+derecho, y vórtices cuya fase se envuelve hacia la izquierda.
 
-\subsubsection{Discusión sobre GS}
-Analizar correctamente los resultados de la figura
-\ref{fig:ChPD_RMS_error} depende de entender las diferencias entre la
+\subsubsection{Discusión sobre el método Gerchberg-Saxton}
+Analizar correctamente los resultados de la Fig.~\ref{fig:ChPD_RMS_error} depende de entender las diferencias entre la
 reconstrucción con GS y la reconstrucción con PD. Comenzaremos por
 identificar algunas propiedades de la reconstrucción con el método GS.
 
 El método GS es un algoritmo cíclico de una sola imagen en el cual se
-llega a la solución haciendo múltiples propagaciones hacia adelante y hacia atrás
-del sistema óptico. Se parte de un campo complejo conocido en un plano
+llega a encontrar la fase de un frente de onda haciendo múltiples
+propagaciones hacia adelante y hacia atrás del sistema óptico. En este
+caso el sistema consiste en la segunda lente de un 4F y las
+propagaciones suceden entre el plano de Fourier donde está el SLM y el
+plano imagen donde se registran con la CCD. El
+algoritmo que implementamos se ilustra de forma gráfica en la
+Fig.~\ref{fig:GS_algorithm} y se describe a continuación.
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.36]{GS_algorithm.pdf}
+\caption[Algoritmo de GS]{Diagrama de flujo de nuestra implementación
+  del método de múltiples propagaciones de Gerchberg-Saxton.} 
+\label{fig:GS_algorithm}
+\end{figure}
+Se parte de un campo complejo conocido en un plano
 de Fourier, que se debe propagar por medio de una FT a través del
 sistema para obtener el campo en el plano imagen. La amplitud del
 campo resultante se reemplaza por la raíz cuadrada de la intensidad
@@ -795,19 +836,19 @@ contrario a través del sistema por medio de una FT inversa. De nuevo
 en el plano de Fourier, la amplitud del campo se reemplaza por una
 equivalente a la que habría en la entrada del sistema y se repite el
 ciclo hasta que la fase converja a la aberración del sistema que
-produce amplitudes a la salida iguales a la raíz cuadrada de las
-intensidades tomadas experimentalemente. 
+produce intensidades a la salida iguales a las intensidades tomadas
+experimentalemente.  
 Si el campo óptico propuesto en el plano de
 Fourier del sistema es tal que su imagen resulta similar a la imagen
 de entrada, la convergencia es casi segura, el error desciende en cada
 iteración y se necesita de muy pocas
 iteraciones para alcanzar convergencia. Este es el caso del ejemplo
-que mostramos en la figura \ref{fig:ChPD_visual_comparison}. En estos
+que mostramos en la Fig.~\ref{fig:ChPD_visual_comparison}. En estos
 casos podemos suponer que el algoritmo ha retornado un mínimo
 global. Sin embargo, aberraciones de mayor magnitud, o con formas
 complejas, pueden hacer que el error aumente antes de comenzar a
-descender, y entregar resultados que, aunque generan magnitudes del
-campo similares a la raíz cuadrada de las imágenes experimentales, no
+descender, y entregar resultados que, aunque generan intensidades
+similares a las imágenes experimentales, no 
 tienen fases similares a la fase de referencia.  Estos serían entonces
 mínimos locales, y no representarían una solución aceptable a la hora
 de comparar con una métrica como el RMS del frente de onda. Este
@@ -822,14 +863,14 @@ cuales la fase se compone de forma parametrizada, el proceso cíclico
 del GS retorna la fase como una imagen por el simple hecho de propagar campos complejos
 en forma iterativa. Como resultado se corre el riesgo de obtener distribuciones
 de fase que no representan adecuadamente el sistema.  Un ejemplo muy bueno de situaciones en las
-cuales se presenta ese resultado es el que se ilustra en la figura
+cuales se presenta ese fenómeno es el que se ilustra en la Fig.
 \ref{fig:visual_comparison}. Esta figura muestra el resultado de la
 reconstrucción de fase con varios métodos cuando las aberraciones son
-grandes (RMS $1\lambda$) y se puede ver claramente que PD sigue siendo
+grandes (RMS $>1\lambda$) y se puede ver claramente que PD sigue siendo
 altamente preciso, y que la solución
-con el método de GS (cuadrados verdes) llegó a un mínimo que no
+con el método de GS (cuadrados rojos) llegó a un mínimo que no
 corresponde a la referencia. En este caso se muestra además que la
-solución con el método de GS mejorado con VO devuelve una fase espiral
+solución con el método de GS mejorado con VOs devuelve una fase espiral
 aberrada que no corresponde a la fase espiral de referencia. Además hemos
 visto que en algunos casos las múltiples propagaciones
 producen singularidades de fase adicionales no ubicadas en el centro
@@ -841,8 +882,8 @@ de la imagen.
 aberración $1\lambda$]{Comparación visual y de coeficientes entre uno de los frentes
   de onda aleatorios de escala $1\lambda$ y las fases reconstruidas
   con PD y GS. En este caso se incluye también el resultado del GS con
-VO porque al restar la fase espiral y proyectar a la base de Zernike
-se obtuvieron mejores resultados que sin VO.} 
+VOs porque al restar la fase espiral y proyectar a la base de Zernike
+se obtuvieron mejores resultados que sin VOs.} 
 \label{fig:visual_comparison}
 \end{figure}
 Más aún, las propagaciones del GS pueden propiciar la aparición de
@@ -853,18 +894,26 @@ pueden invalidar la comparación con la fase de referencia.
 A fin de que la comparación entre el método de GS y el PD sea justa se
 sustrajeron las máscaras espiral cuando estaban presentes y la fase
 del frente de onda se proyectó al equivalente en la  base Zernike tal
-y como muestra en el capítulo 5 de \citepChPD{Schmidt2010}. Con esto
-pudimos extraer los coeficientes correspondientes a los datos de
-cuadros verdes y triángulos azules de la figura
+y como muestra en el Capítulo 5 de \citepChPD{Schmidt2010}. Con esto
+se pudieron extraer los coeficientes correspondientes a los datos de
+cuadros rojos y triángulos azules de la figura
 \ref{fig:visual_comparison}. 
-Viendo que distribuciones de fase aleatorias probablemente impedirían
-implementar un método de análisis de convergencia basado en búsqueda
-de una variación del error por debajo de un cierto umbral, decidimos
-ejecutar el algoritmo de GS de tal forma que se detuviera una vez
-hubieran pasado 60 iteraciones independientemente del caso. Esto
-aseguraría que las simulaciones que iban en buen camino alcanzaran un
-cambio en el error suficientemente bajo, y le impediría a las
-soluciones que divergían seguir aumentando el error indefinidamente. 
+En términos generales, se observó que aún cuando el método de GS
+encontraba distribuciones de fase que llevaban a intensidades
+similares a las intensidades esperadas, estas fases no eran
+suficientemente cercanas a la fase de referencia que se esperaba. Esto
+se evidencia cuantitativamente en los altos valores del error RMS y su
+desviación estandar en las curvas y barras de las
+Fig.~\ref{fig:ChPD_RMS_error}(a) y (b).
+% Viendo que distribuciones de fase aleatorias probablemente impedirían
+% implementar un método de análisis de convergencia basado en búsqueda
+% de una variación del error por debajo de un cierto umbral, decidimos
+% ejecutar el algoritmo de GS de tal forma que se detuviera una vez
+% hubieran pasado 60 iteraciones independientemente del caso. Esto
+% aseguraría que las simulaciones que iban en buen camino alcanzaran un
+% cambio en el error suficientemente bajo, y le impediría a las
+% soluciones que divergían seguir aumentando el error indefinidamente. 
+
 
 \subsubsection{Sobre las limitantes del método}
 La superioridad del método PD viene con la desventaja de implicar un
@@ -873,28 +922,29 @@ GS pueden tardar alrededor de 30 segundos, la reconstrucción con el PD
 de 3 imágenes tarda 6 minutos y la de PD con 9 tarda 22 minutos. Esto
 se debe a que el algoritmo es más complejo y las funciones de
 minimización que buscan la mayor pendiente necesitan de una mayor cantidad
-de evaluaciones de los funcionales (\ref{eq:metric_coherent}) y
-(\ref{eq:metric_coherent_OAMs}) para poder ensamblar el gradiente
+de evaluaciones de los funcionales de la
+Eq.~(\ref{eq:metric_coherent}) y la
+Eq.~(\ref{eq:metric_coherent_OAMs}) para poder ensamblar el gradiente 
 numéricamente. Todos los resultados fueron obtenidos a partir de
 código programado en el lenguaje de programación Matlab$\circledR$ y
 no han sido optimizados para mejorar la velocidad de
 procesamiento. Futuras implementaciones paralelizadas de los
 algoritmos podrían sacar provecho de lenguajes de programación de bajo
-nivel como \textbf{C++} y de una Unidad de Procesamiento Gráfico (GPU)
+nivel como \textbf{C++} y de una \textbf{Unidad de Procesamiento Gráfico} (\acrshort{GPU})
 para mejorar los tiempos de reconstrucción y hacer del método una
 alternativa viable en aplicaciones donde la velocidad sea importante. 
 
 \subsection{Resultados experimentales}
 \label{sec:ChPD_resultados_experimentales}
 
-El método de PD con iluminación coherente mejorado con OAM también fue
+El método de PD con iluminación coherente mejorado con VOs también fue
 probado con aberraciones inducidas en sistemas ópticos reales. A
 continuación se describe el montaje óptico, el experimento planteado y
 se muestran los resultados. 
 
 \subsubsection{Montaje óptico} 
 El montaje experimental usado para la caracterización de aberraciones
-se puede observar en la figura \ref{fig:exp_setup}. Como fuente de
+se puede observar en la Fig.~\ref{fig:exp_setup}. Como fuente de
 iluminación se ha utilizado una fuente laser de 532nm con polarización
 vertical y modo $TEM_{0,0}$ que puede observarse en la parte derecha de la imagen. Este
 láser de estado sólido produce un haz con polarización ligeramente
@@ -905,7 +955,7 @@ extinción (10.000:1) marca THORLABS referencia LPVISB050. Una vez
 seleccionado el estado de polarización, el haz continúa su recorrido 
 hasta el extremo izquierdo de la mesa óptica donde cambia de dirección
 para luego pasar por un filtro espacial (SF) que se ilustra a la izquierda
-de la figura \ref{fig:exp_setup}. El SF permite eliminar
+de la Fig.~\ref{fig:exp_setup}. El SF permite eliminar
 contenidos con altas frecuencias como speckle y obtener un perfil
  bien definido que pueda ser aproximado por una función Gaussiana. La
  lente L1 cuya distancia focal de 10 cm coincide con la distancia hasta
@@ -922,9 +972,9 @@ en VO.}
 
 Una vez colimado, el haz queda de un
  diámetro de aproximadamente 2cm y continúa su recorrido hasta la
- lente L2. La lente L2 de distancia (incluir la distancia focal de L2) enfoca el haz en un
+ lente L2. La lente L2 de distancia focal 10cm enfoca el haz en un
  plano que en adelante llamaremos plano objeto y que está a una
- distancia de 15cm. Los elementos que se encuentran a partir de este
+ distancia de 15cm de L3. Los elementos que se encuentran a partir de este
  punto conforman el sistema formador de imagen a ser
  analizado.
 % y en este caso resulta muy similar a un microscopio óptico para
@@ -933,7 +983,8 @@ El sistema formador de imagen
  que implementamos es un sistema 4F conformado por las lentes L3 y
  L4. El plano objeto del sistema está a una distancia de L3 que coincide con su
  distancia focal, y asimismo el SLM está a una distancia focal a la
- derecha de L3. Esta configuración asegura que las diversidades de fase introducidas al modulador actúen
+ derecha de L3. Esta configuración asegura que las diversidades de
+ fase introducidas al modulador actúen 
  exactamente en el plano donde se encuentra la FT del objeto.       
 Por otra parte, la distancia focal de L4 coincide con la distancia
 entre el plano del SLM y la lente L4. Esto hace que el haz tenga un
@@ -945,7 +996,7 @@ anterior.
 
 Las imágenes que sirven de entrada al algoritmo son capturadas por un
 ocular de microscopio marca Newport con aumento de 10x acoplado a una cámara
-CCD de resolución 1280x960 marca imagine source modelo DMK
+CCD de resolución 1280x960 marca \textit{Imaging Source} modelo DMK
 41BU02.H. Con el fin de capturar con alta precisión las imagenes que corresponden al
 primer orden de difracción en el plano imagen, hemos ubicado la cámara
 sobre una base con libertad de movimiento en X y Y controlada con
@@ -959,7 +1010,7 @@ orden de difracción.
 El montaje en su totalidad tiene aberraciones ópticas que se deben
 tanto a la alineación y calidad de los elementos ópticos como a la
 capacidad de modulación del TN-SLM. Esas aberraciones son las
-responsables de que los VO sin corrección presentados en el capítulo
+responsables de que los VOs sin corrección presentados en el capítulo
 anterior tengan una mala calidad. En esta sección mostraremos uno de
 los resultados obtenidos con el montaje descrito anteriormente. Con el
 fin de evaluar la capacidad del método para recuperar aberraciones
@@ -967,11 +1018,11 @@ conocidas y no solo las aberraciones inherentes al sistema hemos
 añadido una aberración tipo trébol de magnitud $1\lambda$ a todas las
 imágenes. Las aberraciones tipo trébol corresponden al
 polinomio 10 de la base de Zernike y su perfil de fase se puede
-observar en la figura \ref{fig:trefoil_aber}.  
+observar en la Fig.~\ref{fig:trefoil_aber}.  
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=.5]{trefoil.pdf}
+\includegraphics[scale=.4]{trefoil.pdf}
 \caption[Aberración tipo trébol.]{Mapa de fase de una aberración tipo
   trébol de valor $1\lambda$.} 
 \label{fig:trefoil_aber}
@@ -983,7 +1034,7 @@ originales usadas en la simulación. %\ref{fig:mixed_mask}.
 Esta aberración no solo nos permite probar el
 método en una condición extrema, sino que también permite evaluar
 su capacidad para encontrar aberraciones conocidas. 
-La figura \ref{fig:exp_results}(a) muestra tres grupos de imagenes, en
+La Fig.~\ref{fig:exp_results}(a) muestra tres grupos de imagenes, en
 la primera fila de cada grupo, se resaltan dentro
 de un rectángulo verde 3 de las 9 imágenes de entrada ($d_j^l$)
 adquiridas cuando la diversidad espiral es $l=0,1,2$, las diversidades
@@ -1011,15 +1062,16 @@ fueron incluidas. En este caso las no incluidas corresponden a
 diversidades de fase espiral $l=-2,-1$. El hecho de que logremos emular el comportamiento
 del montaje experimental en casos que no fueron usados por el método
 es un buen indicador de que se obtuvo una solución global, y que la
-aberración del sistema es precisamente la recuperada. Luego, la figura
-\ref{fig:exp_results}(b) muestra los valores de los 15 coeficientes de
+aberración del sistema es precisamente la recuperada. Luego, la
+Fig.~\ref{fig:exp_results}(b) muestra los valores de los 15
+coeficientes de 
 Zernike que componen la aberración recuperada y lo primero que se puede
 observar es un pico con valor de  $1.08\lambda$ en el coeficiente
 número 10, muy distinto a las otras componentes de magnitudes menores
 a $0.4\lambda$, que comprueba la exactitud de la solución.   
 
-Finalmente, la figura \ref{fig:exp_correction} muestra VO de calidad mejorada obtenidos
-luego de restar el frente de onda recuperado al frente de
+Finalmente, la Fig.~\ref{fig:exp_correction} muestra VOs de calidad mejorada obtenidos
+luego de compensar el frente de onda recuperado al frente de
 onda nominal $j = Z_4:0$.  
 
 \begin{figure}[h!]
@@ -1040,7 +1092,8 @@ herramienta de metrología óptica para la caracterización de sistemas
 formadores de imagen. 
 
 En el marco del proyecto de grado se generó una
-publicación científica en la cual se propone nuestra implementación
+publicación científica que ha sido enviada a la revista Optics Letters
+y está en proceso de revisión. En esta publicación se propone nuestra implementación
 como una posible alternativa paran la caracterización de sistemas
 formadores de imagen que puedan ser iluminados con fuentes
 coherentes. 
