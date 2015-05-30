@@ -197,7 +197,6 @@
 %     \RequirePackage[sort&compress,round,authoryear]{natbib}
 %   \fi
 %   \if@spanish
-%     \bibliographystyle{SETUP/ezspanish}
 %   \else
 %     \bibliographystyle{plainnat}
 %   \fi
@@ -228,6 +227,7 @@
 % \RequirePackage{natbib} 
 \usepackage[square, sort&compress, numbers, sectionbib]{natbib} %OJO
                                 %CAMBIO 
+\bibliographystyle{SETUP/ezspanish}
 %\usepackage[spanish]{babelbib} %OJO
 %\usepackage[backend=bibtex,url=false]{biblatex}  %Manejo de
 \usepackage[resetlabels]{multibib}
@@ -244,6 +244,13 @@
 % \newcites{Apc}{Bibliograf\'{i}a}
 % \newcites{Apu}{Bibliograf\'{i}a}
 % \newcites{Apt}{Bibliograf\'{i}a}
+\usepackage{xpatch}
+
+\xpatchbibmacro{name:andothers}{%
+  \bibstring{andothers}%
+}{%
+  \bibstring[\emph]{andothers}%
+}{}{}
 
 % For use of listings code
 \usepackage{listings}

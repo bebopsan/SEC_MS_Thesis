@@ -2632,14 +2632,30 @@ pueden generar con un SLM calibrado para la modulación de fase.
 \chapter{Generación de Vórtices Ópticos}
 \label{sec:OV_gen}
 
-Como se mencionó en la sección \ref{sec:ChGen_marco_teorico}, para generar un haz
-Laguerre-Gauss sólo basta propagar un haz gausiano por una máscara de
-fase espiral como la de la Fig.~\ref{fig:oam_intro}b). Si se usa este 
-tipo de máscaras y se añade una lente al brazo objeto del montaje de
-la Fig.~\ref{fig:oam_intro} la intensidad del haz \acrshort{LG} en un
-plano imagen se puede observar 
-como una \textbf{función de dispersión de punto} (\acrshort{PSF}) en forma
-de anillo.  
+La mayoría de las fuentes láser tienen cavidades que no son
+perfectamente cilíndricas y los campos ópticos que producen oscilan en
+modos transversales y longitudinales que son solución de la ecuación
+de onda en coordenadas cartesianas dónde la distribucion de amplitud y fase
+del campo óptico es descrita con gran precisión por una
+combinación de polinomios de Gauss y de Hermite
+\citepChGen{Siegman1986}. Esta familia de haces es conocida como
+Hermite-Gauss y forma una base completa con la cual se puede describir
+cualquier distribución del campo óptico. Asimismo, estos modos son
+estructuralmente estables, esto quiere decir que su amplitud y fase
+relativa permanecen constantes en la medida en que se propagan en el
+campo lejano. Sin embargo, estas soluciones de la ecuación de onda
+describen solo haces con frentes de onda planos o esféricos, y no dan
+cuenta de los frentes de onda helicoidales en los cuales la fase varía
+de forma azimutalL; fenómeno macroscópico que está asociado con de la
+presencia del \acrshort{OAM} portado por de los fotones que componen
+el haz.
+
+Los haces con frente de on
+\citepChGen{Padgett1999}
+
+
+
+Los haces con frentes de onda helicoidales son una solución 
 
 Los VOs son haces de luz que portan OAM definido a lo largo del eje.
 
@@ -2650,6 +2666,14 @@ El término $\exp{(il\phi)}$ introducido por las m'ascaras de fase, está asocia
 estructura helicoidal de la fase como de la singularidad 'optica a lo
 largo del eje de propagaci'on \citepChGen{Padgett1999}.   
 
+Como se mencionó en la sección \ref{sec:ChGen_marco_teorico}, para generar un haz
+Laguerre-Gauss sólo basta propagar un haz gausiano por una máscara de
+fase espiral como la de la Fig.~\ref{fig:oam_intro}b). Si se usa este 
+tipo de máscaras y se añade una lente al brazo objeto del montaje de
+la Fig.~\ref{fig:oam_intro} la intensidad del haz \acrshort{LG} en un
+plano imagen se puede observar 
+como una \textbf{función de dispersión de punto} (\acrshort{PSF}) en forma
+de anillo.  
 
 Dónde $l$ esta asociado al número cuántico del momento angular portado
 por el haz, y esta relacionado con...
@@ -2660,6 +2684,11 @@ vorticidad óptica está cuantizado por el número entero $l$.
  
 La carga topologica $l$ del VO, es una propiedad  depende de la cantidad de veces que la fase
 de la máscara varíe entre $0$ y $2\pi$. 
+
+La forma de la aberración presente en el VO con carga topológica $l=2$
+nos indica que hay una componente importante de astigmatismo, muy
+similar a las reportadas por \citetChGen{Singh2008} \textit{et~al.}. 
+
 \pagebreak
 \begin{figure}[H]
 \centering

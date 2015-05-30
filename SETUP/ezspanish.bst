@@ -54,6 +54,7 @@
  %   \citeyear{key} ==>>             1990
  %---------------------------------------------------------------------
 
+
 ENTRY
   { address
     author
@@ -119,6 +120,7 @@ FUNCTION {output}
     'output.nonnull
   if$
 }
+
 FUNCTION {output.check}
 { 't :=
   duplicate$ empty$
@@ -228,7 +230,7 @@ FUNCTION {bbl.edby}
 { "editado por" }
 
 FUNCTION {bbl.edition}
-{ "ed\raise1ex\hbox{\underbar{\scriptsize \'on}}." }
+{ "ed\raise1ex\hbox{\underbar{\scriptsize ic\'on}}." }
 
 FUNCTION {bbl.volume}
 { "tomo" }
