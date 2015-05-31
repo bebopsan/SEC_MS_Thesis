@@ -2631,84 +2631,180 @@ pueden generar con un SLM calibrado para la modulación de fase.
 
 \chapter{Generación de Vórtices Ópticos}
 \label{sec:OV_gen}
-
+\label{sec:ChGV_Caracterizacion_de_SLM}
+\lhead{Generación de haces Laguerre-Gauss por medio de un SLM:
+  \textit{Generación de OVs}}
+\section{Introducción}
 La mayoría de las fuentes láser tienen cavidades que no son
-perfectamente cilíndricas y los campos ópticos que producen oscilan en
+perfectamente cilíndricas y los campos ópticos que producen y
+prevalecen oscilan en
 modos transversales y longitudinales que son solución de la ecuación
-de onda en coordenadas cartesianas dónde la distribucion de amplitud y fase
-del campo óptico es descrita con gran precisión por una
+de onda en coordenadas cartesianas, dónde las distribuciones de amplitud y fase
+del campo óptico pueden ser descritas con por una
 combinación de polinomios de Gauss y de Hermite
 \citepChGen{Siegman1986}. Esta familia de haces es conocida como
 Hermite-Gauss y forma una base completa con la cual se puede describir
 cualquier distribución del campo óptico. Asimismo, estos modos son
 estructuralmente estables, esto quiere decir que su amplitud y fase
 relativa permanecen constantes en la medida en que se propagan en el
-campo lejano. Sin embargo, estas soluciones de la ecuación de onda
+campo lejano. Sin embargo, las soluciones Hermite-Gauss de la ecuación de onda
 describen solo haces con frentes de onda planos o esféricos, y no dan
 cuenta de los frentes de onda helicoidales en los cuales la fase varía
 de forma azimutalL; fenómeno macroscópico que está asociado con de la
 presencia del \acrshort{OAM} portado por de los fotones que componen
 el haz.
 
-Los haces con frente de on
-\citepChGen{Padgett1999}
+Los haces con frente de onda helicoidal también son estructuralmente
+estables y han sido producidos desde principios de los 90s. Estos se pueden describir
+analíticamente usando las soluciones a la ecuación de onda paraxial en
+coordenadas cilíndricas que se presentan en la Eq.~(\ref{eq:Laguerre-Gauss}) \citepChGen{Padgett1999},
+\begin{align}
+u(r,\phi,z) &\propto \frac{z_R}{(z_R^2+z_R^2)}
+\left[\frac{r\sqrt{2}}{w(z)}\right]^lL_p^l\left(\frac{2r^2}{w^2(z)}
+\right)\exp{\left(\frac{-r^2}{w^2(z)}\right)}\nonumber\\
+&\times \exp{\left(\frac{-ikr^2z}{2(z^2+z_R^2)}\right)}
+  \highlightG{\exp(-il\phi)}\exp{\left[i\left(2p+l+1\right)\tan^{-1}\frac{z}{z_R}\right]}
+\label{eq:Laguerre-Gauss}
+\end{align}
+Dónde $L_p^l$ es un \href{http://en.wikipedia.org/wiki/Laguerre_polynomials}{\textbf{polinomio de Laguerre generalizado}} con índices $p$
+y $l$, $w(z)$ es el ancho del haz a lo largo de $z$ y
+$z_R$ es el
+\href{http://www.rp-photonics.com/rayleigh_length.html}{rango de
+  Rayleigh}\footnote{Posición en $z$ se cumple la relación $w(z_R)=\sqrt{2}w_0$
+  siendo $w_0$ la cintura del spot en el plano focal.}.
+La primera línea de la Eq.~(\ref{eq:Laguerre-Gauss}) denota la
+amplitud de los haces LG, y la segunda su fase. La combinación de una
+componente Gaussiana con los polinomios de Laguerre produce
+distribuciones de intensidad que consisten en anillos concentricos
+como los que se muestran en la
+Fig.~\ref{fig:LG_intensities}.
+\begin{SCfigure}[\sidecaptionrelwidth][h!]
+\centering
+\includegraphics[scale=0.25]{LG-wiki.jpg}
+\caption[Primeros
+  12 modos LG]{Primeros
+  12 modos LG, el caso $0,0$ es equivalente al modo $0,0$ de la base
+  Hermite-Gauss. En adelante se considerarán solamente los VOs con un
+  sólo anillo es decir, número $p=0$. Imágen con licencia
+  \href{https://creativecommons.org/licenses/by-sa/3.0/}{\textbf{CC-BY-SA-3.0}}
+    tomada de Wikimedia, autor original Ziofil.} 
+\label{fig:LG_intensities}
+\end{SCfigure}
 
+En cuanto a la fase, se puede identificar que además de la fase
+sociada a frentes de onda esféricos que depende de $r$,
+hay dos terminos exponenciales complejos nuevos que tienen como
+argumento los índices $l$ y $p$. El último exponencial describe las variaciones de
+la fase a lo largo de la dirección de propagación, y el primero, que
+hemos resaltado en verde, y depende del número $l$ solamente, describe
+los cambios azimutales de la fase.
+Nos referiremos a la expresión $\exp(-il\phi)$ como la fase espiral, y
+además de ser la responsable de las distribuciónes
+de fase helicoidal de los haces LG, está asociada al \acrshort{OAM} que
+portan sus fotones. El número $l$ se conoce como la \textbf{carga topológica} de
+la singularidad en el VO y determina la cantidad de veces que la fase
+varía de $0$ a $2\pi$ alrededor del eje óptico. La representación de
+las fases espirales y los perfiles de amplitud de haces LG con
+diferentes cargas topológicas se ilustran en la Fig.~\ref{fig:spirals}
+y se puede
+observar que VOs de mayor carga
+topológica tienen mayor tamaño y una región oscura más grande.
+\begin{SCfigure}[\sidecaptionrelwidth][h!]
+\centering
+\includegraphics[scale=0.5]{spirals.pdf}
+\caption[Fase e intensidad de haces LG]{Propagación de la
+  fase, y mapas dos de la intensidad y frente de onda de haces LG con
+  carga topológica 
+  $l=-2:2$ y número $p =0$. El signo de $l$ determina tanto el sentido
+  de giro de la fase como el signo del OAM que porta el haz. VOs con
+  mayor $l$ tienen anillos más grandes. Imágen con licencia
+  \href{https://creativecommons.org/licenses/by-sa/3.0/}{\textbf{CC-BY-SA-3.0}}
+    tomada de Wikimedia, autor original E-karimi.} 
+\label{fig:spirals}
+\end{SCfigure}
 
-
-Los haces con frentes de onda helicoidales son una solución 
-
-Los VOs son haces de luz que portan OAM definido a lo largo del eje.
-
-Este tipo de OVs puede ser descrito en forma matemática como, 
-
-El término $\exp{(il\phi)}$ introducido por las m'ascaras de fase, está asociado al valor del
-\acrshort{OAM} que porta el haz, y es el responsable tanto de la
-estructura helicoidal de la fase como de la singularidad 'optica a lo
-largo del eje de propagaci'on \citepChGen{Padgett1999}.   
-
-Como se mencionó en la sección \ref{sec:ChGen_marco_teorico}, para generar un haz
+Como se mencionó en la Sección \ref{sec:ChGen_marco_teorico}, para generar un haz
 Laguerre-Gauss sólo basta propagar un haz gausiano por una máscara de
-fase espiral como la de la Fig.~\ref{fig:oam_intro}b). Si se usa este 
-tipo de máscaras y se añade una lente al brazo objeto del montaje de
-la Fig.~\ref{fig:oam_intro} la intensidad del haz \acrshort{LG} en un
-plano imagen se puede observar 
-como una \textbf{función de dispersión de punto} (\acrshort{PSF}) en forma
-de anillo.  
+fase espiral como la de la Fig.~\ref{fig:oam_intro}b) para que
+adquiera las distribuciones de fase de la
+Fig.~\ref{fig:spirals}. Haciendo esto, los perfiles de
+intensidad de la primera línea de la  Fig.~\ref{fig:LG_intensities}
+pueden ser observados en un plano imagen como una \textbf{función de dispersión de punto} (\acrshort{PSF}) si se añade una lente
+al brazo objeto del montaje de la Fig.~\ref{fig:oam_intro}.  
 
-Dónde $l$ esta asociado al número cuántico del momento angular portado
-por el haz, y esta relacionado con...
+En este capítulo presentaremos una plataforma computacional que
+desarrollamos en el contexto de este proyecto para
+generar máscaras de fase que al ser  proyectadas en un SLM con
+suficiente rango de modulación de fase, convierten
+un haz Gausiano en un haz LG.
 
+\section{Plataforma computacional para la generación de máscaras de fase}
 
-El momento angular orbital \acrshort{OAM} que porta un haz con
-vorticidad óptica está cuantizado por el número entero $l$.  
- 
-La carga topologica $l$ del VO, es una propiedad  depende de la cantidad de veces que la fase
-de la máscara varíe entre $0$ y $2\pi$. 
-
-La forma de la aberración presente en el VO con carga topológica $l=2$
-nos indica que hay una componente importante de astigmatismo, muy
-similar a las reportadas por \citetChGen{Singh2008} \textit{et~al.}. 
-
-\pagebreak
-\begin{figure}[H]
+Con el objetivo de facilitar la creación y manipulación de máscaras de
+fase se agruparon en una sola aplicación gráfica los algoritmos para
+generación de máscaras de amplitud 
+y fase desarrollados durante el transcurso de este proyecto. Esta aplicacion
+ha sido desarrollado en el entorno Matlab$\circledR$ y se encuentra en
+proceso una aplicación de registro de software ante la Dirección
+Nacional de Derecho de Autor.
+Una captura de pantalla del panel de control de la aplicación se muestra en la Fig.~\ref{fig:mask_app}, y la
+generación de máscaras espiral de fase, como la que se ve en el
+recuadro izquierdo del recorte, se logra haciendo click en el botón
+``Generate mask'' previamente seleccionado un valor de
+carga topológica en la primera casilla titulada ``SpiralMask''. 
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{mask_app.png}
 \caption[Plataforma para la generación de máscaras de fase]{Plataforma
-  para la generación de máscaras de fase a ser proyectadas en un SLM, desarrollada y registrada por el
+  para la generación de máscaras de fase a ser proyectadas en un SLM. Desarrollada y registrada por el
   grupo de Óptica Aplicada de la Universidad EAFIT.} 
 \label{fig:mask_app}
 \end{figure}
 
-\begin{figure}[H]
+Los SLMs que han sido conectados a un computador actúan como una segunda
+pantalla y para llevar la máscara generada a la región del escritorio
+correspondiente al LCD del SLM se usa el recuadro titulado ``Extend'' ubicado
+en la parte inferior de la aplicación. La máscara espiral de fase de
+carga $l=3$ que ha sido previsualizada en el recuadro izquierdo de la
+Fig.~\ref{fig:mask_app} puede
+ser proyectada o extendida al SLM haciendo click en la casilla
+titulada ``Extend figure'' y seleccionando el tamaño y posición en 
+píxeles donde se desea ubicar la imágen.  
+
+Además de generar máscaras espiral, la aplicación permite reducir el
+número de niveles de gris de la modulación para implementar métodos
+como los de \citetChGen{Londono2015} o \citetChGen{Rueda2013} y simular
+otros tipos de elementos de fase como: lentes de Fresnell, aberraciones
+parametrizadas en la base de polinomios de Zernike\footnote{Ver apéndice
+  \ref{cha:Anexo3} dónde se introducen los polinomios de Zernike y la
+  composición de aberraciones en su base}, rejillas de difracción de
+tres tipos distintos e
+inclusive arreglos de máscaras.
+
+A continuación se muestran los resultados de la propagación de haces
+Gaussianos a través de máscaras espiral de fase de distinto $l$
+proyectadaes en el SLM. 
+
+\section{Resultados de los Vórtices Ópticos obtenidos}
+
+En la Fig.~\ref{fig:VOs_I10} se presentan las distribuciones de
+intensidad correspondientes a la generación de VOs con máscaras de
+fase espiral de carga topológica $l=1:5$. 
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{OV_I10.pdf}
 \caption[Vórtices ópticos obtenidos en la configuración en linea para
-el BraKet 10]{Vórtices ópticos de carga topológica $l=1...4$ obtenidos
+el BraKet 10]{Vórtices ópticos de carga topológica $l=1:4$ obtenidos
   en la configuración en linea usando los estados PSG y PSD del BraKet 10.} 
 \label{fig:VOs_I10}
 \end{figure}
+De inmediato se puede ver que sólo el primero de ellos tiene la
+topología típica de un VO. 
+La forma de la aberración presente en el VO con carga topológica $l=2$
+nos indica que hay una componente importante de astigmatismo, muy
+similar a las reportadas por \citetChGen{Singh2008} \textit{et~al.}. 
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{OV_I6.pdf}
 \caption[Vórtices ópticos obtenidos en la configuración en linea para
@@ -2716,6 +2812,8 @@ el BraKet 6]{Vórtices ópticos de carga topológica $l=1...4$ obtenidos
   en la configuración en linea usando los estados PSG y PSD del BraKet 6.} 
 \label{fig:VOs_I10}
 \end{figure}
+
+\section{V'ortices ópticos obtenidos usando máscaras tipo tenedor}
 
 \begin{figure}[H]
 \centering

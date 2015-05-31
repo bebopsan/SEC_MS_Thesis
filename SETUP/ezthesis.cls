@@ -297,7 +297,6 @@ urlcolor=black, cite color=red]{hyperref} %
 %\setlength{\parindent}{0pt}
 %\setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 
-
 %---------------------------------------------------------------
 %  End Packages
 %---------------------------------------------------------------
@@ -334,6 +333,16 @@ urlcolor=black, cite color=red]{hyperref} %
         \definecolor{mylilas}{RGB}{170,55,241}
         \definecolor{MyDarkGreen}{rgb}{0.0,0.4,0.0}
 \fi
+
+%\usepackage{xcolor}
+\usepackage[rightcaption]{sidecap}%side captions
+\usepackage{wrapfig}
+\usepackage{transparent}
+\transparent{0.5}%
+\newcommand{\highlightG}[1]{%
+  \colorbox{mygreen}{$\displaystyle#1$}}
+\newcommand{\highlightB}[1]{%
+  \colorbox{myblue}{$\displaystyle#1$}}
 
 % Linking and pdf options
 \let\phantomsection\@empty
