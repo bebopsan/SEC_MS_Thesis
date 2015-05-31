@@ -25,13 +25,17 @@
 
 (toc "toc" "    1.1 Introducción" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 2 "1.1" "\\section{Introducción}" 495)
 
-(toc "toc" "    1.2 Estado del Arte" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 2 "1.2" "\\section{Estado del Arte}" 1162)
+(toc "toc" "      1.1.1 Aberraciones ópticas" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.1.1" "\\subsection{Aberraciones ópticas}" 1179)
 
-("sec:ChPD_estado_del_arte" "s" "\\lhead{Caracterización de aberraciones en Vórtices Ópticos: \\textit{Estado del Arte}} Los sistemas ó" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+("fig:discrete_mask" "f" "Efecto de pixelado en el SLM sobre las aberraciones en VOs" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-(toc "toc" "    1.3 Marco Teórico" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 2 "1.3" "\\section{Marco Teórico}" 4625)
+(toc "toc" "      1.1.2 Las técnicas de reconstrucción de fase no interferométricas" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.1.2" "\\subsection{Las técnicas de reconstrucción de fase no interferométricas}" 4903)
 
-("sec:ChPD_marco_teorico" "s" "Los métodos de reconstrucción de fase no interferométricos dependen de la medida de la intensidad de" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+("sec:ChPD_estado_del_arte" "s" "\\lhead{Caracterización de aberraciones en Vórtices Ópticos: \\textit{Introducción}} La presencia de a" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "    1.2 Marco Teórico" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 2 "1.2" "\\section{Marco Teórico}" 10499)
+
+("sec:ChPD_marco_teorico" "s" "\\lhead{Caracterización de aberraciones en Vórtices Ópticos: \\textit{Marco Teórico}} Los métodos de r" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
 ("eq:Output_Image" "e" "d(\\vec{x}) = d_{obj}(\\vec{x}) \\otimes s(\\vec{x}). " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
@@ -43,37 +47,85 @@
 
 ("eq:GP" "e" "H(\\vec{u}) = \\mathcal{F} \\{h(\\vec{x})\\} = A(\\vec{u}) e^{i\\phi(\\vec{u})} " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-("eq:OTF" "e" "S(\\vec{u}) = \\frac{H(\\vec{u}) \\star H(\\vec{u})}{|H(\\vec{u})|^2} " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+("eq:OTF" "e" "S(\\vec{u}) = \\frac{H(\\vec{u}) \\star H(\\vec{u})}{|H(\\vec{u})|^2}. " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
 ("fig:ChPD_kernels_sistemas_formadores_de_imagen" "f" "Relaciones entre funciones de transferencia ópticas y sus FT." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-(toc "toc" "      1.3.1 PD tradicional" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.3.1" "\\subsection{PD tradicional}" 10018)
+(toc "toc" "      1.2.1 Phase Diversity tradicional" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.2.1" "\\subsection{Phase Diversity tradicional}" 16226)
 
-("sec:ChPD_PD_tradicional" "s" "Si la GP del sistema es modificada por un cambio conocido en la fase de la forma: $$H_{\\Delta}=e^{\\p" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+("sec:ChPD_PD_tradicional" "s" "Si la GP del sistema es modificada por un cambio conocido en la fase o diversidad de fase de la form" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-("eq:first_diversity_OTF" "e" "S_1 = \\frac{H_1\\star H_1}{|H_1|^2} = \\frac{H_0H_{\\Delta} \\star H_0H_{\\Delta}}{|H_0H_{\\Delta}|^2} " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+("eq:first_diversity_OTF" "e" "S_1 = \\frac{H_1\\star H_1}{|H_1|^2} = \\frac{H_0H_{\\Delta} \\star H_0H_{\\Delta}}{|H_0H_{\\Delta}|^2}, " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
 ("eq:metric" "e" "L(\\bar{D}_{obj}, \\phi)= \\sum_{j=0}^{K} \\sum_{u,v}^{M,N} \\left |D_{j} - \\bar{D}_{obj} S_{j} \\right | " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-(toc "toc" "      1.3.2 PD con iluminación coherente" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.3.2" "\\subsection{PD con iluminación coherente}" 14149)
+(toc "toc" "      1.2.2 PD con iluminación coherente" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.2.2" "\\subsection{PD con iluminación coherente}" 20711)
 
-("sec:ChPD_PD_il_coherente" "s" "La variación de PD que nosotros proponemos puede llamarse PD con iluminación coherente, y requiere d" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+("sec:ChPD_PD_il_coherente" "s" "La variación de PD que nosotros proponemos puede llamarse PD con iluminación coherente, e implica as" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
 ("eq:field" "e" "u_{j}(\\vec{x}) = \\mathcal{F}^{- 1}\\{ U_{obj} H_0(\\vec{u}) H_j(\\vec{u}) \\}. " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
 ("eq:metric_coherent" "e" "L_j(\\phi)= \\sum_{j=0}^{K} \\sum_{u,v}^{M,N} \\left |d_{j} - |u_j|^2 \\right | ^2.  " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-(toc "toc" "      1.3.3 Máscaras espirales como diversidades de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.3.3" "\\subsection{Máscaras espirales como diversidades de fase}" 16645)
+(toc "toc" "      1.2.3 Máscaras espirales como diversidades de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.2.3" "\\subsection{Máscaras espirales como diversidades de fase}" 23748)
 
-("sec:ChPD_PD_Spiral_Diversity" "s" "\\section{Materiales y Métodos}  \\section{Resultados} \\label{sec:ChPD_resultados} \\newpage \\pagebreak" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+("sec:ChPD_PD_Spiral_Diversity" "s" "Como se mencionó en la introducción, \\citetChPD{ Jesacher2007} propusieron el uso de máscaras espira" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-(toc "toc" "    1.4 Materiales y Métodos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 2 "1.4" "\\section{Materiales y Métodos}" 17872)
+("eq:newGP" "e" "u_j^l = \\mathcal{F}^{- 1}\\{U_{obj} A e^{i\\left( \\phi+ \\psi_l + \\phi_j \\right)} \\}. " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-("sec:ChPD_materiales_y_metodos" "s" "\\section{Resultados}  \\newpage \\pagebreak[4] \\bibliographystyleChPD{unsrtnat} \\bibliographyChPD{Refe" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+("eq:metric_coherent_OAMs" "e" "L(\\phi)= \\sum_{l=0}^L\\sum_{j=0}^{K} \\sum_{u,v}^{M,N} \\left |d_{j}^l - |u_j^l|^2 \\right | ^2. " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-(toc "toc" "    1.5 Resultados" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 2 "1.5" "\\section{Resultados}" 17942)
+("fig:flowchart" "f" "Diagrama de flujo del PD con iluminación coherente" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
-("sec:ChPD_resultados" "s" "\\newpage \\pagebreak[4] \\bibliographystyleChPD{unsrtnat} \\bibliographyChPD{References/Ch_PD}" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+(toc "toc" "    1.3 Metodología" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 2 "1.3" "\\section{Metodología}" 27354)
+
+("sec:ChPD_materiales_y_metodos" "s" "\\lhead{Caracterización de aberraciones en Vórtices Ópticos: \\textit{Metodología}} Como se mencionó e" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+("fig:set-up" "f" "Diagrama del sistema óptico para PD con iluminación coherente." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+("fig:mixed_mask" "f" "Ejemplo de una máscara tenedor con astigmatismo." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "    1.4 Resultados" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 2 "1.4" "\\section{Resultados}" 37094)
+
+("sec:ChPD_resultados" "s" "\\lhead{Caracterización de aberraciones en Vórtices Ópticos: \\textit{Resultados}} El método de PD coh" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "      1.4.1 Resultados de simulaciones" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.4.1" "\\subsection{Resultados de simulaciones}" 37522)
+
+("sec:ChPD_resultados_simulados" "s" "En primera medida se requería simular el método para corroborar que funcionaba en sistemas ideales. " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "        1.4.1.1 Preparación de las fases de referencia" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 4 "1.4.1.1" "\\subsubsection{Preparación de las fases de referencia}" 38457)
+
+("eq:ChPD_phase_Zernike" "e" "\\phi(\\vec{u}) = \\sum_{i=1}^{N=15}a_iZ_i(\\vec{u}). " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+("fig:ChPD_RMS_error" "f" "Resultados de simulaciones con PD de iluminación coherente." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "        1.4.1.2 Descripción y análisis de resultados simulados" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 4 "1.4.1.2" "\\subsubsection{Descripción y análisis de resultados simulados}" 41755)
+
+("fig:ChPD_visual_comparison" "f" "Resultados visuales de simulaciones de PD coherente para aberración $1/14\\lambda$" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "        1.4.1.3 Discusión sobre el método Gerchberg-Saxton" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 4 "1.4.1.3" "\\subsubsection{Discusión sobre el método Gerchberg-Saxton}" 45832)
+
+("fig:GS_algorithm" "f" "Algoritmo de GS" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+("fig:visual_comparison" "f" "Resultados visuales de simulaciones de PD coherente para aberración $1\\lambda$" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "        1.4.1.4 Sobre las limitantes del método" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 4 "1.4.1.4" "\\subsubsection{Sobre las limitantes del método}" 52109)
+
+(toc "toc" "      1.4.2 Resultados experimentales" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 3 "1.4.2" "\\subsection{Resultados experimentales}" 53269)
+
+("sec:ChPD_resultados_experimentales" "s" "El método de PD con iluminación coherente mejorado con VOs también fue probado con aberraciones indu" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "        1.4.2.1 Montaje óptico" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 4 "1.4.2.1" "\\subsubsection{Montaje óptico}" 53589)
+
+("fig:exp_setup" "f" "Montaje experimental para reconstrucción de fase con PD" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+(toc "toc" "        1.4.2.2 Análisis de resultados" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil 4 "1.4.2.2" "\\subsubsection{Análisis de resultados}" 57084)
+
+("fig:trefoil_aber" "f" "Aberración tipo trébol." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+("fig:exp_results" "f" "Resultados experimentales de la reconstrucción de fase con PD." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
+
+("fig:exp_correction" "f" "VO registrados luego restar las aberraciones detectadas con PD." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex" nil)
 
 (eof "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_PD.tex")
 ))
