@@ -13,18 +13,16 @@
 %\else
  %   \graphicspath{{5_conclusion/figures/EPS/}{5_conclusion/figures/}}
 %\fi
-
-
 En el marco de esta tésis se implementó un sistema para la generación
 de vórtices ópticos por medio de SLMs de trasmisión y un método para
 la caracterización y corrección de aberraciones ópticas en haces Laguerre-Gausianos. 
 La combinación de ambos cumple con los objetivos del proyecto de grado
-y de los proyectos internos del grupo de investigación en óptica
-aplicada. Y le deja al laboratório de Fotónica una herramienta para el
+y de los proyectos internos del grupo de investigación en Óptica
+Aplicada de la Universidad EAFIT. Asimismo, le deja al laboratório de
+Fotónica un conjunto de herramientas para el
 desarrollo de técnicas de micoscopía basadas en iluminación con haces
 portadores de OAM. 
-Específicamente. 
-
+Específicamente, 
 \begin{itemize}
 \item Se mostró el resultado de una labor investigativa con la cual
   fue posible establecer un marco conceptual y teórico para la
@@ -36,8 +34,8 @@ Específicamente.
   software que adquiere los datos y los procesa para obtener las
   matrices de Jones que describen el elemento birrefringente para cada
   nivel de gris. 
-\item Asimismo, se desarrolló una aplicacion de software en la
-  plataforma Matlab $\circledR$ para la
+\item Asimismo, se desarrolló y puso en proceso de registro una aplicacion de software en la
+  plataforma Matlab$\circledR$ para la
   generación de máscaras de fase arbitrarias a ser proyectadas en el
   SLM. Esta aplicación permite:
   \begin{itemize}
@@ -52,25 +50,66 @@ Específicamente.
     \item Discretizar las máscaras de fase en la cantidad de niveles
       deseados, y asignando valores predeterminados a cada uno. 
   \end{itemize}
-\item Por otra parte, se propuso un método novedoso para la
-  caracterización de SLMs basado en el análisis de desplazamiento de
-  franjas en un interferómetro con brazos que no comparten el mismo
-  estado de polarización. Este método ha sido demostrado en
-  simulaciones y nos encontramos en el proceso de corroboración
-  experimental para validarlo. 
+% \item Por otra parte, se propuso un método novedoso para la
+%   caracterización de SLMs basado en el análisis de desplazamiento de
+%   franjas en un interferómetro con brazos que no comparten el mismo
+%   estado de polarización. Este método ha sido demostrado en
+%   simulaciones y nos encontramos en el proceso de corroboración
+%   experimental para validarlo. 
  \item Utilizando una configuración de estados de polarización que
    producen alta modulación de fase y baja modulación de amplitud se
-   generaron VO en un sistema óptico 4F y se detectó que aún con buena
-   modulación no se corrigen del todo las aberraciones. 
-\item Dado lo anterior se implementó un método traído de aplicaciones
-  en astronomía para la detección y
-  corrección de aberraciones ópticas en haces con vorticidad óptica.
+   generaron VOs en un sistema óptico 4F usando dos tipos distintos de
+   máscaras de fase. Se concluyó que para obtener VOs de calidad es
+   prefereible usar máscaras del tipo tenedor sobre máscaras espiral y
+   se detectó que aún con buena modulación no se corrigen del todo las aberraciones. 
+\item Dado lo anterior se desarrolló un método traído de aplicaciones
+  en astronomía para la detección y corrección de aberraciones ópticas en haces con vorticidad óptica.
 \item Este método fue validado mediante numerosas simulaciones, y
-  experimentos. Concluimos que hemos desarrollado la capacidad para
-  detectar y corregir aberraciones ópticas en sistemas ópticos
-  iluminados con haces portadores de OAM.
+  experimentos y se propuso como la base para un instrumento que puede
+  ser usado en aplicaciones metrológicas. 
 \end{itemize}
+Finalmente, concluimos que hemos desarrollado la capacidad para
+  detectar y corregir aberraciones ópticas en sistemas formadores de imagen
+  iluminados con haces portadores de OAM.
 
+\section{Productos desarrollados en el transcurso del proyecto}
+
+En el transcurso del proyecto titulado \textit{Aberraciones ópticas en haces Laguerre-Gaussianos: corrección
+  y aplicaciones metrológicas} se desarrollaron los siguientes
+productos:
+
+\begin{itemize}
+\item El lanzamiento de un artículo científico del tipo ``Letters'' a una revista de alto
+  impacto en el cual se describe un método novedoso para la detección y corrección de aberraciones. 
+\item Un programa con interfáz gráfica, desarrollado en Python para la
+  visualización de estados de polarización arbitrarios y la traducción entre distintas
+  notaciones. Este programa fue presentado en el evento internacional
+  FOCUS Latinoamérica como una ponencia de Poster y se encuentra en proceso de registro de
+  software ante la Dirección Nacional de Derecho de Autor. 
+\item Una plataforma computacional desarrollada en el entorno
+  Matlab$\circledR$ para la generación de Máscaras de fase arbitrarias
+  a ser proyectadas en un SLM que se encuentra en proceso de registro
+  de software ante la Dirección Nacional de Derecho de Autor. 
+\item Un sistema automatizado de toma de medidas para la
+  caracterización de elementos ópticos birrefringentes que consiste
+  en:
+  \begin{itemize}
+  \item  Cuatro monturas motorizadas de elementos polarizadores
+    controladas desde un microcontrolador Arduino.
+   \item Una plataforma de software desarrollada en el entorno LabView
+     para la calibración y control de rotadores ópticos motorizados.
+   \item Una plataforma de software para la ejecución de rutinas de
+     caracterización que involucran la medida de modulación de amplitud de fase
+     y amplitud de un SLM ante múltiples estados de polarización.
+  \end{itemize}
+\item Un nuevo método para la caracterización de SLMs basado en
+  funciones de minimización y una selexión flexible de argumentos de
+  entrada que aún no ha sido publicado.
+\item Un programa, desarrollado en Python para la
+  simulación de propagación de la propagación de estados de
+  polarización representados como vectores de Jones a traves de
+  matrices arbitrarias.  
+\end{itemize}
 
 % ----------------------------------------------------------------------
 

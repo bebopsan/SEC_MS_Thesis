@@ -585,7 +585,7 @@ apertura circular que corresponde al tamaño del haz en el SLM.
   máscara de espiral con $l=1$, con una red de difracción y una
   máscara de diversidad de aberración con astigmatismo primario de
   $Z_4=0.5\lambda$. Se muestra sólo la parte de la imagen que tiene el
-tamaño del haz proyectado en el SLM.º} 
+tamaño del haz proyectado en el SLM.} 
 \label{fig:mixed_mask}
 \end{figure}
 
@@ -774,7 +774,7 @@ un perfil de fase con aberraciones de $1/14\lambda$ RMS, y se ve
 que la reconstrucción de los pesos con PD es casi exacta. 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=.3]{phase_comparison_esp.pdf}
+\includegraphics[scale=.35]{phase_comparison_esp.pdf}
 \caption[Resultados visuales de simulaciones de PD coherente para
 aberración $1/14\lambda$]{Comparación visual y de coeficientes entre uno de los frentes
   de onda aleatorios de escala $1/14\lambda$ y las fases reconstruidas
@@ -1084,19 +1084,28 @@ onda nominal $j = Z_4:0$.
 \label{fig:exp_correction}
 \end{figure}
 
-Este resultado demuestra que se logró implementar un sistema capaz de
-generar, caracterizar y corregir VO mediante el uso de un SLM. 
-
-Fuera de eso, y dado que los VO tienen gran sensibilidad ante ciertas
-aberraciones, el método desarrollado puede ser utilizado como una
-herramienta de metrología óptica para la caracterización de sistemas
-formadores de imagen. 
+Este resultado demuestra que se logró implementar un método para
+caracterizar y corregir VOs mediante el uso de un SLM.  Cosa que junto
+con los resultados de la \textbf{Parte \ref{ParteI}} en donde se
+mostró la generación de VOs, completa los
+requerimientos para el cumplimiento del objetivo general del trabajo
+de grado. Fuera de eso, y dado que los VOs tienen gran sensibilidad ante ciertas
+aberraciones, el método desarrollado puede ser propuesto como la base
+para una herramienta de metrología óptica que tenga aplicación en la caracterización de sistemas
+formadores de imagen. Esto requeriría el diseño de un sistema óptico 4F
+protatil, previamente calibrado y con un SLM en su plano de Fourier, cuyas imágenes se puedan
+poner a la entrada de sistemas ópticos más complejos en los cuales se
+desea caracterizar las aberraciones introducidas al frente de
+onda. Dicho sistema introduciría haces de entrada con diversidades de
+fase que alimentarían el método PD que se ha presentado en este
+trabajo. 
 
 En el marco del proyecto de grado se generó una
 publicación científica que ha sido enviada a la revista Optics Letters
-y está en proceso de revisión. En esta publicación se propone nuestra implementación
-como una posible alternativa paran la caracterización de sistemas
-formadores de imagen que puedan ser iluminados con fuentes
+y está en proceso de revisión. En esta publicación se propone nuestra
+implementación y se muestran estos resultados como una posible
+alternativa paran la caracterización de sistemas formadores de imagen
+que puedan ser iluminados con fuentes 
 coherentes. 
 
 \newpage
