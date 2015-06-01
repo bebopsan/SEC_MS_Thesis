@@ -546,7 +546,7 @@ showstringspaces=false            %
 \newenvironment{acknowledgements}
 {\pagestyle{empty}
 \begin{alwayssingle}
- \cleardoublepage
+% \cleardoublepage
  \begin{center}
 \vspace*{1.5cm}
 {\Large \bfseries Agradecimientos}
@@ -554,6 +554,21 @@ showstringspaces=false            %
 \vspace{0.5cm}
 \begin{quote}}
 {\end{quote}\end{alwayssingle}}
+
+%:-------------------------- License -----------------------
+
+\newenvironment{licence}
+{\pagestyle{empty}
+\begin{alwayssingle}
+ \cleardoublepage
+ \begin{center}
+\vspace*{.5cm}
+{\Large \bfseries Licencia}
+\end{center}
+\vspace{0.5cm}
+\begin{quote}}
+{\end{quote}\end{alwayssingle}}
+
 
 % The acknowledgementslong environment puts a large, bold, centered 
 % "Acknowledgements" label at the top of the page. The acknowledgement itself 
