@@ -2640,7 +2640,7 @@ perfectamente cilíndricas y los campos ópticos que producen o que
 prevalecen oscilan en
 modos transversales y longitudinales que son solución de la ecuación
 de onda en coordenadas cartesianas, dónde las distribuciones de amplitud y fase
-del campo óptico pueden ser descritas con por una
+del campo óptico pueden ser descritas por una
 combinación de polinomios de Gauss y de Hermite
 \citepChGen{Siegman1986}. Esta familia de haces es conocida como
 Hermite-Gauss y forma una base completa con la cual se puede describir
@@ -2650,9 +2650,9 @@ relativa permanecen constantes en la medida en que se propagan en el
 campo lejano. Sin embargo, las soluciones Hermite-Gauss de la ecuación de onda
 describen solo haces con frentes de onda planos o esféricos, y no dan
 cuenta de los frentes de onda helicoidales en los cuales la fase varía
-de forma azimutalL; fenómeno macroscópico que está asociado con de la
+de forma azimutal; fenómeno macroscópico que está asociado con de la
 presencia del \acrshort{OAM} portado por de los fotones que componen
-el haz.
+el haz \citepChGen{Padgett1999}.
 
 Los haces con frente de onda helicoidal también son estructuralmente
 estables y han sido producidos desde principios de los 90s. Estos se pueden describir
@@ -2670,7 +2670,7 @@ Dónde $L_p^l$ es un \href{http://en.wikipedia.org/wiki/Laguerre_polynomials}{\t
 y $l$, $w(z)$ es el ancho del haz a lo largo de $z$ y
 $z_R$ es el
 \href{http://www.rp-photonics.com/rayleigh_length.html}{rango de
-  Rayleigh}\footnote{Posición en $z$ se cumple la relación $w(z_R)=\sqrt{2}w_0$
+  Rayleigh}\footnote{Posición en $z$ en la cual se cumple la relación $w(z_R)=\sqrt{2}w_0$
   siendo $w_0$ la cintura del spot en el plano focal.}.
 La primera línea de la Eq.~(\ref{eq:Laguerre-Gauss}) denota la
 amplitud de los haces LG, y la segunda su fase. La combinación de una
@@ -2692,7 +2692,7 @@ Fig.~\ref{fig:LG_intensities}.
 \end{SCfigure}
 
 En cuanto a la fase, se puede identificar que además de la fase
-sociada a frentes de onda esféricos que depende de $r$,
+asociada a frentes de onda esféricos que depende de $r$,
 hay dos terminos exponenciales complejos nuevos que tienen como
 argumento los índices $l$ y $p$. El último exponencial describe las variaciones de
 la fase a lo largo de la dirección de propagación, y el primero, que
@@ -2705,15 +2705,15 @@ portan sus fotones. El número $l$ se conoce como la \textbf{carga topológica} 
 la singularidad en el VO y determina la cantidad de veces que la fase
 varía de $0$ a $2\pi$ alrededor del eje óptico. La representación de
 las fases espirales y los perfiles de amplitud de haces LG con
-diferentes cargas topológicas se ilustran en la Fig.~\ref{fig:spirals}
+diferentes cargas topológicas se ilustran en la Fig.~\ref{fig:spirals},
 y se puede
-observar que VOs de mayor carga
+observar que los VOs de mayor carga
 topológica tienen mayor tamaño y una región oscura más grande.
 \begin{SCfigure}[\sidecaptionrelwidth][h!]
 \centering
 \includegraphics[scale=0.5]{spirals.pdf}
 \caption[Fase e intensidad de haces LG]{Propagación de la
-  fase, y mapas dos de la intensidad y frente de onda de haces LG con
+  fase, y mapas de intensidad y frente de onda de haces LG con
   carga topológica 
   $l=-2:2$ y número $p =0$. El signo de $l$ determina tanto el sentido
   de giro de la fase como el signo del OAM que porta el haz. VOs con
@@ -2744,7 +2744,7 @@ Con el objetivo de facilitar la creación y manipulación de máscaras de
 fase se agruparon en una sola aplicación gráfica los algoritmos para
 generación de máscaras de amplitud 
 y fase desarrollados durante el transcurso de este proyecto. Esta aplicacion
-ha sido desarrollado en el entorno Matlab$\circledR$ y se encuentra en
+ha sido desarrollado en el entorno Matlab y se encuentra en
 proceso una aplicación de registro de software ante la Dirección
 Nacional de Derecho de Autor.
 Una captura de pantalla del panel de control de la aplicación se muestra en la Fig.~\ref{fig:mask_app}, y la
@@ -2774,12 +2774,11 @@ píxeles donde se desea ubicar la imágen.
 Además de generar máscaras espiral, la aplicación permite reducir el
 número de niveles de gris de la modulación para implementar métodos
 como los de \citetChGen{Londono2015} o \citetChGen{Rueda2013} y simular
-otros tipos de elementos de fase como: lentes de Fresnell, aberraciones
+otros tipos de elementos de fase como: lentes de Fresnel, aberraciones
 parametrizadas en la base de polinomios de Zernike\footnote{Ver apéndice
-  \ref{cha:Anexo3} dónde se introducen los polinomios de Zernike y la
+  \ref{cha:AppendixC} dónde se introducen los polinomios de Zernike y la
   composición de aberraciones en su base}, rejillas de difracción de
-tres tipos distintos e
-inclusive arreglos de máscaras.
+tres tipos distintos, e inclusive arreglos de máscaras.
 
 A continuación se muestran los resultados de la propagación de haces
 Gaussianos a través de máscaras espiral de fase de distinto $l$
@@ -2806,27 +2805,29 @@ intensidad con unas partes más intensas que otras. El hecho de que
 sólo se pueda producir el VO con $l=1$ se debe en parte a las
 aberraciones ópticas del sistema que destruyen las singularidades de
 carga alta y en parte al hecho de que no se
-lograron rangos de modulación de $2\pi$ con el SLM. En particular se
+lograron rangos de modulación de $2\pi$ con el SLM\footnote{El estudio
+de estos fenómenos hace parte de un trabajo de grado de Ingeniería
+Física en curso de un integrante del Grupo de Óptica Aplicada.}. En particular se
 puede notar que la forma de la aberración presente en el VO
 con carga topológica $l=2$ indica que hay una componente importante de
-astigmatismo, muy similar al comportamiento de las reportadas por \citetChGen{Singh2008} \textit{et~al.}. Por otra parte, la
+astigmatismo, muy similar al comportamiento de las reportadas por \citetChGen{Singh2008}. Por otra parte, la
 no uniformidad de la intensidad en el anillo se debe a que
 la modulación de amplitud no es constante para todos los niveles de
 gris. 
 
 Ahora bien, cabe notar que estos resultados se han logrado con el
 estado que tiene la mejor combinación de modulación de amplitud plana
-y fase amplia. Hemos observado que si se usara el SLM con estados de
+y fase de rango amplio. Hemos observado que si se usara el SLM con estados de
 polarización diferentes no se obtendría ni siquiera el VO de
-$l=1$. Como ejemplo, en la \ref{fig:VOs_I6} se presentan las
+$l=1$. Como ejemplo, en la Fig.~\ref{fig:VOs_I6} se presentan las
 distribuciones de intensidad equivalente cuando se usan los estados de
-polarizaci'on del BraKet 6. 
+polarización del BraKet 6. 
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{OV_I6.pdf}
-\caption[Vórtices ópticos obtenidos en la configuración en linea para
+\caption[Vórtices ópticos obtenidos en la configuración en eje para
 el BraKet 6]{Vórtices ópticos de carga topológica $l=1...5$ obtenidos
-  en la configuración en linea usando los estados PSG y PSD del BraKet 6.} 
+  en la configuración en eje usando los estados PSG y PSD del BraKet 6.} 
 \label{fig:VOs_I6}
 \end{figure}
 En este caso, la distribución de la intensidad se asemeja a la PSF de
@@ -2842,7 +2843,7 @@ al utilizar esta modificación.
 \subsection{Vótices Ópticos obtenidos usando máscaras tipo tenedor}
 
 En la literatura, los VOs generados con máscaras espiral se conocen
-como \textit{``en línea''}. Esto quiere decir que toda la luz que pasa
+como \textit{``en eje''} \citepChGen{Maurer2011}. Esto quiere decir que toda la luz que pasa
 por el SLM se observa en el plano imagen. Esto es positivo si el SLM
 tiene un muy buen rango de modulación, si es importante tener una
 buena cantidad de luz o si el diseño del instrumento que genera VOs no
@@ -2852,15 +2853,14 @@ de tipo tenedor mejora sustancialmente la calidad óptica al reducir la
 interferencia con la luz no difractada\citepChGen{Maurer2011}.
 Según \citetChGen{Leach2004}, igual que con elementos difractivos
 convencionales, las imperfecciones en la linealidad de la fase y otros
-fenómenos que disminuyen la eficiencia como: efectos de difracción en los saltos de fase, el área no
+fenómenos que disminuyen la eficiencia (como: efectos de difracción en los saltos de fase, el área no
 efectiva de las celdas o la
-periodicidad de los píxeles, significan
-que la luz que atraviesa el SLM es difractada en un número
-significativo de ordenes de difracción. Si estos ordenes se
-superponen, como es el caso del haz observado en un montaje \textit{en línea} resulta
+periodicidad de los píxeles), producen un número
+significativo de ordenes de difracción en la luz que atraviesa el SLM. Si estos ordenes se
+superponen, como es el caso del haz observado en un montaje \textit{en eje} resulta
 una versión deteriorada del haz esperado. Esto puede explicar los
 resultados presentados en las Fig.~\ref{fig:VOs_I10}
-y\ref{{fig:VOs_I6}}. Es por esto que autores clásicos de los
+y en la Fig.~\ref{fig:VOs_I6}. Es por esto que autores clásicos de los
 inicios del estudio de VOs como 
 \citetChGen{Bazhenov1990}, \citetChGen{Leach2004}, y
 \citetChGen{Dennis2009}  han propuesto usar máscaras de fase conocidas
@@ -2893,13 +2893,14 @@ filtrar o seleccionar sólo el orden de difracción deseado que porta el
 VO a ser detectado. Aunque hay un gran incremento en la calidad de los
 VOs generados con rejillas de este tipo algunos posibles
 inconvenientes son: la necesidad de trabajar con luz monocromática
-para evitar aberración cromática, y las limitantes geométricas que
+para evitar aberración cromática \citepChGen{Maurer2011}, y las limitantes geométricas que
 implica el tener que sacar el haz de eje y filtrar las otras
 componentes. 
 
-Como nosotros usamos una fuente de iluminación monocromática y no
-tenemos problemas de espacio, decidimos implementar el montaje fuera
-de eje para mejorar la calidad de los VOs obtenidos. Los resultados de
+% Como nosotros usamos una fuente de iluminación monocromática y no
+% tenemos problemas de espacio, decidimos implementar el montaje fuera
+% de eje 
+En nuestro caso, usamos el montaje fuera de eje para mejorar la calidad de los VOs obtenidos. Los resultados de
 VOs generados con rejillas del tipo tenedor para las configuraciones
 de polarización de los BraKets 10 y 6 se presentan en la
 Fig.~\ref{fig:diffracted_OV_I6_and_I10}. El montaje con el cual fueron
@@ -2911,7 +2912,7 @@ y se discute en el siguiente capítulo en la Sección \ref{sec:montaje_PD}.
 \includegraphics[scale=0.3]{diffracted_OV_I6_and_I10.pdf}
 \caption[Vórtices ópticos difractados por una rejilla tipo
 blazed.]{Comparación de Vórtices ópticos de carga topológica $l=1...4$ obtenidos en
-  la configuración fuera de linea al usar una máscara tipo tenedor
+  la configuración fuera de eje al usar una máscara tipo tenedor
   cuando se ubican los elementos ópticos que generan los estados PSG y PSD de los
   BraKets 10 y 6.} 
 \label{fig:diffracted_OV_I6_and_I10}
@@ -2928,14 +2929,16 @@ intensidad que es menor a la de la luz no difractada que se concentra
 en el orden 0. Intensidad que es típica de un sistema formador de
 imagen sin máscaras. Ambos estados comparten la característica de
 tener altos rangos de modulación de fase ($>1.5$) pero sólo con el que
-tiene buena modulación de amplitud es posible lograr VOs en linea. 
+tiene buena modulación de amplitud es posible lograr VOs en eje. 
 
 Una característica de los VOs de cargas mayor a 1 es que tienden a
 separarse en varios VOs de carga 1 ante la presencia de
 aberraciones. Esto se puede observar con claridad en los VOs de carga
 $l=2$ de las Fig.~\ref{fig:VOs_I10} y
 \ref{fig:diffracted_OV_I6_and_I10} dónde se hace evidente que hay al menos una componente
-de astigmatismo.  En lo que sige de esta disertación se presenta un
+de astigmatismo. 
+
+En la siguiente parte de esta disertación se presenta un
 método de caracterización y corrección de aberraciones con el cual es
 posible mejorar la calidad de VOs producidos en sistemas formadores de
 imagen. 
@@ -2943,4 +2946,4 @@ imagen.
 \newpage
 \pagebreak[4]
 \bibliographystyleChGen{ezspanish}
-\bibliographyChGen{References/Ch2}t
+\bibliographyChGen{References/Ch2}
