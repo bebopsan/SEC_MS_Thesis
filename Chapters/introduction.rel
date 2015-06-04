@@ -1,0 +1,56 @@
+;; RefTeX parse info file
+;; File: /Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex
+;; User: Santiago (Santiago)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/")
+
+(label-numbers)
+
+(bof "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex")
+
+(toc "toc" "  1 Introducción" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil 1 "1" "\\chapter{Introducción}" 177)
+
+("cha:Introduccion" "s" "\\lhead{Introducción} % This is for the header on each page - perhaps a shortened title \\graphicspath" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil)
+
+("fig:oam0intro" "f" "a) Amplitud normalizada de un haz plano circular con OAM 0. b) %Mapa de fase envuelta de $-\\pi$ a $\\" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" 2112)
+
+("fig:oam_intro" "f" "Comparación entre haces Gaussianos y haces Laguerre-Gauss" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil)
+
+(toc "toc" "    1.1 Estado del arte del estudio de haces Laguerre-Gauss" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil 2 "1.1" "\\section{Estado del arte del estudio de haces Laguerre-Gauss\\label{sec:estadoArte}}" 4449)
+
+("sec:estadoArte" "s" "El momento angular orbital añade un grado de libertad al conjunto de propiedades que pueden ser mani" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil)
+
+(toc "toc" "    1.2 Motivación" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil 2 "1.2" "\\section{Motivación\\label{sec:motiv}}" 9712)
+
+("sec:motiv" "s" "Con la iniciativa de adquirir las capacidades técnicas y experimentales necesarias para el desarroll" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil)
+
+(toc "toc" "    1.3 Planteamiento del problema" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil 2 "1.3" "\\section{Planteamiento del problema}" 10440)
+
+("sec:planteamiento" "s" "En este proyecto se busca generar y caracterizar haces LG por medio de un instrumento electro óptico" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil)
+
+(toc "toc" "    1.4 Objetivos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil 2 "1.4" "\\section{Objetivos}" 12456)
+
+("sec:objetivos" "s" "A continuación se listan el objetivo general y los objetivos específicos. \\subsection{Objetivo Gener" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil)
+
+(toc "toc" "      1.4.1 Objetivo General" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil 3 "1.4.1" "\\subsection{Objetivo General}" 12574)
+
+(toc "toc" "      1.4.2 Objetivos Específicos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil 3 "1.4.2" "\\subsection{Objetivos Específicos}" 12706)
+
+(toc "toc" "    1.5 Estructura del documento" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil 2 "1.5" "\\section{Estructura del documento\\label{sec:estructura}}" 13557)
+
+("sec:estructura" "s" "En esta tesis se propuso generar la capacidad para \\textbf{generar} y \\textbf{caracterizar} Vórtices" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex" nil)
+
+(eof "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/introduction.tex")
+))
+
