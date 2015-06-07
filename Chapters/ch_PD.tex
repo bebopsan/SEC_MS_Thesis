@@ -249,11 +249,12 @@ y por ser el par de Fourier de la APSF se cumple la Eq.~(\ref{eq:GP}).
 \end{equation}
 En la Eq.~(\ref{eq:GP}) se observa que fuera de ser la FT de la APSF, la GP es
 una función compleja que describe tanto la forma y
-tramitancia de la apertura $A(\vec{u})$ como la fase introducida por sistema
+tramitancia de la apertura $A(\vec{u})$ como la fase introducida por
+el sistema
 óptico $\phi(\vec{u})$ en un plano de Fourier. La fase $\phi$ generalmente es sinónimo de las
 aberraciones del sistema y se describe matemáticamente de forma
 parametrizada como una combinación de polinomios de Zernike
-\footnote{El anexo \ref{cha:Anexo3} hace referencia a los polinomios
+\footnote{El anexo \ref{cha:AppendixC} hace referencia a los polinomios
   de Zernike y a la composición de aberraciones en esta base.}
 \citepChPD{Paxman1992}. Finalmente, la OTF de un sistema formador de
 imagen con iluminación coherente se puede obtener mediante la
@@ -319,7 +320,7 @@ minimizar funcionales de la forma,
 L(\bar{D}_{obj}, \phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |D_{j} - \bar{D}_{obj} S_{j} \right | ^2.
 \end{equation}
 
-Dónde $\bar{D}_{obj}$ es la FT del objeto a la entrada limitada por las frecuencia
+Dónde $\bar{D}_{obj}$ es la FT del objeto a la entrada limitada por las frecuencias
 de corte establecidas en la apertura, y $D_{j}$ es la FT de la intensidad
 medida experimentalmente por una cámara en el pixel con coordenadas $\vec{u}$ luego de
 introducir una diversidad de fase conocida con índice $j$.      
@@ -561,7 +562,7 @@ sobre las aberraciones.
 Cuando el campo $U_{obj}$ llega al SLM se encuentra con una combinación de tres
 máscaras de fase que han sido asignadas a los píxeles del LCD. La
 primera de estas máscaras, visible en la Fig.~\ref{fig:set-up}(a)  es una máscara de espiral de fase con carga
-topologica $l$ que, como se vio en el Capítulo \ref{sec:OV_gen}, introduce un una
+topologica $l$ que, como se vio en el Capítulo \ref{sec:OV_gen}, introduce una
 singularidad de fase de orden $l$ al campo. La segunda máscara
 (Fig.~\ref{fig:set-up}(b)) corresponde a una rejilla de difracción del tipo
 blazed que representa una cuña delgada, y se usa para separar la luz
@@ -596,9 +597,9 @@ imagen.
 % En nuestro caso el resto del sistema consiste en una sola
 % lente (tal y como se muestra en alguna foto) con la misma curvatura
 % que la lente usada para colimar el haz hace ima. 
-Como se puede ver en el extremo derecho de la figura \ref{fig:set-up},
+Como se puede ver en el extremo derecho de la Fig.~\ref{fig:set-up},
 los perfiles de intensidad que se usan como entrada para el algoritmo
-de la figura \ref{fig:flowchart} corresponden sólo a una pequeña parte
+de la Fig~\ref{fig:flowchart} corresponden sólo a una pequeña parte
 de la imagen en la cual está el orden +1 de la rejilla de
 difracción. Dado que los spots tienen un tamaño microscópico, para observar sólo
 el orden 1 en el plano de enfoque usamos un objetivo de 
@@ -786,9 +787,9 @@ Después de un cuidadoso análisis de los resultados, se puedo concluir que hace
 incremento en la redundancia aumentando la cantidad de imágenes de
 entrada tiene un efecto positivo sobre la precisión. Eso se ve
 reflejado en la mejor reconstrucción de PD de 9 imagenes con respecto
-al de tres, y la mejor reconstrucción de ste último con respecto al GS
+al de tres, y la mejor reconstrucción de este último con respecto al GS
 de una sola imagen.  Asimismo, identificamos que el desempeño del
-método mejora cuando se usan VO con cargas topológicas de orden más
+método mejora cuando se usan VOs con cargas topológicas de orden más
 alto, y que la combinación de diversidades espiral de mismo valor pero
 signo contrario es preferible a una variedad de cargas de mismo
 signo. Creemos que una razón importante por la cual los resultados con
@@ -796,7 +797,7 @@ vórtices de $l=2$ son mejores que los de $l=1$ y estos a su vez
 mejores que los haces Gaussianos $l=0$ es el hecho de que tienen un
 tamaño mayor. Al ocupar una parte mayor de la imagen los cambios en el
 perfil debidos a las aberraciones son más evidentes y pueden ser
-muestreados con una mayor cantidad de píxeles. Adicionalmente, se
+muestreados con una mayor cantidad de píxeles. Adicionalmente, se ha
 demostrado que las
 singularidades de VOs con cargas topológicas mayores a 1 son altamente
 inestables y tienden a
@@ -1055,7 +1056,7 @@ PD.]{(a) Imagenes experimentales de
 
 Las nueve imagenes dentro de recuadros con línea sólida son la
 entrada al algoritmo de PD y las imágenes en recuadros con líneas
-discontinuas corresponden a las imagens sintéticas ($|u_j^l|^2$) obtenidas
+discontinuas corresponden a las imagenes sintéticas ($|u_j^l|^2$) obtenidas
 cuando el método de búsqueda del gradiente ha alcanzado su punto de 
 convergencia. Se puede observar que las imagenes
 recuperadas por nuestro método no sólo emulan con alta precisión las
@@ -1101,13 +1102,13 @@ onda. Dicho sistema introduciría haces de entrada con diversidades de
 fase que alimentarían el método PD que se ha presentado en este
 trabajo. 
 
-En el marco del proyecto de grado se generó una
-publicación científica que ha sido enviada a la revista Optics Letters
-y está en proceso de revisión. En esta publicación se propone nuestra
-implementación y se muestran estos resultados como una posible
-alternativa paran la caracterización de sistemas formadores de imagen
-que puedan ser iluminados con fuentes 
-coherentes. 
+% En el marco del proyecto de grado se generó una
+% publicación científica que ha sido enviada a la revista Optics Letters
+% y está en proceso de revisión. En esta publicación se propone nuestra
+% implementación y se muestran estos resultados como una posible
+% alternativa paran la caracterización de sistemas formadores de imagen
+% que puedan ser iluminados con fuentes 
+% coherentes. 
 
 \newpage
 \pagebreak[4]
