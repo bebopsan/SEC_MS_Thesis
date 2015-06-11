@@ -25,14 +25,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.6616811"
-     inkscape:cx="100.78078"
-     inkscape:cy="167.69517"
+     inkscape:zoom="1.3233622"
+     inkscape:cx="356.90352"
+     inkscape:cy="114.26777"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer5"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="851"
+     inkscape:window-width="1280"
+     inkscape:window-height="751"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -4579,9 +4579,15 @@
        id="path36929"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Layer 2"
+     style="display:inline">
     <g
        id="g10276"
-       transform="translate(255.86671,155.59944)"
+       transform="translate(117.38688,35.90706)"
        ns0:preamble="/Users/Santiago/Dropbox/Faustos/Master 3/Focus poster/Tikzposter (extended example)/preamble.ini"
        ns0:text="\\textbf{Phase Diversity (PD)}">
       <defs
@@ -4882,7 +4888,7 @@
     </g>
     <g
        id="g12043"
-       transform="matrix(0.94065299,0,0,0.94065299,33.968514,13.567029)">
+       transform="matrix(0.94065299,0,0,0.94065299,-104.51131,-106.12535)">
       <g
          transform="matrix(0.22004538,-0.89210077,0.89210077,0.22004538,159.2934,712.08109)"
          id="g11405">

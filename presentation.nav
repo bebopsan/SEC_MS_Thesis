@@ -17,18 +17,17 @@
 \headcommand {\beamer@framepages {6}{6}}
 \headcommand {\slideentry {1}{1}{4}{7/7}{Planteamiento del Problema}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{8}{Contexto}}\headcommand {\beamer@subsectionpages {4}{7}}
-\headcommand {\slideentry {1}{2}{1}{8/8}{Contexto}{0}}
+\headcommand {\slideentry {1}{1}{5}{8/8}{Planteamiento del Problema}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\slideentry {1}{2}{2}{9/9}{Contexto}{0}}
+\headcommand {\slideentry {1}{1}{6}{9/9}{Planteamiento del Problema}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\slideentry {1}{2}{3}{10/10}{Contexto}{0}}
+\headcommand {\slideentry {1}{1}{7}{10/10}{Planteamiento del Problema}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{11}{Objetivos}}\headcommand {\beamer@subsectionpages {8}{10}}
-\headcommand {\slideentry {1}{3}{1}{11/11}{Objetivos}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{11}{Contexto}}\headcommand {\beamer@subsectionpages {4}{10}}
+\headcommand {\slideentry {1}{2}{1}{11/11}{Contexto}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsectionentry {0}{1}{4}{12}{Justificaci\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {11}{11}}
-\headcommand {\slideentry {1}{4}{1}{12/12}{Justificaci\IeC {\'o}n}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{12}{Objetivos}}\headcommand {\beamer@subsectionpages {11}{11}}
+\headcommand {\slideentry {1}{3}{1}{12/12}{Objetivos}{0}}
 \headcommand {\beamer@framepages {12}{12}}
 \headcommand {\sectionentry {2}{Generaci\IeC {\'o}n de V\IeC {\'o}rtices \IeC {\'O}pticos}{13}{Generaci\IeC {\'o}n de V\IeC {\'o}rtices \IeC {\'O}pticos}{0}}
 \headcommand {\beamer@sectionpages {3}{12}}
@@ -36,74 +35,201 @@
 \headcommand {\slideentry {2}{0}{2}{13/13}{}{0}}
 \headcommand {\beamer@framepages {13}{13}}
 \headcommand {\beamer@subsectionentry {0}{2}{1}{14}{Introducci\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {13}{13}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{14}{Marco Te\IeC {\'o}rico}}\headcommand {\beamer@subsectionpages {14}{13}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{14}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {14}{13}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{14}{Resulatados experimentales}}\headcommand {\beamer@subsectionpages {14}{13}}
-\headcommand {\sectionentry {3}{Caracterizaci\IeC {\'o}n de aberraciones de V\IeC {\'o}rtices \IeC {\'O}pticos}{14}{Caracterizaci\IeC {\'o}n de aberraciones de V\IeC {\'o}rtices \IeC {\'O}pticos}{0}}
-\headcommand {\beamer@sectionpages {13}{13}}
-\headcommand {\beamer@subsectionpages {14}{13}}
-\headcommand {\slideentry {3}{0}{1}{14/14}{}{0}}
-\headcommand {\beamer@framepages {14}{14}}
-\headcommand {\beamer@subsectionentry {0}{3}{1}{15}{Introducci\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {14}{14}}
-\headcommand {\slideentry {3}{1}{1}{15/15}{Introducci\IeC {\'o}n}{0}}
-\headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {3}{1}{2}{16/16}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\slideentry {2}{1}{1}{14/15}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {14}{15}}
+\headcommand {\slideentry {2}{1}{2}{16/16}{Introducci\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\beamer@subsectionentry {0}{3}{2}{17}{Marco te\IeC {\'o}rico}}\headcommand {\beamer@subsectionpages {15}{16}}
-\headcommand {\slideentry {3}{2}{1}{17/20}{Marco te\IeC {\'o}rico}{0}}
-\headcommand {\beamer@framepages {17}{20}}
-\headcommand {\slideentry {3}{2}{2}{21/24}{Marco te\IeC {\'o}rico}{0}}
-\headcommand {\beamer@framepages {21}{24}}
-\headcommand {\slideentry {3}{2}{3}{25/27}{Marco te\IeC {\'o}rico}{0}}
-\headcommand {\beamer@framepages {25}{27}}
-\headcommand {\slideentry {3}{2}{4}{28/30}{Marco te\IeC {\'o}rico}{0}}
-\headcommand {\beamer@framepages {28}{30}}
-\headcommand {\slideentry {3}{2}{5}{31/31}{Marco te\IeC {\'o}rico}{0}}
+\headcommand {\slideentry {2}{1}{3}{17/17}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{1}{4}{18/18}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {2}{1}{5}{19/20}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {19}{20}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{21}{Marco Te\IeC {\'o}rico}}\headcommand {\beamer@subsectionpages {14}{20}}
+\headcommand {\slideentry {2}{2}{1}{21/23}{Marco Te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {21}{23}}
+\headcommand {\slideentry {2}{2}{2}{24/24}{Marco Te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {2}{2}{3}{25/25}{Marco Te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {2}{2}{4}{26/26}{Marco Te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\slideentry {2}{2}{5}{27/27}{Marco Te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {2}{2}{6}{28/28}{Marco Te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {2}{2}{7}{29/29}{Marco Te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {2}{2}{8}{30/30}{Marco Te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {2}{2}{9}{31/31}{Marco Te\IeC {\'o}rico}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\beamer@subsectionentry {0}{3}{3}{32}{Aberraciones simuladas}}\headcommand {\beamer@subsectionpages {17}{31}}
-\headcommand {\slideentry {3}{3}{1}{32/32}{Aberraciones simuladas}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{32}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {21}{31}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{3}{1}{32}{Caracterizaci\IeC {\'o}n de la modulaci\IeC {\'o}n de amplitud}}
+\headcommand {\slideentry {2}{3}{1}{32/32}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {32}{32}}
-\headcommand {\slideentry {3}{3}{2}{33/33}{Aberraciones simuladas}{0}}
+\headcommand {\slideentry {2}{3}{2}{33/33}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {33}{33}}
-\headcommand {\slideentry {3}{3}{3}{34/34}{Aberraciones simuladas}{0}}
+\headcommand {\slideentry {2}{3}{3}{34/34}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {34}{34}}
-\headcommand {\slideentry {3}{3}{4}{35/35}{Aberraciones simuladas}{0}}
+\headcommand {\slideentry {2}{3}{4}{35/35}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {35}{35}}
-\headcommand {\slideentry {3}{3}{5}{36/36}{Aberraciones simuladas}{0}}
+\headcommand {\slideentry {2}{3}{5}{36/36}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {36}{36}}
-\headcommand {\slideentry {3}{3}{6}{37/37}{Aberraciones simuladas}{0}}
+\headcommand {\slideentry {2}{3}{6}{37/37}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {37}{37}}
-\headcommand {\beamer@subsectionentry {0}{3}{4}{38}{Aberraciones experimentales}}\headcommand {\beamer@subsectionpages {32}{37}}
-\headcommand {\slideentry {3}{4}{1}{38/38}{Aberraciones experimentales}{0}}
+\headcommand {\slideentry {2}{3}{7}{38/38}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {38}{38}}
-\headcommand {\slideentry {3}{4}{2}{39/39}{Aberraciones experimentales}{0}}
+\headcommand {\slideentry {2}{3}{8}{39/39}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {39}{39}}
-\headcommand {\slideentry {3}{4}{3}{40/40}{Aberraciones experimentales}{0}}
+\headcommand {\slideentry {2}{3}{9}{40/40}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {3}{4}{4}{41/41}{Aberraciones experimentales}{0}}
+\headcommand {\slideentry {2}{3}{10}{41/41}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {41}{41}}
-\headcommand {\slideentry {3}{4}{5}{42/42}{Aberraciones experimentales}{0}}
+\headcommand {\slideentry {2}{3}{11}{42/42}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {42}{42}}
-\headcommand {\sectionentry {4}{Conclusiones y trabajo futuro}{43}{Conclusiones y trabajo futuro}{0}}
-\headcommand {\beamer@sectionpages {14}{42}}
-\headcommand {\beamer@subsectionpages {38}{42}}
-\headcommand {\slideentry {4}{0}{6}{43/43}{}{0}}
+\headcommand {\slideentry {2}{3}{12}{43/43}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {43}{43}}
-\headcommand {\slideentry {4}{0}{7}{44/44}{}{0}}
+\headcommand {\slideentry {2}{3}{13}{44/44}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {44}{44}}
-\headcommand {\slideentry {4}{0}{8}{45/45}{}{0}}
+\headcommand {\slideentry {2}{3}{14}{45/45}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {45}{45}}
-\headcommand {\slideentry {4}{0}{9}{46/46}{}{0}}
+\headcommand {\slideentry {2}{3}{15}{46/46}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {46}{46}}
-\headcommand {\sectionentry {5}{Bibliograf\'ia}{47}{Bibliograf\'ia}{0}}
-\headcommand {\beamer@sectionpages {43}{46}}
-\headcommand {\beamer@subsectionpages {43}{46}}
-\headcommand {\slideentry {5}{0}{10}{47/47}{}{0}}
+\headcommand {\slideentry {2}{3}{16}{47/47}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {47}{47}}
-\headcommand {\slideentry {5}{0}{11}{48/48}{}{0}}
+\headcommand {\slideentry {2}{3}{17}{48/48}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
 \headcommand {\beamer@framepages {48}{48}}
-\headcommand {\beamer@partpages {1}{48}}
-\headcommand {\beamer@subsectionpages {47}{48}}
-\headcommand {\beamer@sectionpages {47}{48}}
-\headcommand {\beamer@documentpages {48}}
-\headcommand {\def \inserttotalframenumber {38}}
+\headcommand {\slideentry {2}{3}{18}{49/49}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\slideentry {2}{3}{19}{50/50}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\slideentry {2}{3}{20}{51/51}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\slideentry {2}{3}{21}{52/52}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {2}{3}{22}{53/53}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {2}{3}{23}{54/54}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\slideentry {2}{3}{24}{55/55}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\slideentry {2}{3}{25}{56/56}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\slideentry {2}{3}{26}{57/57}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {57}{57}}
+\headcommand {\slideentry {2}{3}{27}{58/58}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{3}{2}{59}{Caracterizaci\IeC {\'o}n de la modulaci\IeC {\'o}n de fase}}
+\headcommand {\slideentry {2}{3}{28}{59/59}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\slideentry {2}{3}{29}{60/60}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {60}{60}}
+\headcommand {\slideentry {2}{3}{30}{61/61}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {61}{61}}
+\headcommand {\slideentry {2}{3}{31}{62/62}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\slideentry {2}{3}{32}{63/63}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\slideentry {2}{3}{33}{64/64}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {2}{3}{34}{65/65}{Caracterizaci\IeC {\'o}n de un SLM de transmisi\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{66}{Resulatados experimentales}}\headcommand {\beamer@subsectionpages {32}{65}}
+\headcommand {\slideentry {2}{4}{1}{66/66}{Resulatados experimentales}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\slideentry {2}{4}{2}{67/67}{Resulatados experimentales}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\slideentry {2}{4}{3}{68/69}{Resulatados experimentales}{0}}
+\headcommand {\beamer@framepages {68}{69}}
+\headcommand {\slideentry {2}{4}{4}{70/70}{Resulatados experimentales}{0}}
+\headcommand {\beamer@framepages {70}{70}}
+\headcommand {\slideentry {2}{4}{5}{71/71}{Resulatados experimentales}{0}}
+\headcommand {\beamer@framepages {71}{71}}
+\headcommand {\slideentry {2}{4}{6}{72/72}{Resulatados experimentales}{0}}
+\headcommand {\beamer@framepages {72}{72}}
+\headcommand {\sectionentry {3}{Caracterizaci\IeC {\'o}n de aberraciones de V\IeC {\'o}rtices \IeC {\'O}pticos}{73}{Caracterizaci\IeC {\'o}n de aberraciones de V\IeC {\'o}rtices \IeC {\'O}pticos}{0}}
+\headcommand {\beamer@sectionpages {13}{72}}
+\headcommand {\beamer@subsectionpages {66}{72}}
+\headcommand {\slideentry {3}{0}{7}{73/73}{}{0}}
+\headcommand {\beamer@framepages {73}{73}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{74}{Introducci\IeC {\'o}n}}\headcommand {\beamer@subsectionpages {73}{73}}
+\headcommand {\slideentry {3}{1}{1}{74/74}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {74}{74}}
+\headcommand {\slideentry {3}{1}{2}{75/75}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {75}{75}}
+\headcommand {\slideentry {3}{1}{3}{76/76}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@framepages {76}{76}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{77}{Marco te\IeC {\'o}rico}}\headcommand {\beamer@subsectionpages {74}{76}}
+\headcommand {\slideentry {3}{2}{1}{77/80}{Marco te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {77}{80}}
+\headcommand {\slideentry {3}{2}{2}{81/84}{Marco te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {81}{84}}
+\headcommand {\slideentry {3}{2}{3}{85/87}{Marco te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {85}{87}}
+\headcommand {\slideentry {3}{2}{4}{88/90}{Marco te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {88}{90}}
+\headcommand {\slideentry {3}{2}{5}{91/91}{Marco te\IeC {\'o}rico}{0}}
+\headcommand {\beamer@framepages {91}{91}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{92}{Aberraciones simuladas}}\headcommand {\beamer@subsectionpages {77}{91}}
+\headcommand {\slideentry {3}{3}{1}{92/92}{Aberraciones simuladas}{0}}
+\headcommand {\beamer@framepages {92}{92}}
+\headcommand {\slideentry {3}{3}{2}{93/93}{Aberraciones simuladas}{0}}
+\headcommand {\beamer@framepages {93}{93}}
+\headcommand {\slideentry {3}{3}{3}{94/94}{Aberraciones simuladas}{0}}
+\headcommand {\beamer@framepages {94}{94}}
+\headcommand {\slideentry {3}{3}{4}{95/95}{Aberraciones simuladas}{0}}
+\headcommand {\beamer@framepages {95}{95}}
+\headcommand {\slideentry {3}{3}{5}{96/96}{Aberraciones simuladas}{0}}
+\headcommand {\beamer@framepages {96}{96}}
+\headcommand {\slideentry {3}{3}{6}{97/97}{Aberraciones simuladas}{0}}
+\headcommand {\beamer@framepages {97}{97}}
+\headcommand {\beamer@subsectionentry {0}{3}{4}{98}{Aberraciones experimentales}}\headcommand {\beamer@subsectionpages {92}{97}}
+\headcommand {\slideentry {3}{4}{1}{98/98}{Aberraciones experimentales}{0}}
+\headcommand {\beamer@framepages {98}{98}}
+\headcommand {\slideentry {3}{4}{2}{99/99}{Aberraciones experimentales}{0}}
+\headcommand {\beamer@framepages {99}{99}}
+\headcommand {\slideentry {3}{4}{3}{100/100}{Aberraciones experimentales}{0}}
+\headcommand {\beamer@framepages {100}{100}}
+\headcommand {\slideentry {3}{4}{4}{101/101}{Aberraciones experimentales}{0}}
+\headcommand {\beamer@framepages {101}{101}}
+\headcommand {\slideentry {3}{4}{5}{102/102}{Aberraciones experimentales}{0}}
+\headcommand {\beamer@framepages {102}{102}}
+\headcommand {\slideentry {3}{4}{6}{103/103}{Aberraciones experimentales}{0}}
+\headcommand {\beamer@framepages {103}{103}}
+\headcommand {\sectionentry {4}{Conclusiones y trabajo futuro}{104}{Conclusiones y trabajo futuro}{0}}
+\headcommand {\beamer@sectionpages {73}{103}}
+\headcommand {\beamer@subsectionpages {98}{103}}
+\headcommand {\slideentry {4}{0}{7}{104/104}{}{0}}
+\headcommand {\beamer@framepages {104}{104}}
+\headcommand {\slideentry {4}{0}{8}{105/109}{}{0}}
+\headcommand {\beamer@framepages {105}{109}}
+\headcommand {\slideentry {4}{0}{9}{110/111}{}{0}}
+\headcommand {\beamer@framepages {110}{111}}
+\headcommand {\slideentry {4}{0}{10}{112/112}{}{0}}
+\headcommand {\beamer@framepages {112}{112}}
+\headcommand {\slideentry {4}{0}{11}{113/113}{}{0}}
+\headcommand {\beamer@framepages {113}{113}}
+\headcommand {\sectionentry {5}{Bibliograf\IeC {\'\i }a}{114}{Bibliograf\IeC {\'\i }a}{0}}
+\headcommand {\beamer@sectionpages {104}{113}}
+\headcommand {\beamer@subsectionpages {104}{113}}
+\headcommand {\slideentry {5}{0}{12}{114/114}{}{0}}
+\headcommand {\beamer@framepages {114}{114}}
+\headcommand {\sectionentry {6}{Referencias}{115}{Referencias}{0}}
+\headcommand {\beamer@sectionpages {114}{114}}
+\headcommand {\beamer@subsectionpages {114}{114}}
+\headcommand {\slideentry {6}{0}{13}{115/115}{}{0}}
+\headcommand {\beamer@framepages {115}{115}}
+\headcommand {\slideentry {6}{0}{13}{115/116}{}{0}}
+\headcommand {\beamer@framepages {115}{116}}
+\headcommand {\slideentry {6}{0}{14}{117/117}{}{0}}
+\headcommand {\beamer@framepages {117}{117}}
+\headcommand {\slideentry {6}{0}{15}{118/118}{}{0}}
+\headcommand {\beamer@framepages {118}{118}}
+\headcommand {\slideentry {6}{0}{16}{119/119}{}{0}}
+\headcommand {\beamer@framepages {119}{119}}
+\headcommand {\beamer@partpages {1}{119}}
+\headcommand {\beamer@subsectionpages {114}{119}}
+\headcommand {\beamer@sectionpages {114}{119}}
+\headcommand {\beamer@documentpages {119}}
+\headcommand {\def \inserttotalframenumber {60}}

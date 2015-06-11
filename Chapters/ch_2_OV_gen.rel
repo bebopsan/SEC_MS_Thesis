@@ -174,7 +174,7 @@
 
 ("eq:valor_esperado" "e" "I = |<J|\\mathbf{SLM} |J>|^2 &= \\begin{pmatrix} J_x & J_y " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    2.2 El método de Ma et al.~ para la caracterización del SLM" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "2.2" "\\section{El método de Ma et al.~ para la caracterización del SLM}" 80442)
+(toc "toc" "    2.2 El método de Ma et al.~ para la caracterización del SLM" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "2.2" "\\section{El método de Ma et al.~ para la caracterización del SLM}" 80441)
 
 ("sec:metodo_ma" "s" "Según \\citetChGen{Ma2010}, hay tres combinaciones de PSD y PSG a partir de las cuales se pueden enco" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -184,7 +184,7 @@
 
 ("fig:Ma_and_our_XYZW" "f" "Comparación entre los valores de $X$, $Y$ $Z$ y $W$ encontrados por Ma et al.~ para un SLM similar y" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      2.2.1 Comprobación experimental con 100 medidas" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "2.2.1" "\\subsection{Comprobación experimental con 100 medidas}" 87831)
+(toc "toc" "      2.2.1 Comprobación experimental con 100 medidas" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "2.2.1" "\\subsection{Comprobación experimental con 100 medidas}" 87830)
 
 ("sec:exp_validation" "s" "Hemos comparado las intensidades predichas por las matrices obtenidas y encontramos que el modelo em" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -194,11 +194,11 @@
 
 ("fig:Ma_caracterization_results" "f" "Curvas de modulación experimentales comparadas con las simuladas usando el modelo obtenido con el mé" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    2.3 Un método basado en minimización de parámetros" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "2.3" "\\section{Un método basado en minimización de parámetros}" 93349)
+(toc "toc" "    2.3 Un método basado en minimización de parámetros" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "2.3" "\\section{Un método basado en minimización de parámetros}" 93348)
 
 ("fig:six_input_measures" "f" "Curvas de modulación que sirven de entrada para el ajuste de parámetros de la matriz de Jones del SL" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      2.3.1 Funcional a minimizar" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "2.3.1" "\\subsection{Funcional a minimizar}" 97018)
+(toc "toc" "      2.3.1 Funcional a minimizar" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "2.3.1" "\\subsection{Funcional a minimizar}" 97011)
 
 ("eq:ChGen_SLM_model_functional" "e" "\\mathcal{L}(\\mathbf{X,Y,Z,W}) = \\sum_{ng=0}^{255}\\sum_{i=1}^6 | I_{ng,i} - |<\\mathbf{J_{i}}|\\mathbf{" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -210,20 +210,20 @@
 
 ("fig:6m_caracterization_results" "f" "Curvas de modulación experimentales comparadas con las simuladas usando el modelo obtenido con el mé" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      2.3.2 Una ampliación de la función de minimización" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "2.3.2" "\\subsection{Una ampliación de la función de minimización}" 104534)
+(toc "toc" "      2.3.2 Una ampliación de la función de minimización" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "2.3.2" "\\subsection{Una ampliación de la función de minimización}" 104528)
 
 ("fig:xyzw_100" "f" "Parametros reales que conforman la matriz de Jones del SLM encontrados por minimización con 100 medi" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("fig:100m_caracterization_results" "f" "Curvas de modulación experimentales comparadas con las simuladas usando el modelo obtenido con el mé" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 (toc "toc" "        2.3.2.1 Instrumento para la automatización del proceso de medida." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 4 "2.3.2.1" "\\subsubsection{Instrumento para la automatización del proceso de
-  medida.}" 107300)
+  medida.}" 107294)
 
 ("sec:instrumento" "s" "Ahora bien, cualquiera que haya tenido experiencia con la caracterización de SLMs se sorprenderá por" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("fig:montaje_real_polarimetro" "f" "Hardware del instrumento de polarimetría y montaje experimental " "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    2.4 Medida de la modulación de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "2.4" "\\section{Medida de la modulación de fase}" 109321)
+(toc "toc" "    2.4 Medida de la modulación de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "2.4" "\\section{Medida de la modulación de fase}" 109315)
 
 ("fig:mach_zehnder" "f" "Interferómetro Mach-Zehnder para caracterización de curvas de modulación de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -237,7 +237,7 @@
 
 ("fig:fourier_script" "f" "Script para el cálculo de la fase de un interferograma usando FT." "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      2.4.1 Resultados de la medida de modulación de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "2.4.1" "\\subsection{Resultados de la medida de modulación de fase}" 118326)
+(toc "toc" "      2.4.1 Resultados de la medida de modulación de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "2.4.1" "\\subsection{Resultados de la medida de modulación de fase}" 118320)
 
 ("fig:amp_and_phase_I6" "f" "Modulación de amplitud y fase del estado con máximo rango de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -245,13 +245,13 @@
 
 ("fig:amp_and_phase_I100" "f" "Modulación de amplitud y fase óptima" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "  3 Generación de Vórtices Ópticos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 1 "3" "\\chapter{Generación de Vórtices Ópticos}" 124775)
+(toc "toc" "  3 Generación de Vórtices Ópticos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 1 "3" "\\chapter{Generación de Vórtices Ópticos}" 124769)
 
 ("sec:OV_gen" "s" "\\lhead{Generación de haces Laguerre-Gauss por medio de un SLM: \\textit{Generación de OVs}} \\section{" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
 ("sec:ChGV_Caracterizacion_de_SLM" "s" "\\lhead{Generación de haces Laguerre-Gauss por medio de un SLM: \\textit{Generación de OVs}} \\section{" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    3.1 Introducción" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "3.1" "\\section{Introducción}" 124968)
+(toc "toc" "    3.1 Introducción" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "3.1" "\\section{Introducción}" 124962)
 
 ("eq:Laguerre-Gauss" "e" "&\\times \\exp{\\left(\\frac{-ikr^2z}{2(z^2+z_R^2)}\\right)} \\highlightG{\\exp(-il\\phi)}\\exp{\\left[i\\left(" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
@@ -259,17 +259,17 @@
 
 ("fig:spirals" "f" "Fase e intensidad de haces LG" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    3.2 Plataforma computacional para la generación de máscaras de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "3.2" "\\section{Plataforma computacional para la generación de máscaras de fase}" 130597)
+(toc "toc" "    3.2 Plataforma computacional para la generación de máscaras de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "3.2" "\\section{Plataforma computacional para la generación de máscaras de fase}" 130588)
 
 ("fig:mask_app" "f" "Plataforma para la generación de máscaras de fase" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "    3.3 Resultados de los Vórtices Ópticos obtenidos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "3.3" "\\section{Resultados de los Vórtices Ópticos obtenidos}" 133052)
+(toc "toc" "    3.3 Resultados de los Vórtices Ópticos obtenidos" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 2 "3.3" "\\section{Resultados de los Vórtices Ópticos obtenidos}" 133042)
 
 ("fig:VOs_I10" "f" "Vórtices ópticos obtenidos en la configuración en linea para el BraKet 10" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-("fig:VOs_I6" "f" "Vórtices ópticos obtenidos en la configuración en linea para el BraKet 6" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
+("fig:VOs_I6" "f" "Vórtices ópticos obtenidos en la configuración en eje para el BraKet 6" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
-(toc "toc" "      3.3.1 Vótices Ópticos obtenidos usando máscaras tipo tenedor" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "3.3.1" "\\subsection{Vótices Ópticos obtenidos usando máscaras tipo tenedor}" 135892)
+(toc "toc" "      3.3.1 Vótices Ópticos obtenidos usando máscaras tipo tenedor" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil 3 "3.3.1" "\\subsection{Vótices Ópticos obtenidos usando máscaras tipo tenedor}" 135882)
 
 ("fig:fork_recipe" "f" "Composición de una máscara tipo tenedor con dislocación de carga 1" "/Users/Santiago/Documents/SEC_Master_thesis/Chapters/ch_2_OV_gen.tex" nil)
 
