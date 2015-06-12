@@ -51,7 +51,7 @@
 \placelogotrue % set it to true
 \logo{\ifplacelogo Maestría en Física Aplicada\includegraphics[width=1cm]{Figures/presentation/EAFIT.jpg}\fi} 
 \author[]{Santiago Echeverri Chac\'on\\ Director: René Restrepo
-  Gomez\\Co-director: Luciano A Ángel Toro}
+  Gómez\\Co-director: Luciano A Ángel Toro}
 \title[Trabajo de grado]{GENERACIÓN Y CARACTERIZACIÓN DE VÓRTICES
                   ÓPTICOS MEDIANTE MODULADORES ESPACIALES DE LUZ}
 \subtitle{Trabajo de grado}
@@ -95,7 +95,7 @@
 }
 
 \section{Introducción}
-\subsection{Planteamiento del Problema}
+\subsection{Planteamiento del problema}
 \begin{frame}
 \frametitle{Planteamiento del problema}
 \begin{figure}
@@ -103,10 +103,17 @@
   \end{figure}
 \end{frame}
 \addtocounter{framenumber}{-1}
+% \begin{frame}
+% \frametitle{Planteamiento del problema}
+% \begin{figure}
+%   \includegraphics[scale = 0.6]{Figures/presentation/speckle_vo_1.pdf}
+%   \end{figure}
+% \end{frame}
+% \addtocounter{framenumber}{-1}
 \begin{frame}
 \frametitle{Planteamiento del problema}
 \begin{figure}
-  \includegraphics[scale = 0.6]{Figures/presentation/speckle_vo.pdf}
+  \includegraphics[scale = 0.6]{Figures/presentation/speckle_vo_2.pdf}
   \end{figure}
 \end{frame}
 \addtocounter{framenumber}{-1}
@@ -118,62 +125,62 @@
 \end{frame}
 
 \frame{
-  \frametitle{Applicaciones de haces con VOs}
+  \frametitle{Applicaciones de frentes de onda con vorticidad óptica}
   \begin{figure}
     \includegraphics[scale = 0.4]{Figures/presentation/optical_tweezers.pdf}
   \end{figure}
 }
 \placelogofalse
 \frame{
-  \frametitle{Applicaciones de haces con VOs}
+  \frametitle{Applicaciones de frentes de onda con vorticidad óptica}
   \begin{figure}
     \includegraphics[scale = 0.5]{Figures/presentation/phase_microscopy.png}
   \end{figure}
 }
+% \frame{
+%   \frametitle{Applicaciones de frentes de onda con vorticidad óptica}
+%   \begin{figure}
+%     \includegraphics[scale = 0.45]{Figures/presentation/spiral_interferometry.png}
+%   \end{figure}
+% }
 \frame{
-  \frametitle{Applicaciones de haces con VOs}
-  \begin{figure}
-    \includegraphics[scale = 0.45]{Figures/presentation/spiral_interferometry.png}
-  \end{figure}
-}
-\frame{
-  \frametitle{Applicaciones de haces con VOs}
+  \frametitle{Applicaciones de frentes de onda con vorticidad óptica}
   \begin{figure}
     \includegraphics[scale = 0.5]{Figures/presentation/terabit_com_application.png}
   \end{figure}
 }
-
-\subsection{Contexto}
-   \placelogotrue
- \begin{frame}
-   \frametitle{Contexto}
-   \begin{block}{\centering Proyecto interinstitucional en curso} 
-	\justifying
-   Aberraciones ópticas en haces Laguerre-Gaussianos:
-       corrección y aplicaciones metrológicas; 2013 – 2015
-   \end{block}
-   \begin{figure}
-     \centering
-     \includegraphics[scale = .5]{Figures/presentation/instituciones.png}
-   \end{figure}
- \end{frame}
+\placelogotrue
+% \subsection{Contexto}
+   
+%  \begin{frame}
+%    \frametitle{Contexto}
+%    \begin{block}{\centering Proyecto interinstitucional en curso} 
+% 	\justifying
+%    Aberraciones ópticas en haces Laguerre-Gaussianos:
+%        corrección y aplicaciones metrológicas; 2013 – 2015
+%    \end{block}
+%    \begin{figure}
+%      \centering
+%      \includegraphics[scale = .5]{Figures/presentation/instituciones.png}
+%    \end{figure}
+%  \end{frame}
 
 
 \subsection{Objetivos}
 \begin{frame}
   \frametitle{Objetivos planteados en el anteproyecto}
-  \begin{block}{Objetivo General}
+  \begin{block}{Objetivo general}
     Desarrollar la capacidad para generar y caracterizar vórtices de fase
-    mediante un SLM de transmisión. 
+    mediante un modulador espacial de luz (SLM) de transmisión. 
   \end{block}
-  \begin{block}{Objetivos Espec\'ificos}
+  \begin{block}{Objetivos espec\'ificos}
     \small
     \begin{enumerate}
 	\item Identificar y apropiar los conceptos y
                   procedimientos necesarios para caracterizar
                   moduladores espaciales de luz de transmisión, con
                   miras a la producción y análisis de vórtices
-                  ópticos. 
+                  ópticos (VOs). 
         \item Implementar una plataforma experimental para
                   caracterizar la modulación de amplitud y fase de un
                   SLM a partir de un montaje interferométrico
@@ -189,11 +196,11 @@
      \end{block}
    \end{frame}
 
-\section{Generación de Vórtices Ópticos}
+\section{Generación de vórtices ópticos}
 \subsection{Introducción}
 \frame{
-\frametitle{Vórtices Ópticos}
-  \begin{block}{\centering Vórtices ópticos son una solución a la equación de onda}
+\frametitle{Vórtices ópticos presentes en haces Laguerre-Gauss}
+  \begin{block}{\centering Los haces Laguerre-Gauss son una solución a la ecuación de onda}
    \scriptsize
     \begin{align*}
      u(r,\phi,z) &\propto \frac{z_R}{(z_R^2+z_R^2)}
@@ -204,46 +211,46 @@
      \label{eq:Laguerre-Gauss}
      \end{align*}
   \end{block}
-\pause
+%\pause
 \begin{figure}
 \includegraphics[scale = 0.6]{Figures/presentation/VO_amp_and_phase.pdf}
 \end{figure}
 }
+% \frame{
+% \frametitle{Cómo se generan los vórtices ópticos}
+% % \begin{columns}
+% %   \column{0.3\textwidth}
+% %   \begin{figure}
+% %     \includegraphics[scale =
+% %     0.5]{Figures/presentation/conversores_modales.pdf}
+% %   \end{figure}
+% %   \pause
+% %  \column{0.3\textwidth}
+% %   \begin{figure}
+% %     \includegraphics[scale =
+% %     0.5]{Figures/presentation/spp.pdf}
+% %   \end{figure}
+% %   \pause
+% %   \column{0.4\textwidth}
+% %   \begin{figure}
+% %     \includegraphics[scale =
+% %     0.5]{Figures/presentation/holograms.pdf}
+% %   \end{figure}
+% % \end{columns}
+% \begin{figure}
+% \includegraphics[scale=0.39]{Figures/presentation/methods_1.pdf}
+% \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{Cómo se generan los vórtices ópticos}
+% \begin{figure}
+% \includegraphics[scale=0.39]{Figures/presentation/methods_2.pdf}
+% \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
 \frame{
-\frametitle{Cómo se generan los Vórtices Ópticos}
-% \begin{columns}
-%   \column{0.3\textwidth}
-%   \begin{figure}
-%     \includegraphics[scale =
-%     0.5]{Figures/presentation/conversores_modales.pdf}
-%   \end{figure}
-%   \pause
-%  \column{0.3\textwidth}
-%   \begin{figure}
-%     \includegraphics[scale =
-%     0.5]{Figures/presentation/spp.pdf}
-%   \end{figure}
-%   \pause
-%   \column{0.4\textwidth}
-%   \begin{figure}
-%     \includegraphics[scale =
-%     0.5]{Figures/presentation/holograms.pdf}
-%   \end{figure}
-% \end{columns}
-\begin{figure}
-\includegraphics[scale=0.39]{Figures/presentation/methods_1.pdf}
-\end{figure}
-}
-\addtocounter{framenumber}{-1}
-\frame{
-\frametitle{Cómo se generan los Vórtices Ópticos}
-\begin{figure}
-\includegraphics[scale=0.39]{Figures/presentation/methods_2.pdf}
-\end{figure}
-}
-\addtocounter{framenumber}{-1}
-\frame{
-\frametitle{Cómo se generan los Vórtices Ópticos}
+\frametitle{Cómo se generan los vórtices ópticos}
 \begin{figure}
 \includegraphics[scale=0.39]{Figures/presentation/methods_3.pdf}
 \end{figure}
@@ -253,27 +260,27 @@
 \begin{figure}
 \includegraphics[scale=0.39]{Figures/presentation/SLMs.png}
 \end{figure}
-\pause
+%\pause
 \begin{figure}
 \includegraphics[scale=0.39]{Figures/presentation/SLMs_2.png}
 \end{figure}
 }
-\subsection{Marco Teórico}%
+\subsection{Marco teórico}%
 \frame{
 \frametitle{Cristales líquidos del tipo twisted nematic}
 \begin{columns}
   \column{0.32\textwidth}
-  \begin{figure}
-    \includegraphics[scale = 0.53]{Figures/presentation/clasificacion_LC.pdf}
-  \end{figure}
-  \pause
+  % \begin{figure}
+  %   \includegraphics[scale = 0.53]{Figures/presentation/clasificacion_LC.pdf}
+  % \end{figure}
+  %\pause
   \begin{figure}
     \includegraphics[scale = 0.2]{Figures/presentation/molecula_anisotropica.pdf}
   \end{figure}
-  \pause
+  %\pause
   \column{0.6\textwidth}
   \begin{figure}
-    \includegraphics[scale = 0.3]{Figures/presentation/TN-LCD.pdf}
+    \includegraphics[scale = 0.25]{Figures/presentation/TN-LCD.pdf}
   \end{figure}
   \tiny
   \centering
@@ -304,22 +311,22 @@
   \end{figure}
 }
 \addtocounter{framenumber}{-1}
-\frame{
-\frametitle{\small El modulador espacial de luz es un sistema que modifica la
-  polarización}
-  \begin{figure}
-    \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_3.pdf}
-  \end{figure}
-}
+% \frame{
+% \frametitle{\small El modulador espacial de luz es un sistema que modifica la
+%   polarización}
+%   \begin{figure}
+%     \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_3.pdf}
+%   \end{figure}
+% }
 \addtocounter{framenumber}{-1}
-\frame{
-\frametitle{\small El modulador espacial de luz es un sistema que modifica la
-  polarización}
-  \begin{figure}
-    \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_4.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{\small El modulador espacial de luz es un sistema que modifica la
+%   polarización}
+%   \begin{figure}
+%     \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_4.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
 \frame{
 \frametitle{\small El modulador espacial de luz es un sistema que modifica la
   polarización}
@@ -327,42 +334,63 @@
     \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_4d5.pdf}
   \end{figure}
 }
-\frame{
-\frametitle{\small El modulador espacial de luz es un sistema que modifica la
-  polarización}
-  \begin{figure}
-    \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_5.pdf}
-  \end{figure}
-}
+% \frame{
+% \frametitle{\small El modulador espacial de luz es un sistema que modifica la
+%   polarización}
+%   \begin{figure}
+%     \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_5.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{\small El modulador espacial de luz es un sistema que modifica la
+%   polarización}
+%   \begin{figure}
+%     \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_6.pdf}
+%   \end{figure}
+% }
 \addtocounter{framenumber}{-1}
-\frame{
-\frametitle{\small El modulador espacial de luz es un sistema que modifica la
-  polarización}
-  \begin{figure}
-    \includegraphics[scale = 0.8]{Figures/presentation/polarization_system_6.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
-\subsection{Caracterización de un SLM de transmisión}
+\subsection{Caracterización de un modulador espacial de luz de transmisión}
 \subsubsection{Caracterización de la modulación de amplitud}
 \frame{
    \frametitle{Contenido}
    \footnotesize 
    \tableofcontents[currentsubsection]%,hideothersubsections]
 }
+% \frame{
+% \frametitle{Medida de la modulación de amplitud del SLM}
+%   \begin{figure}
+%     \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_1.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{Medida de la modulación de amplitud del SLM}
+%   \begin{figure}
+%     \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_2.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
 \frame{
 \frametitle{Medida de la modulación de amplitud del SLM}
   \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_1.pdf}
+    \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_ZIP.pdf}
   \end{figure}
 }
 \addtocounter{framenumber}{-1}
-\frame{
-\frametitle{Medida de la modulación de amplitud del SLM}
-  \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_2.pdf}
-  \end{figure}
-}
+% \frame{
+% \frametitle{Medida de la modulación de amplitud del SLM}
+%   \begin{figure}
+%     \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_5.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{Medida de la modulación de amplitud del SLM}
+%   \begin{figure}
+%     \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_6.pdf}
+%   \end{figure}
+% }
 \addtocounter{framenumber}{-1}
 \frame{
 \frametitle{Medida de la modulación de amplitud del SLM}
@@ -370,41 +398,21 @@
     \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_3.pdf}
   \end{figure}
 }
-\addtocounter{framenumber}{-1}
-\frame{
-\frametitle{Medida de la modulación de amplitud del SLM}
-  \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_4.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
-\frame{
-\frametitle{Medida de la modulación de amplitud del SLM}
-  \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_5.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
-\frame{
-\frametitle{Medida de la modulación de amplitud del SLM}
-  \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/amplitude_measure_6.pdf}
-  \end{figure}
-}
-\frame{
-\frametitle{El método de Ma et al.~ para la caracterización del SLM}
-  \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/Ma_method_1.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
-\frame{
-\frametitle{El método de Ma et al.~ para la caracterización del SLM}
-  \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/Ma_method_2.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
+
+% \frame{
+% \frametitle{El método de Ma et al.~ para la caracterización del SLM}
+%   \begin{figure}
+%     \includegraphics[scale = 0.5]{Figures/presentation/Ma_method_1.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{El método de Ma et al.~ para la caracterización del SLM}
+%   \begin{figure}
+%     \includegraphics[scale = 0.5]{Figures/presentation/Ma_method_2.pdf}
+%   \end{figure}
+% }
+%\addtocounter{framenumber}{-1}
 \frame{
 \frametitle{El método de Ma et al.~ para la caracterización del SLM}
   \begin{figure}
@@ -412,13 +420,13 @@
   \end{figure}
 }
 \addtocounter{framenumber}{-1}
-\frame{
-\frametitle{El método de Ma et al.~ para la caracterización del SLM}
-  \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/Ma_method_4.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{El método de Ma et al.~ para la caracterización del SLM}
+%   \begin{figure}
+%     \includegraphics[scale = 0.5]{Figures/presentation/Ma_method_4.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
 \frame{
 \frametitle{El método de Ma et al.~ para la caracterización del SLM}
   \begin{figure}
@@ -435,7 +443,7 @@
 \frame{
 \frametitle{Comprobación experimental con 100 medidas}
   \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/100_measures.pdf}
+    \includegraphics[scale = 0.56]{Figures/presentation/100_measures.pdf}
   \end{figure}
 }
 \frame{
@@ -448,14 +456,14 @@ de Ma et~al.}
 \frame{
 \frametitle{\small Un método nuevo basado en minimización de parámetros}
   \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/our_method_1.pdf}
+    \includegraphics[scale = 0.6]{Figures/presentation/our_method_1.pdf}
   \end{figure}
 }
 \addtocounter{framenumber}{-1}
 \frame{
 \frametitle{\small Un método nuevo basado en minimización de parámetros}
   \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/our_method_2.pdf}
+    \includegraphics[scale = 0.6]{Figures/presentation/our_method_2.pdf}
   \end{figure}
 }
 \frame{
@@ -465,40 +473,40 @@ de minimizaci\'on}
     \includegraphics[scale = 0.65]{Figures/presentation/Min_results.pdf}
   \end{figure}
 }
-\frame{
-\frametitle{Ampliaci\'on del nuevo método}
-  \begin{figure}
-    \includegraphics[scale = 0.5]{Figures/presentation/Min_100_results_1.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{Ampliaci\'on del nuevo método}
+%   \begin{figure}
+%     \includegraphics[scale = 0.5]{Figures/presentation/Min_100_results_1.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
 \frame{
 \frametitle{Ampliaci\'on del nuevo método}
   \begin{figure}
     \includegraphics[scale = 0.5]{Figures/presentation/Min_100_results_2.pdf}
   \end{figure}
 }
-\addtocounter{framenumber}{-1}
+%\addtocounter{framenumber}{-1}
 \frame{
 \frametitle{Resultados de la caracterizaci\'on con 100 medidas}
   \begin{figure}
     \includegraphics[scale = 0.68]{Figures/presentation/Min_100_results_3.pdf}
   \end{figure}
 }
-\frame{
-\frametitle{Una plataforma para la automatización de medidas}
-  \begin{figure}
-    \includegraphics[scale = 0.7]{Figures/presentation/montaje_experimental_amp_1.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
-\frame{
-\frametitle{Una plataforma para la automatización de medidas}
-  \begin{figure}
-    \includegraphics[scale = 0.7]{Figures/presentation/montaje_experimental_amp_4.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{Una plataforma para la automatización de medidas}
+%   \begin{figure}
+%     \includegraphics[scale = 0.7]{Figures/presentation/montaje_experimental_amp_1.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{Una plataforma para la automatización de medidas}
+%   \begin{figure}
+%     \includegraphics[scale = 0.7]{Figures/presentation/montaje_experimental_amp_4.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
 \frame{
 \frametitle{Una plataforma para la automatización de medidas}
   \begin{figure}
@@ -519,26 +527,26 @@ de minimizaci\'on}
     \includegraphics[scale = 0.9]{Figures/presentation/plataforma_digital_2.pdf}
   \end{figure}
 }
-\addtocounter{framenumber}{-1}
-\frame{
-\frametitle{Una plataforma para la automatización de medidas}
-  \begin{figure}
-    \includegraphics[scale = 0.9]{Figures/presentation/plataforma_digital_3.pdf}
-  \end{figure}
-}
+% \addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{Una plataforma para la automatización de medidas}
+%   \begin{figure}
+%     \includegraphics[scale = 0.9]{Figures/presentation/plataforma_digital_3.pdf}
+%   \end{figure}
+% }
 \subsubsection{Caracterización de la modulación de fase}
 \frame{
    \frametitle{Contenido}
    \footnotesize 
    \tableofcontents[currentsubsection]%,hideothersubsections]
 }
-\frame{
-\frametitle{Medida de la modulaci\'on de fase}
-  \begin{figure}
-    \includegraphics[scale = 0.54]{Figures/presentation/medida_fase_1.pdf}
-  \end{figure}
-}
-\addtocounter{framenumber}{-1}
+% \frame{
+% \frametitle{Medida de la modulaci\'on de fase}
+%   \begin{figure}
+%     \includegraphics[scale = 0.54]{Figures/presentation/medida_fase_1.pdf}
+%   \end{figure}
+% }
+% \addtocounter{framenumber}{-1}
 \frame{
 \frametitle{Medida de la modulaci\'on de fase}
   \begin{figure}
@@ -572,7 +580,7 @@ de minimizaci\'on}
   \end{figure}
 }
 
-\subsection{Resulatados experimentales}
+\subsection{Resultados experimentales}
 \frame{
    \frametitle{Contenido}
    \footnotesize 
@@ -591,7 +599,7 @@ de minimizaci\'on}
 \begin{figure}
   \includegraphics[scale = 0.2]{Figures/ch2_img/OV_I10.pdf}
 \end{figure}
-\pause
+% \pause
 \begin{figure}
   \includegraphics[scale = 0.2]{Figures/ch2_img/OV_I6.pdf}
 \end{figure}
@@ -618,11 +626,12 @@ de minimizaci\'on}
 \end{figure}
 }
 \addtocounter{framenumber}{-1}
-\section{Caracterización de aberraciones de Vórtices Ópticos}
+\section{Caracterización de aberraciones de vórtices ópticos}
 \subsection{Introducción}
 \frame{
   \frametitle{Fuentes de aberraciones}
 \begin{columns}[t]
+\small
 \column{0.5 \textwidth}
 Pueden deberse a imperfecciones en:
 \begin{itemize}
@@ -634,17 +643,17 @@ Pueden deberse a imperfecciones en:
 de elementos ópticos.
 \vspace{0.5cm}
 
-Y en nuestro caso, a los efectos no deseados que introducen algunas
-características del SLM como las distintas formas de discretización
-y el factor de llenado.
+En nuestro caso, se deben también a los efectos no deseados que introducen algunas
+características del SLM como las distintas formas de discretización, el
+acople entre modulación de fase y de amplitud y el factor de llenado.
 \column{0.5 \textwidth}
 \begin{figure}
-  \includegraphics[scale = .25]{Figures/presentation/discrete_mask2.png}
+  \includegraphics[scale = .28]{Figures/presentation/discrete_mask2.png}
 \end{figure}
-\begin{figure}
-\includegraphics[scale =.5]{Figures/presentation/fill_factor.jpg}
-\caption{}
-\end{figure}
+% \begin{figure}
+% \includegraphics[scale =.5]{Figures/presentation/fill_factor.jpg}
+% \caption{}
+% \end{figure}
 \end{columns}
 }
 \frame{
@@ -668,7 +677,7 @@ y el factor de llenado.
 \scriptsize
 \justifying
 Las t\'ecnicas de phase retrieval analizan el efecto de las
-aberraciones sobre las imagenes que produce un sistema \'optico. 
+aberraciones sobre las imágenes que produce un sistema \'optico. 
 Las aberraciones son caracterizadas cuando se encuentra una funci\'on de transferencia que reproduce las
 im\'agenes registradas. 
 \column{0.5\textwidth}
@@ -678,7 +687,7 @@ im\'agenes registradas.
 \end{columns}
 \vspace{-0.5cm}
 \begin{columns}
-  \pause
+  % \pause
   \column{0.3\textwidth}
   % \begin{block}{Transformaciones en sistemas no coherentes}
   %     \begin{equation}\label{eq:Output_Image}
@@ -704,7 +713,7 @@ im\'agenes registradas.
   \begin{figure}
     \includegraphics[scale =.85]{Figures/presentation/definitions.pdf}
   \end{figure}
-  \pause
+  % \pause
  \column{0.3\textwidth}
   \begin{figure}
     \includegraphics[scale =.85]{Figures/presentation/relations.pdf}
@@ -717,18 +726,18 @@ im\'agenes registradas.
 % \end{columns} ñ
 }
 \frame{
-\frametitle{Marco teórico: Phase Diversity }
+\frametitle{Marco teórico: Phase diversity }
 \small
 \begin{columns}
   \column{0.7\textwidth}
    \begin{figure}
      \includegraphics[scale=.3]{Figures/presentation/sistema_PD.pdf}
    \end{figure}
-   \pause
+   % \pause
    \begin{figure}
      \includegraphics[scale=.3]{Figures/presentation/sistema_PD_2.pdf}
    \end{figure}
-\pause
+% \pause
   \column{0.3\textwidth}
    \begin{figure}
      \includegraphics[scale=.4]{Figures/presentation/diversities.pdf}
@@ -742,7 +751,7 @@ im\'agenes registradas.
 \end{block}
 }
 \frame{
-\frametitle{\small Marco teórico: Phase Diversity con iluminaci\'on
+\frametitle{\small Marco teórico: Phase diversity con iluminaci\'on
   coherente}
 \begin{columns}
   \column{0.5\textwidth}
@@ -755,7 +764,7 @@ im\'agenes registradas.
       \includegraphics[scale = 0.6]{Figures/presentation/our_PD_right.pdf}
     \end{figure}
 \end{columns}
-\pause
+% \pause
 \begin{block}{\centering Un nuevo funcional de minimizaci\'on}
 \begin{equation*}
 L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
@@ -765,7 +774,7 @@ L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
 \end{block}
 }
 \frame{
-\frametitle{\small Marco teórico: Phase Diversity con iluminaci\'on coherente mejorado
+\frametitle{\small Marco teórico: Phase diversity con iluminaci\'on coherente mejorado
   con VOs}
 \begin{columns}
   \column{0.4\textwidth}
@@ -777,7 +786,7 @@ L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
           \phi+ \psi_l + \phi_j \right)} \}.
     \end{equation*}
   \end{block}
-  \pause
+  % \pause
   \column{0.5\textwidth}
   \begin{block}{\centering \footnotesize Funcional extendido}
 \footnotesize
@@ -786,7 +795,7 @@ L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
     \end{equation}
   \end{block}
 \end{columns}
-\pause
+% \pause
   \begin{figure}
    \includegraphics[scale = 0.8]{Figures/presentation/montaje_dibujo.pdf}
   \end{figure}
@@ -878,7 +887,20 @@ L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
 \includegraphics[scale = 0.7]{Figures/presentation/exp_res_correction_2.pdf}
 \end{figure}
 }
-
+\subsection{Propuesta de una aplicación para metrología}
+\frame{
+\frametitle{Propuesta de una aplicación para metrología}
+\begin{figure}
+\includegraphics[scale = 0.55]{Figures/presentation/propuesta_1.pdf}
+\end{figure}
+}
+\frame{
+\frametitle{Propuesta de una aplicación para metrología}
+\begin{figure}
+\includegraphics[scale = 0.55]{Figures/presentation/propuesta_2.pdf}
+\end{figure}
+}
+\addtocounter{framenumber}{-1}
 \section{Conclusiones y trabajo futuro}	
 \begin{frame}{Conclusiones I}
 \small
@@ -936,7 +958,23 @@ L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
 
 \begin{frame}
   \frametitle{Trabajo futuro}
-    ¿Qué vale la pena explorar en trabajos futuros?	
+\begin{itemize}
+  \item Estudiar la generación de vórtices ópticos con iluminación
+    parcialmente coherente y
+ \pause
+ \item extender el método de PD para este caso.
+ \pause
+  \item Exploración de una técnica de polarimetría-interfermoétrica
+    basada en derivada de las investigaciones para la caracterización
+    del SLM.
+ \pause
+ \item Implementar la propuesta de una herramienta basada en nuestro
+   método para la caracterización de sistemas complejos. Por ejemplo
+   sistemas de escritura punto a punto en hologramas sintéticos.
+ \pause
+ \item Aplicar los métodos y habilidades desarrollados para la
+   implementación de un microscopio de fase con iluminación espiral.
+\end{itemize}
 \end{frame}
 \begin{frame}{¿Preguntas?}
   \begin{figure}
@@ -944,7 +982,7 @@ L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
     \includegraphics[scale=0.5]{Figures/presentation/thinker.jpeg}	
   \end{figure}
 \end{frame}
-
+\placelogofalse
 \section{Bibliografía}
 \tiny
   \begin{frame}[allowframebreaks]
@@ -953,7 +991,7 @@ L_j(\phi)= \sum_{j=0}^{K} \sum_{u,v}^{M,N}  \left |d_{j} - |u_j|^2
   \bibliographystyle{unsrt}
   \bibliography{References/presentation_references}
   \end{frame}
-
+\placelogotrue 
  \begin{frame}
    \frametitle{Contexto}
    \begin{figure}
