@@ -1794,10 +1794,10 @@ normalizados, lo más adecuado es normalizar también las medidas de
 intensidad. Una forma de normalizar las medidas consiste en medir no
 solo el BraKet deseado sino también un Braket en el cual el Bra o PSD es un
 vector ortogonal al PSD original.  La intensidad medida con el PSD
-ortogonal es entonces un complemento de la original y su suma debe ser
+ortogonal ($\hat{I}^{\perp} $) es entonces un complemento de la original y su suma debe ser
 un valor constante. Si se divide cualquiera de las dos intensidades experimentales
 sobre la suma de las dos, obtenemos un valor que ha sido
-normalizado y que es equivalente a aquellos obtenidos usando el producto
+normalizado ($\hat{I}$) y que es equivalente a aquellos obtenidos usando el producto
 analítico de la Eq. \ref{eq:valor_esperado}, 
 
 \begin{align*}
@@ -1950,7 +1950,10 @@ Hemos comparado las intensidades predichas por las matrices obtenidas
 y encontramos que el modelo emula con muy buena exactitud tanto las 3 medidas
 de entrada como las 3 medidas ortogonales. Para cada uno de los 6
 estados el error absoluto promedio es menor a $2\times10^{-4}$.  Se
-calcula el error absoluto promedio para cada estado como,
+calcula el error absoluto promedio para cada estado como el valor
+absoluto entre las intensidades normalizadas (con valor de 0 a 1)
+simulada $I_n^s$ y
+experimental $I_n^e$ para cada nivel de gris,
 \begin{equation*}
 error_i = \sum_{n=1}^{52}\frac{|I_n^e-I_n^s|}{52}.
 \end{equation*}   
@@ -1973,13 +1976,7 @@ representados en la figura. }
 \label{fig:braket_100_notation}
 \end{figure}
 Entre los estados se incluyeron dos parejas de estados
-elípticos ortonormales no usados
-como entrada del algoritmo de minimización. Los estados elípticos
-corresponden a polarizaciones elípticas horizontal, vertical, a
-$45^{\circ}$ y a $-45^{\circ}$ con ángulo de elipticidad $\theta
-=22.5^{\circ}$ como se muestra en la Fig. \ref{fig:elliptic_states}.
-\\
-Para saber cómo ubicar los
+elípticos\footnote{Para saber cómo ubicar los
 elementos ópticos que generan y detectan estados de polarización
 elípticos arbitrarios usamos un software desarrollado y registrado por nosotros en el Grupo de
 Óptica Aplicada y presentado como una ponencia de póster en el evento
@@ -1988,14 +1985,18 @@ elípticos arbitrarios usamos un software desarrollado y registrado por nosotros
 interfaz gráfica y las librerías pueden ser descargadas sin costo en
 el siguiente vínculo web:\\
 \hspace*{\fill}
-\href{https://github.com/bebopsan/Ellipsometry\_for\_dummies.git}{\textbf{https://github.com/bebopsan/Ellipsometry\_for\_dummies.git}}\hspace*{\fill}.\\
+\href{https://github.com/bebopsan/Ellipsometry\_for\_dummies.git}{\textbf{https://github.com/bebopsan/Ellipsometry\_for\_dummies.git}}\hspace*{\fill}.} ortonormales no usados
+como entrada del algoritmo de minimización. Los estados elípticos
+corresponden a polarizaciones elípticas horizontal, vertical, a
+$45^{\circ}$ y a $-45^{\circ}$ con ángulo de elipticidad $\theta
+=22.5^{\circ}$ como se muestra en la Fig. \ref{fig:elliptic_states}.
 
-Aún cuando la imprecisión del método se hace evidente de forma
-cualitativa, se midió un error promedio global para los
+Aún cuando la imprecisión del método se hace evidente al observar las
+curvas de la Fig.~\ref{fig:Ma_caracterization_results}, se midió un error promedio global para los
 100 estados como medida cuantitativa, $$error_g =
 \sum_{i=1}^{100}\frac{error_i}{100},$$ y se obtuvo un valor de $error_g
-= 0.08$. Es decir que con intensidades normalizadas la diferencia
-entre la medida y la simulación es de alrededor de $8\%$.
+= 0.09$. Es decir que con intensidades normalizadas la diferencia
+entre la medida y la simulación es de alrededor de $9\%$.
 Cuatro de los 100 resultados que incluyen estados elípticos se muestran en la
 Fig. \ref{fig:Ma_caracterization_results} y el resto de medidas se han
 puesto al alcance del lector como un notebook de iPython en un
@@ -2253,7 +2254,7 @@ medidas]{Curvas de modulación
 \end{figure}
 El error en las 6 medidas usadas como entrada es en este caso menor a
 $2\times10^{-4}$, y el error absoluto global es de $error_g
-=0.077673$, que es un poco menor que el anterior. Sin embargo, sigue ocurriendo que la exactitud se pierde a partir del
+=0.08$, que es un poco menor que el anterior. Sin embargo, sigue ocurriendo que la exactitud se pierde a partir del
 nivel de gris 200 en la mayoría de los estados. Es decir, que con estas medidas como entrada
 nuestro método es tan bueno como el de la literatura pero no
 significativamente mejor.
@@ -2473,7 +2474,7 @@ coordenadas de frecuencia espacial, y se observa claramente que se ha
 filtrado el pico central y que la información de la FT se encuentra
 alrededor de los picos en las frecuencias  8 y -8. Nosotros adaptamos
 una implementación en Matlab de este método que fue inicialmente
-propuesta para esta aplicación por el profesor Alberto Lencina del Centro de
+propuesta para esta aplicación por colegas del Centro de
 Investigaciones Ópticas de Argentina. En la figura \ref{fig:fourier_script}, se muestra un
 pequeño script que ilustra cómo se haría el cálculo de la fase del
 interferograma de referencia.     
