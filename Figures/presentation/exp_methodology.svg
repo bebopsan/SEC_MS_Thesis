@@ -25,17 +25,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="41.640281"
+     inkscape:zoom="1"
+     inkscape:cx="363.37387"
      inkscape:cy="279.43856"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="851"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1280"
+     inkscape:window-height="975"
+     inkscape:window-x="1285"
+     inkscape:window-y="194"
+     inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -1739,7 +1739,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3581,5 +3581,26 @@
        height="181.01933"
        x="93.338097"
        y="226.06659" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect21029"
+       width="259"
+       height="87"
+       x="311.3381"
+       y="135.35384" />
+    <rect
+       y="316.33142"
+       x="311.3157"
+       height="86.044777"
+       width="256.04477"
+       id="rect21031"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:3.95522046;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#0000ff;stroke-width:3.95522046;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect21033"
+       width="256.04477"
+       height="86.044777"
+       x="311.3157"
+       y="498.33142" />
   </g>
 </svg>

@@ -11,9 +11,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="260.49939mm"
-   height="285.08606mm"
-   viewBox="0 0 923.02933 1010.1475"
+   width="260.49936mm"
+   height="262.62195mm"
+   viewBox="0 0 923.02922 930.55025"
    id="svg27494"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -26,15 +26,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="746.3878"
-     inkscape:cy="381.70397"
+     inkscape:cx="206.94291"
+     inkscape:cy="302.10675"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="851"
+     inkscape:window-width="1280"
+     inkscape:window-height="975"
      inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-y="224"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -92,7 +92,7 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1"
-     transform="translate(-9.6428767,3.6166453)">
+     transform="translate(-9.6429072,3.6166453)">
     <image
        width="923.02936"
        height="446.85715"
@@ -102,7 +102,7 @@
        x="9.6428766"
        y="47.505062"
        clip-path="url(#clipPath32294)"
-       transform="translate(0,500.00002)" />
+       transform="translate(0,434.00002)" />
     <g
        id="g32045"
        ns0:preamble="/Users/Santiago/Dropbox/Faustos/Master 3/Focus poster/Tikzposter (extended example)/preamble.ini"
@@ -477,7 +477,7 @@
        preserveAspectRatio="none"
        height="446.85715"
        width="923.02936"
-       transform="translate(2.9325188e-8,498.57144)" />
+       transform="translate(2.9325188e-8,432.57144)" />
     <image
        clip-path="url(#clipPath32288)"
        y="47.505062"
@@ -487,16 +487,16 @@
        preserveAspectRatio="none"
        height="446.85715"
        width="923.02936"
-       transform="translate(0,500.00002)" />
+       transform="translate(0,434.00002)" />
     <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect9265"
        width="9.2857141"
        height="9.6428576"
        x="795.71429"
-       y="914.00507" />
+       y="848.00507" />
     <g
-       transform="matrix(0.80691256,0,0,0.80691256,127.30146,-4.4754869)"
+       transform="matrix(0.65979831,0,0,0.65979831,198.34901,28.958177)"
        id="layer1-0"
        inkscape:label="Layer 1">
       <g
