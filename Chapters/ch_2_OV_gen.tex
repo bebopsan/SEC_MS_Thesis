@@ -441,7 +441,7 @@ construyen usando una configuración conocida como \textbf{Twisted
 Nematic} (\acrshort{TN-LCD}) o nemáticos retorcidos. Los TN-LCD son
 dispositivos como el que se ilustra en la Fig.~\ref{fig:tn-lcd} en
 los cuales una  solución de cristal líquido nemático se inyecta entre
-dos superficies rígidas transparentes que han sido rayadas o frotadas
+dos superficies rígidas transparentes que han sido rayadas o frotadas 
 a lo largo de una dirección preestablecida. Este proceso se conoce
 rayado direccional. Las moléculas del LC en
 contacto con las superficies transparentes se adhieren a los canales
@@ -2287,8 +2287,8 @@ virtualente cero para todo el rango de niveles. Además, se observa que
 $X$ también adquiere valores negativos para niveles de gris por encima
 de 200.   
 Con respecto a las medidas de intensidad, se obtuvo una mejoría cuantitativa
-significativa con un error absoluto global de $error_g= 0.024162$ que
-es 3.5 veces menor que el obtenido con el método de Ma et al. No
+significativa con un error absoluto global de $error_g= 0.02$ que
+es 4.5 veces menor que el obtenido con el método de Ma et al. No
 obstante, la calidad de la solución se hace más evidente cuando se
 comparan los resultados cualitativamente, y se observa que los cambios
 de dirección que surgían a partir del nivel de gris 200 han
@@ -2727,14 +2727,24 @@ topológica tienen mayor tamaño y una región oscura más grande.
 \label{fig:spirals}
 \end{SCfigure}
 
-Como se mencionó en la Sección \ref{sec:ChGen_marco_teorico}, para generar un haz
-Laguerre-Gauss sólo basta propagar un haz gausiano por una máscara de
-fase espiral como la de la Fig.~\ref{fig:oam_intro}b) para que
-adquiera las distribuciones de fase de la
-Fig.~\ref{fig:spirals}. Haciendo esto, los perfiles de
+%Como se mencionó en la Sección \ref{sec:ChGen_marco_teorico}, 
+Para generar un haz \textit{similar}\footnote{Decimos que el haz con frente de onda
+helicoidal generado por medio de este tipo de máscaras es
+\textit{similar} a los que se describen con la
+Eq.~\ref{eq:Laguerre-Gauss} porque los cambios súbitos de fase presentes en las
+máscaras introducen efectos de difracción que se describen mejor con
+combinaciones de polinomios de Bessel o de Kummer como han mostrado
+\citetChGen{Berry2004, Bekshaev2008a}.} a los haces Laguerre-Gauss producidos en
+cavidades perfectamente cilíndricas sólo basta propagar un haz
+gausiano por una máscara de fase espiral como la de la
+Fig.~\ref{fig:mask_app} para que adquiera las distribuciones de fase de la
+Fig.~\ref{fig:spirals}. 
+Haciendo esto, los perfiles de
 intensidad de la primera línea de la  Fig.~\ref{fig:LG_intensities}
 pueden ser observados en un plano imagen como una \textbf{función de dispersión de punto} (\acrshort{PSF}) si se añade una lente
-al brazo objeto del montaje de la Fig.~\ref{fig:oam_intro}.  
+al brazo objeto del montaje de la Fig.~\ref{fig:mach_zehnder}.  
+
+
 
 En este capítulo presentaremos una plataforma computacional que
 desarrollamos en el contexto de este proyecto para
@@ -2747,10 +2757,11 @@ un haz Gausiano en un haz LG.
 Con el objetivo de facilitar la creación y manipulación de máscaras de
 fase se agruparon en una sola aplicación gráfica los algoritmos para
 generación de máscaras de amplitud 
-y fase desarrollados durante el transcurso de este proyecto. Esta aplicacion
+y fase desarrollados durante el transcurso de este proyecto. \footnote{Esta aplicacion
 ha sido desarrollada en el entorno Matlab y se encuentra en
 proceso una aplicación de registro de software ante la Dirección
-Nacional de Derecho de Autor.
+Nacional de Derecho de Autor.}
+
 Una captura de pantalla del panel de control de la aplicación se muestra en la Fig.~\ref{fig:mask_app}, y la
 generación de máscaras espiral de fase, como la que se ve en el
 recuadro izquierdo del recorte, se logra haciendo click en el botón
@@ -2814,10 +2825,14 @@ de estos fenómenos hace parte de un trabajo de grado de Ingeniería
 Física en curso de un integrante del Grupo de Óptica Aplicada.}. En particular se
 puede notar que la forma de la aberración presente en el VO
 con carga topológica $l=2$ indica que hay una componente importante de
-astigmatismo, muy similar al comportamiento de las reportadas por \citetChGen{Singh2008}. Por otra parte, la
-no uniformidad de la intensidad en el anillo se debe a que
-la modulación de amplitud no es constante para todos los niveles de
-gris. 
+astigmatismo, muy similar al comportamiento de las reportadas por
+\citetChGen{Singh2008}. Por otra parte, creemos que la no uniformidad de la
+intensidad en el anillo se debe a que la modulación de amplitud no es
+constante para todos los niveles de gris. Una modulación de amplitud
+no lineal o no constante podría hacer que píxeles con niveles de gris
+distintos modificaran la polarización de tal manera que el PSD
+redujera la intensidad de ciertos segmentos del anillo de luz como se
+ve en el VO de carga $l=1$ en la Fig.~\ref{fig:VOs_I10}. 
 
 Ahora bien, cabe notar que estos resultados se han logrado con el
 estado que tiene la mejor combinación de modulación de amplitud plana
@@ -2851,8 +2866,9 @@ como \textit{``en eje''} \citepChGen{Maurer2011}. Esto quiere decir que toda la 
 por el SLM se observa en el plano imagen. Esto es positivo si el SLM
 tiene un muy buen rango de modulación, si es importante tener una
 buena cantidad de luz o si el diseño del instrumento que genera VOs no
-permite sacar el haz de eje. Sin embargo, en la práctica rara vez es usada esta
-configuración pues sacar los VOs de eje usando una red de difracción
+permite sacar el haz de eje. Sin embargo, haciendo una revisión del
+estado del arte se puede observar que el uso de esta configuración es
+muy reducido pues sacar los VOs de eje usando una red de difracción
 de tipo tenedor mejora sustancialmente la calidad óptica al reducir la
 interferencia con la luz no difractada \citepChGen{Maurer2011}.
 Según \citetChGen{Leach2004}, igual que con elementos difractivos
@@ -2860,17 +2876,20 @@ convencionales, las imperfecciones en la linealidad de la fase y otros
 fenómenos que disminuyen la eficiencia (como: efectos de difracción en los saltos de fase, el área no
 efectiva de las celdas o la
 periodicidad de los píxeles), producen un número
-significativo de ordenes de difracción en la luz que atraviesa el SLM. Si estos ordenes se
+significativo de ordenes de difracción en la luz que atraviesa el
+SLM. Si estos ordenes se 
 superponen, como es el caso del haz observado en un montaje \textit{en eje} resulta
 una versión deteriorada del haz esperado. Esto puede explicar los
 resultados presentados en las Fig.~\ref{fig:VOs_I10}
-y en la Fig.~\ref{fig:VOs_I6}. Es por esto que autores clásicos de los
-inicios del estudio de VOs como 
-\citetChGen{Bazhenov1990}, \citetChGen{Leach2004}, y
-\citetChGen{Dennis2009}  han propuesto usar máscaras de fase conocidas
+y en la Fig.~\ref{fig:VOs_I6}. Es por esto que autores clásicos y modernos del
+estudio de VOs como 
+\citetChGen{Bazhenov1990}, \citetChGen{Leach2004,Leach2005}, y
+\citetChGen{Dennis2009} han propuesto usar máscaras de fase conocidas
 como \textit{mascaras tenedor} que se ilustra en la
 Fig.~\ref{fig:fork_recipe}(c) y son rejillas de difracción con
-dislocaciones en su centro. Las máscaras del tipo tenedor resultan de la combinación de una
+dislocaciones en su centro\footnote{Otras publicaciones recientes en las cuales
+  se producen VOs fuera de eje son \citepChGen{Curtis2003,Frhapter2005,Arias2013,Novoa2014}.}. 
+Las máscaras del tipo tenedor resultan de la combinación de una
 máscara espiral y un plano inclinado o rejilla de difracción y el
 efecto que tienen sobre un haz Gaussiano de entrada es el de producir VOs de
 carga topológica $m\times l$ difractados a un ángulo fuera de eje que
@@ -2892,14 +2911,18 @@ Fig.~\ref{fig:fork_recipe}(b)
 emula una cuña delgada y es capaz de difractar toda la energía
 incidente en el primer orden\citepChGen{Dennis2009}. Sin embargo, en la
 práctica este nunca es el caso y una fracción de la energía queda en
-los otros ordenes, esto implica una menor eficiencia y la nececidad de
+los otros ordenes, esto implica una menor eficiencia y la necesidad de
 filtrar o seleccionar sólo el orden de difracción deseado que porta el
 VO a ser detectado. Aunque hay un gran incremento en la calidad de los
 VOs generados con rejillas de este tipo algunos posibles
 inconvenientes son: la necesidad de trabajar con luz monocromática
 para evitar aberración cromática \citepChGen{Maurer2011}, y las limitantes geométricas que
 implica el tener que sacar el haz de eje y filtrar las otras
-componentes. 
+componentes. Además, para evitar aberraciones horizontales que
+aumentan con la distancia de propagación y que se pueden deber a la
+inclinación del haz con respecto a la cámara, es recomendable observar
+los VOs fuera de eje en un plano focal y bloquear la luz procedente de
+otros ordenes de difracción.
 
 % Como nosotros usamos una fuente de iluminación monocromática y no
 % tenemos problemas de espacio, decidimos implementar el montaje fuera
@@ -2939,8 +2962,20 @@ Una característica de los VOs de cargas mayor a 1 es que tienden a
 separarse en varios VOs de carga 1 ante la presencia de
 aberraciones. Esto se puede observar con claridad en los VOs de carga
 $l=2$ de las Fig.~\ref{fig:VOs_I10} y
-\ref{fig:diffracted_OV_I6_and_I10} dónde se hace evidente que hay al menos una componente
-de astigmatismo. 
+\ref{fig:zoom_vortex} dónde se hace evidente que hay al menos una
+componente de astigmatismo. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.6]{zoom_vortex_l2.pdf}
+\caption[Magnificación de un VO dónde las aberraciones
+parecen haber separado la singularidad de carga $l=2$ en dos
+singularidades de carga $l=1$.]{Magnificación de uno de los VOs de la
+  Fig.~\ref{fig:diffracted_OV_I6_and_I10} dónde las
+  aberraciones parecen haber separado la singularidad de carga $l=2$ en dos
+singularidades de carga $l=1$.}
+\label{fig:zoom_vortex}
+\end{figure}
 
 En la siguiente parte de esta disertación se presenta un
 método de caracterización y corrección de aberraciones con el cual es

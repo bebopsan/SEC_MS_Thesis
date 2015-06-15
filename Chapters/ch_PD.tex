@@ -15,8 +15,8 @@ necesario contar con un sistema óptico en el cual sea posible
 manipular con precisión la fase de un frente de onda.  Asimismo, se
 presentó un montaje experimental en el cual logramos generar VOs a
 partir del uso de dispositivos difractivos conocidos como SLMs. 
-No obstante, los VOs obtenidos distan de ser de suficiente calidad como
-para ser usados en aplicaciones científicas o tecnológicas. 
+% No obstante, los VOs obtenidos distan de ser de suficiente calidad como
+% para ser usados en aplicaciones científicas o tecnológicas. 
 
 Esta segunda parte de la tesis abarca el trabajo que se realizó para
 mejorar la calidad óptica de nuestro montaje con el fin de mejorar los
@@ -149,8 +149,7 @@ singuladridades ópticas que portan tinen mayor sensibilidad a la
 presencia de aberraciones. 
 
 En este capítulo se presenta un método novedoso de reconstrucción de
-fase del tipo PD, que se encuentra en el proceso de publicación en la
-revista Optics Letters. Éste método fue desarrollado por el Grupo de Óptica Aplicada en
+fase del tipo PD. Éste método fue desarrollado por el Grupo de Óptica Aplicada en
 colaboración con el investigador Nestor Uribe Patarroyo de la
 Universidad de Medicina de 
 Harvard y es una variación del PD tradicional basada en GSAs, en la
@@ -170,10 +169,10 @@ caracterizar aberraciones en sistemas formadores de imagen generales;
 ya que al ser ubicado a la entrada de estos permite introducir
 máscaras de diversidad de fase con efectos conocidos con las cuales se
 puede ejecutar de nuevo el proceso de caracterización sobre el sistema
-combinado. Se espera que por medio de un convenio de colaboración con
+combinado\footnote{Se espera que por medio de un convenio de colaboración con
 el Instituto Nacional de Técnica Aeroespacial de España  (INTA) se
 pueda probar esta conjetura en sistemas ópticos
-complejos para uso en astrofísica. 
+complejos para uso en astrofísica.}. 
 
 A continuación, se presenta el marco teórico que
 soporta la implementación del método. En la sección
@@ -374,8 +373,12 @@ filtros y máscaras que mejoren el contraste de muestras biológicas transparent
 \citepChPD{Maurer2011}. 
 Dado que usamos  una fuente láser para generar VOs, podemos asumir que el campo óptico a la entrada, $u_{obj}$, se puede representar
 como un haz de luz coherente con perfil Gaussiano,
-$$u_{obj} = e^{\frac{-(x^2+y^2)}{\sigma}}.$$
- Ese sería el campo óptico en el plano objeto, es decir, a una
+\begin{equation}
+u_{obj} = \exp{\left(\frac{-r^2}{w^2(z)}\right)}.
+\label{eq:field_at_input}
+\end{equation}
+ Donde conocemos o podemos aprocimar el ancho del haz $w(z)$.
+ La Eq.~\ref{eq:field_at_input} describe entonces el campo óptico en el plano objeto, es decir, a una
  distancia focal de la primera lente. La FT del 
  objeto , $U_{obj}$ puede ser
  observada en el plano focal de la
@@ -1079,7 +1082,7 @@ onda nominal $j = Z_4:0$.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[scale=1.5]{PSF_comparison_experimental_results_07032015.pdf}
+\includegraphics[scale=1]{exp_res_correction_1.pdf}
 \caption[VO registrados luego restar las aberraciones detectadas
   con PD.]{Imagenes de VO tomadas luego de restar las aberraciones
     reconstruidas con PD.}  
